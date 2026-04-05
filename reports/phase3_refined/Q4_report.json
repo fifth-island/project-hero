@@ -1,0 +1,85 @@
+{
+  "question": "Q4",
+  "title": "Air Quality Index and Multi-Pollutant Analysis",
+  "research_question": "What were the air quality index and concentrations of other pollutants (CO, SO2, NO2, Ozone) in Chinatown between July 19 – August 2023 based on the MassDEP monitor?",
+  "study_period": "2023-07-19 to 2023-08-23",
+  "kpi": {
+    "days_good_aqi": 36,
+    "total_days": 36,
+    "pct_good_aqi": 100,
+    "mean_daily_aqi": 29.4,
+    "max_daily_aqi": 46.2,
+    "multi_pollutant_events": 0,
+    "naaqs_exceedances": 0,
+    "dominant_aqi_pollutant": "Ozone",
+    "dominant_aqi_pollutant_pct": 97
+  },
+  "epa_compliance": {
+    "ozone": {"standard_ppm_8hr": 0.070, "max_observed": 0.062, "margin_pct": 11},
+    "so2": {"standard_ppb_1hr": 75, "max_observed": 1.0, "margin_pct": 99},
+    "co": {"standard_ppm_8hr": 9.0, "max_observed": 0.988, "margin_pct": 89},
+    "no2": {"standard_ppb_1hr": 100, "max_observed": 49.0, "margin_pct": 51},
+    "pm25": {"standard_ug_m3_24hr": 35.0, "max_observed": 22.4, "margin_pct": 36}
+  },
+  "pollutant_summary": {
+    "ozone": {"coverage_pct": 97.4, "range_ppm": [0.001, 0.062], "mean": 0.032, "std": 0.011},
+    "so2": {"coverage_pct": 93.4, "range_ppb": [0.10, 1.00], "mean": 0.275, "std": 0.080},
+    "co": {"coverage_pct": 97.7, "range_ppm": [0.143, 0.988], "mean": 0.262, "std": 0.077},
+    "no2": {"coverage_pct": 86.3, "range_ppb": [0.0, 49.0], "mean": 5.547, "std": 4.396},
+    "pm25_fem": {"coverage_pct": 98.5, "range_ug_m3": [1.2, 22.4], "mean": 7.918, "std": 4.192}
+  },
+  "weekday_weekend_signal": {
+    "no2_max_difference_pct": 197,
+    "no2_weekday_peak_hour": 5,
+    "no2_weekend_peak_hour": 19,
+    "ozone_max_difference_pct": 37,
+    "so2_max_difference_pct": 33,
+    "pm25_max_difference_pct": 18,
+    "co_max_difference_pct": 15
+  },
+  "correlation_matrix": {
+    "co_no2": 0.685,
+    "ozone_temp": 0.584,
+    "co_pm25": 0.526,
+    "so2_co": 0.434,
+    "ozone_no2": -0.376,
+    "temp_rh": -0.571,
+    "pm25_temp": 0.319
+  },
+  "spatial_variation": {
+    "pm25_highest_site": "Chin Park",
+    "pm25_highest_ug_m3": 8.68,
+    "pm25_lowest_site": "Oxford",
+    "pm25_lowest_ug_m3": 6.56,
+    "pm25_range_pct": 32.2,
+    "no2_range_pct": 18.6,
+    "co_range_pct": 11.4,
+    "ozone_range_pct": 11.3,
+    "so2_range_pct": 5.2
+  },
+  "wind_direction": {
+    "no2_highest_direction": "W and SW",
+    "pm25_highest_direction": "S and SW",
+    "ozone_pattern": "relatively uniform (regional formation)"
+  },
+  "key_findings": [
+    "All 36 study days achieved EPA Good AQI category (mean 29.4, max 46.2)",
+    "Zero exceedances of any federal standard for any pollutant",
+    "Ozone dominated AQI on 97% of days (summer photochemistry)",
+    "NO2 shows 197% weekday/weekend difference — clearest traffic signature",
+    "CO and NO2 highly correlated (r=0.685), confirming shared combustion origins",
+    "PM2.5 varies 32% across sites — Chin Park highest, Oxford lowest",
+    "Zero multi-pollutant episodes occurred"
+  ],
+  "figures": [
+    "q4_pollutant_distributions.png",
+    "q4_hourly_patterns.png",
+    "q4_daily_aqi_stacked.png",
+    "q4_correlation_matrix.png",
+    "q4_weather_scatter.png",
+    "q4_spatial_variation.png",
+    "q4_pollution_rose.png",
+    "q4_site_hour_heatmap.png",
+    "q4_daily_trends.png"
+  ]
+}

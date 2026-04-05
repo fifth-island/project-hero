@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Environmental Justice &amp; Community Impact | Chinatown HEROS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#a93533",
+                    "on-tertiary-container": "#79cdb1",
+                    "tertiary": "#003e2f",
+                    "surface-container-highest": "#f6e1ae",
+                    "surface-container-low": "#fff2da",
+                    "inverse-primary": "#ffb3ae",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#241a00",
+                    "on-primary-container": "#ffa59e",
+                    "secondary-fixed": "#ffdbc8",
+                    "on-tertiary-fixed": "#002118",
+                    "on-primary-fixed-variant": "#891c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#410004",
+                    "inverse-surface": "#3b2f0b",
+                    "primary-container": "#902223",
+                    "surface-bright": "#fff8f1",
+                    "on-tertiary-fixed-variant": "#00513f",
+                    "surface-dim": "#eed8a6",
+                    "tertiary-fixed-dim": "#82d7ba",
+                    "surface-variant": "#f6e1ae",
+                    "on-secondary-container": "#794622",
+                    "on-secondary-fixed": "#311300",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#58413f",
+                    "inverse-on-surface": "#ffefcf",
+                    "secondary": "#87512d",
+                    "surface-container": "#ffecc3",
+                    "secondary-fixed-dim": "#feb78a",
+                    "surface": "#fff8f1",
+                    "on-background": "#241a00",
+                    "background": "#fff8f1",
+                    "surface-container-high": "#fce6b3",
+                    "primary-fixed": "#ffdad7",
+                    "outline": "#8b716f",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#dfbfbc",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#005744",
+                    "secondary-container": "#feb78a",
+                    "primary": "#6f070f",
+                    "on-secondary-fixed-variant": "#6b3a18",
+                    "tertiary-fixed": "#9ef3d6",
+                    "primary-fixed-dim": "#ffb3ae"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { backdrop-filter: blur(16px); background: rgba(255, 248, 241, 0.8); }
+        .lattice-bg { background-image: radial-gradient(circle at 2px 2px, rgba(111, 7, 15, 0.05) 1px, transparent 0); background-size: 24px 24px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-stone-50 dark:bg-stone-950 border-r-0 z-40">
+<div class="px-6 py-8 flex flex-col gap-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary-container/30">
+<img alt="Tufts University Logo Seal" class="w-8 h-8 object-contain" data-alt="Traditional circular academic seal of Tufts University in deep maroon and white on a textured paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsPWa87dvniPpNG_RjK30CD81vf7Wrj4Mt1o4ceyxdCLp9V64oJeusX-aLbbyySse70lGJ7OdYgQ2v-7x4uN0OrtVcTYjTPYjmiZLh1reF9qg9uUX8_O-usXmz-8xP43AmosTlYks3VyTdlebPkYr2VBYVNqLIKhChtkEvnS_Zr8s9PgXkATZxDuaylqt-HWsDEsFMFp3FJYOCkiHxOyfeIzgRLe2lVH1iyVs-oE2spMJqitDrFlzlc5f3sgU5xhkKOcp0KhvjVdgP"/>
+</div>
+<div>
+<h2 class="font-serif text-lg text-red-900 dark:text-red-500 leading-tight">HEROS Dashboard</h2>
+<p class="font-sans uppercase text-[10px] font-semibold tracking-widest text-stone-500">Environmental Research</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-sans uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span>Project Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-sans uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Environmental Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-sans uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span>Sensor Validation</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-red-900 dark:text-red-400 font-bold bg-stone-200/50 dark:bg-stone-800/50 rounded-r-full translate-x-1 font-sans uppercase text-xs tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="diversity_1">diversity_1</span>
+<span>Community Impact</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-stone-200/50 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-sans uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-sans uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+<button class="mt-4 bg-primary text-on-primary py-3 rounded-md font-sans uppercase text-xs font-bold tracking-widest shadow-md hover:opacity-90 transition-opacity">
+                    Download Data
+                </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 min-h-screen">
+<!-- TopAppBar Navigation (Mobile only placeholder & Desktop Branding) -->
+<header class="flex justify-between items-center px-6 py-4 w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm md:hidden">
+<h1 class="text-xl font-serif font-bold text-red-900 italic tracking-tight">Chinatown HEROS</h1>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-stone-600" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-stone-600" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<section class="p-6 md:p-12 max-w-7xl mx-auto">
+<!-- Hero Narrative -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16">
+<div class="lg:col-span-8">
+<div class="flex items-center gap-2 text-primary font-bold mb-4">
+<span class="h-px w-8 bg-primary"></span>
+<span class="uppercase tracking-[0.2em] text-[10px] font-bold">Field Research Report</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-serif text-on-surface leading-tight tracking-tight mb-6">
+                        Thermal Justice <br/>in <span class="italic text-primary">Chinatown</span>
+</h1>
+<p class="text-xl text-on-surface-variant font-body max-w-2xl leading-relaxed">
+                        Chinatown HEROS (Health, Environmental Research, &amp; Outreach Strategy) investigates how urban design and social vulnerability intersect to create hazardous heat conditions in Boston's historic core.
+                    </p>
+</div>
+<div class="lg:col-span-4 flex justify-end">
+<div class="text-right">
+<p class="text-xs font-bold uppercase tracking-widest text-secondary mb-1">Collaboration</p>
+<p class="text-sm font-serif italic text-on-surface">Tufts University x ACDC Boston</p>
+<p class="text-[10px] text-stone-400 mt-2">Data Refresh: Aug 2023</p>
+</div>
+</div>
+</div>
+<!-- Bento Data Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+<!-- Heat Map Module (Asymmetrical Width) -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-xl overflow-hidden shadow-sm relative min-h-[500px]">
+<div class="absolute top-6 left-6 z-10 glass-card p-4 rounded-lg shadow-lg border border-white/20">
+<h3 class="font-serif text-lg text-primary leading-tight">Relative Heat Intensity</h3>
+<p class="text-[10px] font-sans uppercase tracking-widest text-on-surface-variant mt-1">Surface Temperature Overlay</p>
+<div class="mt-4 flex items-center gap-2">
+<div class="h-3 w-24 bg-gradient-to-r from-yellow-200 via-orange-500 to-red-900 rounded-full"></div>
+<span class="text-[10px] font-bold">104°F</span>
+</div>
+</div>
+<!-- Map Visual Placeholder -->
+<div class="w-full h-full bg-stone-200">
+<img alt="Thermal map of Boston Chinatown" class="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]" data-alt="High-resolution aerial thermal map showing heat intensity across Boston's Chinatown with deep reds and oranges indicating extreme heat zones over dense urban blocks" data-location="Boston" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASQCMmZL6UyfeJdUhw3yegrlGMDfwk8pt8MpTzJqsT9bXm75CaP0lpUDHtj9R7WkNaJmz8MQCVDm2rUWhztc2vXFiuwgS9JV42RTTnRniGlUN6saGosW_LgZ8sBUx_J94dAGJQZSbt3bx3QRZnp-vXshkVnQ5FeEE9m2XxwkhdY-UzomHjkxQuPq6m1yE4WLD_6TP6_0JzTpVeBdqnvpQ2j9kB6tVJzYerRM2dq7rLLp0_W6lwGL06-Y5O9PfG3KIUf2YVzZajnJKL"/>
+</div>
+<div class="absolute bottom-6 right-6 z-10 flex flex-col gap-2">
+<button class="w-10 h-10 bg-surface-container-highest rounded-full shadow-md flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-highest rounded-full shadow-md flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Vulnerability Indicators -->
+<div class="flex flex-col gap-6">
+<div class="bg-surface-container p-8 rounded-xl relative overflow-hidden lattice-bg">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="elderly">elderly</span>
+<span class="text-[10px] font-bold bg-secondary-container px-2 py-1 rounded">Vulnerability: High</span>
+</div>
+<h4 class="font-serif text-2xl text-on-surface leading-tight">Aging Population</h4>
+<p class="text-sm text-on-surface-variant mt-2 leading-relaxed">
+                                28% of residents are over 65, significantly higher than the city average, increasing risk during heat waves.
+                            </p>
+</div>
+</div>
+<div class="bg-tertiary-container p-8 rounded-xl text-on-tertiary relative overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-tertiary-fixed text-3xl" data-icon="translate">translate</span>
+</div>
+<h4 class="font-serif text-2xl leading-tight">Linguistic Isolation</h4>
+<p class="text-sm text-tertiary-fixed-dim mt-2 leading-relaxed opacity-90">
+                            42% of households speak limited English, complicating the dissemination of emergency cooling resources.
+                        </p>
+<div class="mt-6 flex gap-1">
+<div class="h-1 flex-1 bg-tertiary-fixed/30 rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed w-3/4"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Narrative Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] bg-stone-100 rounded-xl overflow-hidden shadow-xl">
+<img alt="Chinatown street during hot day" class="w-full h-full object-cover" data-alt="Atmospheric street scene in Boston Chinatown during a hazy summer afternoon with traditional red lanterns hanging between brick buildings and residents walking in soft light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX8f6MmcV4mDVn3MMHs91_1oKFKXKZBdm1M-Vf9kt1sBoEr7QEJ5IYFvQbvp7uDKGdE_UbQxeEmK7vDhPhBqwp6ZW4AUTCvjellSLfiGfxB-TPCeXVFJ-l1Qw8LvirFP0WYk9yO_UFCma7jPR_tK_w6z9Wouy1m38AzVXgRzryZZ1aQqvQicPjr5RK5XKiQEhPFoog_auJcNYxY13iRzBlRMr33LVQVpy1lR7l_sDEgV2k80EN904xvlsntmKhu_m7owMYpUuIiz6W"/>
+</div>
+<div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-lg max-w-[240px] shadow-2xl border border-white/40">
+<p class="font-serif italic text-primary text-lg">"The bricks hold the heat long after the sun goes down."</p>
+<p class="text-[10px] uppercase font-bold mt-2 text-stone-500">— Resident Interview, 2023</p>
+</div>
+</div>
+<div class="lg:col-span-7 py-8">
+<h2 class="text-4xl font-serif text-on-surface mb-8">The Cumulative Impact of the Urban Heat Island</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+<p>
+                            In the dense urban fabric of Boston’s Chinatown, the convergence of concrete surfaces, lack of tree canopy, and proximity to major highway arteries creates a "micro-climate" that can be 10–15°F hotter than surrounding coastal neighborhoods.
+                        </p>
+<p>
+                            For a population that faces high rates of respiratory illness and cardiovascular disease, these temperature spikes are not just uncomfortable—they are life-threatening. Our research indicates that linguistic barriers often prevent residents from accessing "Cooling Centers" provided by the city.
+                        </p>
+<div class="pt-4 flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-3xl font-serif text-primary">12.4%</span>
+<span class="text-[10px] uppercase tracking-widest font-bold text-stone-400">Asthma Rate</span>
+</div>
+<div class="w-px h-12 bg-stone-200"></div>
+<div class="flex flex-col">
+<span class="text-3xl font-serif text-primary">4.2°C</span>
+<span class="text-[10px] uppercase tracking-widest font-bold text-stone-400">Nighttime Excess</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action & Resources Section -->
+<div class="bg-surface-container-low rounded-2xl p-8 md:p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[160px]" data-icon="eco">eco</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 text-tertiary font-bold mb-6">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span class="uppercase tracking-widest text-[11px] font-bold">Community Action Hub</span>
+</div>
+<h2 class="text-4xl font-serif text-on-surface mb-10">Resources &amp; Resiliency</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Resource 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-4 border-primary">
+<h5 class="font-serif text-xl mb-3">Cooling Center Map</h5>
+<p class="text-sm text-on-surface-variant mb-4">View real-time availability of air-conditioned public spaces in Chinatown and nearby areas.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group" href="#">
+                                Access Map
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Resource 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-4 border-secondary">
+<h5 class="font-serif text-xl mb-3">Utility Assistance</h5>
+<p class="text-sm text-on-surface-variant mb-4">Grants and subsidies available for elderly residents to help manage electricity costs during peak heat.</p>
+<a class="inline-flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-widest group" href="#">
+                                Learn More
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Resource 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-4 border-tertiary">
+<h5 class="font-serif text-xl mb-3">Air Quality Sensors</h5>
+<p class="text-sm text-on-surface-variant mb-4">Volunteer to host a HEROS environmental sensor at your residence to help our research.</p>
+<a class="inline-flex items-center gap-2 text-tertiary font-bold text-xs uppercase tracking-widest group" href="#">
+                                Join Project
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Seal -->
+<footer class="mt-20 py-12 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<img alt="Tufts University Logo" class="h-16 w-16 opacity-30 grayscale" data-alt="Traditional academic seal of Tufts University showing architectural crest and laurel wreath in a vintage faded print style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7LHU8iZqr_KgqZUEatWw9XECzzbNjjUSHAJNu165FrwovYkQEymCb54-CZpd9r3Vh_aVfYlLdIIQ84B41Guta9sbYykQhuR0LGgFHd2PZMzMttC12Bzd3y3uceSEV-uQw8S6AV0mhTRhkEewEcIqseIME7gRFKqcPlQQ-b073ymJrxDyThoVbzKTljB2iYqhO5ex4sfhRvlls9HizmAVGFKot_yAcAOSFNlkc--oMS9Hx6J57vpOqhdTh71_-MAC2VQ8A3Ke5oKAY"/>
+<div>
+<p class="font-serif text-lg text-stone-500 italic">Tufts University</p>
+<p class="text-[10px] font-sans uppercase tracking-[0.2em] text-stone-400">Environmental Research Collaboration</p>
+</div>
+</div>
+<div class="flex gap-8 text-[11px] font-sans uppercase font-bold tracking-widest text-stone-400">
+<a class="hover:text-primary" href="#">Data Ethics</a>
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Contact Team</a>
+</div>
+</footer>
+</section>
+</main>
+<!-- Mobile Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_10px_rgba(0,0,0,0.05)] flex justify-around items-center py-3 z-50">
+<div class="flex flex-col items-center text-stone-500">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-[9px] uppercase font-bold mt-1">Overview</span>
+</div>
+<div class="flex flex-col items-center text-stone-500">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[9px] uppercase font-bold mt-1">Analytics</span>
+</div>
+<div class="flex flex-col items-center text-red-900 border-t-2 border-red-900 pt-1">
+<span class="material-symbols-outlined" data-icon="diversity_1">diversity_1</span>
+<span class="text-[9px] uppercase font-bold mt-1">Impact</span>
+</div>
+<div class="flex flex-col items-center text-stone-500">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[9px] uppercase font-bold mt-1">Settings</span>
+</div>
+</nav>
+</body></html>

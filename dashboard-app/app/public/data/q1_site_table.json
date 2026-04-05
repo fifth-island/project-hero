@@ -1,0 +1,122 @@
+[
+  {
+    "site_id": "greenway",
+    "name": "One Greenway",
+    "slope": 0.682,
+    "intercept": 0.774,
+    "r_squared": 0.913,
+    "rmse": 1.27,
+    "bias": 2.62,
+    "n": 4821
+  },
+  {
+    "site_id": "lyndenboro",
+    "name": "Lyndboro Park",
+    "slope": 0.755,
+    "intercept": 0.352,
+    "r_squared": 0.92,
+    "rmse": 1.27,
+    "bias": 2.25,
+    "n": 4714
+  },
+  {
+    "site_id": "msh",
+    "name": "Mary Soo Hoo",
+    "slope": 0.698,
+    "intercept": 0.654,
+    "r_squared": 0.858,
+    "rmse": 1.28,
+    "bias": 2.07,
+    "n": 4117
+  },
+  {
+    "site_id": "chin",
+    "name": "Chin Park",
+    "slope": 0.747,
+    "intercept": 0.857,
+    "r_squared": 0.91,
+    "rmse": 1.39,
+    "bias": 1.79,
+    "n": 2187
+  },
+  {
+    "site_id": "dewey",
+    "name": "Dewey Square",
+    "slope": 0.747,
+    "intercept": 0.917,
+    "r_squared": 0.897,
+    "rmse": 1.39,
+    "bias": 1.52,
+    "n": 4817
+  },
+  {
+    "site_id": "tufts",
+    "name": "Tufts Garden",
+    "slope": 0.739,
+    "intercept": 1.161,
+    "r_squared": 0.908,
+    "rmse": 1.34,
+    "bias": 1.45,
+    "n": 4030
+  },
+  {
+    "site_id": "taitung",
+    "name": "Tai Tung",
+    "slope": 0.807,
+    "intercept": 0.42,
+    "r_squared": 0.911,
+    "rmse": 1.25,
+    "bias": 1.37,
+    "n": 4767
+  },
+  {
+    "site_id": "berkley",
+    "name": "Berkeley Garden",
+    "slope": 0.701,
+    "intercept": 1.485,
+    "r_squared": 0.889,
+    "rmse": 1.22,
+    "bias": 1.34,
+    "n": 2391
+  },
+  {
+    "site_id": "eliotnorton",
+    "name": "Eliot Norton",
+    "slope": 0.781,
+    "intercept": 0.71,
+    "r_squared": 0.917,
+    "rmse": 1.15,
+    "bias": 1.31,
+    "n": 3816
+  },
+  {
+    "site_id": "oxford",
+    "name": "Oxford Place",
+    "slope": 0.756,
+    "intercept": 0.611,
+    "r_squared": 0.775,
+    "rmse": 1.46,
+    "bias": 1.31,
+    "n": 2834
+  },
+  {
+    "site_id": "reggie",
+    "name": "Reggie Wong",
+    "slope": 0.832,
+    "intercept": 0.704,
+    "r_squared": 0.913,
+    "rmse": 1.28,
+    "bias": 0.69,
+    "n": 4066
+  },
+  {
+    "site_id": "castle",
+    "name": "Castle Square",
+    "slope": 0.673,
+    "intercept": 2.671,
+    "r_squared": 0.884,
+    "rmse": 1.32,
+    "bias": -0.02,
+    "n": 3721
+  }
+]

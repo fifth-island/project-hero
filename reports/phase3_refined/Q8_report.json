@@ -1,0 +1,87 @@
+{
+  "question": "Q8",
+  "title": "Temporal Patterns of PM2.5 and WBGT",
+  "research_question": "What time(s) of day and day(s) of week are associated with the highest wet bulb globe temperatures and PM2.5 overall and for each open space site?",
+  "study_period": "2023-07-19 to 2023-08-23",
+  "total_observations": 48123,
+  "pm25_valid_pct": 98,
+  "wbgt_valid_pct": 96,
+  "statistical_test": "Kruskal-Wallis H-test",
+  "kpi": {
+    "pm25": {
+      "peak_hour": 12,
+      "peak_value_ug_m3": 10.6,
+      "trough_hour": 1,
+      "trough_value_ug_m3": 8.5,
+      "diurnal_amplitude_ug_m3": 2.1,
+      "peak_dow": "Monday",
+      "peak_dow_value": 10.9,
+      "weekday_mean": 9.3,
+      "weekend_mean": 10.0,
+      "hour_effect_kw_h": 743,
+      "hour_effect_p": 3.87e-142,
+      "dow_effect_kw_h": 1812,
+      "dow_effect_p": 0.0
+    },
+    "wbgt": {
+      "peak_hour": 17,
+      "peak_value_f": 67.2,
+      "trough_hour": 6,
+      "trough_value_f": 64.2,
+      "diurnal_amplitude_f": 3.1,
+      "peak_dow": "Friday",
+      "peak_dow_value_f": 68.1,
+      "weekday_mean_f": 66.0,
+      "weekend_mean_f": 65.6,
+      "hour_effect_kw_h": 1896,
+      "hour_effect_p": 0.0,
+      "dow_effect_kw_h": 3614,
+      "dow_effect_p": 0.0
+    }
+  },
+  "compound_exposure_window": "3-6 PM (transition between PM2.5 noon peak and WBGT 5pm peak)",
+  "hour_dow_hotspots": {
+    "pm25_darkest_cell": "Wednesday 15:00-17:00",
+    "pm25_darkest_value": 15.7,
+    "pm25_darkest_cause": "mid-study wildfire-smoke event (Aug 16)",
+    "wbgt_warmest_block": "Friday 13:00-18:00",
+    "wbgt_warmest_range_f": [69, 70]
+  },
+  "weekday_weekend": {
+    "pm25_weekend_higher_by": 0.7,
+    "wbgt_weekday_slightly_warmer_afternoon": true
+  },
+  "site_heterogeneity": {
+    "pm25_peak_hour_consensus": 12,
+    "pm25_peak_hour_consensus_count": 6,
+    "pm25_peak_hour_range": [12, 20],
+    "pm25_amplitude_range": [1.2, 3.9],
+    "wbgt_peak_hour_range": [13, 18],
+    "wbgt_amplitude_range_f": [2.0, 4.3],
+    "most_variable_site": "Chin Park",
+    "chin_pm25_amplitude": 3.9,
+    "chin_wbgt_amplitude": 4.3,
+    "most_stable_site": "Mary Soo Hoo",
+    "msh_pm25_amplitude": 1.2,
+    "smallest_wbgt_amplitude_site": "Oxford Place",
+    "oxford_wbgt_amplitude": 2.0
+  },
+  "key_findings": [
+    "PM2.5 peaks at noon (10.6 ug/m3); WBGT peaks at 5 PM (67.2F) — 5-hour offset",
+    "Compound exposure window: 3-6 PM when both PM2.5 and WBGT are elevated",
+    "All temporal effects highly significant (Kruskal-Wallis p ≈ 0)",
+    "DOW patterns confounded with weather in 36-day study",
+    "PM2.5 peak hours range 12:00-20:00 across sites; amplitudes vary 3-fold (1.2-3.9 ug/m3)",
+    "Chin Park most temporally variable; Mary Soo Hoo most stable",
+    "Weekend PM2.5 slightly exceeds weekday (10.0 vs 9.3 ug/m3)"
+  ],
+  "figures": [
+    "q8_diurnal_profiles.png",
+    "q8_dow_profiles.png",
+    "q8_hour_dow_heatmap.png",
+    "q8_weekday_weekend.png",
+    "q8_site_diurnal.png",
+    "q8_site_pm25_heatmaps.png",
+    "q8_site_wbgt_heatmaps.png"
+  ]
+}

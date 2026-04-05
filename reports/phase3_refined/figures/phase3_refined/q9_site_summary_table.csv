@@ -1,0 +1,13 @@
+site_id,PM2.5_Mean_ugm3,WBGT_Mean_F,Landuse_Cluster,Dominant_LandUse_25m,Dominant_LandUse_50m
+castle,8.18,66.8,0,Trees (0.7%),Trees (0.7%)
+eliotnorton,9.29,65.5,0,Impervious (0.5%),Impervious (0.7%)
+berkley,9.53,66.1,0,Impervious (0.7%),Impervious (0.6%)
+lyndenboro,10.68,65.8,0,Impervious (0.7%),Impervious (0.7%)
+oxford,7.92,65.6,1,Impervious (1.0%),Impervious (1.0%)
+reggie,8.34,65.7,1,Impervious (0.9%),Impervious (0.9%)
+msh,9.07,65.1,1,Impervious (1.0%),Impervious (0.9%)
+taitung,9.36,65.9,1,Impervious (1.0%),Impervious (1.0%)
+dewey,9.7,65.9,1,Impervious (0.9%),Impervious (0.9%)
+tufts,10.04,66.2,1,Impervious (0.8%),Impervious (0.9%)
+chin,10.49,66.0,1,Impervious (0.9%),Impervious (0.9%)
+greenway,10.72,65.7,1,Impervious (0.9%),Impervious (1.0%)

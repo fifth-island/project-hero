@@ -1,0 +1,96 @@
+{
+  "question": "Q2",
+  "title": "Temperature Sensor Comparison: Kestrel vs Reference Monitors",
+  "research_question": "How do Kestrel ambient temperature data at each of the 12 open space sites compare with the weather station at 35 Kneeland St and DEP Nubian Square?",
+  "study_period": "2023-07-19 to 2023-08-23",
+  "paired_observations": 36600,
+  "kpi": {
+    "vs_ws_rooftop": {
+      "pearson_r": 0.60,
+      "spearman_rho": 0.54,
+      "mean_bias_f": 0.81,
+      "rmse_f": 7.03,
+      "within_2f_pct": 29.0,
+      "diurnal_bias_sd_f": 4.50,
+      "heat_event_agreement_pct": 14.1
+    },
+    "vs_dep_nubian": {
+      "pearson_r": 0.90,
+      "spearman_rho": 0.89,
+      "mean_bias_f": -0.37,
+      "rmse_f": 3.10,
+      "within_2f_pct": 53.2,
+      "diurnal_bias_sd_f": 0.96,
+      "heat_event_agreement_pct": 74.3
+    }
+  },
+  "summary_statistics": {
+    "kestrel": {"n": 48000, "mean_f": 74.3, "std": 5.5, "min": 52.5, "median": 74.5, "max": 93.4},
+    "ws_35_kneeland": {"n": 48000, "mean_f": 73.5, "std": 4.5, "min": 62.8, "median": 73.2, "max": 92.2},
+    "dep_nubian": {"n": 48000, "mean_f": 74.6, "std": 7.1, "min": 60.0, "median": 74.6, "max": 93.9}
+  },
+  "rooftop_thermal_mass": {
+    "phase_lag_hours": 4,
+    "diurnal_bias_swing_f": 13.5,
+    "zero_lag_r": 0.42,
+    "lag_corrected_r": 0.998,
+    "ws_coolest_hour": 10,
+    "ws_warmest_hour": 18,
+    "ground_coolest_hour": 5,
+    "ground_warmest_hour": 14,
+    "explanation": "Rooftop concrete absorbs solar radiation during day and releases heat at night, creating ~4-hour thermal lag"
+  },
+  "urban_heat_island": {
+    "hottest_site": "Castle Square",
+    "hottest_mean_f": 75.3,
+    "coolest_site": "Mary Soo Hoo",
+    "coolest_mean_f": 73.9,
+    "range_f": 1.4
+  },
+  "site_dep_bias": {
+    "warmest_relative": {"site": "Oxford Place", "bias_f": 0.63},
+    "coolest_relative": {"site": "Eliot Norton", "bias_f": -1.03},
+    "r_range": [0.877, 0.929]
+  },
+  "landuse_association": {
+    "greenspace_vs_dep_bias_r": -0.84,
+    "greenspace_vs_dep_bias_p": 0.001,
+    "interpretation": "More greenspace -> cooler readings relative to reference"
+  },
+  "temporal_stability": {
+    "dep_rolling_7day_r_min": 0.87,
+    "ws_rolling_7day_r_range": [0.42, 0.73],
+    "sensor_drift": false
+  },
+  "wbgt_relationship": {
+    "temp_wbgt_r": 0.54,
+    "max_wbgt_f": 77.5,
+    "osha_caution_exceeded": false,
+    "note": "WBGT never reached OSHA caution threshold despite air temp >90F"
+  },
+  "key_findings": [
+    "DEP Nubian is the gold-standard reference (r=0.90, bias=-0.37F, RMSE=3.1F)",
+    "WS at 35 Kneeland is unsuitable: rooftop thermal mass creates 4-hour phase lag and 13.5F daily bias swing",
+    "Lag-corrected WS correlation jumps from r=0.42 to r=0.998",
+    "1.4F urban heat island effect across sites (Castle Square hottest, Mary Soo Hoo coolest)",
+    "Greenspace is strongest predictor of temperature bias (r=-0.84, p=0.001)",
+    "WBGT never exceeded OSHA caution despite air temp >90F"
+  ],
+  "figures": [
+    "q2_temp_distributions.png",
+    "q2_kes_by_site.png",
+    "q2_ref_crosscheck.png",
+    "q2_scatter_matrix.png",
+    "q2_bland_altman.png",
+    "q2_diurnal_pattern.png",
+    "q2_lag_correlation.png",
+    "q2_site_violins.png",
+    "q2_bias_temp_rh_heatmap.png",
+    "q2_wind_direction_bias.png",
+    "q2_daily_timeseries.png",
+    "q2_site_hour_heatmap.png",
+    "q2_landuse_temp.png",
+    "q2_rolling_stability.png",
+    "q2_temp_vs_wbgt.png"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "question": "Q3",
+  "title": "Cumulative Distribution Function Analysis",
+  "research_question": "Create separate CDFs of PM2.5 and WBGT overall, by time of day, and per site.",
+  "study_period": "2023-07-19 to 2023-08-23",
+  "kpi": {
+    "pm25_observations": 47009,
+    "pm25_mean_ug_m3": 9.49,
+    "pm25_above_naaqs_annual_pct": 46.3,
+    "pm25_above_naaqs_24hr_pct": 0.0,
+    "wbgt_observations": 46404,
+    "wbgt_mean_f": 65.86,
+    "wbgt_above_osha_caution_pct": 0.0,
+    "wbgt_above_osha_warning_pct": 0.0,
+    "wbgt_above_osha_danger_pct": 0.0
+  },
+  "pm25_distribution": {
+    "skewness": 0.648,
+    "range": [0.88, 25.09],
+    "median": 8.33,
+    "p75": 13.43
+  },
+  "wbgt_distribution": {
+    "skewness": -0.047,
+    "range": [54.8, 77.5],
+    "median": 66.2,
+    "p75": 68.9
+  },
+  "day_night_ks_tests": {
+    "pm25": {"d_statistic": 0.1226, "p_value": 3.06e-154, "significant": true},
+    "wbgt": {"d_statistic": 0.0719, "p_value": 1.69e-52, "significant": true}
+  },
+  "site_level_stats": {
+    "pm25_p90_range": [13.37, 19.74],
+    "pm25_p90_cv_pct": 9.5,
+    "wbgt_p90_range": [71.2, 73.4],
+    "wbgt_p90_cv_pct": 0.9,
+    "pm25_exceedance_range_pct": [35.3, 52.7],
+    "highest_pm25_exceedance_site": "Lyndboro Park",
+    "highest_pm25_exceedance_pct": 52.7,
+    "lowest_pm25_exceedance_site": "Oxford Place",
+    "lowest_pm25_exceedance_pct": 35.3
+  },
+  "temporal_patterns": {
+    "pm25_peak_hour": 3,
+    "pm25_peak_median": 9.07,
+    "wbgt_peak_hour": 18,
+    "wbgt_peak_median": 67.10,
+    "midday_pm25_p90": 19.33,
+    "afternoon_pm25_p90": 19.42
+  },
+  "cross_variable": {
+    "n_paired": 46253,
+    "pearson_r": 0.3598,
+    "spearman_rho": 0.3740,
+    "r_squared": 0.13
+  },
+  "key_findings": [
+    "46.3% of PM2.5 measurements exceed EPA annual NAAQS (9.0 ug/m3)",
+    "0% exceed 24-hour NAAQS (35.0 ug/m3)",
+    "All WBGT measurements below OSHA heat thresholds (max 77.5F vs 80F caution)",
+    "Significant day-night distribution differences for both variables (KS test)",
+    "PM2.5 spatial heterogeneity: 35.3-52.7% exceedance across sites",
+    "WBGT shows much lower spatial variability than PM2.5 (CV 0.9% vs 9.5%)",
+    "Moderate PM2.5-WBGT correlation (r=0.36) suggests shared meteorological drivers"
+  ],
+  "figures": [
+    "q3_distributions.png",
+    "q3_cdf_overall.png",
+    "q3_cdf_day_night.png",
+    "q3_cdf_by_site.png",
+    "q3_pm25_wbgt_relationship.png"
+  ]
+}

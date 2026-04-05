@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chinatown HEROS | Environmental Research Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#a93533",
+                    "on-tertiary-container": "#79cdb1",
+                    "tertiary": "#003e2f",
+                    "surface-container-highest": "#f6e1ae",
+                    "surface-container-low": "#fff2da",
+                    "inverse-primary": "#ffb3ae",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#241a00",
+                    "on-primary-container": "#ffa59e",
+                    "secondary-fixed": "#ffdbc8",
+                    "on-tertiary-fixed": "#002118",
+                    "on-primary-fixed-variant": "#891c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#410004",
+                    "inverse-surface": "#3b2f0b",
+                    "primary-container": "#902223",
+                    "surface-bright": "#fff8f1",
+                    "on-tertiary-fixed-variant": "#00513f",
+                    "surface-dim": "#eed8a6",
+                    "tertiary-fixed-dim": "#82d7ba",
+                    "surface-variant": "#f6e1ae",
+                    "on-secondary-container": "#794622",
+                    "on-secondary-fixed": "#311300",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#58413f",
+                    "inverse-on-surface": "#ffefcf",
+                    "secondary": "#87512d",
+                    "surface-container": "#ffecc3",
+                    "secondary-fixed-dim": "#feb78a",
+                    "surface": "#fff8f1",
+                    "on-background": "#241a00",
+                    "background": "#fff8f1",
+                    "surface-container-high": "#fce6b3",
+                    "primary-fixed": "#ffdad7",
+                    "outline": "#8b716f",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#dfbfbc",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#005744",
+                    "secondary-container": "#feb78a",
+                    "primary": "#6f070f",
+                    "on-secondary-fixed-variant": "#6b3a18",
+                    "tertiary-fixed": "#9ef3d6",
+                    "primary-fixed-dim": "#ffb3ae"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .data-seal {
+            background-image: radial-gradient(circle at center, transparent 0%, transparent 80%, rgba(111, 7, 15, 0.1) 100%);
+            border: 1px solid rgba(111, 7, 15, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #fff2da; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #8b716f; border-radius: 10px; }
+        .lattice-pattern {
+            background-image: radial-gradient(#8b716f 0.5px, transparent 0.5px);
+            background-size: 12px 12px;
+            opacity: 0.08;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container overflow-hidden">
+<aside class="flex flex-col h-screen w-64 fixed left-0 top-0 bg-stone-50 dark:bg-stone-950 border-r-0 z-50">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<img alt="Tufts University Logo Seal" class="w-10 h-10 object-contain opacity-90" data-alt="Tufts University academic seal with intricate heraldic details in deep heritage red ink style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVJMT2ltJZIE9rHu3hE9WBuM5VL3p_u0Jy0tXKvbZfGmmn7AtOC0t7CVuD7J7mLqJDbFv8XfUJsAOK6lfl84IE2vmoUiC6gGU4SQoqY8tcggbl4SHivYBZ8Taohq08R-w-U6LSH4WVy5qUzgwxuVxBp57XpITHjwy4ds8wPX1E0DrGlsILhG3JnSaQZhUoWSN3iHUw_0-EmaB0I9JfVKt6VlBdNvNAP8cjikRwV0tT9WTSSdB_i8K6nAdA7T01JUJ6S_jz2bVc5m8l"/>
+<div>
+<h1 class="font-serif text-lg text-red-900 dark:text-red-500 leading-tight">HEROS Dashboard</h1>
+<p class="font-sans uppercase text-[10px] font-semibold tracking-widest text-stone-500">Environmental Research</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 font-sans uppercase text-xs font-semibold tracking-widest hover:bg-stone-200 transition-all group" href="#">
+<span class="material-symbols-outlined text-red-900" data-icon="map">map</span>
+<span>Project Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-red-900 dark:text-red-400 font-bold bg-stone-200/50 rounded-r-full font-sans uppercase text-xs tracking-widest group" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Environmental Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 font-sans uppercase text-xs font-semibold tracking-widest hover:bg-stone-200 transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span>Sensor Validation</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 font-sans uppercase text-xs font-semibold tracking-widest hover:bg-stone-200 transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="diversity_1">diversity_1</span>
+<span>Community Impact</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 space-y-4">
+<button class="w-full py-3 px-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-md text-xs font-bold tracking-widest uppercase flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                Download Data
+            </button>
+<div class="pt-4 border-t border-outline-variant/30 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-stone-500 font-sans uppercase text-xs font-semibold tracking-widest hover:bg-stone-200 transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-stone-500 font-sans uppercase text-xs font-semibold tracking-widest hover:bg-stone-200 transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+<span>Support</span>
+</a>
+</div>
+</div>
+</aside>
+<main class="ml-64 h-screen overflow-y-auto custom-scrollbar">
+<header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 shadow-sm flex justify-between items-center px-8 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="text-xl font-serif font-bold text-red-900 italic tracking-tight">Chinatown HEROS</span>
+<div class="h-6 w-[1px] bg-outline-variant/40 mx-2"></div>
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="calendar_today">calendar_today</span>
+<span class="text-xs font-bold text-on-surface-variant tracking-tight uppercase">July 19 – Aug 23, 2023</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<label class="text-[10px] font-bold uppercase tracking-widest text-stone-500">Site Filter:</label>
+<select class="bg-surface-container-low border-none rounded-lg text-xs font-bold text-primary focus:ring-1 focus:ring-primary py-1 pl-3 pr-8 appearance-none cursor-pointer">
+<option>Auntie Kay &amp; Uncle Frank Chin Park</option>
+<option>Phillips Square</option>
+<option>Hudson Street</option>
+<option>Chinatown Gate</option>
+</select>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-stone-600 hover:text-red-800 transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-stone-600 hover:text-red-800 transition-colors" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<section class="p-8 space-y-8">
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<div class="bg-surface-container-lowest rounded-xl p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 lattice-pattern"></div>
+<div class="flex justify-between items-end mb-8 relative">
+<div>
+<h2 class="font-headline text-3xl font-bold text-primary leading-tight">Particulate Matter Exposure</h2>
+<p class="text-secondary font-medium tracking-tight mt-1">PM2.5 Concentration (μg/m³)</p>
+</div>
+<div class="flex items-center gap-6 bg-surface-container-low px-4 py-2 rounded-full">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-tertiary focus:ring-tertiary transition-colors" type="checkbox"/>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Purple Air (Comm.)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary transition-colors" type="checkbox"/>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">MassDEP (Reg.)</span>
+</label>
+</div>
+</div>
+<div class="h-64 flex items-end gap-1 relative border-b border-outline-variant/20">
+<!-- Simulated Data Plot -->
+<div class="flex-1 bg-tertiary/20 h-[40%] rounded-t-sm hover:bg-tertiary/40 transition-all group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">12.4</div>
+</div>
+<div class="flex-1 bg-tertiary/30 h-[55%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/25 h-[48%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/40 h-[62%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/60 h-[80%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/45 h-[52%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/50 h-[70%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-[35%] rounded-t-sm -ml-8 opacity-60"></div>
+<div class="flex-1 bg-primary/30 h-[50%] rounded-t-sm opacity-60"></div>
+<div class="flex-1 bg-primary/40 h-[75%] rounded-t-sm opacity-60"></div>
+<!-- Repeat visual sequence for high density -->
+<div class="flex-1 bg-tertiary/35 h-[45%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/55 h-[75%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/30 h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/40 h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/25 h-[42%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/50 h-[68%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/45 h-[58%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/60 h-[85%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/40 h-[62%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/35 h-[48%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/25 h-[38%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/30 h-[44%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between pt-3 text-[10px] font-bold text-stone-400 uppercase tracking-widest">
+<span>July 19</span>
+<span>Aug 01</span>
+<span>Aug 15</span>
+<span>Aug 23</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-8 relative overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline text-2xl font-bold text-on-surface">Microclimate: Kestrel Temperature</h3>
+<p class="text-on-surface-variant text-sm mt-1">Detailed Heat Flux in Ambient Surface Environment</p>
+</div>
+<div class="data-seal rounded-full px-4 py-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base" data-icon="verified">verified</span>
+<span class="text-[10px] font-extrabold uppercase tracking-widest text-primary">Research Verified</span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-6">
+<div class="col-span-3 bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10">
+<div class="h-40 flex items-center justify-center relative">
+<svg class="w-full h-full" viewbox="0 0 500 100">
+<path d="M0,80 Q50,70 100,50 T200,30 T300,60 T400,20 T500,40" fill="none" stroke="#902223" stroke-width="3"></path>
+<path d="M0,90 Q50,85 100,75 T200,65 T300,85 T400,55 T500,70" fill="none" stroke="#87512d" stroke-dasharray="4 2" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-primary-container rounded-lg text-on-primary-container">
+<p class="text-[10px] uppercase font-bold tracking-widest opacity-80">Max Temp</p>
+<p class="text-2xl font-serif font-bold">94.2°F</p>
+</div>
+<div class="p-4 bg-secondary-container rounded-lg text-on-secondary-container">
+<p class="text-[10px] uppercase font-bold tracking-widest opacity-80">Humidity Avg</p>
+<p class="text-2xl font-serif font-bold">68%</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<div class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<h3 class="font-headline text-xl font-bold">Spatial Analysis</h3>
+</div>
+<div class="rounded-lg overflow-hidden h-64 bg-stone-200 relative">
+<img alt="Chinatown Boston Map" class="w-full h-full object-cover" data-location="Chinatown, Boston" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhRPefImRR6lSAcT06djhTUIffqA9QtRh5dCvcOaPzsfYu0mtmU3QR1_ulEr-1FTSnd7JCsQqWwlf9f9d6WwlZgLYZ-gEvvLdkrxBDGviP_gKyWTwrgiceq4w68GCioL1IB-1fcxXQd_GQTnJ-dIezCjgKrikxAkEiOJFzoVyHu_d4PbLKoybdX_MtOgPjiYCmusArG8GtAmpA8fTNV3Aj8V6d-oxsukeEp-9LPz2LnscFEZ47ftFu3skFkQgcrYSMRuFO_Ohfblec"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<div class="absolute top-1/4 left-1/3 w-4 h-4 bg-primary rounded-full border-2 border-white shadow-lg pulse"></div>
+<div class="absolute top-1/2 left-2/3 w-4 h-4 bg-tertiary rounded-full border-2 border-white shadow-lg"></div>
+<div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md p-3 rounded-lg text-xs font-bold text-on-surface shadow-sm">
+<div class="flex justify-between items-center">
+<span>Phillips Square Zone</span>
+<span class="text-primary">+12% Heat Index</span>
+</div>
+</div>
+</div>
+<div class="mt-6 space-y-4">
+<div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+<span class="text-xs uppercase font-bold tracking-widest text-stone-500">Tree Canopy</span>
+<span class="text-xs font-serif font-bold">8.4% (Low)</span>
+</div>
+<div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+<span class="text-xs uppercase font-bold tracking-widest text-stone-500">Albedo Ratio</span>
+<span class="text-xs font-serif font-bold">0.14</span>
+</div>
+<div class="flex items-center justify-between py-2">
+<span class="text-xs uppercase font-bold tracking-widest text-stone-500">Avg Surface Temp</span>
+<span class="text-xs font-serif font-bold">102°F</span>
+</div>
+</div>
+</div>
+<div class="bg-primary p-8 rounded-xl text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 lattice-pattern opacity-20"></div>
+<h4 class="font-headline text-xl font-bold mb-4">Research Insight</h4>
+<p class="text-sm leading-relaxed opacity-90 font-light italic">
+                            "The correlation between high PM2.5 readings at Phillips Square and evening traffic peaks suggests a significant contribution from transit corridor idling during the summer thermal inversion period."
+                        </p>
+<div class="mt-6 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="history_edu">history_edu</span>
+</div>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest">Lead Researcher</p>
+<p class="text-xs font-serif italic">Tufts University Environmental Lab</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest/30 rounded-xl p-8 border border-primary/10">
+<h4 class="text-[10px] font-bold uppercase tracking-widest text-primary mb-6">Active Sensor Fleet</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4 bg-white/50 p-3 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="sensors">sensors</span>
+<div>
+<p class="text-xs font-bold">Purple Air PA-II</p>
+<p class="text-[10px] uppercase font-bold opacity-60">Status: Operational</p>
+</div>
+<span class="ml-auto w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+<div class="flex items-center gap-4 bg-white/50 p-3 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-icon="device_thermostat">device_thermostat</span>
+<div>
+<p class="text-xs font-bold">Kestrel 5400</p>
+<p class="text-[10px] uppercase font-bold opacity-60">Status: Calibration</p>
+</div>
+<span class="ml-auto w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-8 left-8 flex flex-col gap-2 z-50">
+<div class="bg-white/40 backdrop-blur-xl border border-white/50 p-4 rounded-xl shadow-xl">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-tertiary rounded-sm"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Low Risk</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-secondary rounded-sm"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Moderate</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-primary rounded-sm"></div>
+<span class="text-[10px] font-bold uppercase tracking-widest">Alert</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

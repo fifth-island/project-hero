@@ -1,0 +1,130 @@
+{
+  "berkley": {
+    "name": "Berkeley Garden",
+    "search_query": "Berkeley Garden Boston Chinatown",
+    "status": "downloaded",
+    "note": "Field photo provided by research team",
+    "file": "berkley.jpg",
+    "source": "User-provided field photo",
+    "license": "Project photo"
+  },
+  "castle": {
+    "name": "Castle Square",
+    "search_query": "Castle Square Boston Chinatown",
+    "status": "downloaded",
+    "note": "Field photo provided by research team",
+    "file": "castle.jpg",
+    "source": "User-provided field photo",
+    "license": "Project photo"
+  },
+  "chin": {
+    "name": "Chin Park",
+    "search_query": "Chin Park Boston Chinatown",
+    "status": "downloaded",
+    "note": "Photo collection deferred \u2014 use web search for openly-licensed images",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Chinatown_Park%2C_Boston.JPG",
+    "file": "chin.jpg",
+    "source": "File:Chinatown Park, Boston.JPG",
+    "license": "CC BY-SA 4.0",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:NewtonCourt\" title=\"User:NewtonCourt\">NewtonCourt</a>",
+    "wikimedia_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Chinatown_Park%2C_Boston.JPG"
+  },
+  "dewey": {
+    "name": "Dewey Square",
+    "search_query": "Dewey Square Boston Chinatown",
+    "status": "downloaded",
+    "note": "Photo collection deferred \u2014 use web search for openly-licensed images",
+    "file": "dewey.jpg",
+    "source": "File:Dewey Square Tunnel postcard.jpg",
+    "license": "Public domain",
+    "author": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+    "wikimedia_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Dewey_Square_Tunnel_postcard.jpg"
+  },
+  "eliotnorton": {
+    "name": "Eliot Norton Park",
+    "search_query": "Eliot Norton Park Boston Chinatown",
+    "status": "downloaded",
+    "note": "Photo collection deferred \u2014 use web search for openly-licensed images",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Charles_Eliot_Norton_to_Edmund_Trowbridge_Dana%2C_5_September_1866_%289e61f40e-a89a-4e74-b705-7ef399734705%29.jpg",
+    "file": "eliotnorton.jpg",
+    "source": "File:Charles Eliot Norton to Edmund Trowbridge Dana, 5 September 1866 (9e61f40e-a89a-4e74-b705-7ef399734705).jpg",
+    "license": "Public domain",
+    "author": "Charles Eliot Norton (1827-1908)",
+    "wikimedia_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Charles_Eliot_Norton_to_Edmund_Trowbridge_Dana%2C_5_September_1866_%289e61f40e-a89a-4e74-b705-7ef399734705%29.jpg"
+  },
+  "greenway": {
+    "name": "One Greenway",
+    "search_query": "One Greenway Boston Chinatown",
+    "status": "downloaded",
+    "note": "Photo collection deferred \u2014 use web search for openly-licensed images",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Chinatown_Park%2C_Boston.JPG",
+    "file": "greenway.jpg",
+    "source": "File:Chinatown Park, Boston.JPG",
+    "license": "CC BY-SA 4.0",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:NewtonCourt\" title=\"User:NewtonCourt\">NewtonCourt</a>",
+    "wikimedia_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Chinatown_Park%2C_Boston.JPG"
+  },
+  "lyndenboro": {
+    "name": "Lyndboro Park",
+    "search_query": "Lyndboro Park Boston Chinatown",
+    "status": "downloaded",
+    "note": "Field photo provided by research team",
+    "file": "lyndenboro.jpg",
+    "source": "User-provided field photo",
+    "license": "Project photo"
+  },
+  "msh": {
+    "name": "Mary Soo Hoo Park",
+    "search_query": "Mary Soo Hoo Park Boston Chinatown",
+    "status": "downloaded",
+    "note": "Photo collection deferred \u2014 use web search for openly-licensed images",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/A_Sign_at_Mary_Soo_Hoo_Park_on_The_Greenway.jpg",
+    "file": "msh.jpg",
+    "source": "File:A Sign at Mary Soo Hoo Park on The Greenway.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Peacearth\" title=\"User:Peacearth\">Peacearth</a>",
+    "wikimedia_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/A_Sign_at_Mary_Soo_Hoo_Park_on_The_Greenway.jpg"
+  },
+  "oxford": {
+    "name": "Oxford Place Plaza",
+    "search_query": "Oxford Place Plaza Boston Chinatown",
+    "status": "downloaded",
+    "note": "Photo collection deferred \u2014 use web search for openly-licensed images",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Oxford_Street%2C_Chinatown_-_DPLA_-_8998c31ba0f50aa7c1db0d7a395c6a3b.jpg",
+    "file": "oxford.jpg",
+    "source": "File:Oxford Street, Chinatown - DPLA - 8998c31ba0f50aa7c1db0d7a395c6a3b.jpg",
+    "license": "CC BY 4.0",
+    "author": "Woodruff, Andy; Boston Public Library. Norman B. Leventhal Map and Education Center",
+    "wikimedia_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Oxford_Street%2C_Chinatown_-_DPLA_-_8998c31ba0f50aa7c1db0d7a395c6a3b.jpg"
+  },
+  "reggie": {
+    "name": "Reggie Wong Park",
+    "search_query": "Reggie Wong Park Boston Chinatown",
+    "status": "downloaded",
+    "note": "Field photo provided by research team",
+    "file": "reggie.jpg",
+    "source": "User-provided field photo",
+    "license": "Project photo"
+  },
+  "taitung": {
+    "name": "Tai Tung Park",
+    "search_query": "Tai Tung Park Boston Chinatown",
+    "status": "downloaded",
+    "note": "Photo collection deferred \u2014 use web search for openly-licensed images",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Boston_Chinatown_gate_front_02.jpg",
+    "file": "taitung.jpg",
+    "source": "File:Boston Chinatown gate front 02.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Peacearth\" title=\"User:Peacearth\">Peacearth</a>",
+    "wikimedia_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Boston_Chinatown_gate_front_02.jpg"
+  },
+  "tufts": {
+    "name": "Tufts Community Garden",
+    "search_query": "Tufts Community Garden Boston Chinatown",
+    "status": "downloaded",
+    "note": "Field photo provided by research team",
+    "file": "tufts.jpg",
+    "source": "User-provided field photo",
+    "license": "Project photo"
+  }
+}

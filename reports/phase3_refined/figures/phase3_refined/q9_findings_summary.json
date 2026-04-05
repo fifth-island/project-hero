@@ -1,0 +1,121 @@
+{
+  "analysis_metadata": {
+    "analysis_date": "2026-04-04",
+    "dataset": "data_HEROS_clean.parquet",
+    "n_sites": 12,
+    "n_observations": 48123,
+    "study_period": "2023-07-19 16:40:00 to 2023-08-23 15:50:00",
+    "landuse_variables": 10
+  },
+  "top_correlations": {
+    "pm25": {
+      "strongest_positive": {
+        "variable": "Roads_Area_Percent_50m",
+        "correlation": 0.68,
+        "p_value": 0.015,
+        "significant": true
+      },
+      "strongest_negative": {
+        "variable": "Trees_Area_Percent_50m",
+        "correlation": -0.206,
+        "p_value": 0.5206,
+        "significant": false
+      },
+      "significant_relationships": [
+        {
+          "variable": "Roads_Area_Percent_25m",
+          "correlation": 0.634,
+          "p_value": 0.0269
+        },
+        {
+          "variable": "Roads_Area_Percent_50m",
+          "correlation": 0.68,
+          "p_value": 0.015
+        }
+      ]
+    },
+    "wbgt": {
+      "strongest_positive": {
+        "variable": "Trees_Area_Percent_50m",
+        "correlation": 0.506,
+        "p_value": 0.093,
+        "significant": false
+      },
+      "strongest_negative": {
+        "variable": "Impervious_Area_Percent_25m",
+        "correlation": -0.566,
+        "p_value": 0.0548,
+        "significant": false
+      },
+      "significant_relationships": []
+    }
+  },
+  "regression_models": {
+    "pm25_best_predictor": {
+      "predictor": "Roads_Area_Percent_50m",
+      "r_squared": 0.46242817663195324,
+      "coefficient": 5.527786730232471,
+      "p_value": 0.01496513617777169
+    },
+    "wbgt_best_predictor": {
+      "predictor": "Impervious_Area_Percent_25m",
+      "r_squared": 0.3208306547271771,
+      "coefficient": -1.1120581635523967,
+      "p_value": 0.054849667513963155
+    },
+    "multivariate_results": {}
+  },
+  "site_clusters": {
+    "optimal_k": 2,
+    "silhouette_score": 0.31718167402925285,
+    "cluster_assignments": {
+      "cluster_0": [
+        "berkley",
+        "castle",
+        "eliotnorton",
+        "lyndenboro"
+      ],
+      "cluster_1": [
+        "chin",
+        "dewey",
+        "greenway",
+        "msh",
+        "oxford",
+        "reggie",
+        "taitung",
+        "tufts"
+      ]
+    },
+    "cluster_characteristics": {
+      "cluster_0": {
+        "n_sites": 4,
+        "mean_pm25": 9.418,
+        "mean_wbgt": 66.04125,
+        "dominant_landuse_25m": "Impervious_Area_Percent_25m",
+        "dominant_landuse_25m_percent": 0.549
+      },
+      "cluster_1": {
+        "n_sites": 8,
+        "mean_pm25": 9.455874999999999,
+        "mean_wbgt": 65.77175,
+        "dominant_landuse_25m": "Impervious_Area_Percent_25m",
+        "dominant_landuse_25m_percent": 0.9145
+      }
+    }
+  },
+  "environmental_justice_insights": [
+    "Sites with more roads 50m tend to have higher PM2.5 concentrations (r=0.680, p=0.015)",
+    "Sites with more roads 25m tend to have higher PM2.5 concentrations (r=0.634, p=0.027)"
+  ],
+  "figures_generated": [
+    "q9_scatter_landuse_vs_pm25.png",
+    "q9_scatter_landuse_vs_wbgt.png",
+    "q9_heatmap_landuse_vs_outcomes.png",
+    "q9_heatmap_landuse_intercorrelation.png",
+    "q9_regression_coefficients.png",
+    "q9_pca_sites_pm25.png",
+    "q9_pca_sites_wbgt.png",
+    "q9_dendrogram_landuse.png",
+    "q9_cluster_comparison.png"
+  ]
+}

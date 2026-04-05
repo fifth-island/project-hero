@@ -1,0 +1,537 @@
+{
+  "Q1": {
+    "DEP Chinatown": {
+      "r": 0.9391,
+      "slope": 1.1976,
+      "intercept": -0.0481,
+      "rmse": 2.525,
+      "bias": 1.525,
+      "n": 47009
+    },
+    "DEP Nubian": {
+      "r": 0.9422,
+      "slope": 1.1311,
+      "intercept": 0.3582,
+      "rmse": 2.355,
+      "bias": 1.416,
+      "n": 47009
+    },
+    "EPA PM2.5 FEM": {
+      "r": 0.9395,
+      "slope": 1.2066,
+      "intercept": -0.1228,
+      "rmse": 2.523,
+      "bias": 1.513,
+      "n": 46281
+    },
+    "bland_altman": {
+      "mean_diff": 1.525,
+      "sd_diff": 2.012,
+      "loa_upper": 5.47,
+      "loa_lower": -2.419
+    },
+    "site_regression": [
+      {
+        "Site": "Berkeley Garden",
+        "n": 2445,
+        "r": 0.942,
+        "slope": 1.254,
+        "intercept": -0.718,
+        "RMSE": 2.34
+      },
+      {
+        "Site": "Castle Square",
+        "n": 3793,
+        "r": 0.939,
+        "slope": 1.3,
+        "intercept": -2.467,
+        "RMSE": 2.2
+      },
+      {
+        "Site": "Chin Park",
+        "n": 2199,
+        "r": 0.954,
+        "slope": 1.207,
+        "intercept": -0.016,
+        "RMSE": 2.7
+      },
+      {
+        "Site": "Dewey Square",
+        "n": 4889,
+        "r": 0.946,
+        "slope": 1.194,
+        "intercept": -0.043,
+        "RMSE": 2.51
+      },
+      {
+        "Site": "Eliot Norton Park",
+        "n": 3888,
+        "r": 0.956,
+        "slope": 1.162,
+        "intercept": 0.034,
+        "RMSE": 2.06
+      },
+      {
+        "Site": "One Greenway",
+        "n": 4893,
+        "r": 0.955,
+        "slope": 1.332,
+        "intercept": -0.04,
+        "RMSE": 3.5
+      },
+      {
+        "Site": "Lyndboro Park",
+        "n": 4786,
+        "r": 0.959,
+        "slope": 1.21,
+        "intercept": 0.492,
+        "RMSE": 2.94
+      },
+      {
+        "Site": "Mary Soo Hoo Park",
+        "n": 4177,
+        "r": 0.926,
+        "slope": 1.216,
+        "intercept": 0.571,
+        "RMSE": 2.8
+      },
+      {
+        "Site": "Oxford Place",
+        "n": 2879,
+        "r": 0.881,
+        "slope": 1.015,
+        "intercept": 1.232,
+        "RMSE": 2.16
+      },
+      {
+        "Site": "Reggie Wong",
+        "n": 4126,
+        "r": 0.957,
+        "slope": 1.092,
+        "intercept": -0.006,
+        "RMSE": 1.65
+      },
+      {
+        "Site": "Tai Tung",
+        "n": 4839,
+        "r": 0.954,
+        "slope": 1.121,
+        "intercept": 0.416,
+        "RMSE": 2.1
+      },
+      {
+        "Site": "Tufts Community Garden",
+        "n": 4095,
+        "r": 0.953,
+        "slope": 1.222,
+        "intercept": -0.443,
+        "RMSE": 2.47
+      }
+    ],
+    "barkjohn_style_ols": {
+      "const": 0.9421,
+      "coef_PA": 0.7377,
+      "coef_RH": 0.0003,
+      "r_squared": 0.8824
+    }
+  },
+  "Q2": {
+    "Weather Station (35 Kneeland)": {
+      "r": 0.5966,
+      "slope": 0.5932,
+      "intercept": 30.4934,
+      "rmse": 5.716,
+      "bias": 0.338
+    },
+    "DEP Nubian": {
+      "r": 0.899,
+      "slope": 0.8019,
+      "intercept": 14.4513,
+      "rmse": 3.133,
+      "bias": -0.372
+    },
+    "bland_altman_ws": {
+      "mean_diff": 0.338,
+      "sd_diff": 5.706
+    },
+    "site_correlations": [
+      {
+        "Site": "Berkeley Garden",
+        "r_WS": 0.627,
+        "bias_WS": -0.43,
+        "r_DEP": 0.902,
+        "bias_DEP": -1.03
+      },
+      {
+        "Site": "Castle Square",
+        "r_WS": 0.452,
+        "bias_WS": 0.49,
+        "r_DEP": 0.929,
+        "bias_DEP": -0.16
+      },
+      {
+        "Site": "Chin Park",
+        "r_WS": 0.622,
+        "bias_WS": 0.3,
+        "r_DEP": 0.912,
+        "bias_DEP": -0.26
+      },
+      {
+        "Site": "Dewey Square",
+        "r_WS": 0.606,
+        "bias_WS": 0.53,
+        "r_DEP": 0.892,
+        "bias_DEP": -0.23
+      },
+      {
+        "Site": "Eliot Norton Park",
+        "r_WS": 0.621,
+        "bias_WS": -0.3,
+        "r_DEP": 0.901,
+        "bias_DEP": -1.03
+      },
+      {
+        "Site": "One Greenway",
+        "r_WS": 0.545,
+        "bias_WS": 0.54,
+        "r_DEP": 0.92,
+        "bias_DEP": -0.22
+      },
+      {
+        "Site": "Lyndboro Park",
+        "r_WS": 0.653,
+        "bias_WS": -0.03,
+        "r_DEP": 0.877,
+        "bias_DEP": -0.85
+      },
+      {
+        "Site": "Mary Soo Hoo Park",
+        "r_WS": 0.626,
+        "bias_WS": 0.4,
+        "r_DEP": 0.882,
+        "bias_DEP": 0.04
+      },
+      {
+        "Site": "Oxford Place",
+        "r_WS": 0.584,
+        "bias_WS": 1.05,
+        "r_DEP": 0.892,
+        "bias_DEP": 0.63
+      },
+      {
+        "Site": "Reggie Wong",
+        "r_WS": 0.581,
+        "bias_WS": 0.72,
+        "r_DEP": 0.923,
+        "bias_DEP": -0.17
+      },
+      {
+        "Site": "Tai Tung",
+        "r_WS": 0.638,
+        "bias_WS": 0.43,
+        "r_DEP": 0.888,
+        "bias_DEP": -0.46
+      },
+      {
+        "Site": "Tufts Community Garden",
+        "r_WS": 0.637,
+        "bias_WS": 0.06,
+        "r_DEP": 0.897,
+        "bias_DEP": -0.76
+      }
+    ]
+  },
+  "Q3": {
+    "pm25_pct_above_naaqs_annual": 46.3,
+    "pm25_pct_above_naaqs_24hr": 0.0,
+    "wbgt_pct_above_80F": 0.0,
+    "ks_test_day_night": {
+      "pm25": {
+        "statistic": 0.1226,
+        "p_value": "3.06e-154"
+      },
+      "wbgt": {
+        "statistic": 0.0719,
+        "p_value": "1.69e-52"
+      }
+    }
+  },
+  "Q4": {
+    "daily_aqi_mean": 45.9,
+    "daily_aqi_max": 69.9,
+    "dominant_counts": {
+      "pm25": 31,
+      "ozone": 5
+    }
+  },
+  "Q5": {
+    "top5_hottest_days": [
+      {
+        "date": "2023-07-27",
+        "mean_wbgt": 72.98
+      },
+      {
+        "date": "2023-07-28",
+        "mean_wbgt": 72.84
+      },
+      {
+        "date": "2023-07-29",
+        "mean_wbgt": 72.55
+      },
+      {
+        "date": "2023-08-08",
+        "mean_wbgt": 72.49
+      },
+      {
+        "date": "2023-08-13",
+        "mean_wbgt": 70.72
+      }
+    ],
+    "kruskal_wallis": {
+      "statistic": 213.31,
+      "p_value": "1.28e-39"
+    },
+    "impervious_vs_wbgt": {
+      "r": -0.207,
+      "p": 0.5186
+    }
+  },
+  "Q6": {
+    "top5_aqi_days": [
+      {
+        "date": "2023-08-21",
+        "aqi": 69.9,
+        "dominant": "pm25"
+      },
+      {
+        "date": "2023-08-20",
+        "aqi": 66.8,
+        "dominant": "pm25"
+      },
+      {
+        "date": "2023-07-26",
+        "aqi": 66.7,
+        "dominant": "pm25"
+      },
+      {
+        "date": "2023-08-07",
+        "aqi": 65.6,
+        "dominant": "pm25"
+      },
+      {
+        "date": "2023-07-19",
+        "aqi": 64.8,
+        "dominant": "pm25"
+      }
+    ]
+  },
+  "Q7": {
+    "vif": [
+      {
+        "variable": "const",
+        "VIF": 410.03
+      },
+      {
+        "variable": "kes_mean_temp_f",
+        "VIF": 2.17
+      },
+      {
+        "variable": "kes_mean_humid_pct",
+        "VIF": 1.97
+      },
+      {
+        "variable": "mean_wind_speed_mph",
+        "VIF": 1.35
+      },
+      {
+        "variable": "wind_sin",
+        "VIF": 1.24
+      },
+      {
+        "variable": "wind_cos",
+        "VIF": 1.33
+      },
+      {
+        "variable": "hour_sin",
+        "VIF": 1.89
+      },
+      {
+        "variable": "hour_cos",
+        "VIF": 1.4
+      },
+      {
+        "variable": "day_of_week",
+        "VIF": 1.01
+      }
+    ],
+    "ols_r_squared": 0.201,
+    "ols_adj_r_squared": 0.2009,
+    "site_heterogeneity": [
+      {
+        "Site": "Berkeley Garden",
+        "r": 0.47,
+        "slope": 0.348
+      },
+      {
+        "Site": "Castle Square",
+        "r": 0.384,
+        "slope": 0.304
+      },
+      {
+        "Site": "Chin Park",
+        "r": 0.508,
+        "slope": 0.47
+      },
+      {
+        "Site": "Dewey Square",
+        "r": 0.386,
+        "slope": 0.344
+      },
+      {
+        "Site": "Eliot Norton Park",
+        "r": 0.378,
+        "slope": 0.308
+      },
+      {
+        "Site": "One Greenway",
+        "r": 0.361,
+        "slope": 0.344
+      },
+      {
+        "Site": "Lyndboro Park",
+        "r": 0.358,
+        "slope": 0.318
+      },
+      {
+        "Site": "Mary Soo Hoo Park",
+        "r": 0.299,
+        "slope": 0.234
+      },
+      {
+        "Site": "Oxford Place",
+        "r": 0.362,
+        "slope": 0.232
+      },
+      {
+        "Site": "Reggie Wong",
+        "r": 0.527,
+        "slope": 0.378
+      },
+      {
+        "Site": "Tai Tung",
+        "r": 0.374,
+        "slope": 0.295
+      },
+      {
+        "Site": "Tufts Community Garden",
+        "r": 0.44,
+        "slope": 0.42
+      }
+    ]
+  },
+  "Q8": {
+    "weekday_vs_weekend_pm25": {
+      "weekday": 9.28,
+      "weekend": 9.99
+    },
+    "pm25_peak_hour": 12,
+    "pm25_trough_hour": 1,
+    "wbgt_peak_hour": 17
+  },
+  "Q9": {
+    "correlation_results": {
+      "pm25": {
+        "25m": [
+          {
+            "r": 0.635,
+            "p": 0.0267
+          },
+          {
+            "r": 0.57,
+            "p": 0.053
+          },
+          {
+            "r": -0.11,
+            "p": 0.734
+          },
+          {
+            "r": 0.123,
+            "p": 0.7028
+          },
+          {
+            "r": 0.209,
+            "p": 0.5135
+          }
+        ],
+        "50m": [
+          {
+            "r": 0.681,
+            "p": 0.0148
+          },
+          {
+            "r": 0.513,
+            "p": 0.0881
+          },
+          {
+            "r": -0.207,
+            "p": 0.5195
+          },
+          {
+            "r": 0.154,
+            "p": 0.6321
+          },
+          {
+            "r": -0.203,
+            "p": 0.5278
+          }
+        ]
+      },
+      "wbgt": {
+        "25m": [
+          {
+            "r": -0.014,
+            "p": 0.9647
+          },
+          {
+            "r": 0.084,
+            "p": 0.7946
+          },
+          {
+            "r": 0.489,
+            "p": 0.1063
+          },
+          {
+            "r": -0.566,
+            "p": 0.0548
+          },
+          {
+            "r": 0.061,
+            "p": 0.8518
+          }
+        ],
+        "50m": [
+          {
+            "r": -0.227,
+            "p": 0.4775
+          },
+          {
+            "r": -0.003,
+            "p": 0.9931
+          },
+          {
+            "r": 0.506,
+            "p": 0.0935
+          },
+          {
+            "r": -0.52,
+            "p": 0.0834
+          },
+          {
+            "r": -0.098,
+            "p": 0.7612
+          }
+        ]
+      }
+    }
+  }
+}

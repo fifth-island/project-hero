@@ -1,0 +1,264 @@
+{
+  "univariate": {
+    "PM2.5 (Purple Air)": {
+      "unit": "\u00b5g/m\u00b3",
+      "count": 47009,
+      "mean": 9.49,
+      "std": 5.34,
+      "min": 0.88,
+      "q25": 5.12,
+      "median": 8.33,
+      "q75": 13.43,
+      "max": 25.09,
+      "skew": 0.648
+    },
+    "Temperature (Kestrel)": {
+      "unit": "\u00b0F",
+      "count": 46404,
+      "mean": 74.47,
+      "std": 6.33,
+      "min": 61.5,
+      "q25": 69.7,
+      "median": 73.8,
+      "q75": 78.7,
+      "max": 91.8,
+      "skew": 0.4
+    },
+    "WBGT (Kestrel)": {
+      "unit": "\u00b0F",
+      "count": 46404,
+      "mean": 65.86,
+      "std": 4.82,
+      "min": 54.8,
+      "q25": 62.6,
+      "median": 66.2,
+      "q75": 68.9,
+      "max": 77.5,
+      "skew": -0.047
+    },
+    "Humidity (Kestrel)": {
+      "unit": "%",
+      "count": 46404,
+      "mean": 65.95,
+      "std": 18.89,
+      "min": 27.5,
+      "q25": 52.2,
+      "median": 65.1,
+      "q75": 80.1,
+      "max": 100.0,
+      "skew": 0.073
+    },
+    "Wind Speed": {
+      "unit": "mph",
+      "count": 48123,
+      "mean": 2.81,
+      "std": 1.5,
+      "min": 0.0,
+      "q25": 2.0,
+      "median": 2.5,
+      "q75": 3.5,
+      "max": 10.5,
+      "skew": 0.878
+    },
+    "Wind Direction": {
+      "unit": "degrees",
+      "count": 48123,
+      "mean": 211.95,
+      "std": 95.37,
+      "min": 0.0,
+      "q25": 135.0,
+      "median": 202.5,
+      "q75": 315.0,
+      "max": 337.5,
+      "skew": -0.17
+    }
+  },
+  "temporal": {
+    "diurnal_pm25_peak_hour": 12,
+    "diurnal_temp_peak_hour": 14,
+    "diurnal_wbgt_peak_hour": 17
+  },
+  "spatial": {
+    "berkley": {
+      "name": "Berkeley Garden",
+      "n_obs": 2445,
+      "pm25_mean": 9.53,
+      "pm25_median": 8.46,
+      "temp_mean": 74.41,
+      "wbgt_mean": 66.1,
+      "humid_mean": 67.18
+    },
+    "castle": {
+      "name": "Castle Square",
+      "n_obs": 4881,
+      "pm25_mean": 8.17,
+      "pm25_median": 7.1,
+      "temp_mean": 75.31,
+      "wbgt_mean": 66.76,
+      "humid_mean": 66.81
+    },
+    "chin": {
+      "name": "Chin Park",
+      "n_obs": 2199,
+      "pm25_mean": 10.49,
+      "pm25_median": 9.97,
+      "temp_mean": 75.02,
+      "wbgt_mean": 66.01,
+      "humid_mean": 64.28
+    },
+    "dewey": {
+      "name": "Dewey Square",
+      "n_obs": 4903,
+      "pm25_mean": 9.69,
+      "pm25_median": 8.7,
+      "temp_mean": 74.57,
+      "wbgt_mean": 65.92,
+      "humid_mean": 65.74
+    },
+    "eliotnorton": {
+      "name": "Eliot Norton Park",
+      "n_obs": 3888,
+      "pm25_mean": 9.29,
+      "pm25_median": 8.35,
+      "temp_mean": 73.93,
+      "wbgt_mean": 65.48,
+      "humid_mean": 66.09
+    },
+    "greenway": {
+      "name": "One Greenway",
+      "n_obs": 4893,
+      "pm25_mean": 10.71,
+      "pm25_median": 9.26,
+      "temp_mean": 74.5,
+      "wbgt_mean": 65.73,
+      "humid_mean": 65.65
+    },
+    "lyndenboro": {
+      "name": "Lyndboro Park",
+      "n_obs": 4786,
+      "pm25_mean": 10.68,
+      "pm25_median": 9.49,
+      "temp_mean": 74.37,
+      "wbgt_mean": 65.83,
+      "humid_mean": 66.29
+    },
+    "msh": {
+      "name": "Mary Soo Hoo Park",
+      "n_obs": 4189,
+      "pm25_mean": 9.07,
+      "pm25_median": 8.35,
+      "temp_mean": 73.91,
+      "wbgt_mean": 65.09,
+      "humid_mean": 64.67
+    },
+    "oxford": {
+      "name": "Oxford Place Plaza",
+      "n_obs": 2879,
+      "pm25_mean": 7.93,
+      "pm25_median": 7.36,
+      "temp_mean": 74.96,
+      "wbgt_mean": 65.6,
+      "humid_mean": 63.09
+    },
+    "reggie": {
+      "name": "Reggie Wong Park",
+      "n_obs": 4126,
+      "pm25_mean": 8.34,
+      "pm25_median": 7.06,
+      "temp_mean": 74.67,
+      "wbgt_mean": 65.67,
+      "humid_mean": 65.0
+    },
+    "taitung": {
+      "name": "Tai Tung Park",
+      "n_obs": 4839,
+      "pm25_mean": 9.37,
+      "pm25_median": 8.15,
+      "temp_mean": 74.34,
+      "wbgt_mean": 65.94,
+      "humid_mean": 66.96
+    },
+    "tufts": {
+      "name": "Tufts Community Garden",
+      "n_obs": 4095,
+      "pm25_mean": 10.04,
+      "pm25_median": 9.19,
+      "temp_mean": 73.98,
+      "wbgt_mean": 66.21,
+      "humid_mean": 68.53
+    }
+  },
+  "correlations": {
+    "PA_PM25 vs DEP_CT": 0.939,
+    "PA_PM25 vs DEP_Nub": 0.942,
+    "PA_PM25 vs EPA_PM25": 0.94,
+    "Temp vs WBGT": 0.541,
+    "PM25 vs Temp": 0.386,
+    "Ozone vs Temp": 0.584
+  },
+  "geolocation": {
+    "berkley": {
+      "lat": 42.34483,
+      "lon": -71.06857
+    },
+    "castle": {
+      "lat": 42.344,
+      "lon": -71.0663
+    },
+    "chin": {
+      "lat": 42.3512,
+      "lon": -71.0595
+    },
+    "dewey": {
+      "lat": 42.3534,
+      "lon": -71.0551
+    },
+    "eliotnorton": {
+      "lat": 42.3509,
+      "lon": -71.0644
+    },
+    "greenway": {
+      "lat": 42.35012,
+      "lon": -71.06012
+    },
+    "lyndenboro": {
+      "lat": 42.35001,
+      "lon": -71.06614
+    },
+    "msh": {
+      "lat": 42.35129,
+      "lon": -71.05997
+    },
+    "oxford": {
+      "lat": 42.35252,
+      "lon": -71.06107
+    },
+    "reggie": {
+      "lat": 42.3497,
+      "lon": -71.0609
+    },
+    "taitung": {
+      "lat": 42.34901,
+      "lon": -71.06192
+    },
+    "tufts": {
+      "lat": 42.3474,
+      "lon": -71.0656
+    }
+  },
+  "figures": [
+    "eda_univariate_histograms.png",
+    "eda_timeseries_pm25.png",
+    "eda_timeseries_temp.png",
+    "eda_timeseries_wbgt.png",
+    "eda_diurnal_cycles.png",
+    "eda_day_of_week.png",
+    "eda_spatial_boxplots.png",
+    "eda_spatial_violins.png",
+    "eda_correlation_matrix.png",
+    "eda_landuse_bars.png",
+    "eda_landuse_vs_env.png",
+    "eda_site_locations_map.png",
+    "eda_hour_dow_heatmap.png"
+  ]
+}

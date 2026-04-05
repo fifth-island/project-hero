@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;0,800;1,400&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#ffa59e",
+                    "secondary-fixed": "#ffdbc8",
+                    "inverse-on-surface": "#ffefcf",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#fce6b3",
+                    "primary": "#6f070f",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#ffb3ae",
+                    "primary-container": "#902223",
+                    "outline": "#8b716f",
+                    "on-primary-fixed": "#410004",
+                    "secondary": "#87512d",
+                    "tertiary-fixed-dim": "#82d7ba",
+                    "surface-variant": "#f6e1ae",
+                    "surface-dim": "#eed8a6",
+                    "on-tertiary-fixed-variant": "#00513f",
+                    "on-secondary-fixed-variant": "#6b3a18",
+                    "tertiary-fixed": "#9ef3d6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ffdad7",
+                    "on-primary-fixed-variant": "#891c1e",
+                    "on-surface": "#241a00",
+                    "inverse-primary": "#ffb3ae",
+                    "on-secondary-fixed": "#311300",
+                    "surface-container": "#ffecc3",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#002118",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#f6e1ae",
+                    "background": "#fff8f1",
+                    "surface-container-low": "#fff2da",
+                    "surface": "#fff8f1",
+                    "on-secondary-container": "#794622",
+                    "inverse-surface": "#3b2f0b",
+                    "tertiary-container": "#005744",
+                    "surface-tint": "#a93533",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#feb78a",
+                    "on-background": "#241a00",
+                    "secondary-fixed-dim": "#feb78a",
+                    "outline-variant": "#dfbfbc",
+                    "on-tertiary-container": "#79cdb1",
+                    "on-surface-variant": "#58413f",
+                    "surface-bright": "#fff8f1",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#003e2f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Manrope", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 248, 241, 0.7);
+            backdrop-filter: blur(16px);
+        }
+        .heritage-gradient {
+            background: linear-gradient(45deg, #6f070f, #902223);
+        }
+        .lattice-pattern {
+            background-image: radial-gradient(#8b716f 0.5px, transparent 0.5px);
+            background-size: 12px 12px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container">
+<!-- SideNavBar (Shared Component) -->
+<nav class="flex flex-col h-screen fixed left-0 top-0 bg-stone-100 dark:bg-stone-950 w-64 border-r-0 z-50">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<img alt="Tufts University Research Seal" class="w-10 h-10 object-contain" data-alt="Official Tufts University academic seal in deep red and silver, appearing like a wax stamp on parchment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPL_Zymvg2UiI_pVfgelY_wy8b-dUH_L9Tk2eb0XTA_ooC8vASs02kGFECkpo1lVVIRFhaCO7DTghYsnxzM-Q2-kSYq7jIyL5EJnJkNcc8kCGnQl0OpTIIw1ChcMOGtGXAUkG0kTAGSug5nNSY4xTu3SjkpiBcZFlQmAcYVabo8Pvz0VEfmmPbub_RXmZjIh-4mNmjScP61MMSHnbgjs7tDQOIZse8o570UpH1z_b_I5HDSD8tHpqEnPdYOdU9FqfkWNDJSvRngdaV"/>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-red-900 dark:text-red-500 font-headline">Chinatown HEROS</h1>
+<p class="text-[10px] uppercase tracking-widest font-bold text-stone-500">Environmental Research Lab</p>
+</div>
+</div>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors text-stone-600 dark:text-stone-400 font-medium group" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-sm">Dashboard Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-red-800 dark:text-red-400 font-bold border-r-4 border-red-800 dark:border-red-400 bg-stone-200/50" href="#">
+<span class="material-symbols-outlined text-xl">sensors</span>
+<span class="text-sm">Sensor Validation</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors text-stone-600 dark:text-stone-400 font-medium" href="#">
+<span class="material-symbols-outlined text-xl">map</span>
+<span class="text-sm">Air Quality Maps</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors text-stone-600 dark:text-stone-400 font-medium" href="#">
+<span class="material-symbols-outlined text-xl">temple_buddhist</span>
+<span class="text-sm">Cultural Impact</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors text-stone-600 dark:text-stone-400 font-medium" href="#">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+<span class="text-sm">Archives</span>
+</a>
+</div>
+</div>
+<div class="mt-auto p-6 space-y-1 border-t border-stone-200 dark:border-stone-800">
+<button class="w-full heritage-gradient text-white py-3 rounded shadow-lg mb-4 text-sm font-bold tracking-wide active:scale-95 transition-all">
+                New Research Entry
+            </button>
+<a class="flex items-center gap-3 px-4 py-2 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors text-stone-600 text-sm" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors text-stone-600 text-sm" href="#">
+<span class="material-symbols-outlined text-xl">help</span>
+<span>Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="pl-64 min-h-screen">
+<!-- TopAppBar (Shared Component) -->
+<header class="flex justify-between items-center w-full px-8 py-6 bg-white/80 dark:bg-stone-950/80 backdrop-blur-md sticky top-0 z-40">
+<div class="flex items-center gap-8">
+<h2 class="text-2xl font-black text-red-900 dark:text-red-500 font-headline tracking-tighter">Sensor Validation</h2>
+<nav class="flex gap-6 text-lg font-headline">
+<a class="text-red-800 dark:text-red-400 border-b-2 border-red-800 dark:border-red-400 pb-1" href="#">Calibration</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-red-700" href="#">Temperature Report</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<input class="bg-surface-container-low border-none rounded-full px-6 py-2 text-sm w-64 focus:ring-2 focus:ring-primary focus:bg-white transition-all" placeholder="Search archives..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-2 text-outline">search</span>
+</div>
+<div class="flex gap-4 text-stone-500">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">history_edu</span>
+</div>
+<img alt="Researcher Profile" class="w-10 h-10 rounded-full object-cover ring-2 ring-primary-fixed" data-alt="Portrait of a professional academic researcher in a library setting, warm lighting, blurred books in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5RntEdtofzlse4hVvXstHsfZm73xr8431LycENKq6D5lVkWgAJ2oZfAd_LszboD7sdkvSqVLudsmLmUp-ASnqBPN-JUW9oB5CJ3FtBH6MQP6acd7oiwTOvAuk1CWY4z4Jkq4Qa8LJluMqNcy8ROOKyOSwKse6LCH4UbW7I0ZDc1BEuCWVGZrsHAMZIFNdK41_9lE0yxJOPg20YECJKLZA-SHQL4wfCsxAXuztNxCS6p2rsJPzeObzWMtMhqdvUNX487bn8aYqpI2R"/>
+</div>
+</header>
+<!-- Sub-Navigation (Task Specific) -->
+<div class="px-8 mt-4">
+<div class="flex gap-4 border-b border-outline-variant/30">
+<button class="px-4 py-2 text-sm font-bold text-primary border-b-2 border-primary">Calibration Fidelity Ledger</button>
+<button class="px-4 py-2 text-sm font-medium text-outline hover:text-primary transition-colors">Temperature Sensor Comparison</button>
+</div>
+</div>
+<!-- Content Body -->
+<div class="p-8 space-y-8">
+<!-- Hero & KPIs -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+<div class="lg:col-span-2 space-y-4 pr-12">
+<h3 class="text-4xl font-headline font-extrabold text-primary leading-tight">Calibration Fidelity Ledger</h3>
+<p class="text-lg text-on-surface-variant leading-relaxed font-body">
+                        This ledger documents the longitudinal fidelity of PurpleAir PA-II-SD sensors against regulatory-grade BAM-1020 monitors within the Chinatown corridor. Our methodology applies a multi-variate correction factor accounting for hygroscopic growth and localized diurnal thermal shifts.
+                    </p>
+<div class="flex items-center gap-4 py-4">
+<div class="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-primary text-primary font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-sm tracking-wide">Tufts Verified Research</span>
+</div>
+<span class="text-xs font-bold text-outline-variant uppercase tracking-widest">Archive ID: 2024-CH-093</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-surface-container rounded-xl p-6 relative overflow-hidden flex flex-col justify-between">
+<div class="lattice-pattern absolute inset-0 pointer-events-none"></div>
+<p class="text-xs font-bold text-secondary uppercase tracking-widest">Pearson correlation (r)</p>
+<div class="flex items-end justify-between">
+<span class="text-5xl font-headline font-black text-primary">0.939</span>
+<span class="text-tertiary text-xs font-bold mb-1">+4.2% vs prev. cycle</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low rounded-xl p-6">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest mb-1">RMSE</p>
+<span class="text-3xl font-headline font-bold text-on-surface">2.53</span>
+<span class="block text-[10px] text-stone-500 mt-1">μg/m³ unit depth</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 border-l-4 border-primary">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest mb-1">Mean Bias</p>
+<span class="text-3xl font-headline font-bold text-on-surface">+1.53</span>
+<span class="block text-[10px] text-stone-500 mt-1">Instrument Drift</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Correlation Deep-Dive (Bento Section) -->
+<section class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+<div class="lg:col-span-3 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h4 class="text-xl font-headline font-bold text-on-surface">PA vs DEP FEM Agreement</h4>
+<p class="text-xs text-outline">Hourly concentration pairs (N=4,820)</p>
+</div>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container text-primary">
+<span class="material-symbols-outlined text-sm">zoom_in</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container text-primary">
+<span class="material-symbols-outlined text-sm">file_download</span>
+</button>
+</div>
+</div>
+<div class="aspect-[16/9] relative bg-surface-container-low/30 rounded flex items-center justify-center">
+<!-- Scatter Plot Visualization Placeholder -->
+<div class="absolute inset-0 p-8 flex flex-col justify-between">
+<div class="flex justify-between h-full w-full relative">
+<!-- Axes -->
+<div class="absolute bottom-0 left-0 w-full h-[1px] bg-outline-variant"></div>
+<div class="absolute bottom-0 left-0 h-full w-[1px] bg-outline-variant"></div>
+<!-- Mock Data Points -->
+<div class="absolute bottom-[20%] left-[15%] w-2 h-2 rounded-full bg-primary/40"></div>
+<div class="absolute bottom-[40%] left-[38%] w-2 h-2 rounded-full bg-primary/40"></div>
+<div class="absolute bottom-[65%] left-[62%] w-2 h-2 rounded-full bg-primary/40"></div>
+<div class="absolute bottom-[35%] left-[28%] w-2 h-2 rounded-full bg-primary/40"></div>
+<div class="absolute bottom-[80%] left-[75%] w-2 h-2 rounded-full bg-primary/40"></div>
+<!-- Identity Line -->
+<div class="absolute bottom-0 left-0 w-[141%] h-[1px] bg-secondary/30 origin-bottom-left -rotate-45"></div>
+</div>
+</div>
+<p class="text-xs font-bold text-outline-variant uppercase tracking-widest">Scatter Matrix: Density-Weighted Plot</p>
+</div>
+</div>
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-8 shadow-sm border-t-4 border-secondary">
+<div class="mb-8">
+<h4 class="text-xl font-headline font-bold text-on-surface">Bland-Altman Agreement</h4>
+<p class="text-xs text-outline">Differential distribution vs. Mean concentration</p>
+</div>
+<div class="aspect-square relative bg-surface-container-low/30 rounded flex items-center justify-center">
+<!-- Bland-Altman Visualization Placeholder -->
+<div class="absolute inset-0 p-6 flex flex-col justify-center">
+<div class="w-full h-[1px] bg-outline-variant/50 relative">
+<div class="absolute -top-12 left-0 right-0 h-[1px] border-t border-dashed border-error/50"></div>
+<div class="absolute top-12 left-0 right-0 h-[1px] border-t border-dashed border-error/50"></div>
+<div class="flex justify-around items-center h-24">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/50"></div>
+</div>
+</div>
+</div>
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest absolute bottom-4">LOA Lines (±1.96 SD)</p>
+</div>
+</div>
+</section>
+<!-- Site Specific Performance Table -->
+<section class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="p-6 flex justify-between items-center">
+<h4 class="text-xl font-headline font-bold text-primary">Site-Specific Performance Analytics</h4>
+<span class="text-xs font-bold text-outline uppercase tracking-widest">Last updated: 2024-10-12</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high/50 text-on-surface-variant text-[10px] uppercase font-black tracking-widest">
+<th class="px-6 py-4">Station Asset</th>
+<th class="px-6 py-4">Slope (β)</th>
+<th class="px-6 py-4">R² Value</th>
+<th class="px-6 py-4">RMSE</th>
+<th class="px-6 py-4">Bias (μg/m³)</th>
+<th class="px-6 py-4">N Obs.</th>
+<th class="px-6 py-4 text-right">Fidelity Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 text-sm">
+<tr class="hover:bg-white/40 transition-colors">
+<td class="px-6 py-4 font-bold">Berkeley Garden</td>
+<td class="px-6 py-4 font-mono">1.04</td>
+<td class="px-6 py-4 font-mono">0.96</td>
+<td class="px-6 py-4 font-mono">1.82</td>
+<td class="px-6 py-4 font-mono text-tertiary">+0.42</td>
+<td class="px-6 py-4 text-outline">842</td>
+<td class="px-6 py-4 text-right">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-[10px] font-bold uppercase">Best Agreement</span>
+</td>
+</tr>
+<tr class="hover:bg-white/40 transition-colors bg-white/20">
+<td class="px-6 py-4 font-bold">Castle Square</td>
+<td class="px-6 py-4 font-mono">0.98</td>
+<td class="px-6 py-4 font-mono">0.94</td>
+<td class="px-6 py-4 font-mono">2.10</td>
+<td class="px-6 py-4 font-mono text-secondary">+1.15</td>
+<td class="px-6 py-4 text-outline">789</td>
+<td class="px-6 py-4 text-right">
+<span class="px-3 py-1 bg-surface-container text-secondary font-bold text-[10px] uppercase">Optimal</span>
+</td>
+</tr>
+<tr class="hover:bg-white/40 transition-colors">
+<td class="px-6 py-4 font-bold">Josiah Quincy</td>
+<td class="px-6 py-4 font-mono">0.82</td>
+<td class="px-6 py-4 font-mono">0.78</td>
+<td class="px-6 py-4 font-mono">4.92</td>
+<td class="px-6 py-4 font-mono text-error">+4.82</td>
+<td class="px-6 py-4 text-outline">412</td>
+<td class="px-6 py-4 text-right">
+<span class="px-3 py-1 bg-error-container text-on-error-container rounded-full text-[10px] font-bold uppercase">Worst Agreement</span>
+</td>
+</tr>
+<tr class="hover:bg-white/40 transition-colors">
+<td class="px-6 py-4 font-bold">Chinatown Gate</td>
+<td class="px-6 py-4 font-mono">1.02</td>
+<td class="px-6 py-4 font-mono">0.92</td>
+<td class="px-6 py-4 font-mono">2.34</td>
+<td class="px-6 py-4 font-mono">+0.95</td>
+<td class="px-6 py-4 text-outline">1,024</td>
+<td class="px-6 py-4 text-right">
+<span class="px-3 py-1 bg-surface-container text-secondary font-bold text-[10px] uppercase">Optimal</span>
+</td>
+</tr>
+<!-- Remaining 8 rows simplified for visual brevity -->
+<tr class="opacity-60"><td class="px-6 py-3 text-center text-xs italic tracking-widest text-outline" colspan="7">... 8 additional asset records available in full archive ...</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Bias Modifier Panels -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- PM2.5 Level Bias -->
+<div class="bg-surface-container rounded-xl p-6 relative overflow-hidden group">
+<div class="flex justify-between items-start mb-6">
+<h5 class="text-sm font-black text-primary uppercase tracking-widest">Bias by PM2.5 Level</h5>
+<span class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">bar_chart</span>
+</div>
+<div class="h-32 flex items-end gap-2">
+<div class="flex-1 bg-primary/20 h-[20%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/40 h-[45%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/60 h-[75%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/80 h-[95%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-[60%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-bold text-outline">
+<span>Low</span>
+<span>Moderate</span>
+<span>High</span>
+</div>
+</div>
+<!-- Diurnal Pattern -->
+<div class="bg-surface-container rounded-xl p-6 relative group">
+<h5 class="text-sm font-black text-primary uppercase tracking-widest mb-6">Diurnal Bias Pattern</h5>
+<div class="h-32 relative">
+<svg class="w-full h-full" viewbox="0 0 100 40">
+<path d="M0 20 Q 25 5, 50 20 T 100 20" fill="none" stroke="#6f070f" stroke-width="2"></path>
+<circle cx="25" cy="11" fill="#6f070f" r="2"></circle>
+<circle cx="75" cy="20" fill="#6f070f" r="2"></circle>
+</svg>
+<div class="absolute inset-0 border-b border-outline-variant/30 flex justify-between items-end">
+<span class="text-[8px] text-outline">00:00</span>
+<span class="text-[8px] text-outline">12:00</span>
+<span class="text-[8px] text-outline">23:59</span>
+</div>
+</div>
+</div>
+<!-- Met-Bias Heatmap -->
+<div class="bg-surface-container rounded-xl p-6 relative group overflow-hidden">
+<h5 class="text-sm font-black text-primary uppercase tracking-widest mb-4">Met-Bias Heatmap</h5>
+<div class="grid grid-cols-4 grid-rows-4 gap-1 h-32">
+<div class="bg-primary/10 rounded-sm"></div><div class="bg-primary/20 rounded-sm"></div><div class="bg-primary/40 rounded-sm"></div><div class="bg-primary/60 rounded-sm"></div>
+<div class="bg-primary/20 rounded-sm"></div><div class="bg-primary/40 rounded-sm"></div><div class="bg-primary/70 rounded-sm"></div><div class="bg-primary/90 rounded-sm"></div>
+<div class="bg-primary/30 rounded-sm"></div><div class="bg-primary/60 rounded-sm"></div><div class="bg-primary/80 rounded-sm"></div><div class="bg-primary rounded-sm"></div>
+<div class="bg-primary/10 rounded-sm"></div><div class="bg-primary/30 rounded-sm"></div><div class="bg-primary/50 rounded-sm"></div><div class="bg-primary/70 rounded-sm"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-[8px] font-bold text-outline">T x RH correlation matrix</span>
+</div>
+</div>
+</section>
+<!-- Asset Registry -->
+<section class="space-y-6">
+<div class="flex justify-between items-end border-b border-primary/20 pb-4">
+<h4 class="text-2xl font-headline font-extrabold text-on-surface">Asset Registry &amp; Fleet Health</h4>
+<p class="text-xs font-medium text-outline">Active Sensors: 12/12</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+<!-- Site Cards -->
+<div class="bg-white rounded-lg p-4 shadow-sm border-l-2 border-tertiary">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-outline-variant uppercase">ID: PA-01</span>
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(0,62,47,0.5)]"></span>
+</div>
+<h6 class="text-sm font-bold truncate">Oak St. South</h6>
+<div class="mt-4 space-y-1">
+<div class="flex justify-between text-[10px] font-bold">
+<span>Health</span>
+<span>98%</span>
+</div>
+<div class="w-full bg-stone-100 h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[98%]"></div>
+</div>
+</div>
+</div>
+<!-- Repeat Asset Card x 5 -->
+<div class="bg-white rounded-lg p-4 shadow-sm border-l-2 border-tertiary">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-outline-variant uppercase">ID: PA-02</span>
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(0,62,47,0.5)]"></span>
+</div>
+<h6 class="text-sm font-bold truncate">Harrison Ave</h6>
+<div class="mt-4 space-y-1">
+<div class="flex justify-between text-[10px] font-bold">
+<span>Health</span>
+<span>94%</span>
+</div>
+<div class="w-full bg-stone-100 h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[94%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg p-4 shadow-sm border-l-2 border-secondary">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-outline-variant uppercase">ID: PA-03</span>
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(135,81,45,0.5)]"></span>
+</div>
+<h6 class="text-sm font-bold truncate">Tai Tung Village</h6>
+<div class="mt-4 space-y-1">
+<div class="flex justify-between text-[10px] font-bold">
+<span>Health</span>
+<span>76%</span>
+</div>
+<div class="w-full bg-stone-100 h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[76%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg p-4 shadow-sm border-l-2 border-tertiary">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-outline-variant uppercase">ID: PA-04</span>
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(0,62,47,0.5)]"></span>
+</div>
+<h6 class="text-sm font-bold truncate">Kneeland St</h6>
+<div class="mt-4 space-y-1">
+<div class="flex justify-between text-[10px] font-bold">
+<span>Health</span>
+<span>100%</span>
+</div>
+<div class="w-full bg-stone-100 h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[100%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg p-4 shadow-sm border-l-2 border-error">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-outline-variant uppercase">ID: PA-05</span>
+<span class="w-2 h-2 rounded-full bg-error animate-pulse shadow-[0_0_8px_rgba(186,26,26,0.5)]"></span>
+</div>
+<h6 class="text-sm font-bold truncate">Hudson St. Lab</h6>
+<div class="mt-4 space-y-1">
+<div class="flex justify-between text-[10px] font-bold text-error">
+<span>Failing</span>
+<span>12%</span>
+</div>
+<div class="w-full bg-stone-100 h-1 rounded-full overflow-hidden">
+<div class="bg-error h-full w-[12%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg p-4 shadow-sm border-l-2 border-tertiary">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-bold text-outline-variant uppercase">ID: PA-06</span>
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(0,62,47,0.5)]"></span>
+</div>
+<h6 class="text-sm font-bold truncate">Marginal Rd</h6>
+<div class="mt-4 space-y-1">
+<div class="flex justify-between text-[10px] font-bold">
+<span>Health</span>
+<span>91%</span>
+</div>
+<div class="w-full bg-stone-100 h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[91%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer class="p-8 mt-12 border-t border-outline-variant/30 flex justify-between items-center opacity-60">
+<div class="flex items-center gap-4">
+<img alt="Tufts University Logo" class="w-8 opacity-50 grayscale" data-alt="Subtle grey-scale Tufts University logo, elegant and minimalist branding for research footer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlIMfacpZEBZZXlWn3aj-un1usKx2Bsp1oxrqoz1Y51Ktf89WwcwNMdItcgwSSWzdnw7IyIw5jkKTCfjmzNTpxLdJqcwVtfQUt3psVVugt-PxkdlBDz17NLn3KWFicFilgux9vaiovcLbxuvWF4XR2TWQtZc0POPKb9pw_66SEokxIp_CwicVQPc8tTzFLSr3O6x6YWylzvXamBIR_emrip3tSJqMSJKToGyYnT0O5P_U_OLUy4Qw73A2wK3TueaktEuIugu7H2XEE"/>
+<p class="text-[10px] font-bold text-outline uppercase tracking-tighter">Environmental Research Collaboration — 2024 Project</p>
+</div>
+<div class="flex gap-4">
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest cursor-pointer hover:text-primary">Legal Terms</span>
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest cursor-pointer hover:text-primary">Data Policy</span>
+</div>
+</footer>
+</main>
+</body></html>

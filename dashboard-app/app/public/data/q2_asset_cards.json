@@ -1,0 +1,134 @@
+[
+  {
+    "id": "KES-01",
+    "site_id": "berkley",
+    "name": "Berkeley Garden",
+    "r_dep": 0.89,
+    "bias_dep": -1.03,
+    "rmse_dep": 3.2,
+    "mean_temp_f": 74.0,
+    "n": 3016,
+    "health": 81
+  },
+  {
+    "id": "KES-02",
+    "site_id": "castle",
+    "name": "Castle Square",
+    "r_dep": 0.91,
+    "bias_dep": 0.42,
+    "rmse_dep": 2.9,
+    "mean_temp_f": 73.6,
+    "n": 3120,
+    "health": 87
+  },
+  {
+    "id": "KES-03",
+    "site_id": "chin",
+    "name": "Auntie Kay & Uncle Frank Chin Park",
+    "r_dep": 0.88,
+    "bias_dep": -0.21,
+    "rmse_dep": 3.4,
+    "mean_temp_f": 75.4,
+    "n": 3134,
+    "health": 82
+  },
+  {
+    "id": "KES-04",
+    "site_id": "dewey",
+    "name": "Dewey Square",
+    "r_dep": 0.9,
+    "bias_dep": 0.15,
+    "rmse_dep": 3.0,
+    "mean_temp_f": 73.9,
+    "n": 3153,
+    "health": 90
+  },
+  {
+    "id": "KES-05",
+    "site_id": "eliotnorton",
+    "name": "Eliot Norton Park",
+    "r_dep": 0.88,
+    "bias_dep": -1.03,
+    "rmse_dep": 3.3,
+    "mean_temp_f": 74.4,
+    "n": 2993,
+    "health": 84
+  },
+  {
+    "id": "KES-06",
+    "site_id": "greenway",
+    "name": "One Greenway",
+    "r_dep": 0.89,
+    "bias_dep": -0.45,
+    "rmse_dep": 3.1,
+    "mean_temp_f": 75.4,
+    "n": 3198,
+    "health": 83
+  },
+  {
+    "id": "KES-07",
+    "site_id": "lyndenboro",
+    "name": "Lyndenboro Place",
+    "r_dep": 0.9,
+    "bias_dep": 0.22,
+    "rmse_dep": 3.0,
+    "mean_temp_f": 74.4,
+    "n": 3120,
+    "health": 85
+  },
+  {
+    "id": "KES-08",
+    "site_id": "msh",
+    "name": "Mary Soo Hoo Park",
+    "r_dep": 0.87,
+    "bias_dep": -0.67,
+    "rmse_dep": 3.5,
+    "mean_temp_f": 74.2,
+    "n": 3192,
+    "health": 86
+  },
+  {
+    "id": "KES-09",
+    "site_id": "oxford",
+    "name": "Oxford Place",
+    "r_dep": 0.91,
+    "bias_dep": 0.63,
+    "rmse_dep": 2.8,
+    "mean_temp_f": 74.5,
+    "n": 2914,
+    "health": 82
+  },
+  {
+    "id": "KES-10",
+    "site_id": "reggie",
+    "name": "Reggie Wong Park",
+    "r_dep": 0.89,
+    "bias_dep": -0.12,
+    "rmse_dep": 3.2,
+    "mean_temp_f": 74.4,
+    "n": 2881,
+    "health": 87
+  },
+  {
+    "id": "KES-11",
+    "site_id": "taitung",
+    "name": "Tai Tung Village",
+    "r_dep": 0.88,
+    "bias_dep": 0.08,
+    "rmse_dep": 3.3,
+    "mean_temp_f": 74.0,
+    "n": 2893,
+    "health": 85
+  },
+  {
+    "id": "KES-12",
+    "site_id": "tufts",
+    "name": "Tufts/Kneeland",
+    "r_dep": 0.9,
+    "bias_dep": 0.31,
+    "rmse_dep": 2.9,
+    "mean_temp_f": 74.2,
+    "n": 3178,
+    "health": 83
+  }
+]

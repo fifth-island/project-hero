@@ -1,0 +1,94 @@
+{
+  "question": "Q9",
+  "title": "Land-Use Buffer Characteristics and Environmental Associations",
+  "research_question": "Look at the landuse buffer characteristics across sites and whether they are associated with PM2.5 and heat indicators.",
+  "study_period": "2023-07-19 to 2023-08-23",
+  "total_observations": 48123,
+  "sites": 12,
+  "landuse_variables": 10,
+  "buffer_sizes_m": [25, 50],
+  "landuse_categories": ["Trees", "Grass", "Bare Soil", "Impervious", "Roads"],
+  "kpi": {
+    "pm25": {
+      "strongest_positive_correlate": "Roads 50m",
+      "strongest_positive_r": 0.680,
+      "strongest_positive_p": 0.015,
+      "strongest_negative_correlate": "Trees 50m",
+      "strongest_negative_r": -0.206,
+      "best_single_predictor_r2": 0.462,
+      "significant_predictors_p05": ["Roads 50m", "Roads 25m"]
+    },
+    "wbgt": {
+      "strongest_positive_correlate": "Trees 50m",
+      "strongest_positive_r": 0.506,
+      "strongest_positive_p": 0.093,
+      "strongest_negative_correlate": "Impervious 25m",
+      "strongest_negative_r": -0.566,
+      "best_single_predictor_r2": 0.256,
+      "significant_predictors_p05": []
+    },
+    "optimal_clusters": 2,
+    "silhouette_score": 0.317
+  },
+  "pm25_associations": {
+    "roads_50m": {"r": 0.680, "p": 0.015, "r2": 0.462},
+    "roads_25m": {"r": 0.634, "p": 0.027},
+    "trees_50m": {"r": -0.206, "significant": false},
+    "interpretation": "Road proximity explains 46.2% of inter-site PM2.5 variance"
+  },
+  "wbgt_associations": {
+    "trees_50m": {"r": 0.506, "p": 0.093, "note": "Counterintuitive positive — likely confounded with inland/sheltered locations"},
+    "impervious_25m": {"r": -0.566, "p": 0.055, "note": "Counterintuitive negative — heavily paved sites near waterfront benefit from maritime cooling"},
+    "none_significant_at_p05": true
+  },
+  "pca": {
+    "pc1_variance_pct": 44.1,
+    "pc1_interpretation": "Impervious vs vegetation gradient",
+    "pc2_variance_pct": 28.6,
+    "pc2_interpretation": "Grass and bare soil variation",
+    "cumulative_2pc_pct": 72.7
+  },
+  "clustering": {
+    "method": "K-Means",
+    "optimal_k": 2,
+    "silhouette_score": 0.317,
+    "cluster_0": {
+      "sites": ["Berkley", "Castle", "Eliot Norton", "Lyndenboro"],
+      "description": "Higher impervious surface",
+      "wbgt_mean_f": 66.0
+    },
+    "cluster_1": {
+      "sites": ["Chin", "Dewey", "Greenway", "MSH", "Oxford", "Reggie", "Tai Tung", "Tufts"],
+      "description": "Mixed land-use",
+      "wbgt_mean_f": 65.8
+    },
+    "pm25_difference_p": 0.95,
+    "wbgt_difference_p": 0.31,
+    "significant_outcome_differences": false
+  },
+  "limitations": [
+    "Small sample size (n=12 sites) limits statistical power",
+    "Small buffer zones (25-50m) may miss broader urban context",
+    "Urban homogeneity limits variance in land-use variables",
+    "Waterfront proximity and wind corridors confound WBGT associations",
+    "Temporal aggregation collapses rich variation into site-level means"
+  ],
+  "key_findings": [
+    "Road proximity is dominant PM2.5 driver: 50m buffer r=0.680 (p=0.015), R2=46.2%",
+    "No land-use variable significantly predicts WBGT — microscale factors dominate",
+    "Counterintuitive WBGT associations likely reflect waterfront proximity confounding",
+    "Two land-use clusters identified but no significant environmental outcome differences",
+    "Environmental justice: traffic management and buffer vegetation near high-road sites could reduce PM2.5 exposure"
+  ],
+  "figures": [
+    "q9_scatter_landuse_vs_pm25.png",
+    "q9_scatter_landuse_vs_wbgt.png",
+    "q9_heatmap_landuse_vs_outcomes.png",
+    "q9_heatmap_landuse_intercorrelation.png",
+    "q9_regression_coefficients.png",
+    "q9_pca_sites_pm25.png",
+    "q9_pca_sites_wbgt.png",
+    "q9_dendrogram_landuse.png",
+    "q9_cluster_comparison.png"
+  ]
+}

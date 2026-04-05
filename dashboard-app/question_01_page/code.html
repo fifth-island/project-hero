@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sensor Validation | Chinatown HEROS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#fff2da",
+                      "tertiary-container": "#005744",
+                      "background": "#fff8f1",
+                      "on-error": "#ffffff",
+                      "outline-variant": "#dfbfbc",
+                      "primary": "#6f070f",
+                      "tertiary": "#003e2f",
+                      "on-primary-container": "#ffa59e",
+                      "primary-fixed-dim": "#ffb3ae",
+                      "surface-container": "#ffecc3",
+                      "surface-tint": "#a93533",
+                      "surface-variant": "#f6e1ae",
+                      "on-primary-fixed-variant": "#891c1e",
+                      "on-tertiary-fixed-variant": "#00513f",
+                      "tertiary-fixed": "#9ef3d6",
+                      "surface-container-high": "#fce6b3",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#241a00",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#ffdbc8",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#feb78a",
+                      "secondary": "#87512d",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#fff8f1",
+                      "on-primary-fixed": "#410004",
+                      "inverse-surface": "#3b2f0b",
+                      "tertiary-fixed-dim": "#82d7ba",
+                      "on-secondary-container": "#794622",
+                      "surface-dim": "#eed8a6",
+                      "on-secondary-fixed": "#311300",
+                      "on-tertiary-container": "#79cdb1",
+                      "on-surface": "#241a00",
+                      "outline": "#8b716f",
+                      "on-surface-variant": "#58413f",
+                      "on-secondary-fixed-variant": "#6b3a18",
+                      "inverse-on-surface": "#ffefcf",
+                      "primary-fixed": "#ffdad7",
+                      "surface-bright": "#fff8f1",
+                      "primary-container": "#902223",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#f6e1ae",
+                      "secondary-fixed-dim": "#feb78a",
+                      "on-tertiary-fixed": "#002118",
+                      "inverse-primary": "#ffb3ae",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Newsreader"],
+                      "body": ["Manrope"],
+                      "label": ["Manrope"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrolling-bg {
+            background-image: linear-gradient(45deg, rgba(144, 34, 35, 0.03) 25%, transparent 25%, transparent 50%, rgba(144, 34, 35, 0.03) 50%, rgba(144, 34, 35, 0.03) 75%, transparent 75%, transparent);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- SideNavBar (from JSON Specs) -->
+<aside class="h-screen w-72 fixed left-0 top-0 bg-stone-50 flex flex-col z-40">
+<div class="p-8 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Official Tufts University academic seal in red ink on parchment paper texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoFerkKZ852r8LgDv0JSfiKep_-RkNhGcB_5p4TFnCfTIgAe0HB_0pl5oswklxXOPYWmQmIMo_LVpWC4oJQpbgMsMXZ1cl8waq-nBLV5P_K4YWSGSHH9quqV42QSylC2-LohM5AVWWXd894EEyMiW3n0AgX2-8VL9itwAkQV57OeVA-2A84MDmvHk1X9CcNsIqkumHZwhWiNmt4ErnG6RlwAkL8T2ACbw6xmkul5RGj2qTS3MWDelrWlvFcPXlCvgD3L17_mO78pCc"/>
+</div>
+<div>
+<h1 class="font-serif text-lg text-red-900 leading-tight">HEROS Dashboard</h1>
+<p class="text-[10px] font-label uppercase tracking-widest text-stone-500">Environmental Research</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1">
+<div class="px-4 py-2 text-[10px] font-serif uppercase tracking-widest text-stone-400 font-bold mb-2">Main Navigation</div>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-serif uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span> Project Overview
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-serif uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span> Environmental Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-red-900 font-bold bg-stone-200/50 rounded-r-full font-serif uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span> Sensor Validation
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-serif uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="diversity_1">diversity_1</span> Community Impact
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-serif uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span> Research Questions
+            </a>
+</nav>
+<div class="px-8 pb-8 pt-4">
+<button class="w-full bg-primary py-3 text-on-primary font-label text-sm font-bold uppercase tracking-widest hover:shadow-lg transition-shadow">
+                Download Data
+            </button>
+<div class="mt-6 pt-6 border-t border-stone-200 flex flex-col gap-4">
+<a class="flex items-center gap-3 text-stone-500 text-xs font-serif uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+                </a>
+<a class="flex items-center gap-3 text-stone-500 text-xs font-serif uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span> Support
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-72 min-h-screen">
+<!-- TopAppBar (from JSON Specs) -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md px-10 py-6 flex justify-between items-center shadow-sm">
+<div class="flex items-center gap-2">
+<span class="text-xl font-serif font-bold text-red-900 italic">Chinatown HEROS</span>
+<span class="h-4 w-px bg-stone-300 mx-4"></span>
+<span class="font-headline text-stone-600">Sensor Validation &amp; Calibration</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-stone-500">
+<span class="material-symbols-outlined hover:text-red-800 transition-colors cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined hover:text-red-800 transition-colors cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<div class="max-w-7xl mx-auto px-10 py-12 space-y-12">
+<!-- Hero Banner: Calibration Fidelity Ledger -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-8 space-y-6">
+<div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-[10px] font-label font-bold uppercase tracking-wider text-tertiary">Tufts Verified • Version 2.4</span>
+</div>
+<h2 class="text-5xl font-headline font-bold text-primary tracking-tight leading-none">Calibration Fidelity Ledger</h2>
+<p class="text-lg text-on-surface-variant font-body max-w-2xl leading-relaxed">
+                        This protocol evaluates the operational consistency of PurpleAir PA-II sensors against the MassDEP Federal Equivalent Method (FEM) at the Harrison Ave site. Validation ensures that high-resolution community data maintains scholarly rigor through rigorous regression modeling.
+                    </p>
+<div class="flex flex-wrap gap-3 pt-4">
+<span class="bg-surface-container px-4 py-2 text-xs font-label font-bold text-secondary-container bg-opacity-20 border border-secondary-container/30 rounded-full">Within ±5 µg/m³ (94.6%)</span>
+<span class="bg-surface-container px-4 py-2 text-xs font-label font-bold text-secondary-container bg-opacity-20 border border-secondary-container/30 rounded-full">Paired Observations (47,009)</span>
+<span class="bg-surface-container px-4 py-2 text-xs font-label font-bold text-secondary-container bg-opacity-20 border border-secondary-container/30 rounded-full">Sensor Drift (None Detected)</span>
+</div>
+</div>
+<div class="lg:col-span-4 grid grid-cols-1 gap-4">
+<div class="bg-surface-container-highest p-6 relative overflow-hidden">
+<div class="absolute -top-4 -right-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-8xl" data-icon="analytics">analytics</span>
+</div>
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-primary mb-1">Pearson Correlation (r)</p>
+<div class="text-4xl font-headline font-bold text-primary">0.939</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-6 shadow-sm border border-stone-100">
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-stone-500 mb-1">RMSE</p>
+<div class="text-2xl font-headline font-bold text-secondary">2.53 <span class="text-xs font-body font-normal text-stone-400">μg/m³</span></div>
+</div>
+<div class="bg-white p-6 shadow-sm border border-stone-100">
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-stone-500 mb-1">Mean Bias</p>
+<div class="text-2xl font-headline font-bold text-tertiary">+1.53 <span class="text-xs font-body font-normal text-stone-400">μg/m³</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Correlation Deep-Dive & Comparison -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- PM2.5 Correlation Plot -->
+<div class="bg-surface-container-low p-8 relative">
+<div class="flex justify-between items-center mb-10">
+<h3 class="font-headline font-bold text-2xl text-primary">Correlation Analysis</h3>
+<span class="text-[10px] font-label uppercase tracking-widest bg-stone-200 px-2 py-1">Regression 1:1</span>
+</div>
+<div class="h-80 w-full relative bg-white flex items-end justify-start p-8">
+<img class="absolute inset-0 w-full h-full object-cover opacity-90" data-alt="Scientific scatter plot chart with red and blue data points, showing strong positive linear correlation and regression lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5xYdRIzQ4kbOBTvm57pX37aGSt0IumMOMh4TzYyeBykzCPGOb77q77Xlv546xpOU75xtK_N-w_6Zo6Tly1Ve-HeE9gJgxe67T_CdkbGhnDrbyxVhdAbvdpNCp-UT_pH1d_3QR_02MI_vKAf0GHweT8XvJEBBWlsZawTr6FDtFcbKcjOP2FHuKvS0GmQr3ilmnHxoBiPl5R4AKKfICyqopRCnNJDk-D3GOW_DUPOBBitiT35B-SgCFJoYPAPdxrIiLfBzhm20NiucG"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent"></div>
+</div>
+<p class="mt-4 text-xs font-body text-on-surface-variant italic">Purple Air PA-II vs MassDEP FEM BAM-1022. Comparison based on 1-hour average intervals.</p>
+</div>
+<!-- Bland-Altman Agreement -->
+<div class="bg-surface-container-low p-8">
+<div class="flex justify-between items-center mb-10">
+<h3 class="font-headline font-bold text-2xl text-primary">Bland-Altman Agreement</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="legend_toggle">legend_toggle</span>
+</div>
+<div class="h-80 w-full relative bg-white border border-stone-100 overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="Technical bland-altman plot showing measurement difference versus mean with confidence interval horizontal lines in earthy tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm1RLHJTJ453IYzHgLu-IH2FSaUr1Ad_mItYs--Sax_U6vvMewPNXSmCZ_GKc_6q9K1sBnq74x6hGFZPgHiCElaPYAIHN3JITMHjDqV5mcJvnPPOAllTngom5hxkIr-2SL9Mr7-G6yQzvoE-rI-b1yK1oMlZaMjXY6EJuNP6a5wIV_amgvtt7GPp663yDl9cEI0OeI760mC60_A4JWIcA6c1_0Dc1NBIL-JAyhp2H_v5CK0OQ2crglqm3hAUaJ0KlSRCEkprcOgXa0"/>
+</div>
+<div class="mt-6 flex justify-between items-center text-xs font-label font-bold uppercase tracking-widest">
+<div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span> Mean Bias: 1.53</div>
+<div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary"></span> 95% LOA: ±4.82</div>
+</div>
+</div>
+</section>
+<!-- Site-Specific Performance Table -->
+<section class="bg-white shadow-sm overflow-hidden">
+<div class="px-8 py-6 bg-surface-container flex justify-between items-center">
+<h3 class="font-headline font-bold text-2xl text-primary">Site-Specific Performance</h3>
+<div class="flex gap-2">
+<button class="bg-white/50 px-3 py-1 text-[10px] font-label font-bold uppercase tracking-tighter hover:bg-white transition-colors">Export Ledger</button>
+<button class="bg-white/50 px-3 py-1 text-[10px] font-label font-bold uppercase tracking-tighter hover:bg-white transition-colors">Filter Range</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-stone-50 border-b border-stone-100">
+<th class="px-8 py-4 text-[10px] font-label font-bold uppercase tracking-widest text-stone-500">Monitoring Site</th>
+<th class="px-4 py-4 text-[10px] font-label font-bold uppercase tracking-widest text-stone-500">Slope</th>
+<th class="px-4 py-4 text-[10px] font-label font-bold uppercase tracking-widest text-stone-500">R²</th>
+<th class="px-4 py-4 text-[10px] font-label font-bold uppercase tracking-widest text-stone-500">RMSE</th>
+<th class="px-4 py-4 text-[10px] font-label font-bold uppercase tracking-widest text-stone-500">Bias</th>
+<th class="px-4 py-4 text-[10px] font-label font-bold uppercase tracking-widest text-stone-500 text-right">N (Observations)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-stone-50">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-4 font-headline font-bold text-stone-800 flex items-center gap-3">
+                                    Berkeley Garden
+                                </td>
+<td class="px-4 py-4 font-body text-sm">0.72</td>
+<td class="px-4 py-4 font-body font-bold text-tertiary">0.94</td>
+<td class="px-4 py-4 font-body text-sm">2.41</td>
+<td class="px-4 py-4 font-body text-sm text-tertiary">+1.12</td>
+<td class="px-4 py-4 font-body text-xs text-stone-400 text-right">4,212</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors bg-stone-50/30">
+<td class="px-8 py-4 font-headline font-bold text-stone-800 flex items-center gap-3">
+                                    Castle Square <span class="bg-tertiary text-white text-[8px] px-1.5 py-0.5 rounded uppercase tracking-tighter">Best Agreement</span>
+</td>
+<td class="px-4 py-4 font-body text-sm">0.75</td>
+<td class="px-4 py-4 font-body font-bold text-tertiary">0.96</td>
+<td class="px-4 py-4 font-body text-sm">1.89</td>
+<td class="px-4 py-4 font-body text-sm text-tertiary">+0.94</td>
+<td class="px-4 py-4 font-body text-xs text-stone-400 text-right">3,892</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-8 py-4 font-headline font-bold text-stone-800 flex items-center gap-3">
+                                    One Greenway <span class="bg-error text-white text-[8px] px-1.5 py-0.5 rounded uppercase tracking-tighter">Highest Bias</span>
+</td>
+<td class="px-4 py-4 font-body text-sm">0.68</td>
+<td class="px-4 py-4 font-body font-bold text-stone-400">0.88</td>
+<td class="px-4 py-4 font-body text-sm">3.45</td>
+<td class="px-4 py-4 font-body text-sm text-error font-bold">+2.21</td>
+<td class="px-4 py-4 font-body text-xs text-stone-400 text-right">4,010</td>
+</tr>
+<!-- More rows implied for the 12 sites -->
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-stone-50 text-center">
+<button class="text-[10px] font-label font-bold uppercase tracking-widest text-primary flex items-center gap-2 mx-auto">
+                        View All 12 Research Sites <span class="material-symbols-outlined text-sm" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+</section>
+<!-- Bias Modifier Panels (Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- PM2.5 Level Bar -->
+<div class="lg:col-span-2 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between">
+<div>
+<h4 class="font-headline font-bold text-xl text-primary mb-2">Bias by PM2.5 Level</h4>
+<p class="text-xs text-stone-500 font-body mb-8">Higher concentration trends toward increased sensor divergence.</p>
+</div>
+<div class="h-48 flex items-end gap-3 px-4">
+<div class="flex-1 bg-primary-container h-1/4 rounded-t-sm"></div>
+<div class="flex-1 bg-primary-container h-2/5 rounded-t-sm"></div>
+<div class="flex-1 bg-primary-container h-3/5 rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-4/5 rounded-t-sm"></div>
+<div class="flex-1 bg-primary h-full rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-4 text-[9px] font-label font-bold text-stone-400 uppercase tracking-widest">
+<span>0-12</span>
+<span>12-35</span>
+<span>35-55</span>
+<span>55-150</span>
+<span>150+ µg/m³</span>
+</div>
+</div>
+<!-- Diurnal Patterns -->
+<div class="bg-white p-8 border border-stone-100 flex flex-col justify-between">
+<h4 class="font-headline font-bold text-xl text-secondary mb-2">Diurnal Bias</h4>
+<div class="h-40 w-full relative">
+<img class="w-full h-full object-contain" data-alt="Minimalist line chart showing daily peak and trough patterns in earthy ochre and gold colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXXnGGwOKyzhJIHVPcfvIokMndk8abmoA33H0wxpun48YcNQsc89ckHd_q4Uk2b9ruJTrGf0HzvaN-So5m0m3gtyDCIcTDdIo_KLsGlMosFPOuUhahN7d113NryB29A9xIG7kT9ljjPulmOfFNMqRGEmj2h3tP1xDiw804q3pEY-Xh1t_6BOHhTWefb8SY0i2xtViJi_bpMIOZzXckDOyJcrNPFLQhyN5e-orrbOdblFDbWMNnknmn99k3GRF6mBeINurVWVkUKMW_"/>
+</div>
+<div class="pt-6 border-t border-stone-100">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-label font-bold text-stone-400">PEAK DEVIATION</span>
+<span class="text-sm font-headline font-bold text-secondary">06:00 - 09:00</span>
+</div>
+</div>
+</div>
+<!-- Heatmap Panel -->
+<div class="bg-tertiary-container text-white p-8 flex flex-col justify-between">
+<h4 class="font-headline font-bold text-xl mb-2">Temp × Humidity</h4>
+<div class="grid grid-cols-5 grid-rows-5 gap-1 h-32 my-6">
+<div class="bg-white/10"></div><div class="bg-white/20"></div><div class="bg-white/30"></div><div class="bg-white/40"></div><div class="bg-white/50"></div>
+<div class="bg-white/20"></div><div class="bg-white/30"></div><div class="bg-white/40"></div><div class="bg-white/50"></div><div class="bg-white/60"></div>
+<div class="bg-white/30"></div><div class="bg-white/40"></div><div class="bg-white/50"></div><div class="bg-white/60"></div><div class="bg-white/70"></div>
+<div class="bg-white/40"></div><div class="bg-white/50"></div><div class="bg-white/60"></div><div class="bg-white/70"></div><div class="bg-white/80"></div>
+<div class="bg-white/50"></div><div class="bg-white/60"></div><div class="bg-white/70"></div><div class="bg-white/80"></div><div class="bg-white/100"></div>
+</div>
+<p class="text-[10px] font-body font-medium leading-tight">Interaction effects become significant above 85% RH and 30°C.</p>
+</div>
+</section>
+<!-- Temporal Stability & Asset Registry -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Asset Status Grid -->
+<section class="lg:col-span-8 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline font-bold text-3xl text-primary">Active Asset Registry</h3>
+<div class="flex items-center gap-4">
+<span class="text-xs font-label uppercase tracking-widest text-tertiary font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span> 12/12 Online
+                            </span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Sensor Card Template -->
+<div class="bg-white p-5 border border-stone-100 shadow-sm relative group overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div class="text-[10px] font-label font-bold text-stone-400">CH-001</div>
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="font-headline font-bold text-stone-800 truncate mb-1">Berkeley St</div>
+<div class="text-xl font-headline font-bold text-primary mb-4">0.94 <span class="text-[10px] font-body text-stone-400 uppercase tracking-widest font-normal">R²</span></div>
+<div class="w-full bg-stone-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary w-[94%] h-full"></div>
+</div>
+</div>
+<!-- Repeat Cards for Variety -->
+<div class="bg-white p-5 border border-stone-100 shadow-sm relative group overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div class="text-[10px] font-label font-bold text-stone-400">CH-002</div>
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="font-headline font-bold text-stone-800 truncate mb-1">Castle Sq</div>
+<div class="text-xl font-headline font-bold text-primary mb-4">0.96 <span class="text-[10px] font-body text-stone-400 uppercase tracking-widest font-normal">R²</span></div>
+<div class="w-full bg-stone-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary w-[96%] h-full"></div>
+</div>
+</div>
+<div class="bg-white p-5 border border-stone-100 shadow-sm relative group overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div class="text-[10px] font-label font-bold text-stone-400">CH-003</div>
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="font-headline font-bold text-stone-800 truncate mb-1">One Greenway</div>
+<div class="text-xl font-headline font-bold text-secondary mb-4">0.88 <span class="text-[10px] font-body text-stone-400 uppercase tracking-widest font-normal">R²</span></div>
+<div class="w-full bg-stone-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary w-[88%] h-full"></div>
+</div>
+</div>
+<div class="bg-white p-5 border border-stone-100 shadow-sm relative group overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<div class="text-[10px] font-label font-bold text-stone-400">CH-004</div>
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="font-headline font-bold text-stone-800 truncate mb-1">Tai Tung Village</div>
+<div class="text-xl font-headline font-bold text-primary mb-4">0.91 <span class="text-[10px] font-body text-stone-400 uppercase tracking-widest font-normal">R²</span></div>
+<div class="w-full bg-stone-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary w-[91%] h-full"></div>
+</div>
+</div>
+<!-- More implied cards -->
+</div>
+</section>
+<!-- Stability KPIs -->
+<section class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-low p-8 border-l-4 border-primary">
+<h4 class="font-headline font-bold text-xl text-primary mb-6">Temporal Stability</h4>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-xs font-label font-bold uppercase tracking-widest text-stone-500">Rolling 7-Day r²</span>
+<span class="text-xs font-body font-bold text-tertiary">0.92</span>
+</div>
+<div class="h-10 w-full relative">
+<img class="w-full h-full object-cover rounded opacity-50 grayscale" data-alt="Close up view of a scientific line graph with slight noise representing sensor stability over a week" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMtQJjEqAd70KsW780vXmSLNlWQUY62h3hmXxhL_7-2iqUKyx_O39uCoaIV26XaSP59giu-cPE8uRwG7fjw8_pJ19tqBiUzOvYOLHc5Orvw134CbuX7b_MwZZ4u8HFcZz33_7rRQ21zokYWBtMY5OQWimP8K2I8ZUGbc3vgk52HNjDLLHFBU8g5a1_i8cv-3ZTncQyNSqtrgzC18gQEt-673Ho8hrRT9QdX8C6BjKoY-uaECCcHGxOeZE-6hB7nBkRuKTHyD-1HaQj"/>
+</div>
+</div>
+<div class="pt-6 border-t border-stone-200 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-stone-100">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="history">history</span>
+</div>
+<div>
+<div class="text-[10px] font-label font-bold uppercase tracking-widest text-stone-400">Long-term Drift</div>
+<div class="text-sm font-headline font-bold text-stone-800">Negligible (-0.02% / mo)</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-stone-100">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="sync">sync</span>
+</div>
+<div>
+<div class="text-[10px] font-label font-bold uppercase tracking-widest text-stone-400">Recalibration Cycle</div>
+<div class="text-sm font-headline font-bold text-stone-800">Every 90 Days</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Calibration Equation & Reference Benchmarks -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white p-10 border border-stone-100 relative overflow-hidden flex items-center">
+<div class="absolute inset-0 scrolling-bg opacity-10 pointer-events-none"></div>
+<div class="relative z-10 w-full text-center">
+<div class="text-[10px] font-label font-bold uppercase tracking-[0.3em] text-stone-400 mb-6">Derived Transfer Function</div>
+<div class="text-3xl md:text-4xl font-headline font-bold text-primary tracking-tight">
+                            DEP<span class="text-lg align-sub">est</span> = 0.7376 × PA + 0.9596
+                        </div>
+<div class="mt-8 pt-8 border-t border-stone-100 inline-block">
+<p class="text-xs font-body text-stone-500 italic">Global model applied to all PA-II nodes within the Chinatown monitoring cluster.</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-10">
+<h3 class="font-headline font-bold text-2xl text-primary mb-4">Reference-to-Reference</h3>
+<p class="text-sm text-on-surface-variant font-body mb-8">Verification of Chinatown FEM versus regional Boston (Nubian Sq) monitors to ensure baseline consistency.</p>
+<div class="space-y-4">
+<div class="flex justify-between items-center bg-white p-4">
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-stone-500">Chinatown Harrison Ave</span>
+<span class="text-lg font-headline font-bold text-primary">12.4 <span class="text-[8px] font-body text-stone-400">μg/m³</span></span>
+</div>
+<div class="flex justify-between items-center bg-white/50 p-4">
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-stone-500">Nubian Square FEM</span>
+<span class="text-lg font-headline font-bold text-stone-400">11.9 <span class="text-[8px] font-body text-stone-400">μg/m³</span></span>
+</div>
+<div class="flex justify-between items-center py-2 px-4 border-t border-primary/20">
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-primary">Regional Agreement</span>
+<span class="text-sm font-headline font-bold text-tertiary">96.1%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Research Insight Footer -->
+<footer class="bg-primary p-12 text-on-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl" data-icon="format_quote">format_quote</span>
+</div>
+<div class="relative z-10 max-w-3xl">
+<h3 class="text-[10px] font-label font-bold uppercase tracking-[0.4em] mb-6 text-on-primary-container">Executive Summary</h3>
+<blockquote class="text-3xl font-headline italic leading-snug">
+                        "The high correlation (r=0.939) and minimal bias detected through our validation protocol confirms that the Chinatown sensor network produces data of sufficient fidelity for both community health advocacy and scholarly environmental research."
+                    </blockquote>
+<div class="mt-8 flex items-center gap-4">
+<div class="w-12 h-px bg-on-primary-container"></div>
+<div class="text-sm font-label font-bold uppercase tracking-widest">Tufts Environmental Research Collaboration</div>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</body></html>

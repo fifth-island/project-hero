@@ -1,0 +1,102 @@
+{
+  "question": "Q1",
+  "title": "PM2.5 Sensor Comparison: Purple Air vs MassDEP FEM",
+  "research_question": "How do Purple Air PM2.5 data at each of the 12 open space sites compare with MassDEP FEM PM2.5 data in Chinatown and Nubian Square?",
+  "study_period": "2023-07-19 to 2023-08-23",
+  "paired_observations": 47009,
+  "kpi": {
+    "pearson_r_pa_vs_dep_ct": 0.9391,
+    "spearman_rho": 0.9376,
+    "mean_bias_ug_m3": 1.53,
+    "rmse_ug_m3": 2.53,
+    "within_2_ug_pct": 63.2,
+    "within_5_ug_pct": 94.6,
+    "site_equity_score": 0.532,
+    "high_pollution_correlation_p90": 0.58
+  },
+  "summary_statistics": {
+    "purple_air": {"n": 47009, "mean": 9.49, "std": 5.34, "min": 0.88, "median": 8.33, "max": 25.09, "completeness_pct": 97.7},
+    "dep_chinatown": {"n": 48123, "mean": 7.96, "std": 4.22, "min": 0.85, "median": 7.23, "max": 24.71, "completeness_pct": 100.0},
+    "dep_nubian": {"n": 48123, "mean": 8.07, "std": 4.48, "min": 1.07, "median": 7.11, "max": 33.76, "completeness_pct": 100.0},
+    "epa_fem": {"n": 47395, "mean": 7.92, "std": 4.19, "min": 1.20, "median": 7.20, "max": 22.40, "completeness_pct": 98.5}
+  },
+  "reference_crosscheck": {
+    "dep_ct_vs_dep_nubian_r": 0.96,
+    "dep_ct_vs_dep_nubian_rmse": 1.23
+  },
+  "bland_altman": {
+    "systematic_bias": 1.53,
+    "loa_lower": -2.42,
+    "loa_upper": 5.47,
+    "loa_width": 7.89
+  },
+  "site_regression": {
+    "slope_range": [1.015, 1.332],
+    "bias_range": [-0.01, 2.64],
+    "r2_range": [0.777, 0.919],
+    "best_agreement_site": "Castle Square",
+    "worst_bias_site": "One Greenway"
+  },
+  "calibration": {
+    "equation": "DEP_est = 0.7376 * PA + 0.9596",
+    "post_calibration_bias": 0.0,
+    "post_calibration_rmse": 1.44,
+    "note": "PA data is already ALT-CF3 corrected; Barkjohn would double-correct"
+  },
+  "concentration_dependent_bias": {
+    "low_0_5": 0.6,
+    "moderate_5_10": 1.4,
+    "high_10_15": 2.8,
+    "very_high_15_20": 2.8,
+    "extreme_20_30": 1.6,
+    "note": "Peak bias in health-relevant 10-15 range"
+  },
+  "diurnal_bias": {
+    "daytime_bias": 2.0,
+    "nighttime_bias": 1.1,
+    "peak_hour": 12,
+    "trough_hour": 1
+  },
+  "meteorological_drivers": {
+    "highest_bias_condition": "High temp (85-95F) + moderate humidity (60-70%)",
+    "max_bias_ug_m3": 4.6,
+    "wind_direction_highest_bias": "S/SW",
+    "wind_direction_lowest_bias": "N/NW"
+  },
+  "copollutant_interference": {
+    "co_r": 0.42,
+    "ozone_r": 0.35,
+    "no2_r": 0.13,
+    "so2_r": 0.15
+  },
+  "temporal_stability": {
+    "rolling_7day_r_range": [0.847, 0.969],
+    "sensor_drift": false
+  },
+  "key_findings": [
+    "PA and DEP Chinatown FEM correlate at r=0.94, confirming PA viability for community monitoring",
+    "Systematic positive bias of +1.53 ug/m3, concentration-dependent and diurnally modulated",
+    "Nearly 95% of readings agree within ±5 ug/m3",
+    "Bias peaks in health-relevant 10-15 ug/m3 range (+2.8 ug/m3)",
+    "Daytime bias (~2.0) is 2x nighttime (~1.1)",
+    "No sensor drift detected over 36-day study",
+    "S/SW winds (I-93/South Station) produce highest bias"
+  ],
+  "figures": [
+    "q1_pm25_distributions.png",
+    "q1_pa_by_site.png",
+    "q1_ref_crosscheck.png",
+    "q1_scatter_matrix.png",
+    "q1_bland_altman.png",
+    "q1_calibration.png",
+    "q1_bias_by_concentration.png",
+    "q1_diurnal_bias.png",
+    "q1_daily_timeseries.png",
+    "q1_site_violins.png",
+    "q1_bias_temp_rh_heatmap.png",
+    "q1_wind_direction_bias.png",
+    "q1_landuse_bias.png",
+    "q1_rolling_stability.png",
+    "q1_copollutant_interference.png"
+  ]
+}

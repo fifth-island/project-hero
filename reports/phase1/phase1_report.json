@@ -1,0 +1,199 @@
+{
+  "catalog": [
+    {
+      "filename": "data_HEROS.xlsx",
+      "source": "Project team (Purple Air, Kestrel, Weather Stn, MassDEP FEM)",
+      "status": "present"
+    },
+    {
+      "filename": "Codebook_HEROS.xlsx",
+      "source": "Project team \u2014 data dictionary",
+      "status": "present"
+    },
+    {
+      "filename": "landuse_HEROS.xlsx",
+      "source": "Project team \u2014 MassGIS land-use buffers (25m, 50m)",
+      "status": "present"
+    },
+    {
+      "filename": "EPA AQS hourly pollutants (CO, SO2, NO2, Ozone)",
+      "source": "https://aqs.epa.gov/aqsweb/airdata/download_files.html",
+      "status": "fetched"
+    },
+    {
+      "filename": "EPA AQS PM2.5 FEM (param 88101)",
+      "source": "EPA AQS (site 25-025-0045)",
+      "status": "fetched"
+    }
+  ],
+  "main_data": {
+    "rows": 48123,
+    "cols": 20,
+    "date_min": "2023-07-19 16:40:00",
+    "date_max": "2023-08-23 15:50:00",
+    "sites": [
+      "berkley",
+      "castle",
+      "chin",
+      "dewey",
+      "eliotnorton",
+      "greenway",
+      "lyndenboro",
+      "msh",
+      "oxford",
+      "reggie",
+      "taitung",
+      "tufts"
+    ],
+    "n_sites": 12
+  },
+  "codebook_check": {
+    "codebook_vars": 21,
+    "missing_in_data": [
+      "dep_FEM_nubian_pm10_stp_ug_m3"
+    ],
+    "extra_in_data": []
+  },
+  "landuse": {
+    "rows": 24,
+    "sites": [
+      "Berkeley Garden",
+      "Castle Square",
+      "Chin Park",
+      "Dewey Square",
+      "Eliot Norton Park",
+      "Lyndboro Park",
+      "Mary Soo Hoo Park",
+      "One Greenway",
+      "Oxford Place",
+      "Reggie Wong",
+      "Tai Tung",
+      "Tufts Community Garden"
+    ],
+    "distances": [
+      25,
+      50
+    ]
+  },
+  "imputation": {
+    "strategy": "linear_interp(\u226430min) + spline(30min-2h) + NaN(>2h) + ffill/bfill(reference)",
+    "log_summary": {
+      "pa_mean_pm2_5_atm_b_corr_2": 9,
+      "kes_mean_temp_f": 1,
+      "kes_mean_wbgt_f": 1,
+      "kes_mean_humid_pct": 1,
+      "kes_mean_press_inHg": 1,
+      "kes_mean_heat_f": 1,
+      "kes_mean_dew_f": 1
+    }
+  },
+  "outliers": {
+    "physical_bounds": {
+      "pa_mean_pm2_5_atm_b_corr_2": {
+        "below_bound": 151,
+        "above_bound": 0
+      }
+    },
+    "iqr_flagged": {
+      "pa_mean_pm2_5_atm_b_corr_2": {
+        "n_flagged": 169,
+        "pct": 0.351
+      },
+      "kes_mean_temp_f": {
+        "n_flagged": 186,
+        "pct": 0.387
+      },
+      "kes_mean_wbgt_f": {
+        "n_flagged": 186,
+        "pct": 0.387
+      },
+      "kes_mean_humid_pct": {
+        "n_flagged": 0,
+        "pct": 0.0
+      }
+    },
+    "total_phys_removed": "151",
+    "winsorization": "0.5th/99.5th percentile clip on key sensor variables"
+  },
+  "final_dataset": {
+    "rows": 48123,
+    "cols": 46,
+    "columns": [
+      "site_id",
+      "datetime",
+      "kes_mean_temp_f",
+      "kes_mean_wbgt_f",
+      "kes_mean_humid_pct",
+      "kes_mean_press_inHg",
+      "kes_mean_heat_f",
+      "kes_mean_dew_f",
+      "pa_mean_pm2_5_atm_b_corr_2",
+      "mean_temp_out_f",
+      "mean_out_hum_pct",
+      "mean_dew_pt_f",
+      "mean_wind_speed_mph",
+      "wind_direction_degrees_kr",
+      "mean_heat_index_f",
+      "mean_thw_index_f",
+      "dep_FEM_chinatown_pm2_5_ug_m3",
+      "dep_FEM_nubian_pm2_5_ug_m3",
+      "dep_FEM_nubian_temp_f",
+      "dep_FEM_nubian_humid_pct",
+      "imputed_kes_mean_temp_f",
+      "imputed_kes_mean_wbgt_f",
+      "imputed_kes_mean_humid_pct",
+      "imputed_kes_mean_press_inHg",
+      "imputed_kes_mean_heat_f",
+      "imputed_kes_mean_dew_f",
+      "imputed_pa_mean_pm2_5_atm_b_corr_2",
+      "hour",
+      "day_of_week",
+      "date_only",
+      "is_daytime",
+      "epa_ozone",
+      "epa_so2",
+      "epa_co",
+      "epa_no2",
+      "epa_pm25_fem",
+      "Roads_Area_Percent_25m",
+      "Greenspace_Area_Percent_25m",
+      "Trees_Area_Percent_25m",
+      "Impervious_Area_Percent_25m",
+      "Industrial_Area_Percent_25m",
+      "Roads_Area_Percent_50m",
+      "Greenspace_Area_Percent_50m",
+      "Trees_Area_Percent_50m",
+      "Impervious_Area_Percent_50m",
+      "Industrial_Area_Percent_50m"
+    ],
+    "overall_null_pct": 1.099,
+    "sites": [
+      "berkley",
+      "castle",
+      "chin",
+      "dewey",
+      "eliotnorton",
+      "greenway",
+      "lyndenboro",
+      "msh",
+      "oxford",
+      "reggie",
+      "taitung",
+      "tufts"
+    ]
+  },
+  "site_mapping": {
+    "berkley": "Berkeley Garden",
+    "castle": "Castle Square",
+    "chin": "Chin Park",
+    "dewey": "Dewey Square",
+    "eliotnorton": "Eliot Norton Park",
+    "greenway": "One Greenway",
+    "lyndenboro": "Lyndboro Park",
+    "msh": "Mary Soo Hoo Park",
+    "oxford": "Oxford Place",
+    "reggie": "Reggie Wong",
+    "taitung": "Tai Tung",
+    "tufts": "Tufts Community Garden"
+  }
+}
