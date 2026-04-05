@@ -7,22 +7,33 @@ interface HeaderProps {
 export default function Header({ children }: HeaderProps) {
   const { pathname } = useLocation()
   const isSensors = pathname.startsWith('/sensors')
-  const isAnalytics = pathname === '/analytics'
+  const isAnalytics = pathname.startsWith('/analytics')
 
   const sensorTabs = [
     { to: '/sensors/calibration', label: 'Calibration', full: 'Calibration Fidelity Ledger' },
     { to: '/sensors/temperature', label: 'Temperature Report', full: 'Temperature Sensor Comparison' },
   ]
 
+  const analyticsTabs = [
+    { to: '/analytics/distributions', label: 'Distributions', full: 'Distributions & Cumulative Frequency' },
+    { to: '/analytics/aqi', label: 'AQI & Multi-Pollutants', full: 'AQI & Multi-Pollutant Analysis' },
+    { to: '/analytics/temporal', label: 'Temporal Patterns', full: 'Temporal Exposure Patterns' },
+    { to: '/analytics/clustering', label: 'Site Clustering', full: 'K-Means Site Clustering' },
+  ]
+
+  const hasTabs = isSensors || isAnalytics
+  const tabs = isSensors ? sensorTabs : analyticsTabs
+  const sectionTitle = isSensors ? 'Sensor Validation' : 'Environmental Analytics'
+
   return (
     <>
     <header className="bg-white/80 backdrop-blur-md sticky top-0 z-40 shadow-sm flex justify-between items-center px-10 py-6 w-full">
       <div className="flex items-center gap-8">
-        {isSensors ? (
+        {hasTabs ? (
           <>
-            <h2 className="text-2xl font-[family-name:var(--font-family-headline)] font-black text-red-900 tracking-tighter">Sensor Validation</h2>
+            <h2 className="text-2xl font-[family-name:var(--font-family-headline)] font-black text-red-900 tracking-tighter">{sectionTitle}</h2>
             <nav className="flex gap-6 text-lg font-[family-name:var(--font-family-headline)]">
-              {sensorTabs.map(tab => (
+              {tabs.map(tab => (
                 <Link key={tab.to} to={tab.to}
                   className={pathname === tab.to
                     ? 'text-red-800 border-b-2 border-red-800 pb-1'
@@ -38,17 +49,6 @@ export default function Header({ children }: HeaderProps) {
             <span className="text-xl font-[family-name:var(--font-family-headline)] font-bold text-red-900 italic tracking-tight">
               Chinatown HEROS
             </span>
-            {isAnalytics && (
-              <>
-                <div className="h-6 w-[1px] bg-outline-variant/40 mx-2" />
-                <div className="flex items-center gap-2 px-3 py-1 bg-surface-container-low rounded-full">
-                  <span className="material-symbols-outlined text-sm text-tertiary">calendar_today</span>
-                  <span className="text-xs font-bold text-on-surface-variant tracking-tight uppercase">
-                    July 19 – Aug 23, 2023
-                  </span>
-                </div>
-              </>
-            )}
           </>
         )}
       </div>
@@ -58,17 +58,6 @@ export default function Header({ children }: HeaderProps) {
           <div className="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/20">
             <span className="w-2 h-2 rounded-full bg-tertiary" />
             <span className="text-xs font-bold text-on-surface-variant">NETWORK STATUS: OPTIMAL</span>
-          </div>
-        )}
-        {isAnalytics && (
-          <div className="flex items-center gap-3">
-            <label className="text-[10px] font-bold uppercase tracking-widest text-stone-500">Site Filter:</label>
-            <select className="bg-surface-container-low border-none rounded-lg text-xs font-bold text-primary focus:ring-1 focus:ring-primary py-1 pl-3 pr-8 cursor-pointer">
-              <option>Auntie Kay &amp; Uncle Frank Chin Park</option>
-              <option>Phillips Square</option>
-              <option>Hudson Street</option>
-              <option>Chinatown Gate</option>
-            </select>
           </div>
         )}
         <div className="flex items-center gap-4">
@@ -81,10 +70,10 @@ export default function Header({ children }: HeaderProps) {
         </div>
       </div>
     </header>
-    {isSensors && (
+    {hasTabs && (
       <div className="px-8 mt-4 bg-white/50 backdrop-blur-sm">
         <div className="flex gap-4 border-b border-outline-variant/30">
-          {sensorTabs.map(tab => (
+          {tabs.map(tab => (
             <Link key={tab.to} to={tab.to}
               className={`px-4 py-2 text-sm transition-colors ${
                 pathname === tab.to

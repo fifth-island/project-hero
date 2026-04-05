@@ -1,0 +1,170 @@
+[
+  {
+    "hour": 0,
+    "pm25_weekday": 8.27,
+    "pm25_weekend": 9.48,
+    "wbgt_weekday": 65.21,
+    "wbgt_weekend": 65.49
+  },
+  {
+    "hour": 1,
+    "pm25_weekday": 8.12,
+    "pm25_weekend": 9.56,
+    "wbgt_weekday": 64.92,
+    "wbgt_weekend": 65.28
+  },
+  {
+    "hour": 2,
+    "pm25_weekday": 8.35,
+    "pm25_weekend": 9.54,
+    "wbgt_weekday": 64.66,
+    "wbgt_weekend": 65.21
+  },
+  {
+    "hour": 3,
+    "pm25_weekday": 8.36,
+    "pm25_weekend": 9.7,
+    "wbgt_weekday": 64.54,
+    "wbgt_weekend": 64.81
+  },
+  {
+    "hour": 4,
+    "pm25_weekday": 8.44,
+    "pm25_weekend": 9.86,
+    "wbgt_weekday": 64.33,
+    "wbgt_weekend": 64.28
+  },
+  {
+    "hour": 5,
+    "pm25_weekday": 8.34,
+    "pm25_weekend": 9.41,
+    "wbgt_weekday": 64.27,
+    "wbgt_weekend": 64.02
+  },
+  {
+    "hour": 6,
+    "pm25_weekday": 8.47,
+    "pm25_weekend": 9.67,
+    "wbgt_weekday": 64.27,
+    "wbgt_weekend": 63.89
+  },
+  {
+    "hour": 7,
+    "pm25_weekday": 8.93,
+    "pm25_weekend": 9.76,
+    "wbgt_weekday": 64.61,
+    "wbgt_weekend": 64.44
+  },
+  {
+    "hour": 8,
+    "pm25_weekday": 8.97,
+    "pm25_weekend": 9.82,
+    "wbgt_weekday": 65.2,
+    "wbgt_weekend": 65.34
+  },
+  {
+    "hour": 9,
+    "pm25_weekday": 9.15,
+    "pm25_weekend": 9.88,
+    "wbgt_weekday": 65.85,
+    "wbgt_weekend": 65.81
+  },
+  {
+    "hour": 10,
+    "pm25_weekday": 9.56,
+    "pm25_weekend": 10.4,
+    "wbgt_weekday": 66.16,
+    "wbgt_weekend": 66.03
+  },
+  {
+    "hour": 11,
+    "pm25_weekday": 10.25,
+    "pm25_weekend": 10.79,
+    "wbgt_weekday": 66.65,
+    "wbgt_weekend": 66.13
+  },
+  {
+    "hour": 12,
+    "pm25_weekday": 10.38,
+    "pm25_weekend": 11.19,
+    "wbgt_weekday": 66.92,
+    "wbgt_weekend": 66.2
+  },
+  {
+    "hour": 13,
+    "pm25_weekday": 10.56,
+    "pm25_weekend": 10.61,
+    "wbgt_weekday": 67.37,
+    "wbgt_weekend": 66.22
+  },
+  {
+    "hour": 14,
+    "pm25_weekday": 10.55,
+    "pm25_weekend": 9.9,
+    "wbgt_weekday": 67.46,
+    "wbgt_weekend": 66.48
+  },
+  {
+    "hour": 15,
+    "pm25_weekday": 10.61,
+    "pm25_weekend": 10.05,
+    "wbgt_weekday": 67.41,
+    "wbgt_weekend": 66.68
+  },
+  {
+    "hour": 16,
+    "pm25_weekday": 10.54,
+    "pm25_weekend": 10.24,
+    "wbgt_weekday": 67.47,
+    "wbgt_weekend": 66.42
+  },
+  {
+    "hour": 17,
+    "pm25_weekday": 10.12,
+    "pm25_weekend": 10.26,
+    "wbgt_weekday": 67.54,
+    "wbgt_weekend": 66.57
+  },
+  {
+    "hour": 18,
+    "pm25_weekday": 9.54,
+    "pm25_weekend": 10.28,
+    "wbgt_weekday": 67.48,
+    "wbgt_weekend": 66.63
+  },
+  {
+    "hour": 19,
+    "pm25_weekday": 9.72,
+    "pm25_weekend": 10.51,
+    "wbgt_weekday": 66.93,
+    "wbgt_weekend": 66.44
+  },
+  {
+    "hour": 20,
+    "pm25_weekday": 9.48,
+    "pm25_weekend": 10.02,
+    "wbgt_weekday": 66.61,
+    "wbgt_weekend": 66.62
+  },
+  {
+    "hour": 21,
+    "pm25_weekday": 9.3,
+    "pm25_weekend": 9.77,
+    "wbgt_weekday": 66.39,
+    "wbgt_weekend": 66.18
+  },
+  {
+    "hour": 22,
+    "pm25_weekday": 8.98,
+    "pm25_weekend": 9.83,
+    "wbgt_weekday": 66.19,
+    "wbgt_weekend": 65.03
+  },
+  {
+    "hour": 23,
+    "pm25_weekday": 8.68,
+    "pm25_weekend": 9.38,
+    "wbgt_weekday": 66.01,
+    "wbgt_weekend": 64.5
+  }
+]

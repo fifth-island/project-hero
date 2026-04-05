@@ -1,0 +1,71 @@
+[
+  {
+    "cluster": 0,
+    "cluster_name": "Urban Heat Island",
+    "cluster_color": "#DAA520",
+    "cluster_emoji": "\ud83d\udfe1",
+    "pm25": 8.17,
+    "temp": 75.31,
+    "wbgt": 66.76,
+    "humidity": 66.81,
+    "pm25_norm": 0.0,
+    "temp_norm": 1.0,
+    "wbgt_norm": 1.0,
+    "humidity_norm": 1.0,
+    "pca1": 1.992,
+    "pca2": 2.613,
+    "n_sites": 1,
+    "sites": [
+      "Castle Square"
+    ]
+  },
+  {
+    "cluster": 1,
+    "cluster_name": "High Pollution + Humid",
+    "cluster_color": "#C62828",
+    "cluster_emoji": "\ud83d\udd34",
+    "pm25": 9.97,
+    "temp": 74.39,
+    "wbgt": 65.9,
+    "humidity": 66.34,
+    "pm25_norm": 1.0,
+    "temp_norm": 0.0,
+    "wbgt_norm": 0.344,
+    "humidity_norm": 0.816,
+    "pca1": -0.644,
+    "pca2": 0.235,
+    "n_sites": 8,
+    "sites": [
+      "Berkeley Garden",
+      "Chin Park",
+      "Dewey Square",
+      "Eliot Norton",
+      "One Greenway",
+      "Lyndboro Park",
+      "Tai Tung Park",
+      "Tufts Garden"
+    ]
+  },
+  {
+    "cluster": 2,
+    "cluster_name": "Cleaner & Drier",
+    "cluster_color": "#2E7D32",
+    "cluster_emoji": "\ud83d\udfe2",
+    "pm25": 8.45,
+    "temp": 74.51,
+    "wbgt": 65.45,
+    "humidity": 64.25,
+    "pm25_norm": 0.153,
+    "temp_norm": 0.134,
+    "wbgt_norm": 0.0,
+    "humidity_norm": 0.0,
+    "pca1": 1.053,
+    "pca2": -1.498,
+    "n_sites": 3,
+    "sites": [
+      "Mary Soo Hoo",
+      "Oxford Plaza",
+      "Reggie Wong"
+    ]
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "hour": 0,
+    "pm25_mean": 8.61,
+    "pm25_std": 4.96,
+    "wbgt_mean": 65.29,
+    "wbgt_std": 4.38
+  },
+  {
+    "hour": 1,
+    "pm25_mean": 8.53,
+    "pm25_std": 4.87,
+    "wbgt_mean": 65.02,
+    "wbgt_std": 4.46
+  },
+  {
+    "hour": 2,
+    "pm25_mean": 8.69,
+    "pm25_std": 4.88,
+    "wbgt_mean": 64.82,
+    "wbgt_std": 4.58
+  },
+  {
+    "hour": 3,
+    "pm25_mean": 8.75,
+    "pm25_std": 4.88,
+    "wbgt_mean": 64.62,
+    "wbgt_std": 4.71
+  },
+  {
+    "hour": 4,
+    "pm25_mean": 8.85,
+    "pm25_std": 4.84,
+    "wbgt_mean": 64.31,
+    "wbgt_std": 4.83
+  },
+  {
+    "hour": 5,
+    "pm25_mean": 8.65,
+    "pm25_std": 4.87,
+    "wbgt_mean": 64.2,
+    "wbgt_std": 4.91
+  },
+  {
+    "hour": 6,
+    "pm25_mean": 8.82,
+    "pm25_std": 4.75,
+    "wbgt_mean": 64.17,
+    "wbgt_std": 4.97
+  },
+  {
+    "hour": 7,
+    "pm25_mean": 9.17,
+    "pm25_std": 4.78,
+    "wbgt_mean": 64.56,
+    "wbgt_std": 4.96
+  },
+  {
+    "hour": 8,
+    "pm25_mean": 9.22,
+    "pm25_std": 4.85,
+    "wbgt_mean": 65.24,
+    "wbgt_std": 4.88
+  },
+  {
+    "hour": 9,
+    "pm25_mean": 9.36,
+    "pm25_std": 4.99,
+    "wbgt_mean": 65.84,
+    "wbgt_std": 4.85
+  },
+  {
+    "hour": 10,
+    "pm25_mean": 9.81,
+    "pm25_std": 5.26,
+    "wbgt_mean": 66.12,
+    "wbgt_std": 5.05
+  },
+  {
+    "hour": 11,
+    "pm25_mean": 10.41,
+    "pm25_std": 5.64,
+    "wbgt_mean": 66.5,
+    "wbgt_std": 5.05
+  },
+  {
+    "hour": 12,
+    "pm25_mean": 10.62,
+    "pm25_std": 5.89,
+    "wbgt_mean": 66.71,
+    "wbgt_std": 5.13
+  },
+  {
+    "hour": 13,
+    "pm25_mean": 10.58,
+    "pm25_std": 5.81,
+    "wbgt_mean": 67.02,
+    "wbgt_std": 5.06
+  },
+  {
+    "hour": 14,
+    "pm25_mean": 10.35,
+    "pm25_std": 5.96,
+    "wbgt_mean": 67.15,
+    "wbgt_std": 4.91
+  },
+  {
+    "hour": 15,
+    "pm25_mean": 10.43,
+    "pm25_std": 5.96,
+    "wbgt_mean": 67.18,
+    "wbgt_std": 4.81
+  },
+  {
+    "hour": 16,
+    "pm25_mean": 10.44,
+    "pm25_std": 5.85,
+    "wbgt_mean": 67.14,
+    "wbgt_std": 4.69
+  },
+  {
+    "hour": 17,
+    "pm25_mean": 10.16,
+    "pm25_std": 5.32,
+    "wbgt_mean": 67.24,
+    "wbgt_std": 4.79
+  },
+  {
+    "hour": 18,
+    "pm25_mean": 9.77,
+    "pm25_std": 5.27,
+    "wbgt_mean": 67.22,
+    "wbgt_std": 4.66
+  },
+  {
+    "hour": 19,
+    "pm25_mean": 9.94,
+    "pm25_std": 5.56,
+    "wbgt_mean": 66.79,
+    "wbgt_std": 4.29
+  },
+  {
+    "hour": 20,
+    "pm25_mean": 9.63,
+    "pm25_std": 5.69,
+    "wbgt_mean": 66.61,
+    "wbgt_std": 4.17
+  },
+  {
+    "hour": 21,
+    "pm25_mean": 9.43,
+    "pm25_std": 5.72,
+    "wbgt_mean": 66.33,
+    "wbgt_std": 4.26
+  },
+  {
+    "hour": 22,
+    "pm25_mean": 9.23,
+    "pm25_std": 5.31,
+    "wbgt_mean": 65.86,
+    "wbgt_std": 4.18
+  },
+  {
+    "hour": 23,
+    "pm25_mean": 8.88,
+    "pm25_std": 5.07,
+    "wbgt_mean": 65.58,
+    "wbgt_std": 4.27
+  }
+]

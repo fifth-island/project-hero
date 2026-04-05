@@ -1,0 +1,51 @@
+[
+  {
+    "day": "Mon",
+    "dow": 0,
+    "pm25_mean": 10.91,
+    "wbgt_mean": 65.63,
+    "is_weekend": false
+  },
+  {
+    "day": "Tue",
+    "dow": 1,
+    "pm25_mean": 7.61,
+    "wbgt_mean": 65.62,
+    "is_weekend": false
+  },
+  {
+    "day": "Wed",
+    "dow": 2,
+    "pm25_mean": 9.08,
+    "wbgt_mean": 63.59,
+    "is_weekend": false
+  },
+  {
+    "day": "Thu",
+    "dow": 3,
+    "pm25_mean": 9.11,
+    "wbgt_mean": 66.41,
+    "is_weekend": false
+  },
+  {
+    "day": "Fri",
+    "dow": 4,
+    "pm25_mean": 9.66,
+    "wbgt_mean": 68.12,
+    "is_weekend": false
+  },
+  {
+    "day": "Sat",
+    "dow": 5,
+    "pm25_mean": 10.48,
+    "wbgt_mean": 66.97,
+    "is_weekend": true
+  },
+  {
+    "day": "Sun",
+    "dow": 6,
+    "pm25_mean": 9.5,
+    "wbgt_mean": 64.22,
+    "is_weekend": true
+  }
+]

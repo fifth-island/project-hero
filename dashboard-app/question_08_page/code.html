@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#ffb3ae",
+                        "on-secondary-container": "#794622",
+                        "surface-container": "#ffecc3",
+                        "tertiary-fixed-dim": "#82d7ba",
+                        "primary": "#6f070f",
+                        "surface-tint": "#a93533",
+                        "secondary": "#87512d",
+                        "primary-fixed": "#ffdad7",
+                        "on-primary-container": "#ffa59e",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#fff2da",
+                        "on-tertiary-container": "#79cdb1",
+                        "secondary-fixed": "#ffdbc8",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#3b2f0b",
+                        "primary-fixed-dim": "#ffb3ae",
+                        "tertiary-fixed": "#9ef3d6",
+                        "secondary-container": "#feb78a",
+                        "on-background": "#241a00",
+                        "surface-variant": "#f6e1ae",
+                        "on-secondary-fixed": "#311300",
+                        "surface": "#fff8f1",
+                        "on-surface-variant": "#58413f",
+                        "surface-bright": "#fff8f1",
+                        "on-secondary-fixed-variant": "#6b3a18",
+                        "inverse-on-surface": "#ffefcf",
+                        "outline-variant": "#dfbfbc",
+                        "primary-container": "#902223",
+                        "on-tertiary-fixed-variant": "#00513f",
+                        "on-surface": "#241a00",
+                        "on-primary-fixed": "#410004",
+                        "tertiary-container": "#005744",
+                        "background": "#fff8f1",
+                        "on-error-container": "#93000a",
+                        "outline": "#8b716f",
+                        "on-tertiary-fixed": "#002118",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#f6e1ae",
+                        "on-primary-fixed-variant": "#891c1e",
+                        "surface-container-high": "#fce6b3",
+                        "surface-dim": "#eed8a6",
+                        "tertiary": "#003e2f",
+                        "secondary-fixed-dim": "#feb78a",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    display: inline-block;
+    line-height: 1
+    }
+.paper-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDZChlH2OArezF_8tfG3SM2FkfNpJxQzODywocRGBZWpcY8TOoCXjz4b9xZTm8ZvGXnkN8RPuzhk3338cyYiJcYKvsdbYR0Gl8j0oOKqbLOYA87OjxFdPbOizfEXkHu9ntz73WDMllmwQ_oLe7ztDE0OUIZXn0IwR7FU_phtRJ7eKOtndCSZg3s_TF86S7I9ptmUgUT9ByD-KrqDoljSB6UdPzSTawVlahf01lQoZqKC_dNwOBTKilRypPyCMFPoYIHK8TmmJObOtGa)
+    }
+.lattice-pattern {
+    background-image: radial-gradient(circle at 2px 2px, rgba(111, 7, 15, 0.05) 1px, transparent 0);
+    background-size: 16px 16px
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:flex flex-col h-screen w-72 left-0 top-0 fixed bg-[#eed8a6] dark:bg-stone-950 z-40 overflow-y-auto">
+<div class="p-8 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-secondary-container/20 rounded-full flex items-center justify-center p-1 border border-primary/10">
+<img alt="Tufts University Logo Seal" class="w-full h-full object-contain opacity-80" data-alt="Traditional circular academic seal with detailed crest in deep red ink on a cream background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeljvX372NXCDsDjo8nzTqyWfwitQ1zIENKIkMbhOwuTlEvVb26sXdErVOYncm2QzfWPa9vo8qevTGj4_ZYbO_ZuzD9EeAvVHRp_CkT9hHqiJ1tMVlohC2eWAjlhTSepQLs2-hYSLue_MaCrpbLQ5GL58l_2C4MPB5OW5I_An5DBb2iWRDqNfVD-XpqMoAspSPOQc5Wb5I7uqU8ifoW-izLGdbsmVdvUiG7IW036kQeTbRLuzF4HTj5el74pyvpFaENMS81ZTFUR2u"/>
+</div>
+<div>
+<h2 class="font-headline italic text-lg text-[#6f070f]">Environmental Research</h2>
+<p class="text-[10px] font-label text-secondary uppercase tracking-widest">Archivist Ledger v1.0</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 mt-4">
+<div class="px-4 mb-4">
+<button class="w-full py-3 px-4 bg-primary text-on-primary font-label text-sm rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-sm">edit_note</span>
+                    New Analysis Manuscript
+                </button>
+</div>
+<ul class="space-y-1">
+<!-- Tabs from JSON -->
+<li><a class="flex items-center px-6 py-3 text-[#87512d] hover:bg-[#f5e6c8] transition-all group font-label text-xs font-medium" href="#"><span class="material-symbols-outlined mr-3 group-hover:translate-x-1 transition-transform" data-icon="analytics">analytics</span>Q1: Distribution Analysis</a></li>
+<li><a class="flex items-center px-6 py-3 text-[#87512d] hover:bg-[#f5e6c8] transition-all group font-label text-xs font-medium" href="#"><span class="material-symbols-outlined mr-3 group-hover:translate-x-1 transition-transform" data-icon="aq">aq</span>Q2: Air Quality Index</a></li>
+<li><a class="flex items-center px-6 py-3 text-[#87512d] hover:bg-[#f5e6c8] transition-all group font-label text-xs font-medium" href="#"><span class="material-symbols-outlined mr-3 group-hover:translate-x-1 transition-transform" data-icon="compare_arrows">compare_arrows</span>Q3: Pollutant Correlation</a></li>
+<li><a class="flex items-center px-6 py-3 text-[#87512d] hover:bg-[#f5e6c8] transition-all group font-label text-xs font-medium" href="#"><span class="material-symbols-outlined mr-3 group-hover:translate-x-1 transition-transform" data-icon="schedule">schedule</span>Q4: Temporal Trends</a></li>
+<li><a class="flex items-center px-6 py-3 text-[#87512d] hover:bg-[#f5e6c8] transition-all group font-label text-xs font-medium" href="#"><span class="material-symbols-outlined mr-3 group-hover:translate-x-1 transition-transform" data-icon="grid_view">grid_view</span>Q5: Geometric Patterns</a></li>
+<li><a class="flex items-center px-6 py-3 text-[#87512d] hover:bg-[#f5e6c8] transition-all group font-label text-xs font-medium" href="#"><span class="material-symbols-outlined mr-3 group-hover:translate-x-1 transition-transform" data-icon="location_city">location_city</span>Q6: Urban Density Impact</a></li>
+<li><a class="flex items-center px-6 py-3 text-[#87512d] hover:bg-[#f5e6c8] transition-all group font-label text-xs font-medium" href="#"><span class="material-symbols-outlined mr-3 group-hover:translate-x-1 transition-transform" data-icon="eco">eco</span>Q7: Seasonal Variations</a></li>
+<li><a class="flex items-center px-6 py-4 bg-[#ffffff]/50 text-[#6f070f] font-bold border-l-4 border-[#6f070f] translate-x-1 transition-all font-label text-xs" href="#"><span class="material-symbols-outlined mr-3" data-icon="receipt_long">receipt_long</span>Q8: Comparative Research</a></li>
+<li><a class="flex items-center px-6 py-3 text-[#87512d] hover:bg-[#f5e6c8] transition-all group font-label text-xs font-medium" href="#"><span class="material-symbols-outlined mr-3 group-hover:translate-x-1 transition-transform" data-icon="inventory">inventory</span>Q9: Final Synthesis</a></li>
+</ul>
+</nav>
+<div class="p-6 border-t border-primary/5">
+<div class="flex items-center justify-around text-[#87512d]">
+<div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="text-[9px] font-label uppercase">Archives</span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-70 hover:opacity-100 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="text-[9px] font-label uppercase">Methodology</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-72 min-h-screen relative pb-20 md:pb-0">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-30 bg-[#eed8a6] text-[#6f070f] flex justify-between items-center w-full px-6 py-4 transition-colors">
+<div class="flex items-center gap-8">
+<h1 class="font-headline font-bold text-2xl tracking-tight text-[#6f070f]">Scholarly Archivist</h1>
+<!-- Internal Tab Navigation -->
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-[#87512d] font-medium text-sm transition-colors hover:text-primary" href="#">Distributions</a>
+<a class="text-[#87512d] font-medium text-sm transition-colors hover:text-primary" href="#">AQI &amp; Multi-Pollutants</a>
+<a class="text-[#6f070f] font-bold text-sm border-b-2 border-[#6f070f]" href="#">Temporal Patterns</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary opacity-60">search</span>
+<input class="bg-[#f5e6c8] border-none rounded-full pl-10 pr-4 py-1.5 text-sm focus:ring-1 focus:ring-primary w-48 transition-all" placeholder="Search manuscripts..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-[#f5e6c8] transition-colors"><span class="material-symbols-outlined" data-icon="account_balance">account_balance</span></button>
+<button class="p-2 rounded-full hover:bg-[#f5e6c8] transition-colors"><span class="material-symbols-outlined" data-icon="settings">settings</span></button>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-primary/20">
+<img alt="Lead Researcher Profile" class="w-full h-full object-cover" data-alt="Portrait of a professional researcher in a modern, light-filled office space, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFUfYR1rYvVaXo4SKnpjZpvz8D5NY7yX7w0hrael9JdzFuQopTvH1dtKmd93OfTdd1JUOUVExfdov6W8O_7oMF5Ilw4jlmhY-hzjDyxD-NvdUS8W9kRyHZf6wdqMCbzA1qJ0PgeCr8nhHHrZk3hmFOqG3JAlprTixPuzVA6waJIxI3NB-5hoiWdY1nxZVTsoOkSkPTqiHIc-0YliPvJIKMK4sv_8KovIrKhYBpGw8blQj7daXewFI_R8yfupXD_V6R_jbUDSrTKVT4"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto space-y-8">
+<!-- Hero Banner: Temporal Exposure Summary -->
+<section class="relative overflow-hidden bg-surface-container rounded-xl p-8 lattice-pattern border border-primary/5">
+<div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-label font-bold tracking-widest uppercase">
+                            Research Insight: Compound Risk
+                        </div>
+<h2 class="font-headline text-4xl text-primary leading-tight">Temporal Exposure Summary</h2>
+<p class="text-secondary max-w-lg leading-relaxed">The temporal dynamics of urban exposure reveal a critical 5-hour offset between peak air pollution and thermal stress.</p>
+<div class="flex flex-wrap gap-6 pt-2">
+<div class="space-y-1">
+<p class="text-xs font-label uppercase text-secondary/60">Compound Window</p>
+<p class="text-xl font-headline italic text-primary">3:00 PM – 6:00 PM</p>
+</div>
+<div class="w-px h-10 bg-primary/10"></div>
+<div class="space-y-1">
+<p class="text-xs font-label uppercase text-secondary/60">Offset Duration</p>
+<p class="text-xl font-headline italic text-primary">5 Hours</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-primary/5 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary" data-icon="air">air</span>
+<span class="text-[10px] font-label font-bold text-secondary">PM2.5</span>
+</div>
+<div class="mt-4">
+<div class="text-xs text-secondary/70">Peak: <span class="text-primary font-bold">12:00</span></div>
+<div class="text-xs text-secondary/70">Trough: <span class="text-primary font-bold">01:00</span></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-primary/5 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary" data-icon="thermostat">thermostat</span>
+<span class="text-[10px] font-label font-bold text-secondary">WBGT</span>
+</div>
+<div class="mt-4">
+<div class="text-xs text-secondary/70">Peak: <span class="text-primary font-bold">17:00</span></div>
+<div class="text-xs text-secondary/70">Trough: <span class="text-primary font-bold">06:00</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Diurnal Cycle Analysis -->
+<section class="space-y-4">
+<div class="flex items-baseline gap-4">
+<h3 class="font-headline text-2xl text-primary">Diurnal Cycle Analysis</h3>
+<div class="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent"></div>
+</div>
+<div class="grid lg:grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/5 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 lattice-pattern opacity-10"></div>
+<div class="flex justify-between mb-8">
+<div>
+<h4 class="font-headline italic text-lg text-secondary">Particulate Concentration (PM2.5)</h4>
+<p class="text-xs font-label text-secondary/60 uppercase">Micrograms per cubic meter (µg/m³)</p>
+</div>
+<div class="text-right">
+<span class="text-xs font-label text-secondary bg-surface-container px-2 py-1 rounded">Daily Avg: 7.2</span>
+</div>
+</div>
+<div class="h-64 flex items-end gap-2 relative">
+<!-- Visualizing a diurnal line chart with SVG/Tailwind -->
+<svg class="w-full h-full" viewbox="0 0 400 200">
+<path d="M0,150 Q100,50 200,100 T400,120" fill="none" stroke="#6f070f" stroke-width="3"></path>
+<circle cx="200" cy="100" fill="#6f070f" r="4"></circle>
+</svg>
+<div class="absolute bottom-4 right-4 bg-white/80 backdrop-blur p-3 rounded border border-primary/10 max-w-[200px]">
+<p class="text-[10px] italic text-primary leading-tight">"Midday peak observed at solar noon, likely driven by photochemical processing and downward mixing from the residual layer."</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/5 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 lattice-pattern opacity-10"></div>
+<div class="flex justify-between mb-8">
+<div>
+<h4 class="font-headline italic text-lg text-secondary">Wet Bulb Globe Temperature (WBGT)</h4>
+<p class="text-xs font-label text-secondary/60 uppercase">Degrees Celsius (°C)</p>
+</div>
+<div class="text-right">
+<span class="text-xs font-label text-secondary bg-surface-container px-2 py-1 rounded">Daily Max: 29.4</span>
+</div>
+</div>
+<div class="h-64 flex items-end gap-2 relative">
+<svg class="w-full h-full" viewbox="0 0 400 200">
+<path d="M0,180 Q100,170 200,120 T400,40" fill="none" stroke="#87512d" stroke-width="3"></path>
+<circle cx="380" cy="50" fill="#87512d" r="4"></circle>
+</svg>
+<div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur p-3 rounded border-primary/10 max-w-[200px]">
+<p class="text-[10px] italic text-secondary leading-tight">"Late afternoon peak reflects cumulative heat storage in urban canyon surfaces and building envelopes."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Temporal Hotspots: Heatmaps -->
+<section class="grid lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-4">
+<div class="flex items-baseline gap-4">
+<h3 class="font-headline text-2xl text-primary">Temporal Hotspots</h3>
+<div class="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent"></div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-primary/5">
+<div class="mb-6 flex justify-between items-center">
+<h4 class="font-headline text-xl text-secondary">Weekly Pollution Cycle (Hour x Day)</h4>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-label text-secondary/60">LOW</span>
+<div class="flex h-3 w-32 rounded-full overflow-hidden">
+<div class="h-full w-1/4 bg-surface-container-low"></div>
+<div class="h-full w-1/4 bg-secondary-container"></div>
+<div class="h-full w-1/4 bg-primary-container"></div>
+<div class="h-full w-1/4 bg-primary"></div>
+</div>
+<span class="text-[10px] font-label text-secondary/60">HIGH</span>
+</div>
+</div>
+<!-- Abstract Heatmap Grid -->
+<div class="grid grid-cols-[auto_1fr] gap-4">
+<div class="flex flex-col justify-between text-[8px] font-label text-secondary/40 h-48 uppercase py-2">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+<div class="grid grid-rows-7 gap-1 h-48">
+<div class="grid grid-cols-24 gap-1"><div class="bg-surface-container-low col-span-24 rounded-sm"></div></div>
+<div class="grid grid-cols-24 gap-1"><div class="bg-surface-container col-span-24 rounded-sm"></div></div>
+<!-- Wednesday Highlighting Spike -->
+<div class="grid grid-cols-24 gap-1">
+<div class="bg-surface-container col-span-15 rounded-sm"></div>
+<div class="bg-primary col-span-3 rounded-sm ring-2 ring-primary ring-offset-2 ring-offset-white relative">
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-32 p-2 bg-primary text-white text-[9px] rounded shadow-lg z-20 font-label leading-tight text-center">
+                                            WILDFIRE EVENT SPIKE<br/>Wed 15:00-17:00
+                                        </div>
+</div>
+<div class="bg-surface-container col-span-6 rounded-sm"></div>
+</div>
+<div class="grid grid-cols-24 gap-1"><div class="bg-surface-container-low col-span-24 rounded-sm"></div></div>
+<div class="grid grid-cols-24 gap-1"><div class="bg-surface-container-low col-span-24 rounded-sm"></div></div>
+<div class="grid grid-cols-24 gap-1"><div class="bg-secondary-container col-span-24 rounded-sm opacity-50"></div></div>
+<div class="grid grid-cols-24 gap-1"><div class="bg-secondary-container col-span-24 rounded-sm opacity-50"></div></div>
+</div>
+<div></div>
+<div class="flex justify-between text-[8px] font-label text-secondary/40 uppercase">
+<span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>23:00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-baseline gap-4">
+<h3 class="font-headline text-2xl text-primary">Baseline Shift</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-primary/5 h-full flex flex-col">
+<h4 class="font-headline text-xl text-secondary mb-2">Weekday vs Weekend</h4>
+<p class="text-sm text-secondary/70 leading-relaxed mb-6">Counterintuitively, weekends exhibit a sustained higher baseline.</p>
+<div class="flex-1 flex flex-col justify-center gap-8">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label uppercase">
+<span>Weekday</span>
+<span class="text-secondary/50">6.8 µg/m³</span>
+</div>
+<div class="h-4 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full w-[60%] bg-secondary-container"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-label uppercase">
+<span class="text-primary font-bold">Weekend</span>
+<span class="text-primary">7.9 µg/m³</span>
+</div>
+<div class="h-4 bg-surface-container rounded-full overflow-hidden border border-primary/20">
+<div class="h-full w-[70%] bg-primary"></div>
+</div>
+</div>
+<div class="mt-4 p-4 bg-primary/5 rounded border border-primary/10 italic text-xs text-primary text-center">
+                                "~1 µg/m³ elevation during weekends suggests reduced weekday scavenging by fresh NO emission plumes."
+                            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Site-Level Temporal Heterogeneity -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="font-headline text-2xl text-primary">Site-Level Temporal Heterogeneity</h3>
+<span class="text-[10px] font-label uppercase bg-secondary/10 text-secondary px-3 py-1 rounded-full">Comparative Small-Multiples</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+<!-- Site 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-xs font-headline font-bold text-primary">Chin Park</span>
+<div class="w-2 h-2 rounded-full bg-error"></div>
+</div>
+<div class="h-12 bg-surface-container-low rounded flex items-center justify-center p-1">
+<div class="w-full h-full bg-gradient-to-r from-surface-container via-primary to-surface-container rounded-sm"></div>
+</div>
+<p class="text-[10px] text-secondary/60 leading-tight">High diurnal variability; extreme midday spikes.</p>
+</div>
+<!-- Site 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-xs font-headline font-bold text-primary">Mary Soo Hoo</span>
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+<div class="h-12 bg-surface-container-low rounded flex items-center justify-center p-1">
+<div class="w-full h-full bg-surface-container rounded-sm border-l-4 border-primary/20"></div>
+</div>
+<p class="text-[10px] text-secondary/60 leading-tight">Temporal stability; shielded by high-rises.</p>
+</div>
+<!-- Repeated for 10 more sites to fulfill 4x3 grid -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center"><span class="text-xs font-headline font-bold text-primary">Hudson St</span><div class="w-2 h-2 rounded-full bg-primary/40"></div></div>
+<div class="h-12 bg-surface-container-low rounded flex items-center justify-center p-1"><div class="w-full h-full bg-gradient-to-r from-surface-container via-secondary to-surface-container rounded-sm"></div></div>
+<p class="text-[10px] text-secondary/60 leading-tight">Commuter-driven peaks at 08:00 and 17:00.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center"><span class="text-xs font-headline font-bold text-primary">Harrison Ave</span><div class="w-2 h-2 rounded-full bg-primary/40"></div></div>
+<div class="h-12 bg-surface-container-low rounded flex items-center justify-center p-1"><div class="w-full h-full bg-gradient-to-r from-primary-container via-surface-container to-primary-container rounded-sm"></div></div>
+<p class="text-[10px] text-secondary/60 leading-tight">Early morning thermal inversion trap.</p>
+</div>
+<!-- Row 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center"><span class="text-xs font-headline font-bold text-primary">Oak St</span><div class="w-2 h-2 rounded-full bg-primary/40"></div></div>
+<div class="h-12 bg-surface-container-low rounded p-1"><div class="w-full h-full bg-surface-container rounded-sm"></div></div>
+<p class="text-[10px] text-secondary/60 leading-tight">Low variability; consistent residential load.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center"><span class="text-xs font-headline font-bold text-primary">Tyler St</span><div class="w-2 h-2 rounded-full bg-primary/40"></div></div>
+<div class="h-12 bg-surface-container-low rounded p-1"><div class="w-full h-full bg-gradient-to-r from-surface-container via-primary-container to-surface-container rounded-sm"></div></div>
+<p class="text-[10px] text-secondary/60 leading-tight">Strong afternoon convection impacts.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center"><span class="text-xs font-headline font-bold text-primary">Beach St</span><div class="w-2 h-2 rounded-full bg-primary/40"></div></div>
+<div class="h-12 bg-surface-container-low rounded p-1"><div class="w-full h-full bg-gradient-to-r from-primary via-surface-container to-primary rounded-sm"></div></div>
+<p class="text-[10px] text-secondary/60 leading-tight">Restaurant-heavy cooking aerosol cycle.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center"><span class="text-xs font-headline font-bold text-primary">Kneeland St</span><div class="w-2 h-2 rounded-full bg-primary/40"></div></div>
+<div class="h-12 bg-surface-container-low rounded p-1"><div class="w-full h-full bg-gradient-to-r from-secondary-container via-surface-container to-secondary-container rounded-sm"></div></div>
+<p class="text-[10px] text-secondary/60 leading-tight">Traffic-dominated evening rush peak.</p>
+</div>
+<!-- Row 3 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center"><span class="text-xs font-headline font-bold text-primary">Marginal Rd</span><div class="w-2 h-2 rounded-full bg-primary/40"></div></div>
+<div class="h-12 bg-surface-container-low rounded p-1"><div class="w-full h-full bg-surface-container-high rounded-sm"></div></div>
+<p class="text-[10px] text-secondary/60 leading-tight">Elevated nocturnal baseline due to highway.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center"><span class="text-xs font-headline font-bold text-primary">Washington St</span><div class="w-2 h-2 rounded-full bg-primary/40"></div></div>
+<div class="h-12 bg-surface-container-low rounded p-1"><div class="w-full h-full bg-gradient-to-r from-surface-container via-primary-container to-surface-container rounded-sm"></div></div>
+<p class="text-[10px] text-secondary/60 leading-tight">Complex interaction with transit corridors.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center"><span class="text-xs font-headline font-bold text-primary">Essex St</span><div class="w-2 h-2 rounded-full bg-primary/40"></div></div>
+<div class="h-12 bg-surface-container-low rounded p-1"><div class="w-full h-full bg-gradient-to-r from-surface-container via-primary to-surface-container rounded-sm"></div></div>
+<p class="text-[10px] text-secondary/60 leading-tight">Highly dynamic commercial loading cycle.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-primary/5 shadow-sm space-y-3">
+<div class="flex justify-between items-center"><span class="text-xs font-headline font-bold text-primary">Albany St</span><div class="w-2 h-2 rounded-full bg-primary/40"></div></div>
+<div class="h-12 bg-surface-container-low rounded p-1"><div class="w-full h-full bg-secondary-container/50 rounded-sm"></div></div>
+<p class="text-[10px] text-secondary/60 leading-tight">Broad daytime plateau with minimal decay.</p>
+</div>
+</div>
+</section>
+<!-- Key Research Findings -->
+<section class="bg-[#eed8a6] rounded-xl p-10 border border-primary/10 shadow-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-2 bg-primary"></div>
+<div class="absolute bottom-[-20px] right-[-20px] opacity-5">
+<span class="material-symbols-outlined text-[160px]" data-icon="inventory">inventory</span>
+</div>
+<h3 class="font-headline text-3xl text-primary mb-8 border-b border-primary/20 pb-4">Key Research Findings: Synthesis</h3>
+<div class="grid md:grid-cols-2 gap-10">
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-headline font-bold">1</div>
+<div class="space-y-1">
+<p class="font-bold text-primary font-headline italic text-lg">Solar Heating Dominance</p>
+<p class="text-secondary text-sm leading-relaxed">WBGT peaks consistently at 17:00, trailing solar noon by 5 hours, driven by the thermal mass of asphalt and masonry.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-headline font-bold">2</div>
+<div class="space-y-1">
+<p class="font-bold text-primary font-headline italic text-lg">Scavenging Mechanisms</p>
+<p class="text-secondary text-sm leading-relaxed">The weekend PM2.5 elevation (+1 µg/m³) indicates that weekday traffic actually scavenges ozone and particulates via NO titration.</p>
+</div>
+</li>
+</ul>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-headline font-bold">3</div>
+<div class="space-y-1">
+<p class="font-bold text-primary font-headline italic text-lg">Wildfire Confounding</p>
+<p class="text-secondary text-sm leading-relaxed">Episodic events, such as the Wednesday wildfire spike, can skew seasonal averages by up to 15% if not temporally isolated.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-headline font-bold">4</div>
+<div class="space-y-1">
+<p class="font-bold text-primary font-headline italic text-lg">Compound Exposure Risks</p>
+<p class="text-secondary text-sm leading-relaxed">The 3:00-6:00 PM window represents a 'perfect storm' where both thermal stress and particulate load are at concurrent local maxima.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="mt-12 flex justify-center">
+<div class="inline-flex items-center gap-3 px-6 py-3 bg-white/50 rounded-full border border-primary/20 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<span class="text-xs font-label font-bold text-primary uppercase tracking-widest">Archival Synthesis Verified • Tufts University</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 bg-[#eed8a6]/80 dark:bg-stone-900/80 backdrop-blur-xl z-50 shadow-[0_-10px_30px_rgba(36,26,0,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#87512d] p-2 active:opacity-80 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Distributions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#87512d] p-2 active:opacity-80 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_sync">cloud_sync</span>
+<span class="font-label text-[10px] uppercase tracking-widest">AQI &amp; Pollutants</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#6f070f] text-white rounded-xl p-2 active:opacity-80 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="timeline">timeline</span>
+<span class="font-label text-[10px] uppercase tracking-widest">Temporal</span>
+</a>
+</nav>
+</body></html>

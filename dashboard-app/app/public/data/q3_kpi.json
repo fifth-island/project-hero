@@ -1,0 +1,13 @@
+{
+  "pm25_naaqs_exceedance_pct": 46.3,
+  "wbgt_heat_risk_pct": 0.0,
+  "pm25_mean": 9.49,
+  "total_observations": 47009,
+  "wbgt_mean": 65.86,
+  "wbgt_max": 77.5,
+  "pm25_median": 8.33,
+  "pm25_p75": 13.43,
+  "pm25_skewness": 0.648,
+  "wbgt_median": 66.2,
+  "wbgt_p75": 68.9
+}

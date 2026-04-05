@@ -1,0 +1,86 @@
+[
+  {
+    "site_name": "Castle Square",
+    "cluster": 0,
+    "cluster_name": "Urban Heat Island",
+    "cluster_color": "#DAA520",
+    "silhouette": 0.0
+  },
+  {
+    "site_name": "Lyndboro Park",
+    "cluster": 1,
+    "cluster_name": "High Pollution + Humid",
+    "cluster_color": "#C62828",
+    "silhouette": 0.509
+  },
+  {
+    "site_name": "Berkeley Garden",
+    "cluster": 1,
+    "cluster_name": "High Pollution + Humid",
+    "cluster_color": "#C62828",
+    "silhouette": 0.465
+  },
+  {
+    "site_name": "Tai Tung Park",
+    "cluster": 1,
+    "cluster_name": "High Pollution + Humid",
+    "cluster_color": "#C62828",
+    "silhouette": 0.444
+  },
+  {
+    "site_name": "One Greenway",
+    "cluster": 1,
+    "cluster_name": "High Pollution + Humid",
+    "cluster_color": "#C62828",
+    "silhouette": 0.431
+  },
+  {
+    "site_name": "Tufts Garden",
+    "cluster": 1,
+    "cluster_name": "High Pollution + Humid",
+    "cluster_color": "#C62828",
+    "silhouette": 0.404
+  },
+  {
+    "site_name": "Dewey Square",
+    "cluster": 1,
+    "cluster_name": "High Pollution + Humid",
+    "cluster_color": "#C62828",
+    "silhouette": 0.368
+  },
+  {
+    "site_name": "Chin Park",
+    "cluster": 1,
+    "cluster_name": "High Pollution + Humid",
+    "cluster_color": "#C62828",
+    "silhouette": 0.176
+  },
+  {
+    "site_name": "Eliot Norton",
+    "cluster": 1,
+    "cluster_name": "High Pollution + Humid",
+    "cluster_color": "#C62828",
+    "silhouette": 0.052
+  },
+  {
+    "site_name": "Oxford Plaza",
+    "cluster": 2,
+    "cluster_name": "Cleaner & Drier",
+    "cluster_color": "#2E7D32",
+    "silhouette": 0.358
+  },
+  {
+    "site_name": "Reggie Wong",
+    "cluster": 2,
+    "cluster_name": "Cleaner & Drier",
+    "cluster_color": "#2E7D32",
+    "silhouette": 0.204
+  },
+  {
+    "site_name": "Mary Soo Hoo",
+    "cluster": 2,
+    "cluster_name": "Cleaner & Drier",
+    "cluster_color": "#2E7D32",
+    "silhouette": 0.061
+  }
+]

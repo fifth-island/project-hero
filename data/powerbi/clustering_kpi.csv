@@ -1,0 +1,2 @@
+n_sites,n_clusters,silhouette_score,pca_variance_pct,pm25_boundary,temp_boundary,pm25_overall_mean,temp_overall_mean,study_period,dataset_rows
+12,3,0.289,82.0,9.2,75.25,9.44,74.5,"Jul 19 – Aug 23, 2023",48123

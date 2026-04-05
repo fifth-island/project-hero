@@ -103,3 +103,31 @@
 .custom-scrollbar::-webkit-scrollbar { width: 4px; }
 .custom-scrollbar::-webkit-scrollbar-track { background: #fff2da; }
 .custom-scrollbar::-webkit-scrollbar-thumb { background: #8b716f; border-radius: 10px; }
+
+/* Leaflet popup theme */
+.chinatown-popup .leaflet-popup-content-wrapper {
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: 1px solid rgba(139, 113, 111, 0.15);
+}
+.chinatown-popup .leaflet-popup-content {
+  margin: 0;
+  line-height: 1.4;
+}
+.chinatown-popup .leaflet-popup-tip {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.chinatown-popup .leaflet-popup-close-button {
+  color: #6f070f;
+  font-size: 18px;
+  width: 28px;
+  height: 28px;
+  top: 4px;
+  right: 4px;
+  z-index: 10;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}

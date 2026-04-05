@@ -1,0 +1,37 @@
+[
+  {
+    "pollutant": "Ozone (8-hr)",
+    "standard": "0.070 ppm",
+    "max_observed": 0.062,
+    "margin_pct": 11,
+    "max_display": "0.062 ppm"
+  },
+  {
+    "pollutant": "SO2 (1-hr)",
+    "standard": "75 ppb",
+    "max_observed": 1.0,
+    "margin_pct": 99,
+    "max_display": "1.0 ppb"
+  },
+  {
+    "pollutant": "CO (8-hr)",
+    "standard": "9 ppm",
+    "max_observed": 1.0,
+    "margin_pct": 89,
+    "max_display": "1.0 ppm"
+  },
+  {
+    "pollutant": "NO2 (1-hr)",
+    "standard": "100 ppb",
+    "max_observed": 49.0,
+    "margin_pct": 51,
+    "max_display": "49.0 ppb"
+  },
+  {
+    "pollutant": "PM2.5 (24-hr)",
+    "standard": "35 \u00b5g/m\u00b3",
+    "max_observed": 22.0,
+    "margin_pct": 37,
+    "max_display": "22.0 \u00b5g/m\u00b3"
+  }
+]

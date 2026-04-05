@@ -1,0 +1,22 @@
+{
+  "pm25_peak_hour": 12,
+  "pm25_peak_val": 10.6,
+  "pm25_trough_hour": 1,
+  "pm25_trough_val": 8.5,
+  "pm25_amplitude": 2.1,
+  "wbgt_peak_hour": 17,
+  "wbgt_peak_val": 67.2,
+  "wbgt_trough_hour": 6,
+  "wbgt_trough_val": 64.2,
+  "wbgt_amplitude": 3.1,
+  "pm25_peak_dow": "Mon",
+  "pm25_peak_dow_val": 10.9,
+  "wbgt_peak_dow": "Fri",
+  "wbgt_peak_dow_val": 68.1,
+  "compound_window": "3:00 PM \u2013 6:00 PM",
+  "offset_hours": 5,
+  "weekday_pm25": 9.3,
+  "weekend_pm25": 10.0,
+  "weekday_wbgt": 66.0,
+  "weekend_wbgt": 65.6
+}

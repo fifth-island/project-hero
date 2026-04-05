@@ -1,0 +1,32 @@
+[
+  {
+    "k": 2,
+    "inertia": 32.0,
+    "silhouette": 0.275
+  },
+  {
+    "k": 3,
+    "inertia": 21.79,
+    "silhouette": 0.289
+  },
+  {
+    "k": 4,
+    "inertia": 14.37,
+    "silhouette": 0.327
+  },
+  {
+    "k": 5,
+    "inertia": 7.7,
+    "silhouette": 0.344
+  },
+  {
+    "k": 6,
+    "inertia": 5.32,
+    "silhouette": 0.311
+  },
+  {
+    "k": 7,
+    "inertia": 3.44,
+    "silhouette": 0.312
+  }
+]

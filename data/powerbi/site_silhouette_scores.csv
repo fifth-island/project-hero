@@ -1,0 +1,13 @@
+site_id,site_name,cluster,cluster_name,cluster_color,silhouette
+lyndenboro,Lyndboro Park,1,🔴 High Pollution + Humid,#C62828,0.509
+berkley,Berkeley Garden,1,🔴 High Pollution + Humid,#C62828,0.465
+taitung,Tai Tung Park,1,🔴 High Pollution + Humid,#C62828,0.444
+greenway,One Greenway,1,🔴 High Pollution + Humid,#C62828,0.431
+tufts,Tufts Garden,1,🔴 High Pollution + Humid,#C62828,0.404
+dewey,Dewey Square,1,🔴 High Pollution + Humid,#C62828,0.368
+oxford,Oxford Plaza,2,🟢 Cleaner & Drier,#2E7D32,0.358
+reggie,Reggie Wong,2,🟢 Cleaner & Drier,#2E7D32,0.204
+chin,Chin Park,1,🔴 High Pollution + Humid,#C62828,0.176
+msh,Mary Soo Hoo,2,🟢 Cleaner & Drier,#2E7D32,0.061
+eliotnorton,Eliot Norton,1,🔴 High Pollution + Humid,#C62828,0.052
+castle,Castle Square,0,🟡 Urban Heat Island,#DAA520,0.0

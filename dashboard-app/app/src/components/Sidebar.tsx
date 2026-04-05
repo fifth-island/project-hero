@@ -4,7 +4,7 @@ const IMG_SEAL = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAVJMT2ltJZ
 
 const navItems = [
   { to: '/overview', icon: 'map', label: 'Project Overview' },
-  { to: '/analytics', icon: 'analytics', label: 'Environmental Analytics' },
+  { to: '/analytics/distributions', icon: 'analytics', label: 'Environmental Analytics' },
   { to: '/sensors/calibration', icon: 'precision_manufacturing', label: 'Sensor Validation' },
   { to: '/community', icon: 'diversity_1', label: 'Community Impact' },
 ]
@@ -40,7 +40,9 @@ export default function Sidebar() {
               to={item.to}
               className={({ isActive }) =>
                 `flex items-center gap-3 px-4 py-3 uppercase text-xs font-semibold tracking-widest transition-all ${
-                  isActive || (item.to === '/sensors/calibration' && pathname.startsWith('/sensors/'))
+                  isActive
+                    || (item.to === '/sensors/calibration' && pathname.startsWith('/sensors/'))
+                    || (item.to === '/analytics/distributions' && pathname.startsWith('/analytics/'))
                     ? 'text-red-900 font-bold bg-stone-200/50 rounded-r-full'
                     : 'text-stone-500 hover:bg-stone-200'
                 }`

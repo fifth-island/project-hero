@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chinatown HEROS | Distribution Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#902223",
+                        "tertiary-container": "#005744",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#a93533",
+                        "surface-variant": "#f6e1ae",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#410004",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#58413f",
+                        "inverse-surface": "#3b2f0b",
+                        "on-primary-container": "#ffa59e",
+                        "on-secondary-container": "#794622",
+                        "secondary-container": "#feb78a",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ffb3ae",
+                        "tertiary": "#003e2f",
+                        "outline": "#8b716f",
+                        "surface-container-highest": "#f6e1ae",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fff8f1",
+                        "tertiary-fixed-dim": "#82d7ba",
+                        "surface-container-low": "#fff2da",
+                        "on-tertiary-container": "#79cdb1",
+                        "surface": "#fff8f1",
+                        "surface-container": "#ffecc3",
+                        "on-secondary-fixed-variant": "#6b3a18",
+                        "primary": "#6f070f",
+                        "secondary-fixed-dim": "#feb78a",
+                        "inverse-on-surface": "#ffefcf",
+                        "on-tertiary-fixed": "#002118",
+                        "surface-dim": "#eed8a6",
+                        "on-primary-fixed-variant": "#891c1e",
+                        "primary-fixed-dim": "#ffb3ae",
+                        "tertiary-fixed": "#9ef3d6",
+                        "on-secondary-fixed": "#311300",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#dfbfbc",
+                        "on-surface": "#241a00",
+                        "background": "#fff8f1",
+                        "secondary": "#87512d",
+                        "on-tertiary-fixed-variant": "#00513f",
+                        "surface-container-high": "#fce6b3",
+                        "secondary-fixed": "#ffdbc8",
+                        "primary-fixed": "#ffdad7",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#241a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(255, 248, 241, 0.8);
+            backdrop-filter: blur(16px);
+        }
+        .lattice-pattern {
+            background-image: radial-gradient(#6f070f 0.5px, transparent 0.5px);
+            background-size: 16px 16px;
+            opacity: 0.04;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container">
+<!-- SIDE NAVIGATION BAR -->
+<aside class="h-screen w-72 fixed left-0 top-0 bg-stone-50 dark:bg-stone-950 flex flex-col h-full border-r-0 z-50">
+<div class="p-8">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-12 h-12 bg-secondary-container/30 rounded-full flex items-center justify-center relative overflow-hidden">
+<img class="w-8 h-8 opacity-80 mix-blend-multiply" data-alt="Traditional Tufts University seal with academic crest in a circular format with vintage texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn-KFb9E5XmUzFWiWiJvph2gagK3PXqfrkiZlo_gRgrWsoCr1MqDp0xtOTOkp5tJht6el1vdbPpJuZ0LcUpnKCBsHZypaCRp24QvPRNCrT5WnryGzRQFjYrkPO9eI-6vOv9_eqZ6WWmu3DbVDvFo7da0sqyrCwTsTzEWB0xj8Wjj2vzUhuMYxjzRd1a4zjvX7tvLNsPE_B7XX8aOP1gZ7Wx80xcdMgLkOC1TidRO4_YUBRSuFBKSqjfN-E6DAfjwqRskbEnatzn21H"/>
+</div>
+<div>
+<h1 class="font-serif text-lg text-red-900 dark:text-red-500 leading-none">HEROS Dashboard</h1>
+<p class="font-label text-[10px] uppercase tracking-widest text-stone-500 mt-1">Environmental Research Collaboration</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-serif uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span>Project Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-red-900 dark:text-red-400 font-bold bg-stone-200/50 dark:bg-stone-800/50 rounded-r-full font-serif uppercase text-xs tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Environmental Analytics</span>
+</a>
+<!-- Submenu from JSON -->
+<div class="pl-8 pt-2 pb-4 space-y-2 border-l border-outline-variant/30 ml-6">
+<a class="block text-[10px] text-red-900 font-bold" href="#">Q3: CDF Plots</a>
+<a class="block text-[10px] text-stone-500 hover:text-primary transition-colors" href="#">Q1: Purple Air vs. FEM</a>
+<a class="block text-[10px] text-stone-500 hover:text-primary transition-colors" href="#">Q2: Temperature Comparisons</a>
+<a class="block text-[10px] text-stone-500 hover:text-primary transition-colors" href="#">Q4: Air Quality Index</a>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-serif uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span>Sensor Validation</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-serif uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="diversity_1">diversity_1</span>
+<span>Community Impact</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-200 transition-all font-serif uppercase text-xs font-semibold tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Research Questions</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-8 border-t border-stone-200/50">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-opacity mb-6">
+                Download Data
+            </button>
+<div class="space-y-4">
+<a class="flex items-center gap-3 text-stone-500 text-xs font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 text-stone-500 text-xs font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="ml-72 min-h-screen p-10 bg-surface">
+<!-- Header Section -->
+<header class="mb-12 flex justify-between items-end">
+<div>
+<nav class="flex gap-2 text-[10px] font-label font-bold uppercase tracking-tighter text-stone-400 mb-2">
+<span>Research</span>
+<span class="text-stone-300">/</span>
+<span>Distributions</span>
+<span class="text-stone-300">/</span>
+<span class="text-primary">CDF Analysis</span>
+</nav>
+<h2 class="text-4xl font-headline font-bold text-primary tracking-tight italic">Distributions &amp; Cumulative Frequency</h2>
+<p class="text-secondary font-body mt-2 max-w-2xl">Analysis of PM2.5 and WBGT thresholds across 12 study sites in Boston Chinatown, quantifying public health risk exposure.</p>
+</div>
+<div class="flex gap-3">
+<div class="px-4 py-2 bg-surface-container rounded-lg border border-outline-variant/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="calendar_today">calendar_today</span>
+<span class="text-xs font-bold font-label uppercase tracking-widest">Aug - Sep 2023</span>
+</div>
+</div>
+</header>
+<!-- KPI Grid -->
+<section class="grid grid-cols-4 gap-6 mb-12">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 lattice-pattern"></div>
+<p class="text-[10px] font-label uppercase tracking-widest text-stone-500 font-bold mb-4">PM2.5 NAAQS Exceedance</p>
+<div class="flex items-baseline gap-2">
+<h3 class="text-4xl font-headline font-extrabold text-primary">46.3%</h3>
+<span class="material-symbols-outlined text-error text-xl" data-icon="trending_up">trending_up</span>
+</div>
+<p class="text-[10px] text-stone-400 mt-2 font-body italic">Percentage of readings &gt; 9.0 µg/m³</p>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 lattice-pattern"></div>
+<p class="text-[10px] font-label uppercase tracking-widest text-stone-500 font-bold mb-4">WBGT Heat Risk</p>
+<div class="flex items-baseline gap-2">
+<h3 class="text-4xl font-headline font-extrabold text-tertiary">0.0%</h3>
+<span class="material-symbols-outlined text-tertiary text-xl" data-icon="check_circle">check_circle</span>
+</div>
+<p class="text-[10px] text-stone-400 mt-2 font-body italic">Observations exceeding OSHA caution</p>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 lattice-pattern"></div>
+<p class="text-[10px] font-label uppercase tracking-widest text-stone-500 font-bold mb-4">PM2.5 Mean Density</p>
+<div class="flex items-baseline gap-2">
+<h3 class="text-4xl font-headline font-extrabold text-on-surface">9.49</h3>
+<span class="text-xs font-label text-stone-500">µg/m³</span>
+</div>
+<p class="text-[10px] text-stone-400 mt-2 font-body italic">Average across all sensor nodes</p>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 lattice-pattern"></div>
+<p class="text-[10px] font-label uppercase tracking-widest text-stone-500 font-bold mb-4">Total Observations</p>
+<div class="flex items-baseline gap-2">
+<h3 class="text-4xl font-headline font-extrabold text-on-surface">47,009</h3>
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="database">database</span>
+</div>
+<p class="text-[10px] text-stone-400 mt-2 font-body italic">Validated 5-minute data packets</p>
+</div>
+</section>
+<!-- CDF Analysis Section -->
+<section class="grid grid-cols-2 gap-8 mb-12">
+<!-- PM2.5 CDF -->
+<div class="bg-surface-container p-8 rounded-lg">
+<div class="flex justify-between items-center mb-8">
+<h4 class="font-headline text-xl font-bold italic text-primary">Cumulative Distribution: PM2.5</h4>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+<span class="text-[10px] font-label font-bold uppercase tracking-tighter">Aggregate Data</span>
+</div>
+</div>
+<div class="aspect-video bg-surface-container-lowest rounded border-b border-l border-outline-variant/30 relative flex items-end p-6">
+<!-- Placeholder for the CDF curve using SVG for scholarly look -->
+<svg class="w-full h-full overflow-visible" viewbox="0 0 400 200">
+<!-- Grid lines -->
+<line class="text-stone-100" stroke="currentColor" stroke-width="1" x1="0" x2="400" y1="0" y2="0"></line>
+<line class="text-stone-100" stroke="currentColor" stroke-width="1" x1="0" x2="400" y1="100" y2="100"></line>
+<!-- Threshold Line -->
+<line stroke="#6f070f" stroke-dasharray="4" stroke-width="1.5" x1="180" x2="180" y1="0" y2="200"></line>
+<text class="text-[8px] font-label fill-primary font-bold" x="185" y="20">9.0 µg/m³ THRESHOLD</text>
+<!-- Curve -->
+<path d="M 0 200 Q 150 190 200 100 T 400 0" fill="none" stroke="#6f070f" stroke-width="3"></path>
+</svg>
+</div>
+<div class="mt-4 flex justify-between text-[10px] font-label uppercase tracking-widest text-stone-500 font-bold">
+<span>0 µg/m³</span>
+<span>15 µg/m³</span>
+<span>30 µg/m³</span>
+</div>
+<p class="mt-6 text-xs text-stone-600 leading-relaxed">
+                    The curve illustrates that <strong class="text-primary">46.3% of all observations</strong> lie above the 9.0 µg/m³ mark. 
+                    Variance is highest during morning transit peaks (07:00-09:00).
+                </p>
+</div>
+<!-- WBGT CDF -->
+<div class="bg-surface-container p-8 rounded-lg">
+<div class="flex justify-between items-center mb-8">
+<h4 class="font-headline text-xl font-bold italic text-secondary">Cumulative Distribution: WBGT</h4>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-secondary rounded-full"></span>
+<span class="text-[10px] font-label font-bold uppercase tracking-tighter">Heat Risk Metric</span>
+</div>
+</div>
+<div class="aspect-video bg-surface-container-lowest rounded border-b border-l border-outline-variant/30 relative flex items-end p-6">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 400 200">
+<!-- Grid lines -->
+<line class="text-stone-100" stroke="currentColor" stroke-width="1" x1="0" x2="400" y1="100" y2="100"></line>
+<!-- Threshold Line (OSHA 80F Caution) -->
+<line stroke="#87512d" stroke-dasharray="4" stroke-width="1.5" x1="320" x2="320" y1="0" y2="200"></line>
+<text class="text-[8px] font-label fill-secondary font-bold" x="325" y="20">80°F OSHA CAUTION</text>
+<!-- Curve -->
+<path d="M 0 200 Q 200 198 300 180 T 400 150" fill="none" stroke="#87512d" stroke-width="3"></path>
+</svg>
+</div>
+<div class="mt-4 flex justify-between text-[10px] font-label uppercase tracking-widest text-stone-500 font-bold">
+<span>60 °F</span>
+<span>70 °F</span>
+<span>80 °F</span>
+<span>90 °F</span>
+</div>
+<p class="mt-6 text-xs text-stone-600 leading-relaxed">
+                    Observations remain well below OSHA risk categories. Max WBGT recorded was <strong class="text-secondary">79.2°F</strong>. 
+                    Thermal comfort is maintained by prevailing coastal winds during this cycle.
+                </p>
+</div>
+</section>
+<!-- Day vs Night & Site Variability -->
+<div class="grid grid-cols-12 gap-8 mb-12">
+<!-- Day vs Night Distribution -->
+<div class="col-span-4 bg-surface-container-low p-8 relative">
+<h4 class="font-headline text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="contrast">contrast</span>
+                    Temporal Variance
+                </h4>
+<div class="space-y-6">
+<div class="p-4 bg-surface-container-lowest border-l-4 border-primary">
+<p class="text-[10px] font-label uppercase tracking-widest text-stone-500 font-bold mb-1">Kolmogorov-Smirnov Test</p>
+<h5 class="text-2xl font-headline font-bold">D = 0.42</h5>
+<p class="text-[10px] text-stone-400 italic font-body mt-1">Significant difference between Day/Night distributions (p &lt; 0.001)</p>
+</div>
+<div class="relative h-24 flex items-center justify-center">
+<img class="w-full h-full object-cover opacity-20 grayscale" data-alt="Abstract visualization of day and night overlapping in deep blue and warm orange tones with soft grainy texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMaLvODnxN_q5T3dDL1eDIrdVa3XY59b2dZ9NmvGLSbwfimI31oD7OQh8zR1nLR9QBxempcmjxbO2c5qKrLXcFMyjkXILoRgRwG0c6716ilk3bKe6O5lwG4Jiq96NXuJLAQafiEA7sRBCaHvW44h3fGIbmw9nAzIYaq1hRB5T50MSomf2I1YsF9oAUMmDXA7ucx4BHE6XE7m34lHO3SAIEli3Av3ehGpIB_t-tDmf6yeN8N9iYSOxIAFCrIHh0aPr1PG4iy2hRv-uG"/>
+<div class="absolute inset-0 flex items-center justify-around px-4">
+<div class="text-center">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="light_mode">light_mode</span>
+<p class="text-[10px] font-bold mt-1">DAY</p>
+</div>
+<div class="w-px h-12 bg-outline-variant/30"></div>
+<div class="text-center">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="dark_mode">dark_mode</span>
+<p class="text-[10px] font-bold mt-1">NIGHT</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Site Variability Table -->
+<div class="col-span-8 bg-surface-container-low p-8">
+<div class="flex justify-between items-end mb-6">
+<h4 class="font-headline text-lg font-bold">Site Variability Index (SVI)</h4>
+<span class="text-[10px] font-label font-bold text-stone-400">12 MONITORING SITES</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-[10px] font-label uppercase tracking-widest text-stone-500 border-b border-outline-variant/30">
+<th class="pb-3 font-bold">Sensor ID</th>
+<th class="pb-3 font-bold">Location Context</th>
+<th class="pb-3 font-bold">PM2.5 P90</th>
+<th class="pb-3 font-bold">Exceedance %</th>
+<th class="pb-3 font-bold">Status</th>
+</tr>
+</thead>
+<tbody class="text-xs">
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 font-bold text-primary">S-001</td>
+<td class="py-3 text-stone-600">Washington St / Beach St</td>
+<td class="py-3 font-bold">14.2 µg/m³</td>
+<td class="py-3">52.1%</td>
+<td class="py-3"><span class="px-2 py-0.5 bg-error-container text-on-error-container rounded-full text-[9px] font-bold">CRITICAL</span></td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 font-bold text-primary">S-005</td>
+<td class="py-3 text-stone-600">Kneeland St Corridor</td>
+<td class="py-3 font-bold">12.8 µg/m³</td>
+<td class="py-3">48.3%</td>
+<td class="py-3"><span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-full text-[9px] font-bold">HIGH</span></td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 font-bold text-primary">S-009</td>
+<td class="py-3 text-stone-600">Tai Tung Village</td>
+<td class="py-3 font-bold">9.1 µg/m³</td>
+<td class="py-3">39.8%</td>
+<td class="py-3"><span class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant rounded-full text-[9px] font-bold">MODERATE</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-3 font-bold text-primary">S-012</td>
+<td class="py-3 text-stone-600">Hudson St Park</td>
+<td class="py-3 font-bold">7.4 µg/m³</td>
+<td class="py-3">22.4%</td>
+<td class="py-3"><span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-[9px] font-bold">STABLE</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Research Insight Callout -->
+<footer class="bg-primary-container text-on-primary rounded-xl p-10 relative overflow-hidden flex items-center gap-12">
+<div class="absolute top-0 right-0 w-64 h-full lattice-pattern opacity-10"></div>
+<div class="shrink-0">
+<div class="w-20 h-20 border-2 border-on-primary-container rounded-full flex items-center justify-center p-2">
+<div class="w-full h-full bg-on-primary rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline text-3xl font-bold italic mb-4">Core Research Finding</h3>
+<p class="text-xl font-body leading-relaxed max-w-4xl opacity-90">
+                    The distribution analysis confirms a critical environmental injustice: <strong class="text-white">nearly half (46.3%)</strong> of all PM2.5 readings in the Chinatown study area exceed the EPA’s annual NAAQS health threshold of 9.0 µg/m³. This represents a persistent exposure level that significantly outpaces regional Boston averages.
+                </p>
+<div class="mt-8 flex gap-6 items-center">
+<button class="bg-on-primary text-primary px-6 py-2 rounded-lg font-label text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform">
+                        Read Full Manuscript
+                    </button>
+<div class="flex -space-x-2">
+<img class="w-10 h-10 rounded-full border-2 border-primary-container" data-alt="Portrait of an academic researcher looking professional and focused" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwcU_zHWCGBKsyqXYDb6_YA7YN3aLgZht-C5_Lfa-nj_fMCHAArBYrm_k6I1U8VsPvzr5hMPacYvxIgQFdQ7JrxG8gLVGqx6ilNkdFDGq2199OQhCbxHRS69zAsdJCQ-wBc-OJomu6IoiYdChkn7WUGqyxeQ8kiWhw06uMgBPrm8iz5F-TCjTJCX3nd-0hngmnnAnh1bX9KNYIiXYViO-5wmnYcvQuO0MzS9eDw2r3DNCl4QC14i5UyF70kPmD3O56z0l_sce-C074"/>
+<img class="w-10 h-10 rounded-full border-2 border-primary-container" data-alt="Portrait of a female scientist in a research setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANfTQLZ9KTeOoFsk6snEUHVVElFqSiXdT3FUqqHbhPxEND2zrCHTjRUZsZZEBh3_VJrwA9zluPJ6Zgc0COPnBUH2fAMRLo1xbefgu4A7bX_OF25lVRd_zwIL5HQEmwv5fNWcgKgmYhCq2upuVM6PtLsGHKSbQr15zOJbpoUBL_yn9BAJ-BaEdtOLJbGHxy7otIqFk4UTgqikASrz0hbTCBeheTPeCkop65xbbUdxE--wCCtpl_uwijq1CG9tQCuv674uOJYw5WAqKd"/>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-surface-container flex items-center justify-center text-[10px] font-bold text-primary">+8</div>
+</div>
+<span class="text-xs font-label opacity-70 italic font-medium">Verified by Tufts Faculty Board</span>
+</div>
+</div>
+</footer>
+</main>
+<!-- Contextual Map Legend (Floating Glassmorphic) -->
+<div class="fixed bottom-8 left-80 glass-panel border border-white/20 p-4 rounded-xl shadow-xl z-40 max-w-xs">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="legend_toggle">legend_toggle</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest">Statistical Confidence</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-[10px]">
+<span class="text-stone-500">Confidence Interval (95%)</span>
+<span class="font-bold">±0.4 µg/m³</span>
+</div>
+<div class="w-full bg-stone-200 h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary w-full h-full"></div>
+</div>
+<p class="text-[9px] text-stone-400 leading-tight italic mt-2">Data sourced from 12 PurpleAir sensors cross-validated with FEM monitoring stations.</p>
+</div>
+</div>
+</body></html>

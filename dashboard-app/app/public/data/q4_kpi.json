@@ -1,0 +1,8 @@
+{
+  "days_good_aqi_pct": 81.0,
+  "mean_daily_aqi": 36.4,
+  "max_daily_aqi": 58.5,
+  "dominant_pollutant": "Ozone",
+  "dominant_pollutant_pct": 97,
+  "total_days": 36
+}

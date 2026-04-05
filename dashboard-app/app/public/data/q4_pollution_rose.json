@@ -1,0 +1,162 @@
+[
+  {
+    "direction": "N",
+    "count": 755,
+    "no2_mean": 5.678,
+    "ozone_mean": 0.028,
+    "so2_mean": 0.265,
+    "co_mean": 0.258,
+    "pm25_mean": 8.117,
+    "wind_speed_mean": 2.27
+  },
+  {
+    "direction": "NNE",
+    "count": 558,
+    "no2_mean": 4.603,
+    "ozone_mean": 0.03,
+    "so2_mean": 0.269,
+    "co_mean": 0.252,
+    "pm25_mean": 8.938,
+    "wind_speed_mean": 1.841
+  },
+  {
+    "direction": "NE",
+    "count": 508,
+    "no2_mean": 6.142,
+    "ozone_mean": 0.035,
+    "so2_mean": 0.269,
+    "co_mean": 0.277,
+    "pm25_mean": 8.899,
+    "wind_speed_mean": 1.928
+  },
+  {
+    "direction": "ENE",
+    "count": 1143,
+    "no2_mean": 7.854,
+    "ozone_mean": 0.032,
+    "so2_mean": 0.301,
+    "co_mean": 0.277,
+    "pm25_mean": 6.956,
+    "wind_speed_mean": 2.389
+  },
+  {
+    "direction": "E",
+    "count": 3599,
+    "no2_mean": 8.188,
+    "ozone_mean": 0.03,
+    "so2_mean": 0.299,
+    "co_mean": 0.281,
+    "pm25_mean": 7.164,
+    "wind_speed_mean": 2.727
+  },
+  {
+    "direction": "ESE",
+    "count": 5231,
+    "no2_mean": 7.774,
+    "ozone_mean": 0.031,
+    "so2_mean": 0.29,
+    "co_mean": 0.275,
+    "pm25_mean": 7.291,
+    "wind_speed_mean": 2.885
+  },
+  {
+    "direction": "SE",
+    "count": 3434,
+    "no2_mean": 5.613,
+    "ozone_mean": 0.033,
+    "so2_mean": 0.275,
+    "co_mean": 0.27,
+    "pm25_mean": 8.504,
+    "wind_speed_mean": 1.884
+  },
+  {
+    "direction": "SSE",
+    "count": 1821,
+    "no2_mean": 5.112,
+    "ozone_mean": 0.034,
+    "so2_mean": 0.274,
+    "co_mean": 0.276,
+    "pm25_mean": 8.668,
+    "wind_speed_mean": 1.778
+  },
+  {
+    "direction": "S",
+    "count": 2903,
+    "no2_mean": 4.859,
+    "ozone_mean": 0.036,
+    "so2_mean": 0.267,
+    "co_mean": 0.273,
+    "pm25_mean": 8.599,
+    "wind_speed_mean": 2.318
+  },
+  {
+    "direction": "SSW",
+    "count": 6504,
+    "no2_mean": 4.631,
+    "ozone_mean": 0.038,
+    "so2_mean": 0.28,
+    "co_mean": 0.258,
+    "pm25_mean": 8.153,
+    "wind_speed_mean": 3.447
+  },
+  {
+    "direction": "SW",
+    "count": 2531,
+    "no2_mean": 5.019,
+    "ozone_mean": 0.036,
+    "so2_mean": 0.269,
+    "co_mean": 0.26,
+    "pm25_mean": 8.424,
+    "wind_speed_mean": 3.437
+  },
+  {
+    "direction": "WSW",
+    "count": 920,
+    "no2_mean": 7.425,
+    "ozone_mean": 0.032,
+    "so2_mean": 0.3,
+    "co_mean": 0.302,
+    "pm25_mean": 7.809,
+    "wind_speed_mean": 2.182
+  },
+  {
+    "direction": "W",
+    "count": 1089,
+    "no2_mean": 5.644,
+    "ozone_mean": 0.03,
+    "so2_mean": 0.271,
+    "co_mean": 0.274,
+    "pm25_mean": 8.719,
+    "wind_speed_mean": 2.07
+  },
+  {
+    "direction": "WNW",
+    "count": 1465,
+    "no2_mean": 5.34,
+    "ozone_mean": 0.028,
+    "so2_mean": 0.271,
+    "co_mean": 0.266,
+    "pm25_mean": 8.259,
+    "wind_speed_mean": 2.342
+  },
+  {
+    "direction": "NW",
+    "count": 9812,
+    "no2_mean": 5.006,
+    "ozone_mean": 0.028,
+    "so2_mean": 0.27,
+    "co_mean": 0.248,
+    "pm25_mean": 7.928,
+    "wind_speed_mean": 3.27
+  },
+  {
+    "direction": "NNW",
+    "count": 5850,
+    "no2_mean": 4.415,
+    "ozone_mean": 0.029,
+    "so2_mean": 0.255,
+    "co_mean": 0.237,
+    "pm25_mean": 7.328,
+    "wind_speed_mean": 2.822
+  }
+]

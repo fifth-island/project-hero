@@ -1,0 +1,13 @@
+site_id,pm25_mean,temp_mean,wbgt_mean,humid_mean,pm25_std,n_obs,site_name,cluster,pca1,pca2,cluster_name,cluster_color,cluster_emoji,lat,lon,silhouette
+berkley,9.53,74.41,66.1,67.18,4.94,2445,Berkeley Garden,1,-0.577,0.916,🔴 High Pollution + Humid,#C62828,🔴,42.34483,-71.06857,0.465
+castle,8.17,75.31,66.76,66.81,5.42,3793,Castle Square,0,1.992,2.613,🟡 Urban Heat Island,#DAA520,🟡,42.344,-71.0663,0.0
+chin,10.49,75.02,66.01,64.28,5.93,2199,Chin Park,1,0.794,0.181,🔴 High Pollution + Humid,#C62828,🔴,42.3512,-71.0595,0.176
+dewey,9.69,74.57,65.92,65.74,5.5,4889,Dewey Square,1,0.026,0.148,🔴 High Pollution + Humid,#C62828,🔴,42.3534,-71.0551,0.368
+eliotnorton,9.29,73.93,65.48,66.09,4.89,3888,Eliot Norton,1,-1.002,-1.101,🔴 High Pollution + Humid,#C62828,🔴,42.3509,-71.0644,0.052
+greenway,10.71,74.5,65.73,65.65,6.04,4893,One Greenway,1,-0.728,-0.212,🔴 High Pollution + Humid,#C62828,🔴,42.35012,-71.06012,0.431
+lyndenboro,10.68,74.37,65.83,66.29,5.69,4786,Lyndboro Park,1,-1.105,0.128,🔴 High Pollution + Humid,#C62828,🔴,42.35001,-71.06614,0.509
+msh,9.07,73.91,65.09,64.67,4.54,4177,Mary Soo Hoo,2,-0.529,-2.445,🟢 Cleaner & Drier,#2E7D32,🟢,42.35129,-71.05997,0.061
+oxford,7.93,74.96,65.6,63.09,3.61,2879,Oxford Plaza,2,2.52,-1.37,🟢 Cleaner & Drier,#2E7D32,🟢,42.35252,-71.06107,0.358
+reggie,8.34,74.67,65.67,65.0,4.98,4126,Reggie Wong,2,1.168,-0.68,🟢 Cleaner & Drier,#2E7D32,🟢,42.3497,-71.0609,0.204
+taitung,9.37,74.34,65.94,66.96,4.98,4839,Tai Tung Park,1,-0.566,0.45,🔴 High Pollution + Humid,#C62828,🔴,42.34901,-71.06192,0.444
+tufts,10.04,73.98,66.21,68.53,5.71,4095,Tufts Garden,1,-1.993,1.372,🔴 High Pollution + Humid,#C62828,🔴,42.3474,-71.0656,0.404

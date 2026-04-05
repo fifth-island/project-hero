@@ -1,0 +1,37 @@
+[
+  {
+    "pollutant": "NO\u2082",
+    "weekday_peak": 9.0,
+    "weekend_peak": 8.0,
+    "pct_difference": 400,
+    "unit": "ppb"
+  },
+  {
+    "pollutant": "PM2.5",
+    "weekday_peak": 8.0,
+    "weekend_peak": 8.7,
+    "pct_difference": 71,
+    "unit": "\u00b5g/m\u00b3"
+  },
+  {
+    "pollutant": "SO\u2082",
+    "weekday_peak": 0.3,
+    "weekend_peak": 0.3,
+    "pct_difference": 50,
+    "unit": "ppb"
+  },
+  {
+    "pollutant": "Ozone",
+    "weekday_peak": 0.042,
+    "weekend_peak": 0.046,
+    "pct_difference": 35,
+    "unit": "ppm"
+  },
+  {
+    "pollutant": "CO",
+    "weekday_peak": 0.288,
+    "weekend_peak": 0.3,
+    "pct_difference": 24,
+    "unit": "ppm"
+  }
+]

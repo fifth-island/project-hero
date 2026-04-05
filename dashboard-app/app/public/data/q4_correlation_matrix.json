@@ -1,0 +1,247 @@
+[
+  {
+    "row": "CO",
+    "col": "CO",
+    "value": 1.0
+  },
+  {
+    "row": "CO",
+    "col": "NO2",
+    "value": 0.68
+  },
+  {
+    "row": "CO",
+    "col": "Ozone",
+    "value": 0.01
+  },
+  {
+    "row": "CO",
+    "col": "SO2",
+    "value": 0.43
+  },
+  {
+    "row": "CO",
+    "col": "PM2.5",
+    "value": 0.53
+  },
+  {
+    "row": "CO",
+    "col": "Temp",
+    "value": 0.19
+  },
+  {
+    "row": "CO",
+    "col": "RH",
+    "value": 0.05
+  },
+  {
+    "row": "NO2",
+    "col": "CO",
+    "value": 0.68
+  },
+  {
+    "row": "NO2",
+    "col": "NO2",
+    "value": 1.0
+  },
+  {
+    "row": "NO2",
+    "col": "Ozone",
+    "value": -0.38
+  },
+  {
+    "row": "NO2",
+    "col": "SO2",
+    "value": 0.38
+  },
+  {
+    "row": "NO2",
+    "col": "PM2.5",
+    "value": 0.13
+  },
+  {
+    "row": "NO2",
+    "col": "Temp",
+    "value": -0.17
+  },
+  {
+    "row": "NO2",
+    "col": "RH",
+    "value": 0.19
+  },
+  {
+    "row": "Ozone",
+    "col": "CO",
+    "value": 0.01
+  },
+  {
+    "row": "Ozone",
+    "col": "NO2",
+    "value": -0.38
+  },
+  {
+    "row": "Ozone",
+    "col": "Ozone",
+    "value": 1.0
+  },
+  {
+    "row": "Ozone",
+    "col": "SO2",
+    "value": -0.04
+  },
+  {
+    "row": "Ozone",
+    "col": "PM2.5",
+    "value": 0.26
+  },
+  {
+    "row": "Ozone",
+    "col": "Temp",
+    "value": 0.58
+  },
+  {
+    "row": "Ozone",
+    "col": "RH",
+    "value": -0.15
+  },
+  {
+    "row": "SO2",
+    "col": "CO",
+    "value": 0.43
+  },
+  {
+    "row": "SO2",
+    "col": "NO2",
+    "value": 0.38
+  },
+  {
+    "row": "SO2",
+    "col": "Ozone",
+    "value": -0.04
+  },
+  {
+    "row": "SO2",
+    "col": "SO2",
+    "value": 1.0
+  },
+  {
+    "row": "SO2",
+    "col": "PM2.5",
+    "value": 0.14
+  },
+  {
+    "row": "SO2",
+    "col": "Temp",
+    "value": 0.14
+  },
+  {
+    "row": "SO2",
+    "col": "RH",
+    "value": -0.05
+  },
+  {
+    "row": "PM2.5",
+    "col": "CO",
+    "value": 0.53
+  },
+  {
+    "row": "PM2.5",
+    "col": "NO2",
+    "value": 0.13
+  },
+  {
+    "row": "PM2.5",
+    "col": "Ozone",
+    "value": 0.26
+  },
+  {
+    "row": "PM2.5",
+    "col": "SO2",
+    "value": 0.14
+  },
+  {
+    "row": "PM2.5",
+    "col": "PM2.5",
+    "value": 1.0
+  },
+  {
+    "row": "PM2.5",
+    "col": "Temp",
+    "value": 0.32
+  },
+  {
+    "row": "PM2.5",
+    "col": "RH",
+    "value": -0.1
+  },
+  {
+    "row": "Temp",
+    "col": "CO",
+    "value": 0.19
+  },
+  {
+    "row": "Temp",
+    "col": "NO2",
+    "value": -0.17
+  },
+  {
+    "row": "Temp",
+    "col": "Ozone",
+    "value": 0.58
+  },
+  {
+    "row": "Temp",
+    "col": "SO2",
+    "value": 0.14
+  },
+  {
+    "row": "Temp",
+    "col": "PM2.5",
+    "value": 0.32
+  },
+  {
+    "row": "Temp",
+    "col": "Temp",
+    "value": 1.0
+  },
+  {
+    "row": "Temp",
+    "col": "RH",
+    "value": -0.57
+  },
+  {
+    "row": "RH",
+    "col": "CO",
+    "value": 0.05
+  },
+  {
+    "row": "RH",
+    "col": "NO2",
+    "value": 0.19
+  },
+  {
+    "row": "RH",
+    "col": "Ozone",
+    "value": -0.15
+  },
+  {
+    "row": "RH",
+    "col": "SO2",
+    "value": -0.05
+  },
+  {
+    "row": "RH",
+    "col": "PM2.5",
+    "value": -0.1
+  },
+  {
+    "row": "RH",
+    "col": "Temp",
+    "value": -0.57
+  },
+  {
+    "row": "RH",
+    "col": "RH",
+    "value": 1.0
+  }
+]

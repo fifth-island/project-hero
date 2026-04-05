@@ -1,0 +1,170 @@
+[
+  {
+    "hour": 0,
+    "pm25_median": 7.66,
+    "pm25_p90": 15.54,
+    "wbgt_median": 65.7,
+    "wbgt_p90": 70.2
+  },
+  {
+    "hour": 1,
+    "pm25_median": 7.81,
+    "pm25_p90": 15.48,
+    "wbgt_median": 65.1,
+    "wbgt_p90": 70.2
+  },
+  {
+    "hour": 2,
+    "pm25_median": 8.55,
+    "pm25_p90": 15.57,
+    "wbgt_median": 65.5,
+    "wbgt_p90": 70.7
+  },
+  {
+    "hour": 3,
+    "pm25_median": 9.07,
+    "pm25_p90": 15.55,
+    "wbgt_median": 65.5,
+    "wbgt_p90": 70.8
+  },
+  {
+    "hour": 4,
+    "pm25_median": 8.97,
+    "pm25_p90": 15.41,
+    "wbgt_median": 64.9,
+    "wbgt_p90": 70.9
+  },
+  {
+    "hour": 5,
+    "pm25_median": 7.94,
+    "pm25_p90": 15.49,
+    "wbgt_median": 64.8,
+    "wbgt_p90": 70.9
+  },
+  {
+    "hour": 6,
+    "pm25_median": 8.23,
+    "pm25_p90": 15.54,
+    "wbgt_median": 64.8,
+    "wbgt_p90": 71.5
+  },
+  {
+    "hour": 7,
+    "pm25_median": 8.37,
+    "pm25_p90": 16.18,
+    "wbgt_median": 65.1,
+    "wbgt_p90": 71.2
+  },
+  {
+    "hour": 8,
+    "pm25_median": 8.19,
+    "pm25_p90": 16.4,
+    "wbgt_median": 65.5,
+    "wbgt_p90": 72.0
+  },
+  {
+    "hour": 9,
+    "pm25_median": 8.34,
+    "pm25_p90": 17.1,
+    "wbgt_median": 66.0,
+    "wbgt_p90": 72.7
+  },
+  {
+    "hour": 10,
+    "pm25_median": 8.64,
+    "pm25_p90": 18.0,
+    "wbgt_median": 66.4,
+    "wbgt_p90": 73.0
+  },
+  {
+    "hour": 11,
+    "pm25_median": 8.95,
+    "pm25_p90": 19.36,
+    "wbgt_median": 66.6,
+    "wbgt_p90": 73.7
+  },
+  {
+    "hour": 12,
+    "pm25_median": 8.89,
+    "pm25_p90": 19.98,
+    "wbgt_median": 66.6,
+    "wbgt_p90": 73.9
+  },
+  {
+    "hour": 13,
+    "pm25_median": 8.75,
+    "pm25_p90": 19.58,
+    "wbgt_median": 66.7,
+    "wbgt_p90": 74.1
+  },
+  {
+    "hour": 14,
+    "pm25_median": 7.96,
+    "pm25_p90": 19.96,
+    "wbgt_median": 66.7,
+    "wbgt_p90": 74.1
+  },
+  {
+    "hour": 15,
+    "pm25_median": 8.73,
+    "pm25_p90": 20.17,
+    "wbgt_median": 66.6,
+    "wbgt_p90": 74.4
+  },
+  {
+    "hour": 16,
+    "pm25_median": 8.57,
+    "pm25_p90": 19.84,
+    "wbgt_median": 66.7,
+    "wbgt_p90": 73.5
+  },
+  {
+    "hour": 17,
+    "pm25_median": 8.39,
+    "pm25_p90": 17.91,
+    "wbgt_median": 66.9,
+    "wbgt_p90": 73.4
+  },
+  {
+    "hour": 18,
+    "pm25_median": 8.14,
+    "pm25_p90": 17.86,
+    "wbgt_median": 67.1,
+    "wbgt_p90": 73.4
+  },
+  {
+    "hour": 19,
+    "pm25_median": 8.4,
+    "pm25_p90": 17.87,
+    "wbgt_median": 67.1,
+    "wbgt_p90": 72.1
+  },
+  {
+    "hour": 20,
+    "pm25_median": 7.85,
+    "pm25_p90": 17.71,
+    "wbgt_median": 67.1,
+    "wbgt_p90": 71.8
+  },
+  {
+    "hour": 21,
+    "pm25_median": 7.44,
+    "pm25_p90": 17.73,
+    "wbgt_median": 66.9,
+    "wbgt_p90": 71.8
+  },
+  {
+    "hour": 22,
+    "pm25_median": 7.96,
+    "pm25_p90": 17.17,
+    "wbgt_median": 66.4,
+    "wbgt_p90": 70.3
+  },
+  {
+    "hour": 23,
+    "pm25_median": 7.97,
+    "pm25_p90": 16.32,
+    "wbgt_median": 66.0,
+    "wbgt_p90": 70.3
+  }
+]

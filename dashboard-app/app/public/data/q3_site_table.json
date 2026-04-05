@@ -1,0 +1,122 @@
+[
+  {
+    "site_id": "lyndenboro",
+    "name": "Lyndboro Park",
+    "n_pm25": 4786,
+    "pm25_median": 9.49,
+    "pm25_p90": 18.79,
+    "exceedance_pct": 52.7,
+    "wbgt_p90": 72.3,
+    "status": "CRITICAL"
+  },
+  {
+    "site_id": "chin",
+    "name": "Chin Park",
+    "n_pm25": 2199,
+    "pm25_median": 9.97,
+    "pm25_p90": 18.21,
+    "exceedance_pct": 52.6,
+    "wbgt_p90": 73.4,
+    "status": "CRITICAL"
+  },
+  {
+    "site_id": "greenway",
+    "name": "One Greenway",
+    "n_pm25": 4893,
+    "pm25_median": 9.26,
+    "pm25_p90": 19.74,
+    "exceedance_pct": 51.3,
+    "wbgt_p90": 72.1,
+    "status": "CRITICAL"
+  },
+  {
+    "site_id": "tufts",
+    "name": "Tufts Community Garden",
+    "n_pm25": 4095,
+    "pm25_median": 9.19,
+    "pm25_p90": 17.94,
+    "exceedance_pct": 51.3,
+    "wbgt_p90": 73.0,
+    "status": "CRITICAL"
+  },
+  {
+    "site_id": "dewey",
+    "name": "Dewey Square",
+    "n_pm25": 4889,
+    "pm25_median": 8.7,
+    "pm25_p90": 17.69,
+    "exceedance_pct": 48.7,
+    "wbgt_p90": 72.1,
+    "status": "HIGH"
+  },
+  {
+    "site_id": "berkley",
+    "name": "Berkeley Garden",
+    "n_pm25": 2445,
+    "pm25_median": 8.46,
+    "pm25_p90": 16.88,
+    "exceedance_pct": 47.2,
+    "wbgt_p90": 73.0,
+    "status": "HIGH"
+  },
+  {
+    "site_id": "eliotnorton",
+    "name": "Eliot Norton Park",
+    "n_pm25": 3888,
+    "pm25_median": 8.35,
+    "pm25_p90": 16.44,
+    "exceedance_pct": 47.1,
+    "wbgt_p90": 72.7,
+    "status": "HIGH"
+  },
+  {
+    "site_id": "msh",
+    "name": "Mary Soo Hoo Park",
+    "n_pm25": 4177,
+    "pm25_median": 8.35,
+    "pm25_p90": 15.67,
+    "exceedance_pct": 46.1,
+    "wbgt_p90": 71.6,
+    "status": "HIGH"
+  },
+  {
+    "site_id": "taitung",
+    "name": "Tai Tung Park",
+    "n_pm25": 4839,
+    "pm25_median": 8.15,
+    "pm25_p90": 16.66,
+    "exceedance_pct": 45.5,
+    "wbgt_p90": 72.3,
+    "status": "HIGH"
+  },
+  {
+    "site_id": "castle",
+    "name": "Castle Square",
+    "n_pm25": 3793,
+    "pm25_median": 7.1,
+    "pm25_p90": 15.97,
+    "exceedance_pct": 39.7,
+    "wbgt_p90": 73.0,
+    "status": "MODERATE"
+  },
+  {
+    "site_id": "reggie",
+    "name": "Reggie Wong Park",
+    "n_pm25": 4126,
+    "pm25_median": 7.06,
+    "pm25_p90": 15.91,
+    "exceedance_pct": 35.4,
+    "wbgt_p90": 72.0,
+    "status": "STABLE"
+  },
+  {
+    "site_id": "oxford",
+    "name": "Oxford Place",
+    "n_pm25": 2879,
+    "pm25_median": 7.36,
+    "pm25_p90": 13.37,
+    "exceedance_pct": 35.3,
+    "wbgt_p90": 71.2,
+    "status": "STABLE"
+  }
+]

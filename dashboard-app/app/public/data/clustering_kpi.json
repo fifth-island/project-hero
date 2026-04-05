@@ -1,0 +1,10 @@
+{
+  "n_sites": 12,
+  "n_clusters": 3,
+  "silhouette": 0.289,
+  "pca_variance": 82.0,
+  "pm25_boundary": 9.2,
+  "temp_boundary": 75.25,
+  "pm25_avg": 9.4,
+  "temp_avg": 74.5
+}

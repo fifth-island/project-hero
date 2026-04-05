@@ -1,0 +1,4 @@
+PM2.5 (µg/m³),Temp (°F),WBGT (°F),Humidity (%),cluster,cluster_name,cluster_color,n_sites,sites,pm25_norm,temp_norm,wbgt_norm,humidity_norm
+8.17,75.31,66.76,66.81,0,🟡 Urban Heat Island,#DAA520,1,castle,0.0,1.0,1.0,1.0
+9.975,74.39,65.9025,66.34,1,🔴 High Pollution + Humid,#C62828,8,"berkley, chin, dewey, eliotnorton, greenway, lyndenboro, taitung, tufts",1.0,0.0,0.344,0.816
+8.446666666666667,74.51333333333334,65.45333333333333,64.25333333333333,2,🟢 Cleaner & Drier,#2E7D32,3,"msh, oxford, reggie",0.153,0.134,0.0,0.0
