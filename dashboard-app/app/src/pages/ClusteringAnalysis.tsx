@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   ReferenceLine, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
@@ -74,6 +75,7 @@ function PcaTooltip({ active, payload }: any) {
 type SortKey = 'site_name' | 'cluster' | 'pm25' | 'temp' | 'wbgt' | 'humidity'
 
 export default function ClusteringAnalysis() {
+  const { t } = useTranslation()
   const { kpi, sites, centers, elbow, silhouetteData, pcaMeta, loading } = useClusteringData()
   const [clusterFilter, setClusterFilter] = useState<number | 'all'>('all')
   const [showCentroids, setShowCentroids] = useState(true)
@@ -100,7 +102,7 @@ export default function ClusteringAnalysis() {
   if (loading) return (
     <div className="max-w-7xl mx-auto px-10 py-24 text-center">
       <span className="material-symbols-outlined text-4xl text-primary animate-spin">progress_activity</span>
-      <p className="mt-4 text-sm text-on-surface-variant">Loading clustering analysis…</p>
+      <p className="mt-4 text-sm text-on-surface-variant">{t('common.loading')}</p>
     </div>
   )
 
@@ -131,60 +133,62 @@ export default function ClusteringAnalysis() {
       <header className="flex justify-between items-end">
         <div>
           <h2 className="text-4xl font-[family-name:var(--font-family-headline)] font-bold text-primary tracking-tight italic">
-            Site Clustering Analysis
+            {t('clustering.title')}
           </h2>
           <p className="text-secondary mt-2 max-w-2xl">
-            K-means grouping of 12 monitoring sites by environmental profile —
-            PM2.5, temperature, WBGT, and humidity — revealing three distinct site typologies
-            with implications for public health policy.
+            {t('clustering.description')}
           </p>
         </div>
         <div className="px-4 py-2 bg-surface-container rounded-lg border border-outline-variant/20 flex items-center gap-2">
           <span className="material-symbols-outlined text-primary text-sm">calendar_today</span>
-          <span className="text-xs font-bold uppercase tracking-widest">Jul – Aug 2023</span>
+          <span className="text-xs font-bold uppercase tracking-widest">{t('clustering.period')}</span>
         </div>
       </header>
 
-      {/* ═══ KPI Row ═══ */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-surface-container-lowest p-6 rounded-lg">
-          <div className="flex justify-between items-start mb-4">
-            <span className="material-symbols-outlined text-primary">location_on</span>
-            <span className="text-[10px] font-bold text-secondary uppercase tracking-widest">Sites</span>
+      {/* ═══ KPI Grid ═══ */}
+      <section className="grid grid-cols-4 gap-6">
+        <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('clustering.monitoringSites')}</p>
+          <div className="flex items-baseline gap-2">
+            <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-primary">{kpi!.n_sites}</h3>
+            <span className="material-symbols-outlined text-secondary text-xl">location_on</span>
           </div>
-          <p className="text-3xl font-[family-name:var(--font-family-headline)] font-bold text-primary">{kpi!.n_sites}</p>
-          <p className="text-xs text-secondary/70 mt-1">Open-space monitoring sites</p>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('clustering.monitoringSitesDesc')}</p>
         </div>
-        <div className="bg-surface-container-lowest p-6 rounded-lg">
-          <div className="flex justify-between items-start mb-4">
-            <span className="material-symbols-outlined text-primary">hub</span>
-            <span className="text-[10px] font-bold text-secondary uppercase tracking-widest">Clusters</span>
+        <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('clustering.optimalClusters')}</p>
+          <div className="flex items-baseline gap-2">
+            <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-primary">{kpi!.n_clusters}</h3>
+            <span className="material-symbols-outlined text-secondary text-xl">hub</span>
           </div>
-          <p className="text-3xl font-[family-name:var(--font-family-headline)] font-bold text-primary">{kpi!.n_clusters}</p>
-          <p className="text-xs text-secondary/70 mt-1">Optimal k (elbow + silhouette)</p>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('clustering.optimalClustersDesc')}</p>
         </div>
-        <div className="bg-surface-container-lowest p-6 rounded-lg">
-          <div className="flex justify-between items-start mb-4">
-            <span className="material-symbols-outlined text-primary">verified</span>
-            <span className="text-[10px] font-bold text-secondary uppercase tracking-widest">Cohesion</span>
+        <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('clustering.silhouetteScore')}</p>
+          <div className="flex items-baseline gap-2">
+            <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-tertiary">{kpi!.silhouette}</h3>
+            <span className="material-symbols-outlined text-tertiary text-xl">verified</span>
           </div>
-          <p className="text-3xl font-[family-name:var(--font-family-headline)] font-bold text-primary">{kpi!.silhouette}</p>
-          <p className="text-xs text-secondary/70 mt-1">Silhouette score (moderate)</p>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('clustering.silhouetteDesc')}</p>
         </div>
-        <div className="bg-surface-container-lowest p-6 rounded-lg">
-          <div className="flex justify-between items-start mb-4">
-            <span className="material-symbols-outlined text-primary">insights</span>
-            <span className="text-[10px] font-bold text-secondary uppercase tracking-widest">PCA</span>
+        <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('clustering.pcaVariance')}</p>
+          <div className="flex items-baseline gap-2">
+            <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-on-surface">{kpi!.pca_variance}%</h3>
+            <span className="material-symbols-outlined text-secondary text-xl">insights</span>
           </div>
-          <p className="text-3xl font-[family-name:var(--font-family-headline)] font-bold text-primary">{kpi!.pca_variance}%</p>
-          <p className="text-xs text-secondary/70 mt-1">Variance in 2D projection</p>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('clustering.pcaVarianceDesc')}</p>
         </div>
       </section>
 
       {/* ═══ Cluster Quadrant Scatter ═══ */}
       <section>
         <div className="flex items-baseline gap-4 mb-6">
-          <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">Environmental Quadrant Map</h3>
+          <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">{t('clustering.quadrantMap')}</h3>
           <div className="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
         </div>
         <div className="bg-surface-container-lowest rounded-2xl p-6 relative overflow-hidden">
@@ -199,7 +203,7 @@ export default function ClusteringAnalysis() {
               onChange={(e) => setClusterFilter(e.target.value === 'all' ? 'all' : Number(e.target.value))}
               className="bg-surface-container border border-outline-variant/30 rounded-lg px-3 py-1.5 text-xs font-bold text-on-surface appearance-none cursor-pointer"
             >
-              <option value="all">All Clusters</option>
+              <option value="all">{t('clustering.allClusters')}</option>
               {centers.map(c => (
                 <option key={c.cluster} value={c.cluster}>{c.cluster_emoji} {c.cluster_name}</option>
               ))}
@@ -248,14 +252,14 @@ export default function ClusteringAnalysis() {
       {/* ═══ Cluster Profiles — Radar + Summary Cards ═══ */}
       <section>
         <div className="flex items-baseline gap-4 mb-6">
-          <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">Cluster Profiles</h3>
+          <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">{t('clustering.clusterProfiles')}</h3>
           <div className="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
         </div>
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Radar chart */}
           <div className="bg-surface-container-lowest rounded-2xl p-6">
-            <h4 className="font-[family-name:var(--font-family-headline)] italic text-lg text-primary mb-4">Environmental Profile Radar</h4>
-            <p className="text-xs text-secondary/60 mb-4">Normalized 0–1 across all features. Similar shapes = similar environmental conditions.</p>
+            <h4 className="font-[family-name:var(--font-family-headline)] italic text-lg text-primary mb-4">{t('clustering.envRadar')}</h4>
+            <p className="text-xs text-secondary/60 mb-4">{t('clustering.radarDesc')}</p>
             <ResponsiveContainer width="100%" height={340}>
               <RadarChart data={radarData} cx="50%" cy="50%" outerRadius="75%">
                 <PolarGrid stroke={C.outlineVariant} strokeOpacity={0.3} />

@@ -1,0 +1,1 @@
+{"pearson_r": 0.3598, "spearman_rho": 0.374, "r_squared": 0.129, "slope": 0.399, "intercept": -16.808, "std_err": 0.0048, "n_obs": 46253, "pm25_mean": 9.5, "pm25_median": 8.3, "wbgt_mean": 65.9, "wbgt_range": [54.8, 77.5], "strongest_site": "Berkeley Garden", "strongest_r": 0.62, "weakest_site": "Mary Soo Hoo", "weakest_r": 0.229, "corr_cv": 25.0}

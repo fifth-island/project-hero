@@ -1,4 +1,5 @@
 import { useLocation, Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 interface HeaderProps {
   children?: React.ReactNode
@@ -6,24 +7,43 @@ interface HeaderProps {
 
 export default function Header({ children }: HeaderProps) {
   const { pathname } = useLocation()
+  const { t, i18n } = useTranslation()
   const isSensors = pathname.startsWith('/sensors')
   const isAnalytics = pathname.startsWith('/analytics')
+  const isRisk = pathname.startsWith('/risk')
+  const isCauses = pathname.startsWith('/causes')
 
   const sensorTabs = [
-    { to: '/sensors/calibration', label: 'Calibration', full: 'Calibration Fidelity Ledger' },
-    { to: '/sensors/temperature', label: 'Temperature Report', full: 'Temperature Sensor Comparison' },
+    { to: '/sensors/calibration', label: t('tabs.calibration'), full: t('tabs.calibrationFull') },
+    { to: '/sensors/temperature', label: t('tabs.temperature'), full: t('tabs.temperatureFull') },
   ]
 
   const analyticsTabs = [
-    { to: '/analytics/distributions', label: 'Distributions', full: 'Distributions & Cumulative Frequency' },
-    { to: '/analytics/aqi', label: 'AQI & Multi-Pollutants', full: 'AQI & Multi-Pollutant Analysis' },
-    { to: '/analytics/temporal', label: 'Temporal Patterns', full: 'Temporal Exposure Patterns' },
-    { to: '/analytics/clustering', label: 'Site Clustering', full: 'K-Means Site Clustering' },
+    { to: '/analytics/distributions', label: t('tabs.distributions'), full: t('tabs.distributionsFull') },
+    { to: '/analytics/aqi', label: t('tabs.aqi'), full: t('tabs.aqiFull') },
+    { to: '/analytics/temporal', label: t('tabs.temporal'), full: t('tabs.temporalFull') },
+    { to: '/analytics/clustering', label: t('tabs.clustering'), full: t('tabs.clusteringFull') },
   ]
 
-  const hasTabs = isSensors || isAnalytics
-  const tabs = isSensors ? sensorTabs : analyticsTabs
-  const sectionTitle = isSensors ? 'Sensor Validation' : 'Environmental Analytics'
+  const riskTabs = [
+    { to: '/risk/hottest-days', label: t('tabs.hottestDays'), full: t('tabs.hottestDaysFull') },
+    { to: '/risk/deep-dive', label: t('tabs.deepDive'), full: t('tabs.deepDiveFull') },
+    { to: '/risk/highest-aqi', label: t('tabs.highestAqi'), full: t('tabs.highestAqiFull') },
+  ]
+
+  const causesTabs = [
+    { to: '/causes/heat-pm25', label: t('tabs.heatPm25'), full: t('tabs.heatPm25Full') },
+    { to: '/causes/heterogeneity', label: t('tabs.heterogeneity'), full: t('tabs.heterogeneityFull') },
+    { to: '/causes/land-use', label: t('tabs.landUse'), full: t('tabs.landUseFull') },
+    { to: '/causes/land-use-clusters', label: t('tabs.luClustering'), full: t('tabs.luClusteringFull') },
+  ]
+
+  const hasTabs = isSensors || isAnalytics || isRisk || isCauses
+  const tabs = isSensors ? sensorTabs : isRisk ? riskTabs : isCauses ? causesTabs : analyticsTabs
+  const sectionTitle = isSensors ? t('nav.sensors') : isRisk ? t('nav.risk') : isCauses ? t('nav.causes') : t('nav.analytics')
+
+  const isZh = i18n.language === 'zh'
+  const toggleLang = () => i18n.changeLanguage(isZh ? 'en' : 'zh')
 
   return (
     <>
@@ -47,7 +67,7 @@ export default function Header({ children }: HeaderProps) {
         ) : (
           <>
             <span className="text-xl font-[family-name:var(--font-family-headline)] font-bold text-red-900 italic tracking-tight">
-              Chinatown HEROS
+              {t('nav.chinatownHeros')}
             </span>
           </>
         )}
@@ -57,17 +77,19 @@ export default function Header({ children }: HeaderProps) {
         {isSensors && (
           <div className="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/20">
             <span className="w-2 h-2 rounded-full bg-tertiary" />
-            <span className="text-xs font-bold text-on-surface-variant">NETWORK STATUS: OPTIMAL</span>
+            <span className="text-xs font-bold text-on-surface-variant">{t('nav.networkStatus')}</span>
           </div>
         )}
-        <div className="flex items-center gap-4">
-          <span className="material-symbols-outlined text-stone-600 hover:text-red-800 transition-colors cursor-pointer">
-            notifications
-          </span>
-          <span className="material-symbols-outlined text-stone-600 hover:text-red-800 transition-colors cursor-pointer">
-            account_circle
-          </span>
-        </div>
+        <button
+          onClick={toggleLang}
+          className="flex items-center gap-2 bg-surface-container-highest/40 px-3 py-1.5 rounded-full border border-outline-variant/20 hover:bg-surface-container-highest/70 transition-colors cursor-pointer"
+          title={t('lang.toggle')}
+        >
+          <span className="material-symbols-outlined text-sm text-stone-600">translate</span>
+          <span className={`text-xs font-bold transition-colors ${!isZh ? 'text-red-800' : 'text-stone-400'}`}>EN</span>
+          <span className="text-stone-300">/</span>
+          <span className={`text-xs font-bold transition-colors ${isZh ? 'text-red-800' : 'text-stone-400'}`}>中文</span>
+        </button>
       </div>
     </header>
     {hasTabs && (

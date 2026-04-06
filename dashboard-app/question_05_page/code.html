@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Q5: Urban Heat | Environmental Research Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .data-seal {
+            border: 2px solid #6f070f;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            position: relative;
+        }
+        .lattice-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40 Z' fill='none' stroke='%236f070f' stroke-width='0.5' stroke-opacity='0.05'/%3E%3C/svg%3E");
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#fce6b3",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#feb78a",
+                        "on-primary-container": "#ffa59e",
+                        "surface-container": "#ffecc3",
+                        "surface-dim": "#eed8a6",
+                        "inverse-surface": "#3b2f0b",
+                        "outline": "#8b716f",
+                        "tertiary-fixed-dim": "#82d7ba",
+                        "surface-container-highest": "#f6e1ae",
+                        "on-tertiary-fixed-variant": "#00513f",
+                        "on-surface": "#241a00",
+                        "inverse-on-surface": "#ffefcf",
+                        "secondary-fixed": "#ffdbc8",
+                        "on-secondary-container": "#794622",
+                        "surface": "#fff8f1",
+                        "inverse-primary": "#ffb3ae",
+                        "surface-bright": "#fff8f1",
+                        "on-secondary-fixed": "#311300",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#9ef3d6",
+                        "tertiary": "#003e2f",
+                        "on-surface-variant": "#58413f",
+                        "on-primary-fixed": "#410004",
+                        "surface-variant": "#f6e1ae",
+                        "on-primary-fixed-variant": "#891c1e",
+                        "secondary": "#87512d",
+                        "on-tertiary-fixed": "#002118",
+                        "on-background": "#241a00",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "primary": "#6f070f",
+                        "primary-container": "#902223",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#005744",
+                        "background": "#fff8f1",
+                        "primary-fixed": "#ffdad7",
+                        "surface-tint": "#a93533",
+                        "primary-fixed-dim": "#ffb3ae",
+                        "outline-variant": "#dfbfbc",
+                        "surface-container-low": "#fff2da",
+                        "on-tertiary-container": "#79cdb1",
+                        "on-secondary-fixed-variant": "#6b3a18",
+                        "secondary-container": "#feb78a",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-8 h-16 w-full fixed z-50 bg-[#eed8a6] dark:bg-stone-950 shadow-sm">
+<div class="flex items-center gap-6">
+<span class="text-2xl font-serif italic text-[#6f070f] dark:text-[#902223]">Environmental Research Ledger</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-stone-600 dark:text-stone-400 font-medium font-serif text-lg tracking-tight hover:text-[#902223] transition-colors duration-300" href="#">Overview</a>
+<a class="text-[#6f070f] dark:text-[#902223] border-b-2 border-[#6f070f] font-bold font-serif text-lg tracking-tight" href="#">Analytics</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium font-serif text-lg tracking-tight hover:text-[#902223] transition-colors duration-300" href="#">Mapping</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium font-serif text-lg tracking-tight hover:text-[#902223] transition-colors duration-300" href="#">Archive</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#6f070f] cursor-pointer scale-95 duration-150">settings</span>
+<span class="material-symbols-outlined text-[#6f070f] cursor-pointer scale-95 duration-150">account_circle</span>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="flex flex-col h-full pt-20 pb-4 px-4 overflow-y-auto h-screen w-72 left-0 top-0 fixed bg-[#eed8a6] dark:bg-stone-900 border-r border-stone-300/30 dark:border-stone-700/30 z-40">
+<div class="flex flex-col items-center mb-8 px-2 text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center mb-3 shadow-sm overflow-hidden">
+<img alt="Tufts University Research Seal" data-alt="Official Tufts University academic seal in deep red ink style on a textured cream paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjWo9mqL8R2x_3UZr_zRtlOiTUYj5CoxNGe9-w5kfpiF4uzszPMzww5HCRq0Odpv2ZzHfIvHnYWucAHdUiL8J7Ru8Dq97U7wGntR0LP02HlzG67FNCvQO9Fa-ztAaMtrDGn8HNi83sPFOmTcDoHTo2umw2PM4pjfAug5QLhpZ5xVz1qa2RJxLTxZSPM7OX3QOk_z_LncLwCSxnbfcpT_6zFIzwZHQwpjxZLJtHVBZ1LZs6EDIBd-RGsysE1Aqc1MtdZq6k2R1YH9Km"/>
+</div>
+<h2 class="font-serif text-[#6f070f] dark:text-[#902223] text-lg font-bold">Project Archivist</h2>
+<p class="font-sans text-xs tracking-wide uppercase font-semibold text-stone-700 dark:text-stone-400">Chinatown Environmental Study</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-700 dark:text-stone-400 font-sans text-sm tracking-wide uppercase font-semibold hover:bg-[#f5e6c4] dark:hover:bg-stone-800 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">air</span> Q1: Air Quality
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-700 dark:text-stone-400 font-sans text-sm tracking-wide uppercase font-semibold hover:bg-[#f5e6c4] dark:hover:bg-stone-800 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">terrain</span> Q2: Soil Composition
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-700 dark:text-stone-400 font-sans text-sm tracking-wide uppercase font-semibold hover:bg-[#f5e6c4] dark:hover:bg-stone-800 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">water_drop</span> Q3: Water Table
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-700 dark:text-stone-400 font-sans text-sm tracking-wide uppercase font-semibold hover:bg-[#f5e6c4] dark:hover:bg-stone-800 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">eco</span> Q4: Biodiversity
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#6f070f] dark:text-[#902223] bg-[#f5e6c4] dark:bg-stone-800/50 font-sans text-sm tracking-wide uppercase font-semibold translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">wb_sunny</span> Q5: Urban Heat
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-700 dark:text-stone-400 font-sans text-sm tracking-wide uppercase font-semibold hover:bg-[#f5e6c4] dark:hover:bg-stone-800 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">volume_up</span> Q6: Noise Pollution
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-700 dark:text-stone-400 font-sans text-sm tracking-wide uppercase font-semibold hover:bg-[#f5e6c4] dark:hover:bg-stone-800 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">recycling</span> Q7: Waste Cycles
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-700 dark:text-stone-400 font-sans text-sm tracking-wide uppercase font-semibold hover:bg-[#f5e6c4] dark:hover:bg-stone-800 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">bolt</span> Q8: Energy Grid
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-700 dark:text-stone-400 font-sans text-sm tracking-wide uppercase font-semibold hover:bg-[#f5e6c4] dark:hover:bg-stone-800 transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">groups</span> Q9: Social Impact
+            </a>
+</nav>
+<div class="mt-auto border-t border-stone-300/30 pt-4 space-y-1">
+<button class="w-full bg-primary text-on-primary py-2 px-4 rounded-lg flex items-center justify-center gap-2 mb-4 font-bold text-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">download</span> Export Dataset
+            </button>
+<a class="flex items-center gap-3 px-4 py-2 text-stone-700 dark:text-stone-400 font-sans text-xs tracking-wide uppercase font-semibold hover:bg-[#f5e6c4] dark:hover:bg-stone-800 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">help_outline</span> Help
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 text-stone-700 dark:text-stone-400 font-sans text-xs tracking-wide uppercase font-semibold hover:bg-[#f5e6c4] dark:hover:bg-stone-800 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">description</span> Documentation
+            </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-72 pt-24 px-8 pb-12">
+<!-- Sub Navigation -->
+<nav class="flex gap-8 mb-10 border-b border-outline-variant/30 pb-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm" href="#">Distributions (Q3)</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm" href="#">AQI &amp; Multi-Pollutants (Q4)</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm" href="#">Temporal Patterns (Q8)</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm" href="#">Site Clustering</a>
+<a class="text-primary font-bold text-sm border-b-2 border-primary pb-4 -mb-4.5" href="#">Hottest Days (Q5)</a>
+</nav>
+<header class="mb-12">
+<h1 class="text-5xl font-serif font-bold text-primary mb-2">Hottest Days Analysis</h1>
+<p class="text-secondary max-w-2xl font-serif italic text-lg">Detailed examination of peak thermal stress events across the 12 primary research sites in Boston’s Chinatown.</p>
+</header>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-symbols-outlined text-6xl">thermostat</span>
+</div>
+<p class="text-on-surface-variant text-xs uppercase font-bold tracking-widest mb-1">Site Heat Vulnerability</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-serif font-bold text-primary">8.2</span>
+<span class="text-on-surface-variant text-sm">/ 10</span>
+</div>
+<p class="text-xs text-secondary mt-2 font-medium italic">Composite Risk Score</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-secondary relative overflow-hidden">
+<p class="text-on-surface-variant text-xs uppercase font-bold tracking-widest mb-1">Dangerous Heat Hours</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-serif font-bold text-secondary">32%</span>
+</div>
+<p class="text-xs text-secondary mt-2 font-medium italic">% Hours &gt; 74°F WBGT</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-tertiary relative overflow-hidden">
+<p class="text-on-surface-variant text-xs uppercase font-bold tracking-widest mb-1">Inter-site WBGT Range</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-serif font-bold text-tertiary">1.5°F</span>
+</div>
+<p class="text-xs text-secondary mt-2 font-medium italic">Max Variance Between Sites</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-l-4 border-primary-container relative overflow-hidden">
+<p class="text-on-surface-variant text-xs uppercase font-bold tracking-widest mb-1">Co-exposure Index</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-serif font-bold text-primary-container">47.2%</span>
+</div>
+<p class="text-xs text-secondary mt-2 font-medium italic">Dual Heat &amp; AQI Risk</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<!-- Diurnal Profiles -->
+<div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-sm lattice-pattern relative">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="text-2xl font-serif font-bold text-on-surface">Diurnal WBGT Profiles</h3>
+<p class="text-sm text-on-surface-variant">24-hour thermal trajectories across 12 research sites</p>
+</div>
+<div class="data-seal">
+<span class="text-[10px] font-bold text-primary tracking-tighter uppercase leading-none text-center">Data<br/>Verified</span>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-1 border-b border-outline-variant relative">
+<!-- Faux Line Chart Visualization -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none">
+<!-- Background lines for other sites -->
+<path d="M0 180 Q 150 140 300 100 T 600 160 T 900 200" fill="none" stroke="#dfbfbc" stroke-width="1"></path>
+<path d="M0 190 Q 150 150 300 110 T 600 170 T 900 210" fill="none" stroke="#dfbfbc" stroke-width="1"></path>
+<!-- Tufts (Warmest) -->
+<path d="M0 160 Q 150 80 300 40 T 600 120 T 900 180" fill="none" stroke="#6f070f" stroke-linecap="round" stroke-width="3"></path>
+<!-- Mary Soo Hoo (Coolest) -->
+<path d="M0 200 Q 150 160 300 130 T 600 190 T 900 230" fill="none" stroke="#003e2f" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute top-2 right-4 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-bold text-primary">
+<span class="w-3 h-3 bg-primary rounded-full"></span> Tufts (Warmest)
+                        </div>
+<div class="flex items-center gap-2 text-xs font-bold text-tertiary">
+<span class="w-3 h-3 bg-tertiary rounded-full"></span> Mary Soo Hoo (Coolest)
+                        </div>
+</div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] uppercase font-bold text-on-surface-variant tracking-widest">
+<span>12:00 AM</span>
+<span>06:00 AM</span>
+<span>12:00 PM</span>
+<span>06:00 PM</span>
+<span>11:59 PM</span>
+</div>
+</div>
+<!-- Heatmap Mini Grid -->
+<div class="bg-surface-container p-8 rounded-xl flex flex-col">
+<h3 class="text-xl font-serif font-bold text-on-surface mb-4">Site × Hour Intensity</h3>
+<div class="grid grid-cols-12 gap-1 flex-1">
+<!-- Generating a 12x12 visual grid for the heatmap -->
+<div class="bg-primary/20 rounded-sm"></div><div class="bg-primary/30 rounded-sm"></div><div class="bg-primary/20 rounded-sm"></div><div class="bg-primary/40 rounded-sm"></div><div class="bg-primary/60 rounded-sm"></div><div class="bg-primary/80 rounded-sm"></div><div class="bg-primary rounded-sm"></div><div class="bg-primary/90 rounded-sm"></div><div class="bg-primary/70 rounded-sm"></div><div class="bg-primary/40 rounded-sm"></div><div class="bg-primary/30 rounded-sm"></div><div class="bg-primary/20 rounded-sm"></div>
+<div class="bg-primary/10 rounded-sm"></div><div class="bg-primary/20 rounded-sm"></div><div class="bg-primary/10 rounded-sm"></div><div class="bg-primary/30 rounded-sm"></div><div class="bg-primary/50 rounded-sm"></div><div class="bg-primary/70 rounded-sm"></div><div class="bg-primary/90 rounded-sm"></div><div class="bg-primary/80 rounded-sm"></div><div class="bg-primary/60 rounded-sm"></div><div class="bg-primary/30 rounded-sm"></div><div class="bg-primary/20 rounded-sm"></div><div class="bg-primary/10 rounded-sm"></div>
+<!-- Repeats for aesthetic effect -->
+<div class="col-span-12 grid grid-cols-12 gap-1 mt-1 opacity-80"><div class="bg-primary/30 rounded-sm h-4"></div><div class="bg-primary/40 h-4"></div><div class="bg-primary/50 h-4"></div><div class="bg-primary/70 h-4"></div><div class="bg-primary/90 h-4"></div><div class="bg-primary h-4"></div><div class="bg-primary/90 h-4"></div><div class="bg-primary/80 h-4"></div><div class="bg-primary/60 h-4"></div><div class="bg-primary/40 h-4"></div><div class="bg-primary/30 h-4"></div><div class="bg-primary/20 h-4"></div></div>
+<div class="col-span-12 grid grid-cols-12 gap-1 mt-1 opacity-60"><div class="bg-primary/10 h-4"></div><div class="bg-primary/20 h-4"></div><div class="bg-primary/30 h-4"></div><div class="bg-primary/40 h-4"></div><div class="bg-primary/60 h-4"></div><div class="bg-primary/80 h-4"></div><div class="bg-primary/90 h-4"></div><div class="bg-primary/70 h-4"></div><div class="bg-primary/50 h-4"></div><div class="bg-primary/30 h-4"></div><div class="bg-primary/20 h-4"></div><div class="bg-primary/10 h-4"></div></div>
+<div class="col-span-12 grid grid-cols-12 gap-1 mt-1 opacity-40"><div class="bg-primary/30 h-4"></div><div class="bg-primary/40 h-4"></div><div class="bg-primary/50 h-4"></div><div class="bg-primary/70 h-4"></div><div class="bg-primary/90 h-4"></div><div class="bg-primary h-4"></div><div class="bg-primary/90 h-4"></div><div class="bg-primary/80 h-4"></div><div class="bg-primary/60 h-4"></div><div class="bg-primary/40 h-4"></div><div class="bg-primary/30 h-4"></div><div class="bg-primary/20 h-4"></div></div>
+<div class="col-span-12 grid grid-cols-12 gap-1 mt-1 opacity-20"><div class="bg-primary/10 h-4"></div><div class="bg-primary/20 h-4"></div><div class="bg-primary/30 h-4"></div><div class="bg-primary/40 h-4"></div><div class="bg-primary/60 h-4"></div><div class="bg-primary/80 h-4"></div><div class="bg-primary/90 h-4"></div><div class="bg-primary/70 h-4"></div><div class="bg-primary/50 h-4"></div><div class="bg-primary/30 h-4"></div><div class="bg-primary/20 h-4"></div><div class="bg-primary/10 h-4"></div></div>
+</div>
+<p class="text-[10px] mt-6 font-bold uppercase tracking-wider text-primary">Heat Index Threshold: 92°F Equivalent</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+<!-- Microclimate Comparison -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h3 class="text-xl font-serif font-bold text-on-surface mb-6">Microclimate Dynamics</h3>
+<div class="space-y-6">
+<div>
+<p class="text-xs font-bold uppercase text-secondary mb-3 tracking-widest">Morning Heating Rate (°F/hr)</p>
+<div class="space-y-3">
+<div class="flex items-center gap-4">
+<span class="text-xs w-24 truncate font-bold">Tufts Site</span>
+<div class="flex-1 bg-surface-variant h-4 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+<span class="text-xs font-bold">4.2</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs w-24 truncate font-bold">Tai Tung</span>
+<div class="flex-1 bg-surface-variant h-4 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[70%]"></div>
+</div>
+<span class="text-xs font-bold">3.5</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-xs w-24 truncate font-bold">Pau Heung</span>
+<div class="flex-1 bg-surface-variant h-4 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[62%]"></div>
+</div>
+<span class="text-xs font-bold">3.1</span>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/30">
+<p class="text-xs font-bold uppercase text-secondary mb-3 tracking-widest">Why Temp ≠ WBGT</p>
+<div class="bg-surface-container-lowest p-4 rounded-lg">
+<table class="w-full text-xs">
+<thead>
+<tr class="text-left border-b border-outline-variant/20">
+<th class="pb-2">Site</th>
+<th class="pb-2">Dry Temp Rank</th>
+<th class="pb-2 text-primary">WBGT Rank</th>
+<th class="pb-2">Humidity Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-outline-variant/10">
+<td class="py-2 font-bold">Mary Soo Hoo</td>
+<td class="py-2">#12</td>
+<td class="py-2 font-bold text-primary">#10</td>
+<td class="py-2 text-tertiary">+2 Positions</td>
+</tr>
+<tr class="border-b border-outline-variant/10">
+<td class="py-2 font-bold">Oak St</td>
+<td class="py-2">#5</td>
+<td class="py-2 font-bold text-primary">#2</td>
+<td class="py-2 text-tertiary">+3 Positions</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- Nighttime Heat Retention -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h3 class="text-xl font-serif font-bold text-on-surface mb-6">Nighttime Heat Retention</h3>
+<div class="h-64 flex items-end justify-around gap-2 px-4">
+<div class="flex flex-col items-center gap-2 group">
+<div class="flex gap-1 h-48 items-end">
+<div class="w-6 bg-secondary-container rounded-t-sm" style="height: 60%"></div>
+<div class="w-6 bg-primary rounded-t-sm" style="height: 90%"></div>
+</div>
+<span class="text-[10px] font-bold uppercase rotate-45 mt-4 translate-y-2">Tufts</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="flex gap-1 h-48 items-end">
+<div class="w-6 bg-secondary-container rounded-t-sm" style="height: 45%"></div>
+<div class="w-6 bg-primary rounded-t-sm" style="height: 75%"></div>
+</div>
+<span class="text-[10px] font-bold uppercase rotate-45 mt-4 translate-y-2">Tai Tung</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="flex gap-1 h-48 items-end">
+<div class="w-6 bg-secondary-container rounded-t-sm" style="height: 40%"></div>
+<div class="w-6 bg-primary rounded-t-sm" style="height: 68%"></div>
+</div>
+<span class="text-[10px] font-bold uppercase rotate-45 mt-4 translate-y-2">Pau Heung</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="flex gap-1 h-48 items-end">
+<div class="w-6 bg-secondary-container rounded-t-sm" style="height: 30%"></div>
+<div class="w-6 bg-primary rounded-t-sm" style="height: 50%"></div>
+</div>
+<span class="text-[10px] font-bold uppercase rotate-45 mt-4 translate-y-2">Mary Soo Hoo</span>
+</div>
+</div>
+<div class="mt-12 flex justify-center gap-8">
+<div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-secondary">
+<span class="w-3 h-3 bg-secondary-container rounded-sm"></span> Normal Night
+                    </div>
+<div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-primary">
+<span class="w-3 h-3 bg-primary rounded-sm"></span> Heat Wave Night
+                    </div>
+</div>
+</div>
+</div>
+<!-- Site Heat Vulnerability Table -->
+<section class="bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden mb-8">
+<div class="px-8 py-6 bg-surface-container-low border-b border-outline-variant/20">
+<h3 class="text-2xl font-serif font-bold text-on-surface">Site Vulnerability Ranking</h3>
+</div>
+<table class="w-full">
+<thead class="bg-surface-container-high/30 text-on-surface-variant text-[10px] uppercase font-bold tracking-widest">
+<tr>
+<th class="px-8 py-4 text-left">Site Identifier</th>
+<th class="px-8 py-4 text-left">Classification</th>
+<th class="px-8 py-4 text-left">Mean Peak WBGT</th>
+<th class="px-8 py-4 text-left">Relative Risk</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-8 py-4 font-bold">Tufts University Medical Center</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-error-container text-error rounded-full text-[10px] font-bold uppercase">High Risk</span>
+</td>
+<td class="px-8 py-4 font-serif italic">86.4°F</td>
+<td class="px-8 py-4">
+<div class="w-24 h-2 bg-surface-variant rounded-full"><div class="w-[95%] h-full bg-primary rounded-full"></div></div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-8 py-4 font-bold">Tai Tung Village</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-error-container text-error rounded-full text-[10px] font-bold uppercase">High Risk</span>
+</td>
+<td class="px-8 py-4 font-serif italic">84.8°F</td>
+<td class="px-8 py-4">
+<div class="w-24 h-2 bg-surface-variant rounded-full"><div class="w-[88%] h-full bg-primary rounded-full"></div></div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-8 py-4 font-bold">Oak Street</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold uppercase">Moderate</span>
+</td>
+<td class="px-8 py-4 font-serif italic">82.1°F</td>
+<td class="px-8 py-4">
+<div class="w-24 h-2 bg-surface-variant rounded-full"><div class="w-[72%] h-full bg-secondary rounded-full"></div></div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/30 transition-colors">
+<td class="px-8 py-4 font-bold">Mary Soo Hoo Park</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-[10px] font-bold uppercase">Low Risk</span>
+</td>
+<td class="px-8 py-4 font-serif italic">79.5°F</td>
+<td class="px-8 py-4">
+<div class="w-24 h-2 bg-surface-variant rounded-full"><div class="w-[45%] h-full bg-tertiary rounded-full"></div></div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- Research Insight Footer -->
+<footer class="bg-primary text-on-primary p-12 rounded-2xl relative overflow-hidden shadow-xl">
+<div class="absolute bottom-0 right-0 w-64 h-64 opacity-10 pointer-events-none translate-x-12 translate-y-12">
+<span class="material-symbols-outlined text-[200px]">inventory_2</span>
+</div>
+<div class="max-w-4xl relative z-10">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-4xl">lightbulb</span>
+<h3 class="text-3xl font-serif font-bold">Critical Research Insight</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<p class="font-serif italic text-lg leading-relaxed text-on-primary-container">
+                        Humidity acts as the primary driver of physiological heat stress in Chinatown’s microclimates. While dry temperature varies minimally, moisture retention creates a 47% dual-exposure risk where peak heat coincides with high particulate matter.
+                    </p>
+<div class="space-y-4">
+<div class="bg-white/10 p-4 rounded-lg backdrop-blur-md">
+<h4 class="text-xs font-bold uppercase tracking-widest mb-1 text-on-primary-container">Key Action Item</h4>
+<p class="text-sm">Prioritize green infrastructure at Tufts Medical &amp; Tai Tung to mitigate the "Night-Heat Retention" cycle.</p>
+</div>
+<div class="bg-white/10 p-4 rounded-lg backdrop-blur-md">
+<h4 class="text-xs font-bold uppercase tracking-widest mb-1 text-on-primary-container">Data Source</h4>
+<p class="text-sm">Tufts HEROS Lab High-Frequency Thermal Mesh (Aug 2023 - Present)</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

@@ -3,6 +3,7 @@ import {
   ReferenceLine, AreaChart, Area, Line, ComposedChart, BarChart, Bar, Cell,
 } from 'recharts'
 import { useQ1Data, type SiteRow } from '../hooks/useQ1Data'
+import { useTranslation } from 'react-i18next'
 
 const C = {
   primary: '#6f070f',
@@ -45,11 +46,12 @@ function biasToRgb(bias: number | null): string {
 
 export default function ResearchQ1() {
   const { scatter, blandAltman, siteTable, concBias, diurnal, rolling, heatmap, assets, loading } = useQ1Data()
+  const { t } = useTranslation()
 
   if (loading) return (
     <div className="max-w-7xl mx-auto px-10 py-24 text-center">
       <span className="material-symbols-outlined text-4xl text-primary animate-spin">progress_activity</span>
-      <p className="mt-4 text-sm text-on-surface-variant">Loading sensor validation data…</p>
+      <p className="mt-4 text-sm text-on-surface-variant">{t('common.loading')}</p>
     </div>
   )
 
@@ -66,16 +68,14 @@ export default function ResearchQ1() {
         <div className="lg:col-span-8 space-y-6">
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30">
             <div className="w-2 h-2 rounded-full bg-tertiary" />
-            <span className="text-[10px] font-bold uppercase tracking-wider text-tertiary">Tufts Verified • Version 2.4</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-tertiary">{t('q1.badge')}</span>
           </div>
-          <h2 className="text-5xl font-[family-name:var(--font-family-headline)] font-bold text-primary tracking-tight leading-none">Calibration Fidelity Ledger</h2>
+          <h2 className="text-5xl font-[family-name:var(--font-family-headline)] font-bold text-primary tracking-tight leading-none">{t('q1.title')}</h2>
           <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
-            This protocol evaluates the operational consistency of PurpleAir PA-II sensors against the
-            MassDEP Federal Equivalent Method (FEM) at the Harrison Ave site. Validation ensures that
-            high-resolution community data maintains scholarly rigor through rigorous regression modeling.
+            {t('q1.description')}
           </p>
           <div className="flex flex-wrap gap-3 pt-4">
-            {['Within ±5 µg/m³ (94.6%)', 'Paired Observations (47,009)', 'Sensor Drift (None Detected)'].map((tag) => (
+            {[t('q1.withinTolerance'), t('q1.pairedObs'), t('q1.sensorDrift')].map((tag) => (
               <span key={tag} className="bg-surface-container px-4 py-2 text-xs font-bold text-secondary-container border border-secondary-container/30 rounded-full">{tag}</span>
             ))}
           </div>
@@ -83,16 +83,16 @@ export default function ResearchQ1() {
         <div className="lg:col-span-4 grid grid-cols-1 gap-4">
           <div className="bg-surface-container-highest p-6 relative overflow-hidden">
             <div className="absolute -top-4 -right-4 opacity-5 pointer-events-none"><span className="material-symbols-outlined text-8xl">analytics</span></div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">Pearson Correlation (r)</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">{t('q1.pearsonR')}</p>
             <div className="text-4xl font-[family-name:var(--font-family-headline)] font-bold text-primary">0.939</div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white p-6 shadow-sm border border-stone-100">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1">RMSE</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1">{t('q1.rmse')}</p>
               <div className="text-2xl font-[family-name:var(--font-family-headline)] font-bold text-secondary">2.53 <span className="text-xs font-normal text-stone-400">μg/m³</span></div>
             </div>
             <div className="bg-white p-6 shadow-sm border border-stone-100">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1">Mean Bias</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1">{t('q1.meanBias')}</p>
               <div className="text-2xl font-[family-name:var(--font-family-headline)] font-bold text-tertiary">+1.53 <span className="text-xs font-normal text-stone-400">μg/m³</span></div>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function ResearchQ1() {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-surface-container-low p-8">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-primary">Correlation Analysis</h3>
+            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-primary">{t('q1.corrAnalysis')}</h3>
             <span className="text-[10px] uppercase tracking-widest bg-stone-200 px-2 py-1">n = {reg.n.toLocaleString()}</span>
           </div>
           <ResponsiveContainer width="100%" height={320}>
@@ -127,14 +127,14 @@ export default function ResearchQ1() {
             </ScatterChart>
           </ResponsiveContainer>
           <div className="mt-4 flex justify-between text-xs text-on-surface-variant">
-            <span className="italic">PA-II vs MassDEP FEM BAM-1022 • 10-min intervals</span>
+            <span className="italic">{t('q1.scatterLabel')}</span>
             <span className="font-bold">y = {reg.slope}x + {reg.intercept} | R² = {reg.r2}</span>
           </div>
         </div>
 
         <div className="bg-surface-container-low p-8">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-primary">Bland-Altman Agreement</h3>
+            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-primary">{t('q1.blandAltman')}</h3>
             <span className="material-symbols-outlined text-secondary">legend_toggle</span>
           </div>
           <ResponsiveContainer width="100%" height={320}>
@@ -163,10 +163,10 @@ export default function ResearchQ1() {
           </ResponsiveContainer>
           <div className="mt-6 flex justify-between items-center text-xs font-bold uppercase tracking-widest">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-primary" /> Mean Bias: {blandAltman!.stats.mean_bias}
+              <span className="w-2 h-2 rounded-full bg-primary" /> {t('q1.bias')}: {blandAltman!.stats.mean_bias}
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-tertiary" /> LOA Width: {blandAltman!.stats.loa_width} µg/m³
+              <span className="w-2 h-2 rounded-full bg-tertiary" /> {t('q1.loaWidth')}: {blandAltman!.stats.loa_width} µg/m³
             </div>
           </div>
         </div>
@@ -175,14 +175,14 @@ export default function ResearchQ1() {
       {/* ═══ Site Table (all 12) ═══ */}
       <section className="bg-white shadow-sm overflow-hidden">
         <div className="px-8 py-6 bg-surface-container flex justify-between items-center">
-          <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-primary">Site-Specific Performance</h3>
+          <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-primary">{t('q1.sitePerformance')}</h3>
           <span className="text-[10px] font-bold uppercase tracking-widest text-stone-500">{siteTable.length} Sites • Sorted by Bias</span>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-stone-50 border-b border-stone-100">
-                {['Monitoring Site', 'Slope', 'Intercept', 'R²', 'RMSE', 'Bias (µg/m³)', 'N'].map(h => (
+                {[t('q1.monitoringSite'), t('q1.slope'), t('q1.intercept'), t('q1.rSquared'), t('q1.rmse'), t('q1.biasLabel'), t('q1.nObs')].map(h => (
                   <th key={h} className={`px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-stone-500 ${h === 'N' ? 'text-right' : ''}`}>{h}</th>
                 ))}
               </tr>
@@ -193,8 +193,8 @@ export default function ResearchQ1() {
                   <td className="px-6 py-4 font-[family-name:var(--font-family-headline)] font-bold text-stone-800">
                     <div className="flex items-center gap-3">
                       {site.name}
-                      {site.site_id === 'castle' && <span className="bg-tertiary text-white text-[8px] px-1.5 py-0.5 rounded uppercase tracking-tighter">Best Agreement</span>}
-                      {site.site_id === 'greenway' && <span className="bg-error text-white text-[8px] px-1.5 py-0.5 rounded uppercase tracking-tighter">Highest Bias</span>}
+                      {site.site_id === 'castle' && <span className="bg-tertiary text-white text-[8px] px-1.5 py-0.5 rounded uppercase tracking-tighter">{t('q1.bestAgreement')}</span>}
+                      {site.site_id === 'greenway' && <span className="bg-error text-white text-[8px] px-1.5 py-0.5 rounded uppercase tracking-tighter">{t('q1.highestBias')}</span>}
                     </div>
                   </td>
                   <td className={`px-6 py-4 text-sm ${site.slope > 1.25 ? 'text-error font-bold' : ''}`}>{site.slope.toFixed(3)}</td>
@@ -214,8 +214,8 @@ export default function ResearchQ1() {
       <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <div className="lg:col-span-2 bg-surface-container-low p-8 flex flex-col justify-between">
           <div>
-            <h4 className="font-[family-name:var(--font-family-headline)] font-bold text-xl text-primary mb-2">Bias by PM2.5 Level</h4>
-            <p className="text-xs text-stone-500 mb-4">Higher concentration trends toward increased sensor divergence.</p>
+            <h4 className="font-[family-name:var(--font-family-headline)] font-bold text-xl text-primary mb-2">{t('q1.biasByLevel')}</h4>
+            <p className="text-xs text-stone-500 mb-4">{t('q1.higherConcentration')}</p>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={concBias} layout="vertical" margin={{ top: 5, right: 30, left: 10, bottom: 5 }}>
@@ -236,7 +236,7 @@ export default function ResearchQ1() {
         </div>
 
         <div className="bg-white p-8 border border-stone-100 flex flex-col justify-between">
-          <h4 className="font-[family-name:var(--font-family-headline)] font-bold text-xl text-secondary mb-2">Diurnal Bias</h4>
+          <h4 className="font-[family-name:var(--font-family-headline)] font-bold text-xl text-secondary mb-2">{t('q1.diurnalBias')}</h4>
           <ResponsiveContainer width="100%" height={160}>
             <AreaChart data={diurnal} margin={{ top: 5, right: 5, bottom: 5, left: -10 }}>
               <defs>
@@ -263,7 +263,7 @@ export default function ResearchQ1() {
         </div>
 
         <div className="bg-tertiary-container text-white p-8 flex flex-col justify-between">
-          <h4 className="font-[family-name:var(--font-family-headline)] font-bold text-xl mb-2">Temp × Humidity</h4>
+          <h4 className="font-[family-name:var(--font-family-headline)] font-bold text-xl mb-2">{t('q1.tempHumidity')}</h4>
           <div className="my-4">
             <div className="grid grid-cols-6 gap-1 mb-1">
               <div />
@@ -282,7 +282,7 @@ export default function ResearchQ1() {
               </div>
             ))}
           </div>
-          <p className="text-[10px] font-medium leading-tight opacity-80">Interaction effects become significant above 85°F and moderate humidity.</p>
+          <p className="text-[10px] font-medium leading-tight opacity-80">{t('q1.tempHumidityDesc')}</p>
         </div>
       </section>
 
@@ -290,9 +290,9 @@ export default function ResearchQ1() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <section className="lg:col-span-8 space-y-6">
           <div className="flex items-center justify-between">
-            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-3xl text-primary">Active Asset Registry</h3>
+            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-3xl text-primary">{t('q1.assetRegistry')}</h3>
             <span className="text-xs uppercase tracking-widest text-tertiary font-bold flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse" /> {assets.length}/{assets.length} Online
+              <span className="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse" /> {assets.length}/{assets.length} {t('q1.online')}
             </span>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

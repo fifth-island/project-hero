@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholarly Archivist | Q6: Highest AQI Days</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#6b3a18",
+                    "on-tertiary-container": "#79cdb1",
+                    "tertiary-fixed": "#9ef3d6",
+                    "primary-fixed-dim": "#ffb3ae",
+                    "inverse-on-surface": "#ffefcf",
+                    "tertiary": "#003e2f",
+                    "surface-variant": "#f6e1ae",
+                    "on-surface-variant": "#58413f",
+                    "on-secondary-fixed": "#311300",
+                    "surface-container": "#ffecc3",
+                    "on-primary-fixed": "#410004",
+                    "on-tertiary-fixed": "#002118",
+                    "surface": "#fff8f1",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#feb78a",
+                    "secondary": "#87512d",
+                    "background": "#fff8f1",
+                    "surface-dim": "#eed8a6",
+                    "on-primary-fixed-variant": "#891c1e",
+                    "on-background": "#241a00",
+                    "secondary-container": "#feb78a",
+                    "error-container": "#ffdad6",
+                    "primary": "#6f070f",
+                    "primary-fixed": "#ffdad7",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#fff2da",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdbc8",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#fff8f1",
+                    "on-primary-container": "#ffa59e",
+                    "inverse-surface": "#3b2f0b",
+                    "on-secondary-container": "#794622",
+                    "tertiary-fixed-dim": "#82d7ba",
+                    "error": "#ba1a1a",
+                    "primary-container": "#902223",
+                    "inverse-primary": "#ffb3ae",
+                    "on-surface": "#241a00",
+                    "tertiary-container": "#005744",
+                    "outline": "#8b716f",
+                    "surface-container-high": "#fce6b3",
+                    "outline-variant": "#dfbfbc",
+                    "surface-container-highest": "#f6e1ae",
+                    "on-tertiary-fixed-variant": "#00513f",
+                    "surface-tint": "#a93533"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 248, 241, 0.7);
+            backdrop-filter: blur(16px);
+        }
+        .lattice-bg {
+            background-image: radial-gradient(#6f070f 0.5px, transparent 0.5px);
+            background-size: 8px 8px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation Shell -->
+<header class="bg-surface dark:bg-slate-900 border-b-0 fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4">
+<div class="text-2xl font-bold italic text-red-900 dark:text-red-500 Newsreader">Scholarly Archivist</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-stone-600 dark:text-stone-400 font-medium Newsreader hover:text-red-700 dark:hover:text-red-300 transition-colors duration-300" href="#">Distributions</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium Newsreader hover:text-red-700 dark:hover:text-red-300 transition-colors duration-300" href="#">AQI &amp; Multi-Pollutants</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium Newsreader hover:text-red-700 dark:hover:text-red-300 transition-colors duration-300" href="#">Temporal Patterns</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium Newsreader hover:text-red-700 dark:hover:text-red-300 transition-colors duration-300" href="#">Site Clustering</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium Newsreader hover:text-red-700 dark:hover:text-red-300 transition-colors duration-300" href="#">Hottest Days</a>
+<a class="text-red-800 dark:text-red-400 border-b-2 border-red-800 font-bold Newsreader pb-1" href="#">Highest AQI</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-secondary" data-icon="account_balance">account_balance</button>
+<button class="material-symbols-outlined text-secondary" data-icon="settings">settings</button>
+</div>
+</header>
+<!-- Side Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low dark:bg-slate-950 flex flex-col pt-20 z-40">
+<div class="px-6 py-4 flex flex-col items-center border-b border-outline-variant/10">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center mb-2 overflow-hidden shadow-sm">
+<img alt="Tufts University Logo Research Seal" class="w-12 h-12 object-contain opacity-80" data-alt="Official Tufts University academic seal with intricate detailing in a rich heritage aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA--pCzV1CjBYTV-YW3TCgNKC6uglV77Q9m_u1dvdEVYKMYygL2Du0ZCnaK_jbZIGRPonog0m9tqccpSRAYElW1omJ4OmsSfVgItf7-yKbHXdFfHNyyjVRdliV6W4EuwyZ9_stQRunvm4gIWPkGkT4iOnFygUE5WOCn9aXQU8oEerUhb-bQ_9GhEYEusBfDeYoPzrrgywp8Kpuh_TitTGrRFtv5dYrzQCpzpGYmMlnl0vvxkkh9KU5DBJUad9LZaLbPU11qe56XNBR5"/>
+</div>
+<h2 class="text-lg font-black text-red-900 dark:text-red-500 Manrope">Research Inquiry</h2>
+<p class="text-xs text-stone-500 uppercase tracking-widest font-bold">Archived Queries Q1-Q9</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-4">
+<div class="text-stone-600 dark:text-stone-400 px-6 py-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="analytics">analytics</span>
+<span class="font-semibold text-sm Manrope">Q1: Spatial Variance</span>
+</div>
+<div class="text-stone-600 dark:text-stone-400 px-6 py-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+<span class="font-semibold text-sm Manrope">Q2: Diurnal Flux</span>
+</div>
+<div class="text-stone-600 dark:text-stone-400 px-6 py-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="science">science</span>
+<span class="font-semibold text-sm Manrope">Q3: Aerosol Composition</span>
+</div>
+<div class="text-stone-600 dark:text-stone-400 px-6 py-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="group_work">group_work</span>
+<span class="font-semibold text-sm Manrope">Q4: Cluster Analysis</span>
+</div>
+<div class="text-stone-600 dark:text-stone-400 px-6 py-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="thermostat">thermostat</span>
+<span class="font-semibold text-sm Manrope">Q5: Thermal Extremes</span>
+</div>
+<div class="bg-red-50 dark:bg-red-950/30 text-red-900 dark:text-red-400 rounded-r-full font-bold px-6 py-3 border-l-4 border-red-800 flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="factory">factory</span>
+<span class="font-semibold text-sm Manrope">Q6: Pollution Drivers</span>
+</div>
+<div class="text-stone-600 dark:text-stone-400 px-6 py-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="medical_services">medical_services</span>
+<span class="font-semibold text-sm Manrope">Q7: Health Correlation</span>
+</div>
+<div class="text-stone-600 dark:text-stone-400 px-6 py-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="gavel">gavel</span>
+<span class="font-semibold text-sm Manrope">Q8: Policy Impact</span>
+</div>
+<div class="text-stone-600 dark:text-stone-400 px-6 py-3 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 flex items-center gap-3">
+<span class="material-symbols-outlined text-lg" data-icon="query_stats">query_stats</span>
+<span class="font-semibold text-sm Manrope">Q9: Future Projections</span>
+</div>
+</nav>
+<div class="p-6">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+                Export Dataset
+            </button>
+</div>
+<div class="mt-auto px-6 py-4 border-t border-outline-variant/10">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 text-stone-500 hover:text-primary cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="menu_book">menu_book</span>
+<span class="text-xs font-bold uppercase tracking-wider">Documentation</span>
+</div>
+<div class="flex items-center gap-3 text-stone-500 hover:text-primary cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="biotech">biotech</span>
+<span class="text-xs font-bold uppercase tracking-wider">Methodology</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-72 pt-24 px-8 pb-12 min-h-screen">
+<!-- Hero Header -->
+<div class="mb-12 relative overflow-hidden bg-surface-container-low rounded-xl p-8 border-l-8 border-primary">
+<div class="lattice-bg absolute inset-0"></div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-end gap-6">
+<div>
+<h1 class="display-lg font-headline text-5xl font-bold tracking-tight text-primary mb-2">Q6: Highest AQI Days (PM2.5)</h1>
+<p class="text-lg text-secondary font-medium font-headline italic">Temporal Anomaly Archive &amp; Spatial Disparity Analysis</p>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-highest/50 backdrop-blur-sm p-4 rounded-lg flex flex-col border border-primary/10">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Wildfire Smoke Event</span>
+<span class="text-xl font-black text-primary">AUG 19 - HAZARDOUS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-lowest p-6 rounded-xl relative border-b-4 border-red-900 group">
+<div class="absolute top-4 right-4 text-primary opacity-20 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Peak Daily AQI</h4>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black text-red-900">500</span>
+<span class="text-sm font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded">HAZARDOUS</span>
+</div>
+<p class="text-xs mt-4 text-stone-500 font-medium">Recorded: Aug 19 Wildfire Influx</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl relative border-b-4 border-secondary group">
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Spatial PM2.5 Range</h4>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black text-on-surface">4.3</span>
+<span class="text-sm font-semibold text-secondary">µg/m³</span>
+</div>
+<p class="text-xs mt-4 text-stone-500 font-medium">Variance during high-AQI periods</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl relative border-b-4 border-tertiary group">
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Disparity Amplification</h4>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black text-tertiary">1.5×</span>
+</div>
+<p class="text-xs mt-4 text-stone-500 font-medium">Inequity growth on hazardous days</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl relative border-b-4 border-primary group">
+<div class="absolute top-4 right-4 text-primary">
+<span class="material-symbols-outlined text-xl" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4">Most Affected Site</h4>
+<div class="flex items-baseline gap-2">
+<span class="text-xl font-black text-primary">CHIN PARK</span>
+</div>
+<div class="text-2xl font-bold text-on-surface mt-1">18.5 <span class="text-sm font-medium">µg/m³</span></div>
+</div>
+</div>
+<!-- Main Analytics Section -->
+<div class="grid grid-cols-12 gap-8 mb-12">
+<!-- Map Side -->
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-8">
+<div class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col h-[500px]">
+<div class="p-4 bg-surface-container-high flex justify-between items-center border-b border-outline-variant/10">
+<h3 class="font-headline font-bold text-lg text-primary">Spatial Disparity Map: Aug 19 Peak</h3>
+<span class="text-xs font-bold bg-primary/10 text-primary px-3 py-1 rounded-full">LIVE ARCHIVE</span>
+</div>
+<div class="flex-1 relative bg-stone-200">
+<img class="w-full h-full object-cover grayscale brightness-90 contrast-125" data-alt="Stylized map of Boston Chinatown with red proportional bubbles indicating high pollution hotspots at Chin Park and One Greenway" data-location="Chinatown Boston" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWpTOq4rG9PBuCImwNJTLzc9lpc1plI1oIyBxVV8aneinK-sYBHb62c3Yrq-KmBUJVc0pE50-JqC95e3QsP8hhHLoNpECjemG0RD7gY05DVSjajRl2D7l5iKSw1GkVoIsAK0kQRwkBinpAuco-U7Z6mLt-MoDLrXPmmRkN4yRW4J_LnLX0i_7PK8O-qGpfhz3LQDuzDOGKiGl_5pI5O_ku3KD5ZL1WPtc2glbXTs2WG2ieJKDgVPFwL-xFVjwtAmk9NcRYwOAU6Mlg"/>
+<!-- Hotspot Labels Overlay -->
+<div class="absolute top-1/4 left-1/3 bg-primary text-white text-[10px] px-2 py-1 rounded font-bold shadow-xl">CHIN PARK: 18.5</div>
+<div class="absolute bottom-1/3 right-1/4 bg-red-800 text-white text-[10px] px-2 py-1 rounded font-bold shadow-xl">ONE GREENWAY: 17.2</div>
+<!-- Legend Overlay -->
+<div class="absolute bottom-4 left-4 glass-panel p-3 rounded-lg border border-white/40 shadow-xl">
+<div class="text-[10px] font-bold uppercase tracking-widest mb-2 text-primary">Concentration Gradient</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-red-300"></div><span class="text-[10px]">Moderate</span>
+<div class="w-3 h-3 rounded-full bg-red-600"></div><span class="text-[10px]">Unhealthy</span>
+<div class="w-4 h-4 rounded-full bg-red-900"></div><span class="text-[10px]">Hazardous</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Box Plots -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline font-bold text-lg text-secondary">PM2.5 Distribution Shift</h3>
+<div class="flex gap-4 text-[10px] font-bold uppercase">
+<div class="flex items-center gap-1"><div class="w-2 h-2 bg-stone-300"></div> Normal</div>
+<div class="flex items-center gap-1"><div class="w-2 h-2 bg-primary"></div> High AQI</div>
+</div>
+</div>
+<div class="h-48 flex items-end justify-around gap-8 px-4">
+<!-- Box Plot Mock -->
+<div class="w-20 flex flex-col items-center">
+<div class="w-0.5 h-12 bg-stone-400 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-4 bg-stone-200 border border-stone-400"></div>
+</div>
+<span class="text-[10px] font-bold mt-4 text-stone-500">NORMAL</span>
+</div>
+<div class="w-20 flex flex-col items-center">
+<div class="w-0.5 h-40 bg-primary relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-20 bg-primary/20 border border-primary"></div>
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold mt-4 text-primary">HIGH AQI (+83%)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Analytics Side -->
+<div class="col-span-12 lg:col-span-7 flex flex-col gap-8">
+<!-- Heatmap -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h3 class="font-headline font-bold text-lg text-primary mb-6">Site × Day Deviation Matrix</h3>
+<div class="grid grid-cols-6 gap-2">
+<div class="col-span-1"></div>
+<div class="text-[9px] font-bold text-center text-stone-400 uppercase">Day 1</div>
+<div class="text-[9px] font-bold text-center text-stone-400 uppercase">Day 2</div>
+<div class="text-[9px] font-bold text-center text-stone-400 uppercase">Day 3</div>
+<div class="text-[9px] font-bold text-center text-stone-400 uppercase">Day 4</div>
+<div class="text-[9px] font-bold text-center text-stone-400 uppercase">Day 5</div>
+<!-- Row: Chin Park -->
+<div class="text-[10px] font-bold text-primary">Chin Park</div>
+<div class="h-8 bg-red-900 rounded-sm"></div>
+<div class="h-8 bg-red-800 rounded-sm"></div>
+<div class="h-8 bg-red-900 rounded-sm"></div>
+<div class="h-8 bg-red-700 rounded-sm"></div>
+<div class="h-8 bg-red-900 rounded-sm"></div>
+<!-- Row: Greenway -->
+<div class="text-[10px] font-bold text-secondary">Greenway</div>
+<div class="h-8 bg-red-800 rounded-sm"></div>
+<div class="h-8 bg-red-700 rounded-sm"></div>
+<div class="h-8 bg-red-800 rounded-sm"></div>
+<div class="h-8 bg-red-600 rounded-sm"></div>
+<div class="h-8 bg-red-700 rounded-sm"></div>
+<!-- Row: Harrison -->
+<div class="text-[10px] font-bold text-stone-600">Harrison</div>
+<div class="h-8 bg-red-400 rounded-sm"></div>
+<div class="h-8 bg-red-300 rounded-sm"></div>
+<div class="h-8 bg-red-500 rounded-sm"></div>
+<div class="h-8 bg-red-400 rounded-sm"></div>
+<div class="h-8 bg-red-300 rounded-sm"></div>
+<!-- Row: Oxford -->
+<div class="text-[10px] font-bold text-stone-600">Oxford</div>
+<div class="h-8 bg-stone-200 rounded-sm"></div>
+<div class="h-8 bg-red-200 rounded-sm"></div>
+<div class="h-8 bg-stone-100 rounded-sm"></div>
+<div class="h-8 bg-red-100 rounded-sm"></div>
+<div class="h-8 bg-stone-200 rounded-sm"></div>
+</div>
+<div class="mt-4 flex justify-between items-center text-[10px] text-stone-500 italic">
+<span>* Matrix displays PM2.5 deviation from site-specific mean across peak AQI episodes</span>
+<div class="flex items-center gap-1"><div class="w-2 h-2 bg-red-900"></div> High Dev</div>
+</div>
+</div>
+<!-- Ranking Stability & Drivers Row -->
+<div class="grid grid-cols-2 gap-6">
+<!-- Stability Bar Chart -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h3 class="font-headline font-bold text-sm text-on-surface mb-4">Ranking Stability (σ)</h3>
+<div class="space-y-4">
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold uppercase"><span>Greenway</span> <span>Rank 1.6</span></div>
+<div class="w-full h-2 bg-stone-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[15%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold uppercase"><span>Chin Park</span> <span>Rank 2.1</span></div>
+<div class="w-full h-2 bg-stone-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[20%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold uppercase text-stone-400"><span>Oxford</span> <span>Rank 11.0</span></div>
+<div class="w-full h-2 bg-stone-100 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[85%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Met Context -->
+<div class="bg-surface-container p-6 rounded-xl relative overflow-hidden">
+<div class="lattice-bg absolute inset-0"></div>
+<h3 class="font-headline font-bold text-sm text-primary mb-4 relative z-10">Meteorological Context</h3>
+<div class="grid grid-cols-1 gap-3 relative z-10">
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg border border-primary/5">
+<div class="text-[10px] font-bold text-on-surface-variant uppercase">Wind Stagnation</div>
+<div class="text-lg font-black text-primary">2.1 <span class="text-xs font-normal">mph</span></div>
+<div class="text-[9px] text-red-700 italic">vs 2.8 mph average</div>
+</div>
+<div class="bg-surface-container-lowest/80 p-3 rounded-lg border border-primary/5">
+<div class="text-[10px] font-bold text-on-surface-variant uppercase">Vertical Mixing</div>
+<div class="text-lg font-black text-tertiary">Low Stability</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Land-Use Correlation -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h3 class="font-headline font-bold text-lg text-primary mb-6">Land-Use Predictor Analysis</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="w-32 text-[10px] font-bold uppercase text-stone-500">Road Proximity</span>
+<div class="flex-1 h-6 bg-stone-100 rounded-sm relative">
+<div class="h-full bg-secondary w-[54%]"></div>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-black text-on-surface">r = 0.54</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-32 text-[10px] font-bold uppercase text-stone-500">Building Ht</span>
+<div class="flex-1 h-6 bg-stone-100 rounded-sm relative">
+<div class="h-full bg-secondary w-[41%] opacity-80"></div>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-black text-on-surface">r = 0.41</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-32 text-[10px] font-bold uppercase text-stone-500">Open Space</span>
+<div class="flex-1 h-6 bg-stone-100 rounded-sm relative">
+<div class="h-full bg-tertiary w-[22%] opacity-60"></div>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-black text-on-surface">r = -0.22</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Research Synthesis Footer -->
+<footer class="mt-12 bg-primary-container text-on-primary-container p-10 rounded-2xl relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 right-0 w-64 h-64 opacity-10">
+<span class="material-symbols-outlined text-[200px]" data-icon="menu_book">menu_book</span>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row gap-12">
+<div class="md:w-1/3">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center mb-6 shadow-inner">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="fact_check" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+</div>
+<h2 class="font-headline text-3xl font-bold leading-tight mb-4">Research Synthesis</h2>
+<p class="text-sm font-medium opacity-90 leading-relaxed">
+                        Environmental audit confirming the systemic nature of spatial disparities during hazardous climate events.
+                    </p>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-black/10 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+<h4 class="text-xs font-bold uppercase tracking-widest text-primary-fixed mb-3">Trigger Analysis</h4>
+<p class="text-xs leading-relaxed opacity-90">
+                            The Aug 19 peak was driven by an external wildfire smoke plume. However, local <strong>wind stagnation (2.1 mph)</strong> acted as the primary spatial differentiator, trapping particulates in urban canyons.
+                        </p>
+</div>
+<div class="bg-black/10 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+<h4 class="text-xs font-bold uppercase tracking-widest text-primary-fixed mb-3">Structural Equity</h4>
+<p class="text-xs leading-relaxed opacity-90">
+                            Finding: The "Same Sites Suffer Most" rule. Ranking stability proves that infrastructure—not just weather—dictates pollution exposure. Chin Park consistently remains 1.5× more polluted on bad days.
+                        </p>
+</div>
+</div>
+</div>
+<div class="mt-10 pt-6 border-t border-white/10 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest opacity-60">
+<span>© 2024 Tufts Environmental Research Collaboration</span>
+<span>Case Study: Chinatown Air Quality Repository</span>
+</div>
+</footer>
+</main>
+</body></html>

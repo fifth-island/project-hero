@@ -3,6 +3,7 @@ import {
   ReferenceLine, LineChart, Line, ComposedChart, Cell,
 } from 'recharts'
 import { useQ2Data, type SiteRow } from '../hooks/useQ2Data'
+import { useTranslation } from 'react-i18next'
 
 const C = {
   primary: '#6f070f',
@@ -44,11 +45,12 @@ function biasToRgb(bias: number): string {
 
 export default function ResearchQ2() {
   const { scatterDep, scatterWs, blandAltman, siteTable, diurnal, rolling, assets, tempRh, loading } = useQ2Data()
+  const { t } = useTranslation()
 
   if (loading) return (
     <div className="max-w-7xl mx-auto px-10 py-24 text-center">
       <span className="material-symbols-outlined text-4xl text-primary animate-spin">progress_activity</span>
-      <p className="mt-4 text-sm text-on-surface-variant">Loading temperature comparison data…</p>
+      <p className="mt-4 text-sm text-on-surface-variant">{t('common.loading')}</p>
     </div>
   )
 
@@ -64,16 +66,14 @@ export default function ResearchQ2() {
         <div className="lg:col-span-8 space-y-6">
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/30">
             <div className="w-2 h-2 rounded-full bg-tertiary" />
-            <span className="text-[10px] font-bold uppercase tracking-wider text-tertiary">Tufts Verified • Thermal Analysis</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-tertiary">{t('q2.badge')}</span>
           </div>
-          <h2 className="text-5xl font-[family-name:var(--font-family-headline)] font-bold text-primary tracking-tight leading-none">Temperature Sensor Comparison</h2>
+          <h2 className="text-5xl font-[family-name:var(--font-family-headline)] font-bold text-primary tracking-tight leading-none">{t('q2.title')}</h2>
           <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed">
-            This report evaluates Kestrel ambient temperature measurements across 12 Chinatown open space sites
-            against two reference monitors: the DEP Nubian Square FEM station and the rooftop weather station
-            at 35 Kneeland St. A critical rooftop thermal mass effect is documented.
+            {t('q2.description')}
           </p>
           <div className="flex flex-wrap gap-3 pt-4">
-            {['Study Period: Jul 19 – Aug 23, 2023', '12 Monitoring Sites', '~36,600 Paired Observations'].map((tag) => (
+            {[t('q2.studyPeriod'), t('q2.monitoringSites'), t('q2.pairedObs')].map((tag) => (
               <span key={tag} className="bg-surface-container px-4 py-2 text-xs font-bold text-secondary-container border border-secondary-container/30 rounded-full">{tag}</span>
             ))}
           </div>
@@ -82,26 +82,26 @@ export default function ResearchQ2() {
           {/* DEP KPI */}
           <div className="bg-surface-container-highest p-6 relative overflow-hidden">
             <div className="absolute -top-4 -right-4 opacity-5 pointer-events-none"><span className="material-symbols-outlined text-8xl">thermostat</span></div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-tertiary mb-1">vs DEP Nubian (r)</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-tertiary mb-1">{t('q2.vsDepR')}</p>
             <div className="text-4xl font-[family-name:var(--font-family-headline)] font-bold text-tertiary">0.90</div>
-            <p className="text-[10px] text-stone-500 mt-1">Gold-standard reference</p>
+            <p className="text-[10px] text-stone-500 mt-1">{t('q2.goldStandard')}</p>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white p-6 shadow-sm border border-stone-100">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1">DEP RMSE</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1">{t('q2.depRmse')}</p>
               <div className="text-2xl font-[family-name:var(--font-family-headline)] font-bold text-tertiary">3.10 <span className="text-xs font-normal text-stone-400">°F</span></div>
             </div>
             <div className="bg-white p-6 shadow-sm border border-stone-100">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1">DEP Bias</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1">{t('q2.depBias')}</p>
               <div className="text-2xl font-[family-name:var(--font-family-headline)] font-bold text-tertiary">−0.37 <span className="text-xs font-normal text-stone-400">°F</span></div>
             </div>
           </div>
           {/* WS KPI — warning */}
           <div className="bg-error-container p-6 relative overflow-hidden">
             <div className="absolute -top-4 -right-4 opacity-10 pointer-events-none"><span className="material-symbols-outlined text-8xl">warning</span></div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-error mb-1">vs WS Rooftop (r)</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-error mb-1">{t('q2.vsWsR')}</p>
             <div className="text-4xl font-[family-name:var(--font-family-headline)] font-bold text-error">0.60</div>
-            <p className="text-[10px] text-on-error-container mt-1">Unsuitable — 4-hr phase lag</p>
+            <p className="text-[10px] text-on-error-container mt-1">{t('q2.unsuitable')}</p>
           </div>
         </div>
       </section>
@@ -111,7 +111,7 @@ export default function ResearchQ2() {
         {/* Kestrel vs DEP */}
         <div className="bg-surface-container-low p-8">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-tertiary">Kestrel vs DEP Nubian</h3>
+            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-tertiary">{t('q2.kestrelVsDep')}</h3>
             <span className="text-[10px] uppercase tracking-widest bg-stone-200 px-2 py-1">n = {scatterDep!.regression.n.toLocaleString()}</span>
           </div>
           <ResponsiveContainer width="100%" height={320}>
@@ -134,7 +134,7 @@ export default function ResearchQ2() {
             </ScatterChart>
           </ResponsiveContainer>
           <div className="mt-4 flex justify-between text-xs text-on-surface-variant">
-            <span className="italic">Tight linear agreement</span>
+            <span className="italic">{t('q2.tightAgreement')}</span>
             <span className="font-bold text-tertiary">r = 0.90 | RMSE = 3.10°F</span>
           </div>
         </div>
@@ -142,8 +142,8 @@ export default function ResearchQ2() {
         {/* Kestrel vs WS */}
         <div className="bg-surface-container-low p-8">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-error">Kestrel vs WS Rooftop</h3>
-            <span className="text-[10px] uppercase tracking-widest bg-error-container px-2 py-1 text-error">POOR</span>
+            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-error">{t('q2.kestrelVsWs')}</h3>
+            <span className="text-[10px] uppercase tracking-widest bg-error-container px-2 py-1 text-error">{t('q2.poor')}</span>
           </div>
           <ResponsiveContainer width="100%" height={320}>
             <ScatterChart margin={{ top: 10, right: 10, bottom: 30, left: 10 }}>
@@ -165,7 +165,7 @@ export default function ResearchQ2() {
             </ScatterChart>
           </ResponsiveContainer>
           <div className="mt-4 flex justify-between text-xs text-on-surface-variant">
-            <span className="italic">Diffuse cloud — no linear structure</span>
+            <span className="italic">{t('q2.diffuseCloud')}</span>
             <span className="font-bold text-error">r = 0.60 | RMSE = 7.03°F</span>
           </div>
         </div>
@@ -175,12 +175,12 @@ export default function ResearchQ2() {
       <section className="bg-surface-container-low p-8">
         <div className="flex justify-between items-start mb-6">
           <div>
-            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-primary">Diurnal Temperature Cycle</h3>
+            <h3 className="font-[family-name:var(--font-family-headline)] font-bold text-2xl text-primary">{t('q2.diurnalCycle')}</h3>
             <p className="text-xs text-on-surface-variant mt-1">The rooftop weather station has a <strong className="text-error">4-hour thermal lag</strong> — an inverted diurnal cycle</p>
           </div>
           <div className="flex items-center gap-2 px-3 py-1 bg-error-container rounded-full">
             <span className="material-symbols-outlined text-sm text-error">priority_high</span>
-            <span className="text-[10px] font-bold text-error uppercase tracking-wide">Critical Finding</span>
+            <span className="text-[10px] font-bold text-error uppercase tracking-wide">{t('q2.criticalFinding')}</span>
           </div>
         </div>
         <ResponsiveContainer width="100%" height={300}>
@@ -194,9 +194,9 @@ export default function ResearchQ2() {
             <Tooltip contentStyle={{ background: C.surface, border: `1px solid ${C.outlineVariant}`, fontSize: 11 }}
               formatter={(v: any, name: any) => [`${v}°F`, name]}
               labelFormatter={(h: any) => `${h}:00`} />
-            <Line type="monotone" dataKey="kestrel" stroke={C.secondary} strokeWidth={2.5} dot={false} name="Kestrel (ground)" />
-            <Line type="monotone" dataKey="dep" stroke={C.tertiary} strokeWidth={2.5} dot={false} name="DEP Nubian" />
-            <Line type="monotone" dataKey="ws" stroke={C.error} strokeWidth={2} strokeDasharray="6 4" dot={false} name="WS Rooftop" />
+            <Line type="monotone" dataKey="kestrel" stroke={C.secondary} strokeWidth={2.5} dot={false} name={t('q2.kestrelGround')} />
+            <Line type="monotone" dataKey="dep" stroke={C.tertiary} strokeWidth={2.5} dot={false} name={t('q2.depNubian')} />
+            <Line type="monotone" dataKey="ws" stroke={C.error} strokeWidth={2} strokeDasharray="6 4" dot={false} name={t('q2.wsRooftop')} />
           </LineChart>
         </ResponsiveContainer>
         <div className="mt-6 grid grid-cols-3 gap-4 text-center border-t border-outline-variant/20 pt-6">
@@ -278,7 +278,7 @@ export default function ResearchQ2() {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-stone-50 border-b border-stone-100">
-                {['Monitoring Site', 'r (DEP)', 'Bias (°F)', 'RMSE (°F)', 'r (WS)', 'Mean Temp', 'N'].map(h => (
+                {[t('q2.monitoringSite'), t('q2.rDep'), t('q2.biasF'), t('q2.rmseF'), t('q2.rWs'), t('q2.meanTemp'), t('q2.nObs')].map(h => (
                   <th key={h} className={`px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-stone-500 ${h === 'N' ? 'text-right' : ''}`}>{h}</th>
                 ))}
               </tr>
@@ -289,8 +289,8 @@ export default function ResearchQ2() {
                   <td className="px-6 py-4 font-[family-name:var(--font-family-headline)] font-bold text-stone-800">
                     <div className="flex items-center gap-3">
                       {site.name}
-                      {site.site_id === 'oxford' && <span className="bg-error text-white text-[8px] px-1.5 py-0.5 rounded uppercase tracking-tighter">Warmest</span>}
-                      {site.site_id === 'eliotnorton' && <span className="bg-tertiary text-white text-[8px] px-1.5 py-0.5 rounded uppercase tracking-tighter">Coolest</span>}
+                      {site.site_id === 'oxford' && <span className="bg-error text-white text-[8px] px-1.5 py-0.5 rounded uppercase tracking-tighter">{t('q2.warmest')}</span>}
+                      {site.site_id === 'eliotnorton' && <span className="bg-tertiary text-white text-[8px] px-1.5 py-0.5 rounded uppercase tracking-tighter">{t('q2.coolest')}</span>}
                     </div>
                   </td>
                   <td className={`px-6 py-4 font-bold ${rColor(site.r_dep)}`}>{site.r_dep.toFixed(2)}</td>

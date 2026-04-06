@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   AreaChart, Area, BarChart, Bar, Cell,
@@ -41,12 +42,13 @@ function heatTextColor(v: number, min: number, max: number): string {
 
 export default function ResearchQ8() {
   const { kpi, diurnal, dow, heatmapPm25, wdWeDiurnal, siteTemporal, heatmapBySite, loading } = useQ8Data()
+  const { t } = useTranslation()
   const [heatmapSite, setHeatmapSite] = useState('all')
 
   if (loading) return (
     <div className="max-w-7xl mx-auto px-10 py-24 text-center">
       <span className="material-symbols-outlined text-4xl text-primary animate-spin">progress_activity</span>
-      <p className="mt-4 text-sm text-on-surface-variant">Loading temporal pattern data…</p>
+      <p className="mt-4 text-sm text-on-surface-variant">{t('common.loading')}</p>
     </div>
   )
 
@@ -64,16 +66,15 @@ export default function ResearchQ8() {
       <header className="flex justify-between items-end">
         <div>
           <h2 className="text-4xl font-[family-name:var(--font-family-headline)] font-bold text-primary tracking-tight italic">
-            Temporal Exposure Patterns
+            {t('q8.title')}
           </h2>
           <p className="text-secondary mt-2 max-w-2xl">
-            Hour-of-day and day-of-week patterns for PM2.5 and WBGT across 12 open-space monitoring sites,
-            revealing compound exposure windows and site-level heterogeneity.
+            {t('q8.description')}
           </p>
         </div>
         <div className="px-4 py-2 bg-surface-container rounded-lg border border-outline-variant/20 flex items-center gap-2">
           <span className="material-symbols-outlined text-primary text-sm">calendar_today</span>
-          <span className="text-xs font-bold uppercase tracking-widest">Jul – Aug 2023</span>
+          <span className="text-xs font-bold uppercase tracking-widest">{t('q8.period')}</span>
         </div>
       </header>
 
@@ -83,23 +84,23 @@ export default function ResearchQ8() {
         <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-bold tracking-widest uppercase mb-4">
-              Research Insight: Compound Risk
+              {t('q8.compoundRisk')}
             </div>
             <h3 className="font-[family-name:var(--font-family-headline)] text-3xl text-primary leading-tight mb-3">
-              Temporal Exposure Summary
+              {t('q8.temporalSummary')}
             </h3>
             <p className="text-secondary max-w-lg leading-relaxed">
-              The temporal dynamics of urban exposure reveal a critical {kpi!.offset_hours}-hour offset between peak air pollution and thermal stress.
+              {t('q8.temporalDynamics', { offset_hours: kpi!.offset_hours })}
             </p>
             <div className="flex flex-wrap gap-6 pt-4">
               <div>
-                <p className="text-xs font-bold uppercase text-secondary/60 tracking-widest">Compound Window</p>
+                <p className="text-xs font-bold uppercase text-secondary/60 tracking-widest">{t('q8.compoundWindow')}</p>
                 <p className="text-xl font-[family-name:var(--font-family-headline)] italic text-primary">{kpi!.compound_window}</p>
               </div>
               <div className="w-px h-10 bg-primary/10" />
               <div>
-                <p className="text-xs font-bold uppercase text-secondary/60 tracking-widest">Offset Duration</p>
-                <p className="text-xl font-[family-name:var(--font-family-headline)] italic text-primary">{kpi!.offset_hours} Hours</p>
+                <p className="text-xs font-bold uppercase text-secondary/60 tracking-widest">{t('q8.offsetDuration')}</p>
+                <p className="text-xl font-[family-name:var(--font-family-headline)] italic text-primary">{kpi!.offset_hours} {t('q8.hours')}</p>
               </div>
             </div>
           </div>
@@ -107,18 +108,18 @@ export default function ResearchQ8() {
             <div className="bg-surface-container-lowest p-6 rounded-lg">
               <div className="flex justify-between items-start mb-4">
                 <span className="material-symbols-outlined text-primary">air</span>
-                <span className="text-[10px] font-bold text-secondary">PM2.5</span>
+                <span className="text-[10px] font-bold text-secondary">{t('q8.pm25Label')}</span>
               </div>
-              <p className="text-xs text-secondary/70">Peak: <span className="text-primary font-bold">{String(kpi!.pm25_peak_hour).padStart(2, '0')}:00</span></p>
-              <p className="text-xs text-secondary/70">Trough: <span className="text-primary font-bold">{String(kpi!.pm25_trough_hour).padStart(2, '0')}:00</span></p>
+              <p className="text-xs text-secondary/70">{t('q8.peak')}: <span className="text-primary font-bold">{String(kpi!.pm25_peak_hour).padStart(2, '0')}:00</span></p>
+              <p className="text-xs text-secondary/70">{t('q8.trough')}: <span className="text-primary font-bold">{String(kpi!.pm25_trough_hour).padStart(2, '0')}:00</span></p>
             </div>
             <div className="bg-surface-container-lowest p-6 rounded-lg">
               <div className="flex justify-between items-start mb-4">
                 <span className="material-symbols-outlined text-tertiary">thermostat</span>
-                <span className="text-[10px] font-bold text-secondary">WBGT</span>
+                <span className="text-[10px] font-bold text-secondary">{t('q8.wbgtLabel')}</span>
               </div>
-              <p className="text-xs text-secondary/70">Peak: <span className="text-primary font-bold">{String(kpi!.wbgt_peak_hour).padStart(2, '0')}:00</span></p>
-              <p className="text-xs text-secondary/70">Trough: <span className="text-primary font-bold">{String(kpi!.wbgt_trough_hour).padStart(2, '0')}:00</span></p>
+              <p className="text-xs text-secondary/70">{t('q8.peak')}: <span className="text-primary font-bold">{String(kpi!.wbgt_peak_hour).padStart(2, '0')}:00</span></p>
+              <p className="text-xs text-secondary/70">{t('q8.trough')}: <span className="text-primary font-bold">{String(kpi!.wbgt_trough_hour).padStart(2, '0')}:00</span></p>
             </div>
           </div>
         </div>
@@ -127,7 +128,7 @@ export default function ResearchQ8() {
       {/* ═══ Diurnal Cycle Analysis ═══ */}
       <section>
         <div className="flex items-baseline gap-4 mb-6">
-          <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">Diurnal Cycle Analysis</h3>
+          <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">{t('q8.diurnalCycle')}</h3>
           <div className="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
         </div>
         <div className="grid lg:grid-cols-2 gap-6">
@@ -136,11 +137,11 @@ export default function ResearchQ8() {
             <div className="absolute top-0 right-0 w-24 h-24 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
             <div className="flex justify-between mb-6">
               <div>
-                <h4 className="font-[family-name:var(--font-family-headline)] italic text-lg text-primary">Particulate Concentration (PM2.5)</h4>
-                <p className="text-xs text-secondary/60 uppercase">Micrograms per cubic meter (µg/m³)</p>
+                <h4 className="font-[family-name:var(--font-family-headline)] italic text-lg text-primary">{t('q8.pm25Concentration')}</h4>
+                <p className="text-xs text-secondary/60 uppercase">{t('q8.pm25Unit')}</p>
               </div>
               <span className="text-xs font-bold text-secondary bg-surface-container px-2 py-1 rounded h-fit">
-                Daily Avg: {kpi!.pm25_peak_val}
+                {t('q8.dailyAvg')}: {kpi!.pm25_peak_val}
               </span>
             </div>
             <ResponsiveContainer width="100%" height={220}>
@@ -162,7 +163,7 @@ export default function ResearchQ8() {
               </AreaChart>
             </ResponsiveContainer>
             <p className="mt-4 text-[10px] italic text-primary leading-tight">
-              "Midday peak observed at solar noon, likely driven by photochemical processing and downward mixing from the residual layer."
+              "{t('q8.pm25Note')}"
             </p>
           </div>
           {/* WBGT diurnal */}
@@ -170,11 +171,11 @@ export default function ResearchQ8() {
             <div className="absolute top-0 right-0 w-24 h-24 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#87512d 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
             <div className="flex justify-between mb-6">
               <div>
-                <h4 className="font-[family-name:var(--font-family-headline)] italic text-lg text-secondary">Wet Bulb Globe Temperature (WBGT)</h4>
-                <p className="text-xs text-secondary/60 uppercase">Degrees Fahrenheit (°F)</p>
+                <h4 className="font-[family-name:var(--font-family-headline)] italic text-lg text-secondary">{t('q8.wbgtTemp')}</h4>
+                <p className="text-xs text-secondary/60 uppercase">{t('q8.wbgtUnit')}</p>
               </div>
               <span className="text-xs font-bold text-secondary bg-surface-container px-2 py-1 rounded h-fit">
-                Daily Max: {kpi!.wbgt_peak_val}
+                {t('q8.dailyMax')}: {kpi!.wbgt_peak_val}
               </span>
             </div>
             <ResponsiveContainer width="100%" height={220}>
@@ -196,7 +197,7 @@ export default function ResearchQ8() {
               </AreaChart>
             </ResponsiveContainer>
             <p className="mt-4 text-[10px] italic text-secondary leading-tight">
-              "Late afternoon peak reflects cumulative heat storage in urban canyon surfaces and building envelopes."
+              "{t('q8.wbgtNote')}"
             </p>
           </div>
         </div>
@@ -207,33 +208,33 @@ export default function ResearchQ8() {
         {/* Hour × DOW Heatmap */}
         <div className="lg:col-span-2">
           <div className="flex items-baseline gap-4 mb-4">
-            <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">Temporal Hotspots</h3>
+            <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">{t('q8.temporalHotspots')}</h3>
             <div className="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
           </div>
           <div className="bg-surface-container-lowest rounded-2xl p-8">
             <div className="flex justify-between items-center mb-6">
               <div className="flex items-center gap-4">
-                <h4 className="font-[family-name:var(--font-family-headline)] text-xl text-secondary">Weekly Pollution Cycle (Hour × Day)</h4>
+                <h4 className="font-[family-name:var(--font-family-headline)] text-xl text-secondary">{t('q8.weeklyPollution')}</h4>
                 <select
                   value={heatmapSite}
                   onChange={(e) => setHeatmapSite(e.target.value)}
                   className="bg-surface-container border border-outline-variant/30 rounded-lg px-3 py-1.5 text-xs font-bold text-on-surface appearance-none cursor-pointer"
                 >
-                  <option value="all">All Sites</option>
+                  <option value="all">{t('q8.allSites')}</option>
                   {siteTemporal.map(s => (
                     <option key={s.site_id} value={s.site_id}>{s.site_label}</option>
                   ))}
                 </select>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-[10px] font-bold text-stone-500">LOW</span>
+                <span className="text-[10px] font-bold text-stone-500">{t('q8.low')}</span>
                 <div className="flex h-3 w-32 rounded-full overflow-hidden">
                   <div className="h-full w-1/4" style={{ background: '#fff2da' }} />
                   <div className="h-full w-1/4" style={{ background: '#feb78a' }} />
                   <div className="h-full w-1/4" style={{ background: '#902223' }} />
                   <div className="h-full w-1/4" style={{ background: '#6f070f' }} />
                 </div>
-                <span className="text-[10px] font-bold text-stone-500">HIGH</span>
+                <span className="text-[10px] font-bold text-stone-500">{t('q8.high')}</span>
               </div>
             </div>
             {/* Heatmap grid */}
@@ -257,7 +258,7 @@ export default function ResearchQ8() {
                           <div className="hidden group-hover/hm:block absolute -top-16 left-1/2 -translate-x-1/2 bg-on-surface text-surface px-2 py-1.5 rounded text-[9px] whitespace-nowrap shadow-xl z-20 pointer-events-none">
                             <p className="font-bold">{cell.day} {cell.hour}:00</p>
                             <p>PM2.5: {cell.value} µg/m³</p>
-                            {cell.is_peak && <p className="text-secondary-container font-bold">Peak cell</p>}
+                            {cell.is_peak && <p className="text-secondary-container font-bold">{t('q8.peakCell')}</p>}
                             <div className="absolute bottom-[-3px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-on-surface rotate-45" />
                           </div>
                         </div>
@@ -285,18 +286,18 @@ export default function ResearchQ8() {
         {/* Baseline Shift: Weekday vs Weekend */}
         <div>
           <div className="flex items-baseline gap-4 mb-4">
-            <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">Baseline Shift</h3>
+            <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">{t('q8.baselineShift')}</h3>
           </div>
           <div className="bg-surface-container-lowest rounded-2xl p-8 h-[calc(100%-2.5rem)] flex flex-col">
-            <h4 className="font-[family-name:var(--font-family-headline)] text-xl text-secondary mb-2">Weekday vs Weekend</h4>
+            <h4 className="font-[family-name:var(--font-family-headline)] text-xl text-secondary mb-2">{t('q8.weekdayVsWeekend')}</h4>
             <p className="text-sm text-secondary/70 leading-relaxed mb-6">
-              Counterintuitively, weekends exhibit a sustained higher PM2.5 baseline.
+              {t('q8.weekendHigher')}
             </p>
             <div className="flex-1 flex flex-col justify-center gap-8">
               {/* Weekday bar */}
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-bold uppercase">
-                  <span>Weekday</span>
+                  <span>{t('q8.weekday')}</span>
                   <span className="text-secondary/50">{kpi!.weekday_pm25} µg/m³</span>
                 </div>
                 <div className="h-4 bg-surface-container-low rounded-full overflow-hidden">
@@ -309,7 +310,7 @@ export default function ResearchQ8() {
               {/* Weekend bar */}
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-bold uppercase">
-                  <span className="text-primary">Weekend</span>
+                  <span className="text-primary">{t('q8.weekend')}</span>
                   <span className="text-primary">{kpi!.weekend_pm25} µg/m³</span>
                 </div>
                 <div className="h-4 bg-surface-container rounded-full overflow-hidden">
@@ -320,7 +321,7 @@ export default function ResearchQ8() {
                 </div>
               </div>
               <div className="mt-4 p-4 bg-primary/5 rounded-lg italic text-xs text-primary text-center leading-relaxed">
-                "~{(kpi!.weekend_pm25 - kpi!.weekday_pm25).toFixed(1)} µg/m³ elevation during weekends suggests reduced weekday scavenging by fresh NO emission plumes."
+                "{t('q8.weekendNote', { delta: (kpi!.weekend_pm25 - kpi!.weekday_pm25).toFixed(1) })}"
               </div>
             </div>
           </div>
@@ -330,13 +331,13 @@ export default function ResearchQ8() {
       {/* ═══ Day-of-Week Profiles ═══ */}
       <section>
         <div className="flex items-baseline gap-4 mb-6">
-          <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">Day-of-Week Profiles</h3>
+          <h3 className="font-[family-name:var(--font-family-headline)] text-2xl text-primary font-bold">{t('q8.dowProfiles')}</h3>
           <div className="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
         </div>
         <div className="grid lg:grid-cols-2 gap-6">
           {/* PM2.5 DOW */}
           <div className="bg-surface-container-lowest rounded-2xl p-6">
-            <h4 className="font-[family-name:var(--font-family-headline)] italic text-lg text-primary mb-4">PM2.5 by Day of Week</h4>
+            <h4 className="font-[family-name:var(--font-family-headline)] italic text-lg text-primary mb-4">{t('q8.pm25ByDay')}</h4>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart data={dow} margin={{ top: 5, right: 10, bottom: 0, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke={C.outlineVariant} strokeOpacity={0.3} vertical={false} />
@@ -351,13 +352,13 @@ export default function ResearchQ8() {
               </BarChart>
             </ResponsiveContainer>
             <div className="mt-3 flex gap-4 text-[10px] text-on-surface-variant">
-              <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm" style={{ background: C.secondaryContainer }} /> Weekday</span>
-              <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm" style={{ background: C.primary }} /> Weekend</span>
+              <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm" style={{ background: C.secondaryContainer }} /> {t('q8.weekday')}</span>
+              <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm" style={{ background: C.primary }} /> {t('q8.weekend')}</span>
             </div>
           </div>
           {/* WBGT DOW */}
           <div className="bg-surface-container-lowest rounded-2xl p-6">
-            <h4 className="font-[family-name:var(--font-family-headline)] italic text-lg text-secondary mb-4">WBGT by Day of Week</h4>
+            <h4 className="font-[family-name:var(--font-family-headline)] italic text-lg text-secondary mb-4">{t('q8.wbgtByDay')}</h4>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart data={dow} margin={{ top: 5, right: 10, bottom: 0, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke={C.outlineVariant} strokeOpacity={0.3} vertical={false} />
@@ -372,8 +373,8 @@ export default function ResearchQ8() {
               </BarChart>
             </ResponsiveContainer>
             <div className="mt-3 flex gap-4 text-[10px] text-on-surface-variant">
-              <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm" style={{ background: C.surfaceHighest }} /> Weekday</span>
-              <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm" style={{ background: C.secondary }} /> Weekend</span>
+              <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm" style={{ background: C.surfaceHighest }} /> {t('q8.weekday')}</span>
+              <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-sm" style={{ background: C.secondary }} /> {t('q8.weekend')}</span>
             </div>
           </div>
         </div>

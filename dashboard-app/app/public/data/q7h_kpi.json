@@ -1,0 +1,1 @@
+{"n_sites": 12, "mean_r": 0.379, "std_r": 0.095, "cv_r": 25.0, "range_r": [0.229, 0.62], "fold_diff": 2.7, "mean_slope": 0.406, "slope_range": [0.227, 0.598], "strongest_site": "Berkeley Garden", "strongest_r": 0.62, "weakest_site": "Mary Soo Hoo", "weakest_r": 0.229, "n_above_avg": 6, "n_below_avg": 6}

@@ -1,0 +1,1 @@
+{"n_sites": 12, "n_obs": 46253, "n_lu_vars": 10, "best_pm25_predictor": "Roads 50m", "best_pm25_r": 0.663, "best_pm25_r2": 0.44, "best_pm25_p": 0.0188, "neg_pm25_predictor": "Trees 50m", "neg_pm25_r": -0.214, "best_wbgt_predictor": "Impervious 25m", "best_wbgt_r": -0.567, "best_wbgt_p": 0.0546, "sig_pm25_count": 2, "sig_wbgt_count": 0}

@@ -3,6 +3,7 @@ import {
   ReferenceLine, LineChart, Line, ComposedChart, Bar,
 } from 'recharts'
 import { useQ3Data, type Q3SiteRow } from '../hooks/useQ3Data'
+import { useTranslation } from 'react-i18next'
 
 const C = {
   primary: '#6f070f',
@@ -35,11 +36,12 @@ function statusBadge(status: string) {
 
 export default function ResearchQ3() {
   const { kpi, cdfOverall, cdfDayNight, siteTable, temporal, loading } = useQ3Data()
+  const { t } = useTranslation()
 
   if (loading) return (
     <div className="max-w-7xl mx-auto px-10 py-24 text-center">
       <span className="material-symbols-outlined text-4xl text-primary animate-spin">progress_activity</span>
-      <p className="mt-4 text-sm text-on-surface-variant">Loading distribution analysis data…</p>
+      <p className="mt-4 text-sm text-on-surface-variant">{t('common.loading')}</p>
     </div>
   )
 
@@ -50,16 +52,15 @@ export default function ResearchQ3() {
       <header className="flex justify-between items-end">
         <div>
           <h2 className="text-4xl font-[family-name:var(--font-family-headline)] font-bold text-primary tracking-tight italic">
-            Distributions &amp; Cumulative Frequency
+            {t('q3.title')}
           </h2>
           <p className="text-secondary mt-2 max-w-2xl">
-            Analysis of PM2.5 and WBGT thresholds across 12 study sites in Boston Chinatown,
-            quantifying public health risk exposure.
+            {t('q3.description')}
           </p>
         </div>
         <div className="px-4 py-2 bg-surface-container rounded-lg border border-outline-variant/20 flex items-center gap-2">
           <span className="material-symbols-outlined text-primary text-sm">calendar_today</span>
-          <span className="text-xs font-bold uppercase tracking-widest">Aug – Sep 2023</span>
+          <span className="text-xs font-bold uppercase tracking-widest">{t('q3.period')}</span>
         </div>
       </header>
 
@@ -68,42 +69,42 @@ export default function ResearchQ3() {
         {/* PM2.5 NAAQS Exceedance */}
         <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
-          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">PM2.5 NAAQS Exceedance</p>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('q3.pm25Exceedance')}</p>
           <div className="flex items-baseline gap-2">
             <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-primary">{kpi!.pm25_naaqs_exceedance_pct}%</h3>
             <span className="material-symbols-outlined text-error text-xl">trending_up</span>
           </div>
-          <p className="text-[10px] text-stone-400 mt-2 italic">Percentage of readings &gt; 9.0 µg/m³</p>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('q3.pm25ExceedanceDesc')}</p>
         </div>
         {/* WBGT Heat Risk */}
         <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
-          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">WBGT Heat Risk</p>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('q3.wbgtHeatRisk')}</p>
           <div className="flex items-baseline gap-2">
             <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-tertiary">{kpi!.wbgt_heat_risk_pct}%</h3>
             <span className="material-symbols-outlined text-tertiary text-xl">check_circle</span>
           </div>
-          <p className="text-[10px] text-stone-400 mt-2 italic">Observations exceeding OSHA caution</p>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('q3.wbgtHeatRiskDesc')}</p>
         </div>
         {/* PM2.5 Mean Density */}
         <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
-          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">PM2.5 Mean Density</p>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('q3.pm25MeanDensity')}</p>
           <div className="flex items-baseline gap-2">
             <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-on-surface">{kpi!.pm25_mean}</h3>
             <span className="text-xs text-stone-500">µg/m³</span>
           </div>
-          <p className="text-[10px] text-stone-400 mt-2 italic">Average across all sensor nodes</p>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('q3.pm25MeanDensityDesc')}</p>
         </div>
         {/* Total Observations */}
         <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
-          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">Total Observations</p>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('q3.totalObs')}</p>
           <div className="flex items-baseline gap-2">
             <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-on-surface">{kpi!.total_observations.toLocaleString()}</h3>
             <span className="material-symbols-outlined text-secondary text-xl">database</span>
           </div>
-          <p className="text-[10px] text-stone-400 mt-2 italic">Validated 5-minute data packets</p>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('q3.totalObsDesc')}</p>
         </div>
       </section>
 
@@ -112,10 +113,10 @@ export default function ResearchQ3() {
         {/* PM2.5 CDF */}
         <div className="bg-surface-container p-8 rounded-lg">
           <div className="flex justify-between items-center mb-8">
-            <h4 className="font-[family-name:var(--font-family-headline)] text-xl font-bold italic text-primary">Cumulative Distribution: PM2.5</h4>
+            <h4 className="font-[family-name:var(--font-family-headline)] text-xl font-bold italic text-primary">{t('q3.cdfPm25')}</h4>
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 bg-primary rounded-full" />
-              <span className="text-[10px] font-bold uppercase tracking-tighter">Aggregate Data</span>
+              <span className="text-[10px] font-bold uppercase tracking-tighter">{t('q3.aggregateData')}</span>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={240}>
@@ -129,7 +130,7 @@ export default function ResearchQ3() {
               <CartesianGrid strokeDasharray="3 3" stroke={C.outlineVariant} strokeOpacity={0.3} />
               <XAxis dataKey="x" type="number" domain={[0, 'dataMax']} tick={{ fontSize: 10 }} stroke={C.outline} label={{ value: 'µg/m³', position: 'insideBottomRight', offset: -5, fontSize: 10 }} />
               <YAxis domain={[0, 1]} tick={{ fontSize: 10 }} stroke={C.outline} tickFormatter={(v: number) => `${(v * 100).toFixed(0)}%`} />
-              <ReferenceLine x={9.0} stroke={C.primary} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: '9.0 µg/m³ NAAQS', position: 'top', fontSize: 9, fill: C.primary }} />
+              <ReferenceLine x={9.0} stroke={C.primary} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: t('q3.naaqs'), position: 'top', fontSize: 9, fill: C.primary }} />
               <Tooltip formatter={(v) => `${(Number(v) * 100).toFixed(1)}%`} labelFormatter={(v) => `${v} µg/m³`} />
               <Area type="monotone" dataKey="y" stroke={C.primary} strokeWidth={2.5} fill="url(#pm25Fill)" dot={false} />
             </AreaChart>
@@ -143,10 +144,10 @@ export default function ResearchQ3() {
         {/* WBGT CDF */}
         <div className="bg-surface-container p-8 rounded-lg">
           <div className="flex justify-between items-center mb-8">
-            <h4 className="font-[family-name:var(--font-family-headline)] text-xl font-bold italic text-secondary">Cumulative Distribution: WBGT</h4>
+            <h4 className="font-[family-name:var(--font-family-headline)] text-xl font-bold italic text-secondary">{t('q3.cdfWbgt')}</h4>
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 bg-secondary rounded-full" />
-              <span className="text-[10px] font-bold uppercase tracking-tighter">Heat Risk Metric</span>
+              <span className="text-[10px] font-bold uppercase tracking-tighter">{t('q3.heatRiskMetric')}</span>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={240}>
@@ -160,7 +161,7 @@ export default function ResearchQ3() {
               <CartesianGrid strokeDasharray="3 3" stroke={C.outlineVariant} strokeOpacity={0.3} />
               <XAxis dataKey="x" type="number" domain={['dataMin', 'dataMax']} tick={{ fontSize: 10 }} stroke={C.outline} label={{ value: '°F', position: 'insideBottomRight', offset: -5, fontSize: 10 }} />
               <YAxis domain={[0, 1]} tick={{ fontSize: 10 }} stroke={C.outline} tickFormatter={(v: number) => `${(v * 100).toFixed(0)}%`} />
-              <ReferenceLine x={80} stroke={C.secondary} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: '80°F OSHA CAUTION', position: 'top', fontSize: 9, fill: C.secondary }} />
+              <ReferenceLine x={80} stroke={C.secondary} strokeDasharray="4 4" strokeWidth={1.5} label={{ value: t('q3.oshaCaution'), position: 'top', fontSize: 9, fill: C.secondary }} />
               <Tooltip formatter={(v) => `${(Number(v) * 100).toFixed(1)}%`} labelFormatter={(v) => `${v}°F`} />
               <Area type="monotone" dataKey="y" stroke={C.secondary} strokeWidth={2.5} fill="url(#wbgtFill)" dot={false} />
             </AreaChart>
@@ -178,15 +179,15 @@ export default function ResearchQ3() {
         <div className="col-span-4 bg-surface-container-low p-8 relative">
           <h4 className="font-[family-name:var(--font-family-headline)] text-lg font-bold mb-6 flex items-center gap-2">
             <span className="material-symbols-outlined text-primary">contrast</span>
-            Temporal Variance
+            {t('q3.temporalVariance')}
           </h4>
           <div className="space-y-6">
             {/* KS Test PM2.5 */}
             <div className="p-4 bg-surface-container-lowest border-l-4 border-primary">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1">Kolmogorov-Smirnov Test</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-1">{t('q3.ksTest')}</p>
               <h5 className="text-2xl font-[family-name:var(--font-family-headline)] font-bold">D = {cdfDayNight!.ks_pm25.d.toFixed(2)}</h5>
               <p className="text-[10px] text-stone-400 italic mt-1">
-                Significant difference between Day/Night distributions (p &lt; 0.001)
+                {t('q3.significantDifference')}
               </p>
             </div>
 
@@ -204,12 +205,12 @@ export default function ResearchQ3() {
             <div className="flex items-center justify-around px-4">
               <div className="text-center">
                 <span className="material-symbols-outlined text-secondary text-2xl">light_mode</span>
-                <p className="text-[10px] font-bold mt-1">DAY</p>
+                <p className="text-[10px] font-bold mt-1">{t('q3.day')}</p>
               </div>
               <div className="w-px h-12 bg-outline-variant/30" />
               <div className="text-center">
                 <span className="material-symbols-outlined text-primary text-2xl">dark_mode</span>
-                <p className="text-[10px] font-bold mt-1">NIGHT</p>
+                <p className="text-[10px] font-bold mt-1">{t('q3.night')}</p>
               </div>
             </div>
           </div>
@@ -218,18 +219,18 @@ export default function ResearchQ3() {
         {/* Site Variability Table */}
         <div className="col-span-8 bg-surface-container-low p-8">
           <div className="flex justify-between items-end mb-6">
-            <h4 className="font-[family-name:var(--font-family-headline)] text-lg font-bold">Site Variability Index (SVI)</h4>
+            <h4 className="font-[family-name:var(--font-family-headline)] text-lg font-bold">{t('q3.svi')}</h4>
             <span className="text-[10px] font-bold text-stone-400">{siteTable.length} MONITORING SITES</span>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="text-[10px] font-bold uppercase tracking-widest text-stone-500 border-b border-outline-variant/30">
-                  <th className="pb-3">Sensor ID</th>
-                  <th className="pb-3">Location Context</th>
-                  <th className="pb-3">PM2.5 P90</th>
-                  <th className="pb-3">Exceedance %</th>
-                  <th className="pb-3">Status</th>
+                  <th className="pb-3">{t('q3.sensorId')}</th>
+                  <th className="pb-3">{t('q3.locationContext')}</th>
+                  <th className="pb-3">{t('q3.pm25P90')}</th>
+                  <th className="pb-3">{t('q3.exceedancePct')}</th>
+                  <th className="pb-3">{t('q3.status')}</th>
                 </tr>
               </thead>
               <tbody className="text-xs">
@@ -256,12 +257,12 @@ export default function ResearchQ3() {
       <section className="bg-surface-container-low p-8 rounded-lg">
         <div className="flex justify-between items-center mb-6">
           <div>
-            <h4 className="font-[family-name:var(--font-family-headline)] text-lg font-bold">Hourly Distribution Patterns</h4>
-            <p className="text-[10px] text-stone-500 mt-1 uppercase tracking-widest font-bold">24-hour median &amp; P90 concentrations</p>
+            <h4 className="font-[family-name:var(--font-family-headline)] text-lg font-bold">{t('q3.hourlyPatterns')}</h4>
+            <p className="text-[10px] text-stone-500 mt-1 uppercase tracking-widest font-bold">{t('q3.hourlyDesc')}</p>
           </div>
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2"><span className="w-3 h-0.5 bg-primary inline-block" /><span className="text-[10px] font-bold uppercase tracking-widest">PM2.5 Median</span></div>
-            <div className="flex items-center gap-2"><span className="w-3 h-0.5 bg-secondary inline-block" /><span className="text-[10px] font-bold uppercase tracking-widest">WBGT Median</span></div>
+            <div className="flex items-center gap-2"><span className="w-3 h-0.5 bg-primary inline-block" /><span className="text-[10px] font-bold uppercase tracking-widest">{t('q3.pm25Median')}</span></div>
+            <div className="flex items-center gap-2"><span className="w-3 h-0.5 bg-secondary inline-block" /><span className="text-[10px] font-bold uppercase tracking-widest">{t('q3.wbgtMedian')}</span></div>
           </div>
         </div>
         <ResponsiveContainer width="100%" height={200}>
@@ -282,18 +283,18 @@ export default function ResearchQ3() {
       <div className="bg-white/80 backdrop-blur-xl border border-white/50 p-4 rounded-xl shadow-xl inline-block">
         <div className="flex items-center gap-2 mb-3">
           <span className="material-symbols-outlined text-primary text-sm">legend_toggle</span>
-          <span className="text-[10px] font-bold uppercase tracking-widest">Statistical Confidence</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest">{t('q3.statConfidence')}</span>
         </div>
         <div className="space-y-2">
           <div className="flex justify-between items-center text-[10px] gap-8">
-            <span className="text-stone-500">Confidence Interval (95%)</span>
+            <span className="text-stone-500">{t('q3.ci95')}</span>
             <span className="font-bold">±0.4 µg/m³</span>
           </div>
           <div className="w-full bg-stone-200 h-1 rounded-full overflow-hidden">
             <div className="bg-tertiary w-full h-full" />
           </div>
           <p className="text-[9px] text-stone-400 leading-tight italic mt-2">
-            Data sourced from 12 PurpleAir sensors cross-validated with FEM monitoring stations.
+            {t('q3.dataSource')}
           </p>
         </div>
       </div>

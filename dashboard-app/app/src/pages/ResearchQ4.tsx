@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
@@ -66,13 +67,14 @@ const ROSE_OPTIONS = [
 
 export default function ResearchQ4() {
   const { kpi, dailyAqi, hourlyPatterns, corrMatrix, compliance, pollutionRose, weekdayWeekendGap, loading } = useQ4Data()
+  const { t } = useTranslation()
   const [hourlyPollutant, setHourlyPollutant] = useState(0) // index into HOURLY_POLLUTANTS
   const [roseMetric, setRoseMetric] = useState(0) // index into ROSE_OPTIONS
 
   if (loading) return (
     <div className="max-w-7xl mx-auto px-10 py-24 text-center">
       <span className="material-symbols-outlined text-4xl text-primary animate-spin">progress_activity</span>
-      <p className="mt-4 text-sm text-on-surface-variant">Loading AQI &amp; multi-pollutant data…</p>
+      <p className="mt-4 text-sm text-on-surface-variant">{t('common.loading')}</p>
     </div>
   )
 
@@ -95,47 +97,55 @@ export default function ResearchQ4() {
       <header className="flex justify-between items-end">
         <div>
           <h2 className="text-4xl font-[family-name:var(--font-family-headline)] font-bold text-primary tracking-tight italic">
-            AQI &amp; Multi-Pollutant Analysis
+            {t('q4.title')}
           </h2>
           <p className="text-secondary mt-2 max-w-2xl">
-            Daily Air Quality Index and concentrations of CO, SO₂, NO₂, and Ozone
-            in Chinatown based on the MassDEP monitor.
+            {t('q4.description')}
           </p>
         </div>
         <div className="px-4 py-2 bg-surface-container rounded-lg border border-outline-variant/20 flex items-center gap-2">
           <span className="material-symbols-outlined text-primary text-sm">calendar_today</span>
-          <span className="text-xs font-bold uppercase tracking-widest">Jul – Aug 2023</span>
+          <span className="text-xs font-bold uppercase tracking-widest">{t('q4.period')}</span>
         </div>
       </header>
 
-      {/* ═══ KPI Banner ═══ */}
+      {/* ═══ KPI Grid ═══ */}
       <section className="grid grid-cols-4 gap-6">
-        <div className="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#8b716f 0.5px, transparent 0.5px)', backgroundSize: '12px 12px' }} />
-          <p className="text-xs font-bold text-secondary tracking-widest uppercase mb-1">Status Integrity</p>
-          <h3 className="text-3xl font-[family-name:var(--font-family-headline)] font-black text-tertiary">{kpi!.days_good_aqi_pct}%</h3>
-          <p className="text-sm text-on-surface-variant font-medium">Days in 'Good' AQI</p>
-        </div>
-        <div className="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#8b716f 0.5px, transparent 0.5px)', backgroundSize: '12px 12px' }} />
-          <p className="text-xs font-bold text-secondary tracking-widest uppercase mb-1">Index Average</p>
-          <h3 className="text-3xl font-[family-name:var(--font-family-headline)] font-black text-primary">{kpi!.mean_daily_aqi}</h3>
-          <p className="text-sm text-on-surface-variant font-medium">Mean Daily AQI</p>
-        </div>
-        <div className="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#8b716f 0.5px, transparent 0.5px)', backgroundSize: '12px 12px' }} />
-          <p className="text-xs font-bold text-secondary tracking-widest uppercase mb-1">Observed Peak</p>
-          <h3 className="text-3xl font-[family-name:var(--font-family-headline)] font-black text-primary">{kpi!.max_daily_aqi}</h3>
-          <p className="text-sm text-on-surface-variant font-medium">Maximum Daily AQI</p>
-        </div>
-        <div className="bg-surface-container-lowest p-6 rounded-xl relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#8b716f 0.5px, transparent 0.5px)', backgroundSize: '12px 12px' }} />
-          <p className="text-xs font-bold text-secondary tracking-widest uppercase mb-1">Primary Agent</p>
+        <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('q4.statusIntegrity')}</p>
           <div className="flex items-baseline gap-2">
-            <h3 className="text-3xl font-[family-name:var(--font-family-headline)] font-black text-secondary">{kpi!.dominant_pollutant}</h3>
+            <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-tertiary">{kpi!.days_good_aqi_pct}%</h3>
+            <span className="material-symbols-outlined text-tertiary text-xl">check_circle</span>
+          </div>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('q4.statusIntegrityDesc')}</p>
+        </div>
+        <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('q4.indexAverage')}</p>
+          <div className="flex items-baseline gap-2">
+            <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-primary">{kpi!.mean_daily_aqi}</h3>
+            <span className="material-symbols-outlined text-secondary text-xl">analytics</span>
+          </div>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('q4.indexAverageDesc')}</p>
+        </div>
+        <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('q4.observedPeak')}</p>
+          <div className="flex items-baseline gap-2">
+            <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-primary">{kpi!.max_daily_aqi}</h3>
+            <span className="material-symbols-outlined text-error text-xl">trending_up</span>
+          </div>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('q4.observedPeakDesc')}</p>
+        </div>
+        <div className="bg-surface-container-lowest p-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-16 h-16 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6f070f 0.5px, transparent 0.5px)', backgroundSize: '16px 16px' }} />
+          <p className="text-[10px] font-bold uppercase tracking-widest text-stone-500 mb-4">{t('q4.primaryAgent')}</p>
+          <div className="flex items-baseline gap-2">
+            <h3 className="text-4xl font-[family-name:var(--font-family-headline)] font-extrabold text-secondary">{kpi!.dominant_pollutant}</h3>
             <span className="text-lg font-[family-name:var(--font-family-headline)] font-bold text-primary">{kpi!.dominant_pollutant_pct}%</span>
           </div>
-          <p className="text-sm text-on-surface-variant font-medium">Dominant Pollutant</p>
+          <p className="text-[10px] text-stone-400 mt-2 italic">{t('q4.primaryAgentDesc')}</p>
         </div>
       </section>
 
@@ -143,15 +153,15 @@ export default function ResearchQ4() {
       <section className="bg-surface-container p-8 rounded-2xl relative border-b-4 border-primary-container">
         <div className="flex justify-between items-end mb-8">
           <div>
-            <h2 className="text-2xl font-[family-name:var(--font-family-headline)] font-black text-on-surface">Daily AQI Heatmap</h2>
-            <p className="text-sm text-on-surface-variant">Scholarly review of environmental safety levels (July – August)</p>
+            <h2 className="text-2xl font-[family-name:var(--font-family-headline)] font-black text-on-surface">{t('q4.dailyHeatmap')}</h2>
+            <p className="text-sm text-on-surface-variant">{t('q4.dailyHeatmapDesc')}</p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-bold uppercase text-stone-500">Scale</span>
+            <span className="text-[10px] font-bold uppercase text-stone-500">{t('q4.scale')}</span>
             <div className="w-3 h-3 rounded-sm" style={{ background: '#82d7ba' }} />
             <div className="w-3 h-3 rounded-sm" style={{ background: '#005744' }} />
             <div className="w-3 h-3 rounded-sm" style={{ background: '#902223' }} />
-            <span className="text-[10px] font-bold uppercase text-stone-500 ml-1">Good — Hazardous</span>
+            <span className="text-[10px] font-bold uppercase text-stone-500 ml-1">{t('q4.goodToHazardous')}</span>
           </div>
         </div>
         <div className="grid grid-cols-7 gap-3 max-w-4xl mx-auto">
@@ -182,10 +192,10 @@ export default function ResearchQ4() {
                 {/* Hover tooltip */}
                 <div className="hidden group-hover/cell:block absolute -top-24 left-1/2 -translate-x-1/2 bg-on-surface text-surface px-3 py-2 rounded-lg text-[10px] whitespace-nowrap shadow-xl z-20 pointer-events-none">
                   <p className="font-bold text-[11px] mb-1">{monthNames[day.getMonth()]} {day.getDate()}, {day.getFullYear()}</p>
-                  <p>Overall AQI: <strong>{cell.aqi.toFixed(1)}</strong></p>
-                  <p>Dominant: <strong className="capitalize">{cell.dominant === 'pm25' ? 'PM2.5' : cell.dominant === 'ozone' ? 'Ozone' : cell.dominant}</strong></p>
-                  {cell.aqi_ozone != null && <p>Ozone sub-index: {cell.aqi_ozone.toFixed(1)}</p>}
-                  {cell.aqi_pm25 != null && <p>PM2.5 sub-index: {cell.aqi_pm25.toFixed(1)}</p>}
+                  <p>{t('q4.overallAqi')}: <strong>{cell.aqi.toFixed(1)}</strong></p>
+                  <p>{t('q4.dominant')}: <strong className="capitalize">{cell.dominant === 'pm25' ? 'PM2.5' : cell.dominant === 'ozone' ? 'Ozone' : cell.dominant}</strong></p>
+                  {cell.aqi_ozone != null && <p>{t('q4.ozoneSubIndex')}: {cell.aqi_ozone.toFixed(1)}</p>}
+                  {cell.aqi_pm25 != null && <p>{t('q4.pm25SubIndex')}: {cell.aqi_pm25.toFixed(1)}</p>}
                   <div className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-on-surface rotate-45" />
                 </div>
               </div>
@@ -201,7 +211,7 @@ export default function ResearchQ4() {
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-primary">{HOURLY_POLLUTANTS[hourlyPollutant].icon}</span>
-              <h3 className="text-xl font-[family-name:var(--font-family-headline)] font-black">Hourly {HOURLY_POLLUTANTS[hourlyPollutant].label} Patterns</h3>
+              <h3 className="text-xl font-[family-name:var(--font-family-headline)] font-black">{t('q4.hourlyPatterns', { pollutant: HOURLY_POLLUTANTS[hourlyPollutant].label })}</h3>
             </div>
             <div className="flex gap-1">
               {HOURLY_POLLUTANTS.map((p, i) => (
@@ -233,14 +243,14 @@ export default function ResearchQ4() {
                 stroke={HOURLY_POLLUTANTS[hourlyPollutant].color}
                 strokeWidth={2.5}
                 dot={false}
-                name="Weekday"
+                name={t('q4.weekday')}
               />
               <Line
                 dataKey={`${HOURLY_POLLUTANTS[hourlyPollutant].key}_weekend`}
                 stroke={HOURLY_POLLUTANTS[hourlyPollutant].color}
                 strokeWidth={2}
                 dot={false}
-                name="Weekend"
+                name={t('q4.weekend')}
                 strokeDasharray="6 4"
                 strokeOpacity={0.6}
               />
@@ -248,10 +258,10 @@ export default function ResearchQ4() {
           </ResponsiveContainer>
           <div className="mt-4 flex items-center gap-6 text-xs text-on-surface-variant">
             <span className="flex items-center gap-2">
-              <span className="w-6 h-0.5 bg-primary" /> Weekday
+              <span className="w-6 h-0.5 bg-primary" /> {t('q4.weekday')}
             </span>
             <span className="flex items-center gap-2">
-              <span className="w-6 h-0.5 bg-primary opacity-60" style={{ borderTop: '2px dashed currentColor' }} /> Weekend
+              <span className="w-6 h-0.5 bg-primary opacity-60" style={{ borderTop: '2px dashed currentColor' }} /> {t('q4.weekend')}
             </span>
           </div>
           <p className="mt-3 text-xs text-on-surface-variant font-medium">
@@ -263,7 +273,7 @@ export default function ResearchQ4() {
         <div className="col-span-2 bg-surface-container-lowest p-8 rounded-2xl">
           <div className="flex items-center gap-2 mb-6">
             <span className="material-symbols-outlined text-secondary">compare_arrows</span>
-            <h3 className="text-xl font-[family-name:var(--font-family-headline)] font-black">Weekday / Weekend Gap</h3>
+            <h3 className="text-xl font-[family-name:var(--font-family-headline)] font-black">{t('q4.weekdayWeekendGap')}</h3>
           </div>
           <ResponsiveContainer width="100%" height={240}>
             <BarChart data={weekdayWeekendGap} layout="vertical" margin={{ top: 5, right: 30, bottom: 5, left: 10 }}>
@@ -271,7 +281,7 @@ export default function ResearchQ4() {
               <XAxis type="number" tick={{ fontSize: 10 }} stroke={C.outline} unit="%" />
               <YAxis dataKey="pollutant" type="category" tick={{ fontSize: 11, fontWeight: 700 }} stroke={C.outline} width={55} />
               <Tooltip
-                formatter={(v) => [`${v}%`, 'Max hourly Δ']}
+                formatter={(v) => [`${v}%`, t('q4.maxHourlyDelta')]}
                 labelFormatter={(label) => {
                   const row = weekdayWeekendGap.find(r => r.pollutant === label)
                   return row ? `${label} — WD peak: ${row.weekday_peak} / WE peak: ${row.weekend_peak} ${row.unit}` : String(label)
@@ -289,7 +299,7 @@ export default function ResearchQ4() {
       {/* ═══ Correlation Matrix + Pollution Rose ═══ */}
       <section className="grid grid-cols-5 gap-8">
         <div className="col-span-3 bg-surface-container-lowest p-8 rounded-2xl">
-          <h3 className="text-xl font-[family-name:var(--font-family-headline)] font-black mb-6">Multi-Pollutant Correlation Matrix</h3>
+          <h3 className="text-xl font-[family-name:var(--font-family-headline)] font-black mb-6">{t('q4.corrMatrix')}</h3>
           <div className="overflow-hidden border border-outline-variant/30 rounded-lg">
             <table className="w-full text-sm">
               <thead className="bg-surface-container-low">
