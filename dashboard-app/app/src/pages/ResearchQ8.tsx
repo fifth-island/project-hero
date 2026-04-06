@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   AreaChart, Area, BarChart, Bar, Cell,
 } from 'recharts'
-import { useQ8Data, type HeatmapCell } from '../hooks/useQ8Data'
+import { useQ8Data } from '../hooks/useQ8Data'
 
 const C = {
   primary: '#6f070f',
@@ -35,13 +35,8 @@ function heatColor(v: number, min: number, max: number): string {
   return '#6f070f'                      // primary
 }
 
-function heatTextColor(v: number, min: number, max: number): string {
-  const t = (v - min) / (max - min)
-  return t > 0.5 ? '#ffffff' : '#241a00'
-}
-
 export default function ResearchQ8() {
-  const { kpi, diurnal, dow, heatmapPm25, wdWeDiurnal, siteTemporal, heatmapBySite, loading } = useQ8Data()
+  const { kpi, diurnal, dow, heatmapPm25, siteTemporal, heatmapBySite, loading } = useQ8Data()
   const { t } = useTranslation()
   const [heatmapSite, setHeatmapSite] = useState('all')
 

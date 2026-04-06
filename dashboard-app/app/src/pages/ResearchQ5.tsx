@@ -60,11 +60,6 @@ function heatColor(v: number, min: number, max: number): string {
   return '#6f070f'
 }
 
-function heatTextColor(v: number, min: number, max: number): string {
-  const t = (v - min) / (max - min)
-  return t > 0.5 ? '#ffffff' : '#241a00'
-}
-
 function categoryBadge(cat: string) {
   switch (cat) {
     case 'HIGH': return 'bg-error-container text-error'

@@ -21,19 +21,12 @@ const C = {
   outlineVariant: '#dfbfbc',
 }
 
-const SITE_COLORS: Record<string, string> = {
-  tufts: '#2196f3', berkley: '#4caf50', castle: '#ff9800',
-  chin: '#9c27b0', greenway: '#607d8b', taitung: '#e91e63',
-  reggie: '#00bcd4', dewey: '#8bc34a', lyndenboro: '#ff5722',
-  oxford: '#795548', eliotnorton: '#f44336', msh: '#ffc107',
-}
-
 const CLUSTER_COLORS = ['#6f070f', '#003e2f', '#87512d', '#2196f3']
 
 type PcaColor = 'pm25' | 'wbgt' | 'cluster'
 
 export default function ResearchQ9Clust() {
-  const { kpi, pcaSites, pcaLoadings, pcaInfo, clusters, heatmap, loading } = useQ9Data()
+  const { pcaSites, pcaLoadings, pcaInfo, clusters, heatmap, loading } = useQ9Data()
   const { t } = useTranslation()
   const [pcaColor, setPcaColor] = useState<PcaColor>('cluster')
 

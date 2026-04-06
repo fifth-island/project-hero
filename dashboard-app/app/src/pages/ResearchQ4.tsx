@@ -5,7 +5,7 @@ import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
   BarChart, Bar,
 } from 'recharts'
-import { useQ4Data, type DailyAqi, type ComplianceRow, type CorrCell } from '../hooks/useQ4Data'
+import { useQ4Data, type DailyAqi, type ComplianceRow } from '../hooks/useQ4Data'
 
 const C = {
   primary: '#6f070f',

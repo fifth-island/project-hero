@@ -84,11 +84,8 @@ export default function ResearchQ6() {
   )
 
   const activeDay = selectedDay ?? kpi!.high_dates[0]
-  const dayHeatmap = heatmap.filter(c => c.date === activeDay)
   const dayPerSite = perdaySite.filter(r => r.date === activeDay).sort((a, b) => b.pm25 - a.pm25)
 
-  /* Heatmap bounds for deviation */
-  const allDevs = heatmap.map(c => c.deviation)
   const siteOrder = rankings.map(r => r.site_id)
   const uniqueDates = kpi!.high_dates
 
@@ -347,7 +344,7 @@ export default function ResearchQ6() {
                 wrapperStyle={{ zIndex: 50 }}
               />
               <Bar dataKey="pm25" radius={[0, 4, 4, 0]} barSize={14}>
-                {dayPerSite.map((row, i) => (
+                {dayPerSite.map((_row, i) => (
                   <Cell
                     key={i}
                     fill={i === 0 ? C.primary : i === 1 ? C.primaryContainer : i < 4 ? C.secondary : C.outline}

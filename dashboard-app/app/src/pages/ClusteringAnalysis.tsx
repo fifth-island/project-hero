@@ -5,7 +5,7 @@ import {
   ReferenceLine, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
   BarChart, Bar, LineChart, Line, Cell,
 } from 'recharts'
-import { useClusteringData, type SitePoint, type ClusterCenter } from '../hooks/useClusteringData'
+import { useClusteringData, type SitePoint } from '../hooks/useClusteringData'
 import ChinatownMap from '../components/ChinatownMap'
 
 /* ── Convex hull (Graham scan) ── */
@@ -234,7 +234,7 @@ export default function ClusteringAnalysis() {
                   fill={c.cluster_color}
                   name={`${c.cluster_emoji} ${c.cluster_name}`}
                 >
-                  {filteredSites.filter(s => s.cluster === c.cluster).map((s, i) => (
+                  {filteredSites.filter(s => s.cluster === c.cluster).map((_s, i) => (
                     <Cell key={i} fill={c.cluster_color} fillOpacity={0.85} r={8} />
                   ))}
                 </Scatter>
@@ -470,7 +470,7 @@ export default function ClusteringAnalysis() {
                   fill={c.cluster_color}
                   name={`${c.cluster_emoji} ${c.cluster_name}`}
                 >
-                  {sites.filter(s => s.cluster === c.cluster).map((s, i) => (
+                  {sites.filter(s => s.cluster === c.cluster).map((_s, i) => (
                     <Cell key={i} fill={c.cluster_color} fillOpacity={0.85} r={8} />
                   ))}
                 </Scatter>

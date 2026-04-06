@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  ZAxis, Cell, BarChart, Bar, LineChart, Line, ReferenceLine,
+  ZAxis, Cell, BarChart, Bar, ReferenceLine,
 } from 'recharts'
 import { useQ7Data } from '../hooks/useQ7Data'
 
@@ -62,7 +62,7 @@ function densityColor(count: number, maxCount: number): string {
 }
 
 export default function ResearchQ7() {
-  const { kpi, scatter, regressionLine, density, siteStats, hourly, siteScatter, siteLines, loading } = useQ7Data()
+  const { kpi, scatter, regressionLine, density, siteStats, hourly, siteScatter, loading } = useQ7Data()
   const { t } = useTranslation()
   const [activeView, setActiveView] = useState<ChartView>('overall')
   const [highlightSite, setHighlightSite] = useState<string | null>(null)
