@@ -1,0 +1,110 @@
+[
+  {
+    "site_id": "berkley",
+    "name": "Berkeley Garden",
+    "lat": 42.34522,
+    "lon": -71.0692,
+    "bias": 1.35,
+    "r2": 0.887,
+    "n": 2445
+  },
+  {
+    "site_id": "castle",
+    "name": "Castle Square",
+    "lat": 42.34552,
+    "lon": -71.06813,
+    "bias": -0.01,
+    "r2": 0.883,
+    "n": 3793
+  },
+  {
+    "site_id": "chin",
+    "name": "Chin Park",
+    "lat": 42.35196,
+    "lon": -71.0596,
+    "bias": 1.79,
+    "r2": 0.91,
+    "n": 2199
+  },
+  {
+    "site_id": "dewey",
+    "name": "Dewey Square",
+    "lat": 42.35283,
+    "lon": -71.05722,
+    "bias": 1.54,
+    "r2": 0.895,
+    "n": 4889
+  },
+  {
+    "site_id": "eliotnorton",
+    "name": "Eliot Norton",
+    "lat": 42.34899,
+    "lon": -71.06587,
+    "bias": 1.33,
+    "r2": 0.915,
+    "n": 3888
+  },
+  {
+    "site_id": "greenway",
+    "name": "One Greenway",
+    "lat": 42.34912,
+    "lon": -71.06059,
+    "bias": 2.64,
+    "r2": 0.912,
+    "n": 4893
+  },
+  {
+    "site_id": "lyndenboro",
+    "name": "Lyndboro Park",
+    "lat": 42.34959,
+    "lon": -71.06634,
+    "bias": 2.26,
+    "r2": 0.919,
+    "n": 4786
+  },
+  {
+    "site_id": "msh",
+    "name": "Mary Soo Hoo",
+    "lat": 42.3512,
+    "lon": -71.0596,
+    "bias": 2.08,
+    "r2": 0.857,
+    "n": 4177
+  },
+  {
+    "site_id": "oxford",
+    "name": "Oxford Place",
+    "lat": 42.35174,
+    "lon": -71.06055,
+    "bias": 1.33,
+    "r2": 0.777,
+    "n": 2879
+  },
+  {
+    "site_id": "reggie",
+    "name": "Reggie Wong",
+    "lat": 42.34977,
+    "lon": -71.05872,
+    "bias": 0.7,
+    "r2": 0.916,
+    "n": 4126
+  },
+  {
+    "site_id": "taitung",
+    "name": "Tai Tung",
+    "lat": 42.34833,
+    "lon": -71.06156,
+    "bias": 1.38,
+    "r2": 0.91,
+    "n": 4839
+  },
+  {
+    "site_id": "tufts",
+    "name": "Tufts Garden",
+    "lat": 42.34917,
+    "lon": -71.06188,
+    "bias": 1.46,
+    "r2": 0.908,
+    "n": 4095
+  }
+]

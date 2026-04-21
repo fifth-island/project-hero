@@ -1,0 +1,17 @@
+column,issue_type,affected_rows,recommendation,detail
+(whole row),duplicate_rows,3,"Drop exact duplicate rows, keep first occurrence",
+age,impossible_value,6,Set impossible ages (< 16 or > 60) to NaN; impute with median later,"Values seen: [-3.0, 0.0, 5.0, 150.0, 200.0, 999.0]"
+gender,inconsistent_encoding,75,Map all variants to canonical: Male/Female/Non-binary/Prefer not to say,"Non-canonical values: ['FEMALE', 'female', 'M', 'male', 'MALE', 'F', 'man', 'woman']"
+gpa,impossible_value / wrong_type,8,"Coerce to numeric; set values outside [0, 4] to NaN",Out-of-range count=8; coercion failures=0
+study_hours_per_day,impossible_value,5,"Set values outside [0, 16] to NaN",
+attendance_rate,impossible_value,10,Cap at 100 or set > 100 to NaN,
+sleep_hours_per_night,impossible_value / wrong_type,4,"Coerce to numeric; clamp to [0, 16] or set extreme values to NaN",
+stress_level,mixed_types (text + numeric),20,"Map text labels to numeric midpoints (e.g., low→2, medium→5, high→8); coerce rest to float","Text values: {'low': 8, 'medium': 6, 'high': 4, 'very high': 2}"
+on_campus,inconsistent_encoding,60,Map all variants to boolean True/False,"Non-canonical values: ['YES', '1', 'true', 'NO', '0', 'no', 'false', 'yes']"
+exercise_days_per_week,missing_values,32,Investigate missingness pattern; impute or drop depending on Phase 1 needs,
+caffeine_mg_per_day,missing_values,37,Investigate missingness pattern; impute or drop depending on Phase 1 needs,
+anxiety_score,missing_values,69,Investigate missingness pattern; impute or drop depending on Phase 1 needs,
+depression_score,missing_values,69,Investigate missingness pattern; impute or drop depending on Phase 1 needs,
+num_clubs,missing_values,21,Investigate missingness pattern; impute or drop depending on Phase 1 needs,
+has_part_time_job,missing_values,26,Investigate missingness pattern; impute or drop depending on Phase 1 needs,
+monthly_spending,missing_values,48,Investigate missingness pattern; impute or drop depending on Phase 1 needs,

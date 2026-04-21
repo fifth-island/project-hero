@@ -5,6 +5,7 @@ import {
   AreaChart, Area, BarChart, Bar, Cell,
 } from 'recharts'
 import { useQ8Data } from '../hooks/useQ8Data'
+import ReportViewer from '../components/ReportViewer'
 
 const C = {
   primary: '#6f070f',
@@ -39,6 +40,7 @@ export default function ResearchQ8() {
   const { kpi, diurnal, dow, heatmapPm25, siteTemporal, heatmapBySite, loading } = useQ8Data()
   const { t } = useTranslation()
   const [heatmapSite, setHeatmapSite] = useState('all')
+  const [showReport, setShowReport] = useState(false)
 
   if (loading) return (
     <div className="max-w-7xl mx-auto px-10 py-24 text-center">
@@ -467,13 +469,27 @@ export default function ResearchQ8() {
             </li>
           </ul>
         </div>
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 flex justify-center gap-4 flex-wrap">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/50 rounded-full backdrop-blur-sm">
             <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
             <span className="text-xs font-bold text-primary uppercase tracking-widest">Archival Synthesis Verified · Tufts University</span>
           </div>
+          <button
+            onClick={() => setShowReport(true)}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform"
+          >
+            <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+            Read Mini Report
+          </button>
         </div>
       </section>
+      {showReport && (
+        <ReportViewer
+          reportPath="/reports/Q8.md"
+          title="Q8 — Temporal Patterns in PM2.5 & WBGT"
+          onClose={() => setShowReport(false)}
+        />
+      )}
     </div>
   )
 }

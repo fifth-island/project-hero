@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import ReportViewer from '../components/ReportViewer'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
@@ -70,6 +71,7 @@ export default function ResearchQ4() {
   const { t } = useTranslation()
   const [hourlyPollutant, setHourlyPollutant] = useState(0) // index into HOURLY_POLLUTANTS
   const [roseMetric, setRoseMetric] = useState(0) // index into ROSE_OPTIONS
+  const [showReport, setShowReport] = useState(false)
 
   if (loading) return (
     <div className="max-w-7xl mx-auto px-10 py-24 text-center">
@@ -419,13 +421,24 @@ export default function ResearchQ4() {
             All <strong className="text-white">36 study days</strong> achieved EPA &ldquo;Good&rdquo; AQI (mean 29.4, max 46.2), with <strong className="text-white">zero federal standard exceedances</strong> across all five criteria pollutants. Ozone drove AQI on 97% of days via summer photochemistry, while NO₂ exhibited a <strong className="text-white">197% weekday–weekend difference</strong> — the clearest traffic fingerprint — tracing directly to the I-93 corridor.
           </p>
           <div className="mt-8 flex gap-6 items-center">
-            <button className="bg-on-primary text-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform">
-              Read Full Manuscript
+            <button
+              onClick={() => setShowReport(true)}
+              className="bg-on-primary text-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+              Read Mini Report
             </button>
             <span className="text-xs opacity-70 italic font-medium">Verified by Tufts Faculty Board</span>
           </div>
         </div>
       </footer>
+      {showReport && (
+        <ReportViewer
+          reportPath="/reports/Q4.md"
+          title="Q4 — AQI & Multi-Pollutant Analysis"
+          onClose={() => setShowReport(false)}
+        />
+      )}
     </div>
   )
 }

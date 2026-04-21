@@ -1,0 +1,290 @@
+[
+  {
+    "date": "2023-07-19",
+    "pa_mean": 16.53,
+    "dep_mean": 14.12,
+    "bias": 2.42,
+    "n": 311,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-07-20",
+    "pa_mean": 7.88,
+    "dep_mean": 7.5,
+    "bias": 0.38,
+    "n": 1564,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-07-21",
+    "pa_mean": 13.6,
+    "dep_mean": 10.54,
+    "bias": 3.06,
+    "n": 1414,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-07-22",
+    "pa_mean": 7.43,
+    "dep_mean": 6.3,
+    "bias": 1.13,
+    "n": 1565,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-07-23",
+    "pa_mean": 8.94,
+    "dep_mean": 7.82,
+    "bias": 1.12,
+    "n": 1576,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-07-24",
+    "pa_mean": 11.86,
+    "dep_mean": 9.59,
+    "bias": 2.27,
+    "n": 1501,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-07-25",
+    "pa_mean": 10.79,
+    "dep_mean": 8.36,
+    "bias": 2.44,
+    "n": 1537,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-07-26",
+    "pa_mean": 17.54,
+    "dep_mean": 15.51,
+    "bias": 2.03,
+    "n": 1143,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-07-27",
+    "pa_mean": 14.04,
+    "dep_mean": 10.94,
+    "bias": 3.1,
+    "n": 1525,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-07-28",
+    "pa_mean": 11.86,
+    "dep_mean": 9.65,
+    "bias": 2.2,
+    "n": 1589,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-07-29",
+    "pa_mean": 10.42,
+    "dep_mean": 7.93,
+    "bias": 2.49,
+    "n": 1646,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-07-30",
+    "pa_mean": 5.1,
+    "dep_mean": 5.06,
+    "bias": 0.04,
+    "n": 1706,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-07-31",
+    "pa_mean": 6.01,
+    "dep_mean": 5.53,
+    "bias": 0.48,
+    "n": 1726,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-01",
+    "pa_mean": 5.05,
+    "dep_mean": 4.37,
+    "bias": 0.67,
+    "n": 1697,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-02",
+    "pa_mean": 4.33,
+    "dep_mean": 3.72,
+    "bias": 0.61,
+    "n": 1272,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-03",
+    "pa_mean": 4.84,
+    "dep_mean": 4.28,
+    "bias": 0.55,
+    "n": 1722,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-04",
+    "pa_mean": 8.34,
+    "dep_mean": 7.21,
+    "bias": 1.14,
+    "n": 1659,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-05",
+    "pa_mean": 16.32,
+    "dep_mean": 12.8,
+    "bias": 3.53,
+    "n": 1457,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-08-06",
+    "pa_mean": 12.36,
+    "dep_mean": 10.71,
+    "bias": 1.65,
+    "n": 1470,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-08-07",
+    "pa_mean": 16.93,
+    "dep_mean": 13.99,
+    "bias": 2.94,
+    "n": 1268,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-08-08",
+    "pa_mean": 7.47,
+    "dep_mean": 6.32,
+    "bias": 1.15,
+    "n": 1328,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-09",
+    "pa_mean": 10.29,
+    "dep_mean": 9.26,
+    "bias": 1.03,
+    "n": 1316,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-08-10",
+    "pa_mean": 15.39,
+    "dep_mean": 12.55,
+    "bias": 2.84,
+    "n": 1309,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-08-11",
+    "pa_mean": 8.07,
+    "dep_mean": 6.9,
+    "bias": 1.17,
+    "n": 1276,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-12",
+    "pa_mean": 8.75,
+    "dep_mean": 7.09,
+    "bias": 1.66,
+    "n": 1248,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-13",
+    "pa_mean": 7.5,
+    "dep_mean": 5.9,
+    "bias": 1.6,
+    "n": 1273,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-14",
+    "pa_mean": 4.56,
+    "dep_mean": 3.7,
+    "bias": 0.85,
+    "n": 1264,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-15",
+    "pa_mean": 5.92,
+    "dep_mean": 4.5,
+    "bias": 1.42,
+    "n": 1132,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-16",
+    "pa_mean": 3.76,
+    "dep_mean": 3.67,
+    "bias": 0.09,
+    "n": 982,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-17",
+    "pa_mean": 3.21,
+    "dep_mean": 2.66,
+    "bias": 0.55,
+    "n": 1091,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-18",
+    "pa_mean": 5.06,
+    "dep_mean": 3.98,
+    "bias": 1.08,
+    "n": 1045,
+    "aqi": "Good"
+  },
+  {
+    "date": "2023-08-19",
+    "pa_mean": 9.0,
+    "dep_mean": 7.81,
+    "bias": 1.19,
+    "n": 1017,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-08-20",
+    "pa_mean": 17.56,
+    "dep_mean": 15.64,
+    "bias": 1.92,
+    "n": 834,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-08-21",
+    "pa_mean": 19.22,
+    "dep_mean": 15.97,
+    "bias": 3.24,
+    "n": 894,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-08-22",
+    "pa_mean": 9.1,
+    "dep_mean": 8.11,
+    "bias": 0.99,
+    "n": 1023,
+    "aqi": "Moderate"
+  },
+  {
+    "date": "2023-08-23",
+    "pa_mean": 5.39,
+    "dep_mean": 4.9,
+    "bias": 0.5,
+    "n": 629,
+    "aqi": "Good"
+  }
+]

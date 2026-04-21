@@ -1,0 +1,15 @@
+column,mean,median,std,min,max,skewness,kurtosis,shape
+age,21.49,21.0,2.27,18.0,25.0,0.0,-1.23,symmetric
+gpa,3.07,3.12,0.45,1.57,4.0,-0.38,0.26,symmetric
+study_hours_per_day,6.88,7.0,1.79,0.5,11.6,-0.23,0.06,symmetric
+attendance_rate,82.54,82.8,11.16,50.0,100.0,-0.25,-0.58,symmetric
+sleep_hours_per_night,6.81,6.8,1.13,3.6,10.2,0.15,0.4,symmetric
+exercise_days_per_week,3.41,3.0,2.2,0.0,7.0,0.09,-1.06,symmetric
+screen_time_hours,7.56,7.6,2.01,1.4,14.4,0.05,0.26,symmetric
+social_media_hours,2.55,2.5,1.19,0.0,6.1,0.13,-0.31,symmetric
+caffeine_mg_per_day,185.25,189.0,85.65,0.0,472.0,0.1,0.14,symmetric
+stress_level,5.43,5.4,2.03,1.0,10.0,0.02,-0.4,symmetric
+anxiety_score,6.07,6.0,2.76,0.0,15.0,0.18,0.19,symmetric
+depression_score,5.05,5.0,3.13,0.0,15.0,0.47,0.21,symmetric
+life_satisfaction,5.43,5.4,2.36,1.0,10.0,0.08,-0.69,symmetric
+monthly_spending,832.56,814.6,245.34,200.0,1709.0,0.33,0.37,symmetric

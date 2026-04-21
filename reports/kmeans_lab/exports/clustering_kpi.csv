@@ -1,0 +1,2 @@
+n_neighborhoods,n_clusters,silhouette_score,pca_variance_pct,noise_overall_mean,green_overall_mean,study_period,dataset_rows
+15,3,0.555,95.6,58.72,27.91,"Mar 1–30, 2024",10800

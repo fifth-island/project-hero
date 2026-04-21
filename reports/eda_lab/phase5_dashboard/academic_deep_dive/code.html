@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academic Deep-Dive | Wellness Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#1a1c1d",
+                    "surface-container-low": "#f3f3f5",
+                    "secondary": "#42617d",
+                    "error": "#ba1a1a",
+                    "surface": "#f9f9fb",
+                    "on-secondary-container": "#43627e",
+                    "secondary-fixed-dim": "#aacaea",
+                    "inverse-primary": "#abc9f2",
+                    "primary-fixed-dim": "#abc9f2",
+                    "surface-bright": "#f9f9fb",
+                    "surface-container-highest": "#e2e2e4",
+                    "secondary-fixed": "#cde5ff",
+                    "outline-variant": "#c3c6cf",
+                    "on-primary-fixed-variant": "#2a486b",
+                    "on-surface-variant": "#43474e",
+                    "inverse-surface": "#2f3132",
+                    "background": "#f9f9fb",
+                    "on-tertiary-container": "#d78e96",
+                    "surface-dim": "#d9dadc",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e2e2e4",
+                    "tertiary-fixed-dim": "#ffb2ba",
+                    "on-tertiary-fixed": "#380b14",
+                    "on-secondary-fixed": "#001d32",
+                    "tertiary-fixed": "#ffd9dc",
+                    "on-secondary": "#ffffff",
+                    "primary": "#002444",
+                    "inverse-on-surface": "#f0f0f2",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#d2e4ff",
+                    "on-primary-fixed": "#001c37",
+                    "on-tertiary-fixed-variant": "#6d363e",
+                    "secondary-container": "#bddefe",
+                    "on-primary-container": "#87a4cc",
+                    "surface-tint": "#436084",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#73777f",
+                    "primary-container": "#1a3a5c",
+                    "on-secondary-fixed-variant": "#294a64",
+                    "on-surface": "#1a1c1d",
+                    "tertiary": "#41131b",
+                    "tertiary-container": "#5c2830",
+                    "surface-container-high": "#e8e8ea",
+                    "on-error": "#ffffff",
+                    "surface-container": "#eeeef0",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9fb;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Custom bar chart labels */
+        .bar-label { font-size: 0.65rem; font-weight: 500; }
+    </style>
+</head>
+<body class="text-on-surface bg-surface selection:bg-secondary-container">
+<!-- SideNavBar (Authority: JSON) -->
+<nav class="bg-slate-900 dark:bg-slate-950 text-sky-100 font-inter text-sm tracking-tight h-full w-64 fixed left-0 top-0 shadow-xl flex flex-col h-full py-6 z-50">
+<div class="px-6 mb-10">
+<span class="text-lg font-bold text-white tracking-widest uppercase">Wellness Portal</span>
+<p class="text-[10px] opacity-60 uppercase tracking-tighter">University Insights</p>
+</div>
+<div class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-6 py-3 transition-all duration-200 ease-in-out text-sky-300/70 hover:text-white hover:bg-sky-800/30" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Executive Summary</span>
+</a>
+<!-- Active Tab: Academic Deep-Dive -->
+<a class="flex items-center gap-3 px-6 py-3 transition-all duration-200 ease-in-out bg-gradient-to-r from-sky-900 to-sky-800 text-white font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span>Academic Deep-Dive</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 transition-all duration-200 ease-in-out text-sky-300/70 hover:text-white hover:bg-sky-800/30" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span>Wellness Profile</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 transition-all duration-200 ease-in-out text-sky-300/70 hover:text-white hover:bg-sky-800/30" href="#">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span>Methodology</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar (Authority: JSON) -->
+<header class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white font-inter text-2xl font-light tracking-tight w-[calc(100%-16rem)] ml-64 h-16 flex items-center justify-between px-8 z-40">
+<div class="flex items-center gap-4">
+<h1 class="font-headline font-bold text-primary tracking-tight">Executive Overview</h1>
+</div>
+<div class="text-slate-500 text-xs font-medium uppercase tracking-widest">
+            Updated: Oct 2023
+        </div>
+</header>
+<!-- Main Content Canvas (The Curator Layout) -->
+<main class="ml-64 p-8 bg-surface-container-low min-h-screen">
+<div class="max-w-[1400px] mx-auto grid grid-cols-12 gap-6">
+<!-- Left Side: Data Visualizations -->
+<div class="col-span-9 space-y-6">
+<!-- Section 1: Stress Level by Academic Major -->
+<section class="bg-surface-container-lowest rounded-lg p-6 shadow-sm relative overflow-hidden">
+<div class="flex justify-between items-baseline mb-8">
+<h2 class="text-headline-sm font-semibold tracking-tight text-primary">Stress Level by Academic Major</h2>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">Metric: Average Scale 1-10</span>
+</div>
+<!-- Chart Container -->
+<div class="relative h-64 w-full flex flex-col justify-between">
+<!-- Vertical Reference Line at 5.43 -->
+<div class="absolute top-0 bottom-0 border-l-2 border-dashed border-error/40 z-10 flex flex-col items-center" style="left: 54.3%;">
+<span class="bg-error text-white text-[9px] px-1.5 py-0.5 rounded-t font-bold mb-auto -mt-6">5.43 AVG</span>
+</div>
+<!-- Bar Rows -->
+<div class="space-y-3 relative z-0">
+<!-- STEM Bars (Blue: secondary) -->
+<div class="flex items-center gap-4">
+<span class="w-24 text-[10px] font-semibold text-right text-on-surface-variant truncate">Computer Science</span>
+<div class="flex-1 h-3 bg-secondary rounded-r-full" style="width: 78%"></div>
+<span class="text-[10px] font-bold text-secondary">7.8</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-24 text-[10px] font-semibold text-right text-on-surface-variant truncate">Bio-Engineering</span>
+<div class="flex-1 h-3 bg-secondary rounded-r-full" style="width: 74%"></div>
+<span class="text-[10px] font-bold text-secondary">7.4</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-24 text-[10px] font-semibold text-right text-on-surface-variant truncate">Mathematics</span>
+<div class="flex-1 h-3 bg-secondary rounded-r-full" style="width: 71%"></div>
+<span class="text-[10px] font-bold text-secondary">7.1</span>
+</div>
+<!-- Non-STEM Bars (Rose: tertiary-container / on-tertiary-container) -->
+<div class="flex items-center gap-4">
+<span class="w-24 text-[10px] font-semibold text-right text-on-surface-variant truncate">Fine Arts</span>
+<div class="flex-1 h-3 bg-tertiary-container rounded-r-full" style="width: 65%"></div>
+<span class="text-[10px] font-bold text-on-tertiary-container">6.5</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-24 text-[10px] font-semibold text-right text-on-surface-variant truncate">Psychology</span>
+<div class="flex-1 h-3 bg-tertiary-container rounded-r-full" style="width: 62%"></div>
+<span class="text-[10px] font-bold text-on-tertiary-container">6.2</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-24 text-[10px] font-semibold text-right text-on-surface-variant truncate">Philosophy</span>
+<div class="flex-1 h-3 bg-tertiary-container rounded-r-full" style="width: 58%"></div>
+<span class="text-[10px] font-bold text-on-tertiary-container">5.8</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-24 text-[10px] font-semibold text-right text-on-surface-variant truncate">History</span>
+<div class="flex-1 h-3 bg-tertiary-container rounded-r-full" style="width: 49%"></div>
+<span class="text-[10px] font-bold text-on-tertiary-container">4.9</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-24 text-[10px] font-semibold text-right text-on-surface-variant truncate">Economics</span>
+<div class="flex-1 h-3 bg-secondary rounded-r-full" style="width: 45%"></div>
+<span class="text-[10px] font-bold text-secondary">4.5</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-24 text-[10px] font-semibold text-right text-on-surface-variant truncate">Music Performance</span>
+<div class="flex-1 h-3 bg-tertiary-container rounded-r-full" style="width: 41%"></div>
+<span class="text-[10px] font-bold text-on-tertiary-container">4.1</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-24 text-[10px] font-semibold text-right text-on-surface-variant truncate">Sociology</span>
+<div class="flex-1 h-3 bg-tertiary-container rounded-r-full" style="width: 38%"></div>
+<span class="text-[10px] font-bold text-on-tertiary-container">3.8</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Grouped Box Plot Concept -->
+<section class="bg-surface-container-lowest rounded-lg p-6 shadow-sm h-80 flex flex-col">
+<div class="flex justify-between items-baseline mb-6">
+<h2 class="text-headline-sm font-semibold tracking-tight text-primary">Does STEM Stress Grow with Year in School?</h2>
+<div class="flex gap-4 items-center">
+<div class="flex items-center gap-1.5"><div class="w-3 h-3 bg-secondary rounded-sm"></div><span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">STEM</span></div>
+<div class="flex items-center gap-1.5"><div class="w-3 h-3 bg-tertiary-container rounded-sm"></div><span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Non-STEM</span></div>
+</div>
+</div>
+<div class="flex-1 grid grid-cols-4 gap-8 items-end border-b border-outline-variant/20 pb-4">
+<!-- Year 1 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-full flex justify-center items-end gap-2 h-40">
+<div class="w-6 bg-secondary/80 flex items-center justify-center rounded-t-sm" style="height: 45%;">
+<div class="w-full h-[1px] bg-white"></div>
+</div>
+<div class="w-6 bg-tertiary-container/80 flex items-center justify-center rounded-t-sm" style="height: 35%;">
+<div class="w-full h-[1px] bg-white"></div>
+</div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">1st Year</span>
+</div>
+<!-- Year 2 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-full flex justify-center items-end gap-2 h-40">
+<div class="w-6 bg-secondary/80 flex items-center justify-center rounded-t-sm" style="height: 55%;">
+<div class="w-full h-[1px] bg-white"></div>
+</div>
+<div class="w-6 bg-tertiary-container/80 flex items-center justify-center rounded-t-sm" style="height: 42%;">
+<div class="w-full h-[1px] bg-white"></div>
+</div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">2nd Year</span>
+</div>
+<!-- Year 3 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-full flex justify-center items-end gap-2 h-40">
+<div class="w-6 bg-secondary/80 flex items-center justify-center rounded-t-sm" style="height: 75%;">
+<div class="w-full h-[1px] bg-white"></div>
+</div>
+<div class="w-6 bg-tertiary-container/80 flex items-center justify-center rounded-t-sm" style="height: 50%;">
+<div class="w-full h-[1px] bg-white"></div>
+</div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">3rd Year</span>
+</div>
+<!-- Year 4 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-full flex justify-center items-end gap-2 h-40">
+<div class="w-6 bg-secondary flex items-center justify-center rounded-t-sm" style="height: 88%;">
+<div class="w-full h-[1px] bg-white"></div>
+</div>
+<div class="w-6 bg-tertiary-container flex items-center justify-center rounded-t-sm" style="height: 48%;">
+<div class="w-full h-[1px] bg-white"></div>
+</div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">4th Year</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Side: Slicer Panel -->
+<aside class="col-span-3 space-y-6">
+<div class="bg-surface-container rounded-lg p-6 h-full flex flex-col shadow-sm">
+<div class="flex items-center gap-2 mb-8 text-primary border-b border-outline-variant/30 pb-4">
+<span class="material-symbols-outlined" data-icon="filter_alt">filter_alt</span>
+<h3 class="font-bold text-sm tracking-widest uppercase">Report Filters</h3>
+</div>
+<div class="space-y-10">
+<!-- Slicer: Major -->
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4">Academic Major</label>
+<div class="space-y-3">
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 rounded border-2 border-secondary bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white font-bold" data-icon="check">check</span>
+</div>
+<span class="text-xs font-medium text-on-surface group-hover:text-primary transition-colors">STEM Majors</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 rounded border-2 border-outline-variant"></div>
+<span class="text-xs font-medium text-on-surface-variant group-hover:text-primary transition-colors">Humanities</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 rounded border-2 border-outline-variant"></div>
+<span class="text-xs font-medium text-on-surface-variant group-hover:text-primary transition-colors">Social Sciences</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 rounded border-2 border-outline-variant"></div>
+<span class="text-xs font-medium text-on-surface-variant group-hover:text-primary transition-colors">Performing Arts</span>
+</label>
+</div>
+</div>
+<!-- Slicer: Year -->
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4">Year in School</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full text-[10px] font-bold bg-secondary text-white">All Years</button>
+<button class="px-3 py-1.5 rounded-full text-[10px] font-bold bg-white text-secondary-container border border-secondary-container/20 hover:bg-secondary-container/10">1st</button>
+<button class="px-3 py-1.5 rounded-full text-[10px] font-bold bg-white text-secondary-container border border-secondary-container/20 hover:bg-secondary-container/10">2nd</button>
+<button class="px-3 py-1.5 rounded-full text-[10px] font-bold bg-white text-secondary-container border border-secondary-container/20 hover:bg-secondary-container/10">3rd</button>
+<button class="px-3 py-1.5 rounded-full text-[10px] font-bold bg-white text-secondary-container border border-secondary-container/20 hover:bg-secondary-container/10">4th+</button>
+</div>
+</div>
+<!-- Info Card -->
+<div class="mt-12 bg-surface-container-highest p-4 rounded border border-outline-variant/10">
+<div class="flex items-center gap-2 mb-2 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="lightbulb">lightbulb</span>
+<span class="text-[10px] font-extrabold uppercase tracking-widest">Observation</span>
+</div>
+<p class="text-[11px] leading-relaxed text-on-surface-variant italic">STEM students report a 24% higher average stress level by Year 3 compared to Non-STEM cohorts.</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar (Authority: JSON - Responsive Pivot Only) -->
+<nav class="md:hidden fixed bottom-12 right-8 rounded-full px-6 py-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl flex gap-4 items-center z-40 shadow-lg shadow-slate-200/50">
+<div class="bg-sky-100 dark:bg-sky-900 text-sky-900 dark:text-sky-100 rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-wider">Major</div>
+<div class="text-slate-500 dark:text-slate-400 px-4 py-1 text-xs font-semibold uppercase tracking-wider">Year</div>
+<div class="text-slate-500 dark:text-slate-400 px-4 py-1 text-xs font-semibold uppercase tracking-wider">Gender</div>
+</nav>
+<!-- Footer (Authority: JSON) -->
+<footer class="bg-transparent text-slate-400 font-inter text-[10px] uppercase tracking-widest w-[calc(100%-16rem)] ml-64 py-4 flex justify-center items-center opacity-60">
+<div class="flex flex-col items-center gap-1">
+<span>© 2023 University Wellness Analytics Bureau | Data Source: Institutional Research</span>
+<div class="flex gap-4">
+<a class="hover:text-sky-600 transition-all duration-200" href="#">Privacy Policy</a>
+<a class="hover:text-sky-600 transition-all duration-200" href="#">Contact Admin</a>
+</div>
+</div>
+</footer>
+</body></html>

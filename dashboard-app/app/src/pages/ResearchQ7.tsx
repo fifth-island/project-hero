@@ -5,6 +5,7 @@ import {
   ZAxis, Cell, BarChart, Bar, ReferenceLine,
 } from 'recharts'
 import { useQ7Data } from '../hooks/useQ7Data'
+import ReportViewer from '../components/ReportViewer'
 
 const C = {
   primary: '#6f070f',
@@ -66,6 +67,7 @@ export default function ResearchQ7() {
   const { t } = useTranslation()
   const [activeView, setActiveView] = useState<ChartView>('overall')
   const [highlightSite, setHighlightSite] = useState<string | null>(null)
+  const [showReport, setShowReport] = useState(false)
 
   const maxDensity = useMemo(() => Math.max(...density.map(d => d.count), 1), [density])
 
@@ -547,8 +549,24 @@ export default function ResearchQ7() {
               </p>
             </div>
           </div>
+          <div className="mt-8">
+            <button
+              onClick={() => setShowReport(true)}
+              className="bg-on-primary text-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+              Read Mini Report
+            </button>
+          </div>
         </div>
       </footer>
+      {showReport && (
+        <ReportViewer
+          reportPath="/reports/Q7.md"
+          title="Q7 — PM2.5 & Heat Stress Relationship"
+          onClose={() => setShowReport(false)}
+        />
+      )}
     </div>
   )
 }

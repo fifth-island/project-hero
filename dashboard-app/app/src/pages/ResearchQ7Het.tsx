@@ -5,6 +5,7 @@ import {
   BarChart, Bar, Cell, LineChart, Line, ReferenceLine, ErrorBar,
 } from 'recharts'
 import { useQ7HetData } from '../hooks/useQ7HetData'
+import ReportViewer from '../components/ReportViewer'
 
 const C = {
   primary: '#6f070f',
@@ -35,6 +36,7 @@ export default function ResearchQ7Het() {
   const { kpi, pm25Dist, wbgtDist, binned, sensitivity, trajectories, siteScatter, siteLines, loading } = useQ7HetData()
   const [activeView, setActiveView] = useState<HetView>('sensitivity')
   const [selectedSites, setSelectedSites] = useState<string[]>([])
+  const [showReport, setShowReport] = useState(false)
 
   // Top 5 + bottom 2 for response curves
   const featuredSites = useMemo(() => {
@@ -585,8 +587,24 @@ export default function ResearchQ7Het() {
               </p>
             </div>
           </div>
+          <div className="mt-8">
+            <button
+              onClick={() => setShowReport(true)}
+              className="bg-on-primary text-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+              Read Mini Report
+            </button>
+          </div>
         </div>
       </footer>
+      {showReport && (
+        <ReportViewer
+          reportPath="/reports/Q7.md"
+          title="Q7 — PM2.5 & Heat Stress Heterogeneity"
+          onClose={() => setShowReport(false)}
+        />
+      )}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-const IMG_SEAL = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAVJMT2ltJZIE9rHu3hE9WBuM5VL3p_u0Jy0tXKvbZfGmmn7AtOC0t7CVuD7J7mLqJDbFv8XfUJsAOK6lfl84IE2vmoUiC6gGU4SQoqY8tcggbl4SHivYBZ8Taohq08R-w-U6LSH4WVy5qUzgwxuVxBp57XpITHjwy4ds8wPX1E0DrGlsILhG3JnSaQZhUoWSN3iHUw_0-EmaB0I9JfVKt6VlBdNvNAP8cjikRwV0tT9WTSSdB_i8K6nAdA7T01JUJ6S_jz2bVc5m8l'
+const IMG_SEAL = '/tufts-logo.png'
 
 const navKeys = [
   { to: '/overview', icon: 'map', labelKey: 'nav.overview' },

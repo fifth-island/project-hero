@@ -7,6 +7,7 @@ import {
 } from 'recharts'
 import { useClusteringData, type SitePoint } from '../hooks/useClusteringData'
 import ChinatownMap from '../components/ChinatownMap'
+import ReportViewer from '../components/ReportViewer'
 
 /* ── Convex hull (Graham scan) ── */
 function convexHull(points: { x: number; y: number }[]): { x: number; y: number }[] {
@@ -82,6 +83,7 @@ export default function ClusteringAnalysis() {
   const [showHulls, setShowHulls] = useState(true)
   const [sortKey, setSortKey] = useState<SortKey>('cluster')
   const [sortAsc, setSortAsc] = useState(true)
+  const [showReport, setShowReport] = useState(false)
 
   /* Compute convex hull outlines for PCA chart (must be before early return) */
   const hullData = useMemo(() => {
@@ -625,13 +627,27 @@ export default function ClusteringAnalysis() {
             </li>
           </ul>
         </div>
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <button
+            onClick={() => setShowReport(true)}
+            className="bg-primary text-on-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform flex items-center gap-2"
+          >
+            <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+            Read Mini Report
+          </button>
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/50 rounded-full backdrop-blur-sm">
             <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
             <span className="text-xs font-bold text-primary uppercase tracking-widest">K-Means Clustering Lab · Tufts University</span>
           </div>
         </div>
       </section>
+      {showReport && (
+        <ReportViewer
+          reportPath="/reports/Clustering.md"
+          title="K-Means Site Clustering"
+          onClose={() => setShowReport(false)}
+        />
+      )}
     </div>
   )
 }

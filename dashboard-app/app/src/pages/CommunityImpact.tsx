@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next'
-
-const IMG_HEAT_MAP = 'https://lh3.googleusercontent.com/aida-public/AB6AXuASQCMmZL6UyfeJdUhw3yegrlGMDfwk8pt8MpTzJqsT9bXm75CaP0lpUDHtj9R7WkNaJmz8MQCVDm2rUWhztc2vXFiuwgS9JV42RTTnRniGlUN6saGosW_LgZ8sBUx_J94dAGJQZSbt3bx3QRZnp-vXshkVnQ5FeEE9m2XxwkhdY-UzomHjkxQuPq6m1yE4WLD_6TP6_0JzTpVeBdqnvpQ2j9kB6tVJzYerRM2dq7rLLp0_W6lwGL06-Y5O9PfG3KIUf2YVzZajnJKL'
+import ChinatownHeatMap from '../components/ChinatownHeatMap'
 const IMG_STREET = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBX8f6MmcV4mDVn3MMHs91_1oKFKXKZBdm1M-Vf9kt1sBoEr7QEJ5IYFvQbvp7uDKGdE_UbQxeEmK7vDhPhBqwp6ZW4AUTCvjellSLfiGfxB-TPCeXVFJ-l1Qw8LvirFP0WYk9yO_UFCma7jPR_tK_w6z9Wouy1m38AzVXgRzryZZ1aQqvQicPjr5RK5XKiQEhPFoog_auJcNYxY13iRzBlRMr33LVQVpy1lR7l_sDEgV2k80EN904xvlsntmKhu_m7owMYpUuIiz6W'
-const IMG_FOOTER = 'https://lh3.googleusercontent.com/aida-public/AB6AXuD7LHU8iZqr_KgqZUEatWw9XECzzbNjjUSHAJNu165FrwovYkQEymCb54-CZpd9r3Vh_aVfYlLdIIQ84B41Guta9sbYykQhuR0LGgFHd2PZMzMttC12Bzd3y3uceSEV-uQw8S6AV0mhTRhkEewEcIqseIME7gRFKqcPlQQ-b073ymJrxDyThoVbzKTljB2iYqhO5ex4sfhRvlls9HizmAVGFKot_yAcAOSFNlkc--oMS9Hx6J57vpOqhdTh71_-MAC2VQ8A3Ke5oKAY'
+const IMG_FOOTER = '/tufts-logo.png'
 
 export default function CommunityImpact() {
   const { t } = useTranslation()
@@ -49,12 +48,8 @@ export default function CommunityImpact() {
               <span className="text-[10px] font-bold">104°F</span>
             </div>
           </div>
-          <div className="w-full h-full bg-stone-200">
-            <img
-              alt="Thermal map of Boston Chinatown"
-              className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1]"
-              src={IMG_HEAT_MAP}
-            />
+          <div className="absolute inset-0">
+            <ChinatownHeatMap />
           </div>
           <div className="absolute bottom-6 right-6 z-10 flex flex-col gap-2">
             <button className="w-10 h-10 bg-surface-container-highest rounded-full shadow-md flex items-center justify-center text-primary">
@@ -114,8 +109,11 @@ export default function CommunityImpact() {
             />
           </div>
           <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-lg max-w-[240px] shadow-2xl border border-white/40">
-            <p className="font-[family-name:var(--font-family-headline)] italic text-primary text-lg">
+            <p className="font-[family-name:var(--font-family-headline)] italic text-primary text-base leading-snug">
               {t('community.residentQuote')}
+            </p>
+            <p className="text-[10px] text-stone-400 mt-2 not-italic">
+              {t('community.residentQuoteAttrib')}
             </p>
           </div>
         </div>
@@ -132,13 +130,13 @@ export default function CommunityImpact() {
             </p>
             <div className="pt-4 flex items-center gap-6">
               <div className="flex flex-col">
-                <span className="text-3xl font-[family-name:var(--font-family-headline)] text-primary">12.4%</span>
-                <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400">{t('community.asthmaRate')}</span>
+                <span className="text-3xl font-[family-name:var(--font-family-headline)] text-primary">88°F</span>
+                <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400">{t('community.peakWbgt')}</span>
               </div>
               <div className="w-px h-12 bg-stone-200" />
               <div className="flex flex-col">
-                <span className="text-3xl font-[family-name:var(--font-family-headline)] text-primary">4.2°C</span>
-                <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400">{t('community.nighttimeExcess')}</span>
+                <span className="text-3xl font-[family-name:var(--font-family-headline)] text-primary">10.7 µg/m³</span>
+                <span className="text-[10px] uppercase tracking-widest font-bold text-stone-400">{t('community.peakPm25')}</span>
               </div>
             </div>
           </div>
@@ -161,31 +159,41 @@ export default function CommunityImpact() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: t('community.coolingCenter'),
-                desc: t('community.coolingDesc'),
-                link: t('community.accessMap'),
+                title: t('community.herosResearch'),
+                desc: t('community.herosResearchDesc'),
+                link: t('community.readStory'),
+                href: 'https://medicine.tufts.edu/news-events/news/one-coalition-dozens-projects-advance-asian-american-health-communities',
                 color: 'primary',
               },
               {
-                title: t('community.utilityAssistance'),
-                desc: t('community.utilityDesc'),
-                link: t('community.learnMore'),
+                title: t('community.heatResources'),
+                desc: t('community.heatResourcesDesc'),
+                link: '',
+                href: '',
                 color: 'secondary',
               },
               {
-                title: t('community.airQualitySensors'),
-                desc: t('community.sensorDesc'),
-                link: t('community.joinProject'),
+                title: t('community.acdcPrograms'),
+                desc: t('community.acdcDesc'),
+                link: '',
+                href: '',
                 color: 'tertiary',
               },
             ].map((item) => (
               <div key={item.title} className={`bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-4 border-${item.color}`}>
                 <h5 className="font-[family-name:var(--font-family-headline)] text-xl mb-3">{item.title}</h5>
                 <p className="text-sm text-on-surface-variant mb-4">{item.desc}</p>
-                <a className={`inline-flex items-center gap-2 text-${item.color} font-bold text-xs uppercase tracking-widest group`} href="#">
-                  {item.link}
-                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
+                {item.href ? (
+                  <a
+                    className={`inline-flex items-center gap-2 text-${item.color} font-bold text-xs uppercase tracking-widest group`}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.link}
+                    <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  </a>
+                ) : null}
               </div>
             ))}
           </div>
@@ -195,7 +203,7 @@ export default function CommunityImpact() {
       {/* Footer */}
       <footer className="mt-20 py-12 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex items-center gap-4">
-          <img alt="Tufts University Logo" className="h-16 w-16 opacity-30 grayscale" src={IMG_FOOTER} />
+          <img alt="Tufts University Logo" className="h-16 w-16 object-contain opacity-80" src={IMG_FOOTER} />
           <div>
             <p className="font-[family-name:var(--font-family-headline)] text-lg text-stone-500 italic">Tufts University</p>
             <p className="text-[10px] uppercase tracking-[0.2em] text-stone-400">

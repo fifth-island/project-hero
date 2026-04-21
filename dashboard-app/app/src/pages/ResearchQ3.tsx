@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   ReferenceLine, LineChart, Line, ComposedChart, Bar,
 } from 'recharts'
 import { useQ3Data, type Q3SiteRow } from '../hooks/useQ3Data'
 import { useTranslation } from 'react-i18next'
+import ReportViewer from '../components/ReportViewer'
 
 const C = {
   primary: '#6f070f',
@@ -37,6 +39,7 @@ function statusBadge(status: string) {
 export default function ResearchQ3() {
   const { kpi, cdfOverall, cdfDayNight, siteTable, temporal, loading } = useQ3Data()
   const { t } = useTranslation()
+  const [showReport, setShowReport] = useState(false)
 
   if (loading) return (
     <div className="max-w-7xl mx-auto px-10 py-24 text-center">
@@ -315,13 +318,24 @@ export default function ResearchQ3() {
             The distribution analysis confirms a critical environmental injustice: <strong className="text-white">nearly half ({kpi!.pm25_naaqs_exceedance_pct}%)</strong> of all PM2.5 readings in the Chinatown study area exceed the EPA's annual NAAQS health threshold of 9.0 µg/m³. This represents a persistent exposure level that significantly outpaces regional Boston averages.
           </p>
           <div className="mt-8 flex gap-6 items-center">
-            <button className="bg-on-primary text-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform">
-              Read Full Manuscript
+            <button
+              onClick={() => setShowReport(true)}
+              className="bg-on-primary text-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+              Read Mini Report
             </button>
             <span className="text-xs opacity-70 italic font-medium">Verified by Tufts Faculty Board</span>
           </div>
         </div>
       </footer>
+      {showReport && (
+        <ReportViewer
+          reportPath="/reports/Q3.md"
+          title="Q3 — PM2.5 & WBGT Distribution Analysis"
+          onClose={() => setShowReport(false)}
+        />
+      )}
     </div>
   )
 }

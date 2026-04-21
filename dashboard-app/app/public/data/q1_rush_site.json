@@ -1,0 +1,242 @@
+[
+  {
+    "site_id": "berkley",
+    "name": "Berkeley Garden",
+    "period": "rush",
+    "n": 690,
+    "pa_mean": 9.53,
+    "dep_mean": 8.13,
+    "bias": 1.4,
+    "rmse": 2.47
+  },
+  {
+    "site_id": "berkley",
+    "name": "Berkeley Garden",
+    "period": "nonrush",
+    "n": 1755,
+    "pa_mean": 9.53,
+    "dep_mean": 8.19,
+    "bias": 1.34,
+    "rmse": 2.29
+  },
+  {
+    "site_id": "castle",
+    "name": "Castle Square",
+    "period": "rush",
+    "n": 1116,
+    "pa_mean": 8.22,
+    "dep_mean": 8.09,
+    "bias": 0.13,
+    "rmse": 2.5
+  },
+  {
+    "site_id": "castle",
+    "name": "Castle Square",
+    "period": "nonrush",
+    "n": 2677,
+    "pa_mean": 8.16,
+    "dep_mean": 8.23,
+    "bias": -0.07,
+    "rmse": 2.06
+  },
+  {
+    "site_id": "chin",
+    "name": "Chin Park",
+    "period": "rush",
+    "n": 635,
+    "pa_mean": 11.03,
+    "dep_mean": 9.05,
+    "bias": 1.98,
+    "rmse": 2.94
+  },
+  {
+    "site_id": "chin",
+    "name": "Chin Park",
+    "period": "nonrush",
+    "n": 1564,
+    "pa_mean": 10.27,
+    "dep_mean": 8.56,
+    "bias": 1.71,
+    "rmse": 2.59
+  },
+  {
+    "site_id": "dewey",
+    "name": "Dewey Square",
+    "period": "rush",
+    "n": 1398,
+    "pa_mean": 9.94,
+    "dep_mean": 8.26,
+    "bias": 1.68,
+    "rmse": 2.59
+  },
+  {
+    "site_id": "dewey",
+    "name": "Dewey Square",
+    "period": "nonrush",
+    "n": 3491,
+    "pa_mean": 9.59,
+    "dep_mean": 8.11,
+    "bias": 1.48,
+    "rmse": 2.47
+  },
+  {
+    "site_id": "eliotnorton",
+    "name": "Eliot Norton",
+    "period": "rush",
+    "n": 1111,
+    "pa_mean": 9.51,
+    "dep_mean": 8.08,
+    "bias": 1.44,
+    "rmse": 2.25
+  },
+  {
+    "site_id": "eliotnorton",
+    "name": "Eliot Norton",
+    "period": "nonrush",
+    "n": 2777,
+    "pa_mean": 9.21,
+    "dep_mean": 7.92,
+    "bias": 1.28,
+    "rmse": 1.97
+  },
+  {
+    "site_id": "greenway",
+    "name": "One Greenway",
+    "period": "rush",
+    "n": 1393,
+    "pa_mean": 10.92,
+    "dep_mean": 8.19,
+    "bias": 2.73,
+    "rmse": 3.55
+  },
+  {
+    "site_id": "greenway",
+    "name": "One Greenway",
+    "period": "nonrush",
+    "n": 3500,
+    "pa_mean": 10.63,
+    "dep_mean": 8.03,
+    "bias": 2.6,
+    "rmse": 3.47
+  },
+  {
+    "site_id": "lyndenboro",
+    "name": "Lyndboro Park",
+    "period": "rush",
+    "n": 1417,
+    "pa_mean": 10.76,
+    "dep_mean": 8.51,
+    "bias": 2.25,
+    "rmse": 3.02
+  },
+  {
+    "site_id": "lyndenboro",
+    "name": "Lyndboro Park",
+    "period": "nonrush",
+    "n": 3369,
+    "pa_mean": 10.64,
+    "dep_mean": 8.38,
+    "bias": 2.27,
+    "rmse": 2.9
+  },
+  {
+    "site_id": "msh",
+    "name": "Mary Soo Hoo",
+    "period": "rush",
+    "n": 1182,
+    "pa_mean": 9.3,
+    "dep_mean": 7.03,
+    "bias": 2.27,
+    "rmse": 2.98
+  },
+  {
+    "site_id": "msh",
+    "name": "Mary Soo Hoo",
+    "period": "nonrush",
+    "n": 2995,
+    "pa_mean": 8.98,
+    "dep_mean": 6.97,
+    "bias": 2.01,
+    "rmse": 2.73
+  },
+  {
+    "site_id": "oxford",
+    "name": "Oxford Place",
+    "period": "rush",
+    "n": 763,
+    "pa_mean": 8.36,
+    "dep_mean": 6.74,
+    "bias": 1.62,
+    "rmse": 2.45
+  },
+  {
+    "site_id": "oxford",
+    "name": "Oxford Place",
+    "period": "nonrush",
+    "n": 2116,
+    "pa_mean": 7.77,
+    "dep_mean": 6.55,
+    "bias": 1.22,
+    "rmse": 2.05
+  },
+  {
+    "site_id": "reggie",
+    "name": "Reggie Wong",
+    "period": "rush",
+    "n": 1196,
+    "pa_mean": 8.73,
+    "dep_mean": 7.88,
+    "bias": 0.85,
+    "rmse": 1.69
+  },
+  {
+    "site_id": "reggie",
+    "name": "Reggie Wong",
+    "period": "nonrush",
+    "n": 2930,
+    "pa_mean": 8.18,
+    "dep_mean": 7.54,
+    "bias": 0.64,
+    "rmse": 1.64
+  },
+  {
+    "site_id": "taitung",
+    "name": "Tai Tung",
+    "period": "rush",
+    "n": 1381,
+    "pa_mean": 9.53,
+    "dep_mean": 8.07,
+    "bias": 1.45,
+    "rmse": 2.24
+  },
+  {
+    "site_id": "taitung",
+    "name": "Tai Tung",
+    "period": "nonrush",
+    "n": 3458,
+    "pa_mean": 9.3,
+    "dep_mean": 7.94,
+    "bias": 1.36,
+    "rmse": 2.04
+  },
+  {
+    "site_id": "tufts",
+    "name": "Tufts Garden",
+    "period": "rush",
+    "n": 1171,
+    "pa_mean": 10.16,
+    "dep_mean": 8.67,
+    "bias": 1.49,
+    "rmse": 2.52
+  },
+  {
+    "site_id": "tufts",
+    "name": "Tufts Garden",
+    "period": "nonrush",
+    "n": 2924,
+    "pa_mean": 10.0,
+    "dep_mean": 8.55,
+    "bias": 1.45,
+    "rmse": 2.45
+  }
+]

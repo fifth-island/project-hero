@@ -5,6 +5,7 @@ import {
   BarChart, Bar, Cell, ReferenceLine,
 } from 'recharts'
 import { useQ9Data } from '../hooks/useQ9Data'
+import ReportViewer from '../components/ReportViewer'
 
 const C = {
   primary: '#6f070f',
@@ -29,6 +30,7 @@ export default function ResearchQ9Clust() {
   const { pcaSites, pcaLoadings, pcaInfo, clusters, heatmap, loading } = useQ9Data()
   const { t } = useTranslation()
   const [pcaColor, setPcaColor] = useState<PcaColor>('cluster')
+  const [showReport, setShowReport] = useState(false)
 
   // Heatmap: land-use × outcomes only
   const luOutcomeHm = useMemo(() =>
@@ -399,8 +401,24 @@ export default function ResearchQ9Clust() {
               </p>
             </div>
           </div>
+          <div className="mt-8">
+            <button
+              onClick={() => setShowReport(true)}
+              className="bg-on-primary text-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+              Read Mini Report
+            </button>
+          </div>
         </div>
       </footer>
+      {showReport && (
+        <ReportViewer
+          reportPath="/reports/Q9.md"
+          title="Q9 — Land-Use Clustering Analysis"
+          onClose={() => setShowReport(false)}
+        />
+      )}
     </div>
   )
 }

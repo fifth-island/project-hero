@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#1a1c1d",
+                    "surface-container-low": "#f3f3f5",
+                    "secondary": "#42617d",
+                    "error": "#ba1a1a",
+                    "surface": "#f9f9fb",
+                    "on-secondary-container": "#43627e",
+                    "secondary-fixed-dim": "#aacaea",
+                    "inverse-primary": "#abc9f2",
+                    "primary-fixed-dim": "#abc9f2",
+                    "surface-bright": "#f9f9fb",
+                    "surface-container-highest": "#e2e2e4",
+                    "secondary-fixed": "#cde5ff",
+                    "outline-variant": "#c3c6cf",
+                    "on-primary-fixed-variant": "#2a486b",
+                    "on-surface-variant": "#43474e",
+                    "inverse-surface": "#2f3132",
+                    "background": "#f9f9fb",
+                    "on-tertiary-container": "#d78e96",
+                    "surface-dim": "#d9dadc",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e2e2e4",
+                    "tertiary-fixed-dim": "#ffb2ba",
+                    "on-tertiary-fixed": "#380b14",
+                    "on-secondary-fixed": "#001d32",
+                    "tertiary-fixed": "#ffd9dc",
+                    "on-secondary": "#ffffff",
+                    "primary": "#002444",
+                    "inverse-on-surface": "#f0f0f2",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#d2e4ff",
+                    "on-primary-fixed": "#001c37",
+                    "on-tertiary-fixed-variant": "#6d363e",
+                    "secondary-container": "#bddefe",
+                    "on-primary-container": "#87a4cc",
+                    "surface-tint": "#436084",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#73777f",
+                    "primary-container": "#1a3a5c",
+                    "on-secondary-fixed-variant": "#294a64",
+                    "on-surface": "#1a1c1d",
+                    "tertiary": "#41131b",
+                    "tertiary-container": "#5c2830",
+                    "surface-container-high": "#e8e8ea",
+                    "on-error": "#ffffff",
+                    "surface-container": "#eeeef0",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .heat-map-cell { transition: all 0.2s ease; }
+        .heat-map-cell:hover { filter: brightness(0.9); transform: scale(1.02); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-white">
+<!-- SideNavBar Component -->
+<aside class="bg-slate-900 h-full w-64 fixed left-0 top-0 flex flex-col py-6 shadow-xl z-50">
+<div class="px-6 mb-10">
+<h1 class="text-lg font-bold text-white tracking-widest uppercase">Wellness Portal</h1>
+<p class="text-sky-300/50 text-xs font-inter tracking-tight">University Insights</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-sky-300/70 hover:text-white hover:bg-sky-800/30 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-sm tracking-tight">Executive Summary</span>
+</a>
+<a class="flex items-center px-6 py-3 text-sky-300/70 hover:text-white hover:bg-sky-800/30 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="school">school</span>
+<span class="font-inter text-sm tracking-tight">Academic Deep-Dive</span>
+</a>
+<!-- Active Tab: Wellness Profile -->
+<a class="flex items-center px-6 py-3 bg-gradient-to-r from-sky-900 to-sky-800 text-white font-semibold transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="psychology">psychology</span>
+<span class="font-inter text-sm tracking-tight">Wellness Profile</span>
+</a>
+<a class="flex items-center px-6 py-3 text-sky-300/70 hover:text-white hover:bg-sky-800/30 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="biotech">biotech</span>
+<span class="font-inter text-sm tracking-tight">Methodology</span>
+</a>
+</nav>
+<div class="px-6 pt-6 mt-auto">
+<div class="rounded bg-sky-900/40 p-4">
+<p class="text-[10px] text-sky-300/60 uppercase tracking-widest mb-2">Report Context</p>
+<p class="text-xs text-sky-100 leading-relaxed">Cross-sectional analysis of mental health indicators vs academic discipline.</p>
+</div>
+</div>
+</aside>
+<!-- TopAppBar Component -->
+<header class="flex items-center justify-between px-8 w-[calc(100%-16rem)] ml-64 h-16 bg-slate-50 dark:bg-slate-900 sticky top-0 z-40">
+<h2 class="font-inter text-2xl font-light tracking-tight text-slate-900 dark:text-white">Executive Overview</h2>
+<div class="flex items-center gap-4">
+<span class="text-slate-500 text-xs font-inter">Updated: Oct 2023</span>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center text-white text-xs font-bold">JD</div>
+</div>
+</header>
+<!-- Main Content Canvas (Power BI style 16:9 approach) -->
+<main class="ml-64 p-8 min-h-[calc(100vh-4rem)] bg-surface-container-low">
+<div class="max-w-[1600px] mx-auto space-y-6">
+<!-- Page Header Section -->
+<div class="mb-8">
+<h3 class="text-on-surface font-headline text-3xl font-bold tracking-tight mb-2">Wellness Profile &amp; Sentiment Matrix</h3>
+<p class="text-on-surface-variant max-w-2xl font-body text-sm leading-relaxed">Analyzing the intersection of academic rigor and mental well-being across disciplines. This view correlates self-reported stressors with longitudinal wellness indicators.</p>
+</div>
+<!-- Dashboard Grid (Bento Style) -->
+<div class="grid grid-cols-12 gap-6 h-auto">
+<!-- Left Section: Wellness Heatmap -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded shadow-sm p-6 relative overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h4 class="text-sm font-bold text-primary uppercase tracking-wider">Psychological Indicator Heatmap</h4>
+<p class="text-xs text-on-surface-variant">Intensity mapping: Mint (Optimal) to Rose (Critical)</p>
+</div>
+<div class="flex gap-2">
+<div class="flex items-center gap-1"><div class="w-3 h-3 bg-[#D1FAE5] rounded-sm"></div><span class="text-[10px] text-on-surface-variant uppercase">Low</span></div>
+<div class="flex items-center gap-1"><div class="w-3 h-3 bg-[#FECDD3] rounded-sm"></div><span class="text-[10px] text-on-surface-variant uppercase">High</span></div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-separate border-spacing-2">
+<thead>
+<tr>
+<th class="w-32"></th>
+<th class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center py-2">Stress</th>
+<th class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center py-2">Anxiety</th>
+<th class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center py-2">Depression</th>
+<th class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center py-2">Life Sat</th>
+<th class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center py-2">Sleep Quality</th>
+</tr>
+</thead>
+<tbody>
+<!-- STEM ROW -->
+<tr>
+<td class="text-xs font-bold text-primary uppercase pr-4 py-6">STEM</td>
+<td class="heat-map-cell bg-[#FB7185] rounded-lg h-24 text-white text-center shadow-sm">
+<span class="text-lg font-bold">8.4</span>
+<p class="text-[10px] opacity-80 uppercase">Critical</p>
+</td>
+<td class="heat-map-cell bg-[#FDA4AF] rounded-lg h-24 text-tertiary text-center shadow-sm">
+<span class="text-lg font-bold">7.1</span>
+<p class="text-[10px] opacity-80 uppercase">Elevated</p>
+</td>
+<td class="heat-map-cell bg-[#FEE2E2] rounded-lg h-24 text-tertiary text-center shadow-sm">
+<span class="text-lg font-bold">5.8</span>
+<p class="text-[10px] opacity-80 uppercase">Moderate</p>
+</td>
+<td class="heat-map-cell bg-[#ECFDF5] rounded-lg h-24 text-emerald-900 text-center shadow-sm border border-emerald-100">
+<span class="text-lg font-bold">4.2</span>
+<p class="text-[10px] opacity-80 uppercase">Suppressed</p>
+</td>
+<td class="heat-map-cell bg-[#FECDD3] rounded-lg h-24 text-tertiary text-center shadow-sm">
+<span class="text-lg font-bold">4.1</span>
+<p class="text-[10px] opacity-80 uppercase">Poor</p>
+</td>
+</tr>
+<!-- Non-STEM ROW -->
+<tr>
+<td class="text-xs font-bold text-primary uppercase pr-4 py-6">Non-STEM</td>
+<td class="heat-map-cell bg-[#FEE2E2] rounded-lg h-24 text-tertiary text-center shadow-sm">
+<span class="text-lg font-bold">6.2</span>
+<p class="text-[10px] opacity-80 uppercase">Moderate</p>
+</td>
+<td class="heat-map-cell bg-[#FECDD3] rounded-lg h-24 text-tertiary text-center shadow-sm">
+<span class="text-lg font-bold">6.8</span>
+<p class="text-[10px] opacity-80 uppercase">Moderate+</p>
+</td>
+<td class="heat-map-cell bg-[#FDA4AF] rounded-lg h-24 text-tertiary text-center shadow-sm">
+<span class="text-lg font-bold">7.4</span>
+<p class="text-[10px] opacity-80 uppercase">Elevated</p>
+</td>
+<td class="heat-map-cell bg-[#D1FAE5] rounded-lg h-24 text-emerald-900 text-center shadow-sm border border-emerald-100">
+<span class="text-lg font-bold">7.9</span>
+<p class="text-[10px] opacity-80 uppercase">Healthy</p>
+</td>
+<td class="heat-map-cell bg-[#A7F3D0] rounded-lg h-24 text-emerald-900 text-center shadow-sm border border-emerald-100">
+<span class="text-lg font-bold">6.9</span>
+<p class="text-[10px] opacity-80 uppercase">Fair</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Section: Correlation Matrix (From Data Placeholder) -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container-lowest rounded shadow-sm p-6 h-full flex flex-col">
+<h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-4">Correlation Matrix</h4>
+<div class="flex-1 border-l border-b border-outline-variant/30 relative py-4 px-2">
+<!-- Conceptual Scatter Plot / Matrix UI -->
+<div class="h-full w-full flex flex-col justify-between">
+<div class="flex items-center justify-between group">
+<span class="text-[10px] font-bold text-on-surface-variant w-16">Workload</span>
+<div class="flex-1 h-2 bg-surface-container rounded-full mx-3 overflow-hidden">
+<div class="h-full bg-secondary w-[85%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-secondary">0.82 r</span>
+</div>
+<div class="flex items-center justify-between group">
+<span class="text-[10px] font-bold text-on-surface-variant w-16">Sleep Dep</span>
+<div class="flex-1 h-2 bg-surface-container rounded-full mx-3 overflow-hidden">
+<div class="h-full bg-secondary w-[72%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-secondary">0.71 r</span>
+</div>
+<div class="flex items-center justify-between group">
+<span class="text-[10px] font-bold text-on-surface-variant w-16">Loneliness</span>
+<div class="flex-1 h-2 bg-surface-container rounded-full mx-3 overflow-hidden">
+<div class="h-full bg-tertiary-container w-[44%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-tertiary-container">0.44 r</span>
+</div>
+<div class="flex items-center justify-between group">
+<span class="text-[10px] font-bold text-on-surface-variant w-16">GPA Pressure</span>
+<div class="flex-1 h-2 bg-surface-container rounded-full mx-3 overflow-hidden">
+<div class="h-full bg-secondary w-[61%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-secondary">0.61 r</span>
+</div>
+<div class="flex items-center justify-between group">
+<span class="text-[10px] font-bold text-on-surface-variant w-16">Support Sys</span>
+<div class="flex-1 h-2 bg-surface-container rounded-full mx-3 overflow-hidden">
+<div class="h-full bg-emerald-500 w-[15%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-emerald-600">-0.15 r</span>
+</div>
+</div>
+<p class="mt-4 text-[11px] text-on-surface-variant leading-relaxed italic">
+                                Significant p-values detected in academic workload correlations (p &lt; 0.005).
+                             </p>
+</div>
+</div>
+</div>
+<!-- Bottom Text Block: Selection Effect Explanation -->
+<div class="col-span-12 bg-white rounded-lg p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/3">
+<img alt="Student studying in a quiet university library setting" class="rounded-xl object-cover h-48 w-full shadow-md" data-alt="student deep in concentration studying at a wooden desk in a quiet university library with warm lamp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBebO2Xc7SHV1bWFC66xd8wFEoUj1hI-kwjoE0bxxSQlhTMpZkixcVGZVPXlr0XaoIQ13r3BGFn85pvcAOi9iIezwBzEbfysG7XW9FDSKBb6_cWADMG8ykVFzdlCBUSo-qMZL6OxAhaoAu2L-_qCxHjQgfvTvWflvh6NQkT64rpd1k8cpFkvMqRNCFc5I59OUHSFyjZ5ZkE4ASXdMa1LjYdj4DhgvlSEa5BVzvuv9gqFQiI7sPmsJtLSI4dbZGfqFGsXhBRxXsZx0"/>
+</div>
+<div class="w-full md:w-2/3">
+<h5 class="text-primary font-headline text-xl font-bold mb-4">The 'Selection Effect' Paradox</h5>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed mb-4">
+                            While raw data suggests that STEM majors report higher stress levels, a deeper longitudinal analysis reveals the <strong>Selection Effect</strong>. Students with higher pre-existing grit often self-select into more rigorous programs. However, the data confirms that <strong>Study Time</strong>—not the discipline itself—is the primary driver of wellness degradation.
+                        </p>
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+<p class="text-xs font-semibold text-primary">Insight: Every 5-hour increase in weekly independent study correlates with a 12% drop in reported sleep quality, regardless of major.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Component -->
+<nav class="fixed bottom-12 right-8 rounded-full px-6 py-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl flex gap-4 items-center z-40 shadow-lg shadow-slate-200/50 dark:shadow-none">
+<div class="text-slate-500 dark:text-slate-400 px-4 py-1 font-inter text-xs font-semibold uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer">Major</div>
+<div class="text-slate-500 dark:text-slate-400 px-4 py-1 font-inter text-xs font-semibold uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer">Year</div>
+<!-- Active Filter: Gender -->
+<div class="bg-sky-100 dark:bg-sky-900 text-sky-900 dark:text-sky-100 rounded-full px-4 py-1 font-inter text-xs font-semibold uppercase tracking-wider">Gender</div>
+</nav>
+<!-- Footer Component -->
+<footer class="flex justify-center items-center w-[calc(100%-16rem)] ml-64 opacity-60 bg-transparent text-slate-400 font-inter text-[10px] uppercase tracking-widest py-4">
+<div class="flex gap-8">
+<span>© 2023 University Wellness Analytics Bureau | Data Source: Institutional Research</span>
+<div class="flex gap-4">
+<a class="hover:text-sky-600 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-sky-600 transition-colors" href="#">Contact Admin</a>
+</div>
+</div>
+</footer>
+</body></html>

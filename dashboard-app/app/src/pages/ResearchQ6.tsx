@@ -5,6 +5,7 @@ import {
 } from 'recharts'
 import { useTranslation } from 'react-i18next'
 import { useQ6Data } from '../hooks/useQ6Data'
+import ReportViewer from '../components/ReportViewer'
 
 const C = {
   primary: '#6f070f',
@@ -73,6 +74,7 @@ export default function ResearchQ6() {
   const { t } = useTranslation()
 
   const [selectedDay, setSelectedDay] = useState<string | null>(null)
+  const [showReport, setShowReport] = useState(false)
   const [highlightSites, setHighlightSites] = useState<string[]>(['chin', 'greenway', 'oxford'])
   const [timelineSite, setTimelineSite] = useState<string>('all')
 
@@ -722,8 +724,24 @@ export default function ResearchQ6() {
               </p>
             </div>
           </div>
+          <div className="mt-8">
+            <button
+              onClick={() => setShowReport(true)}
+              className="bg-on-primary text-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+              Read Mini Report
+            </button>
+          </div>
         </div>
       </footer>
+      {showReport && (
+        <ReportViewer
+          reportPath="/reports/Q6.md"
+          title="Q6 — High-AQI Days & PM2.5 Sites"
+          onClose={() => setShowReport(false)}
+        />
+      )}
     </div>
   )
 }

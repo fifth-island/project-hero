@@ -1,0 +1,19 @@
+column,issue_type,affected_rows,recommendation
+ALL,Duplicate rows,3,Drop duplicates using df.drop_duplicates()
+anxiety_score,Missing values,69,"Impute with median (numeric) or mode (categorical), or flag as unknown"
+depression_score,Missing values,69,"Impute with median (numeric) or mode (categorical), or flag as unknown"
+sleep_hours_per_night,Missing values,53,"Impute with median (numeric) or mode (categorical), or flag as unknown"
+monthly_spending,Missing values,48,"Impute with median (numeric) or mode (categorical), or flag as unknown"
+gpa,Missing values,42,"Impute with median (numeric) or mode (categorical), or flag as unknown"
+caffeine_mg_per_day,Missing values,37,"Impute with median (numeric) or mode (categorical), or flag as unknown"
+exercise_days_per_week,Missing values,32,"Impute with median (numeric) or mode (categorical), or flag as unknown"
+has_part_time_job,Missing values,26,"Impute with median (numeric) or mode (categorical), or flag as unknown"
+num_clubs,Missing values,21,"Impute with median (numeric) or mode (categorical), or flag as unknown"
+age,Impossible values (out of range),6,Set to NaN and impute with median age (≈21)
+gpa,Out-of-range values (GPA > 4.0 or < 0),8,Cap at 4.0 for values slightly above; set to NaN for clearly wrong values (GPA > 4.5)
+study_hours_per_day,Impossible values (>18 or <0),5,Set to NaN — 30hrs/day is physically impossible
+sleep_hours_per_night,Impossible values (negative or >16),4,Set to NaN — negative sleep is impossible; >16 hrs is implausible for a student
+attendance_rate,Values > 100% (impossible percentage),10,Cap at 100% — a percentage cannot exceed 100
+gender,Inconsistent categorical encoding,75,"Standardize: map M/male/MALE→Male, F/female/FEMALE→Female"
+stress_level,Mixed types (numeric 1–10 + text labels),20,"Map text labels to numeric: low→2.5, medium→5, high→7.5, very high→9.5; then convert to float"
+on_campus,Mixed boolean representations (True/False/1/0/yes/no),60,"Map all truthy variants → True, falsy variants → False; store as boolean"

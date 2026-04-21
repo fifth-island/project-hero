@@ -5,6 +5,7 @@ import {
   BarChart, Bar, Cell,
 } from 'recharts'
 import { useQ5Data, type VulnerabilityRow } from '../hooks/useQ5Data'
+import ReportViewer from '../components/ReportViewer'
 
 const C = {
   primary: '#6f070f',
@@ -77,6 +78,7 @@ export default function ResearchQ5() {
   } = useQ5Data()
   const { t } = useTranslation()
   const [highlightSites, setHighlightSites] = useState<string[]>(['tufts', 'msh'])
+  const [showReport, setShowReport] = useState(false)
 
   if (loading) return (
     <div className="max-w-7xl mx-auto px-10 py-24 text-center">
@@ -547,10 +549,24 @@ export default function ResearchQ5() {
                 <h4 className="text-xs font-bold uppercase tracking-widest mb-1 text-on-primary-container">Data Source</h4>
                 <p className="text-sm">Tufts HEROS Lab High-Frequency Thermal Mesh (Jul – Aug 2023)</p>
               </div>
+              <button
+                onClick={() => setShowReport(true)}
+                className="bg-on-primary text-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform flex items-center gap-2 mt-2"
+              >
+                <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+                Read Mini Report
+              </button>
             </div>
           </div>
         </div>
       </footer>
+      {showReport && (
+        <ReportViewer
+          reportPath="/reports/Q5.md"
+          title="Q5 — Hottest Days & WBGT Heat Stress"
+          onClose={() => setShowReport(false)}
+        />
+      )}
     </div>
   )
 }

@@ -1,0 +1,16 @@
+step,column,action,rows_affected
+1,ALL,Dropped duplicate rows,3
+2,age,Nulled 6 impossible values; imputed with median (21),6
+3,gpa,"Capped GPA≤4.3→4.0, nulled clearly wrong, imputed median=3.12",6
+4,study_hours_per_day,Nulled 5 impossible values; imputed median (7.0),5
+5,sleep_hours_per_night,Nulled 58 impossible values; imputed median (6.8),58
+6,attendance_rate,Capped 10 values >100% to 100%,10
+7,caffeine_mg_per_day,Imputed 37 missing values with median (189.0),37
+7,exercise_days_per_week,Imputed 32 missing values with median (3.0),32
+7,monthly_spending,Imputed 48 missing values with median (814.6),48
+7,anxiety_score,Imputed 69 missing values with median (6.0),69
+7,depression_score,Imputed 69 missing values with median (5.0),69
+7,num_clubs,Imputed 21 missing values with median (3.0),21
+8,gender,Standardized 75 inconsistent encodings,75
+9,stress_level,"Mapped 20 text labels to numeric (low→2.5, medium→5, high→7.5, very high→9.5)",20
+10,on_campus,Standardized 60 mixed boolean values,60

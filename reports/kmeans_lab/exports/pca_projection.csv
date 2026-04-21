@@ -1,0 +1,16 @@
+neighborhood_id,nbhd_name,cluster,cluster_name,cluster_color,pca1,pca2
+cedar_hills,Cedar Hills,0,🟢 Green Suburbs (Quiet + Green),#1565C0,-0.678,0.376
+downtown_core,Downtown Core,1,🔴 Urban Core (Noisy + Walkable),#C62828,2.799,0.425
+elm_district,Elm District,1,🔴 Urban Core (Noisy + Walkable),#C62828,0.253,0.371
+harbor_view,Harbor View,1,🔴 Urban Core (Noisy + Walkable),#C62828,0.856,0.41
+industrial_pk,Industrial Park,2,⚫ Industrial Zone (Noisy + Sparse),#2E7D32,-0.199,-3.105
+kensington,Kensington,0,🟢 Green Suburbs (Quiet + Green),#1565C0,-0.884,1.129
+lakewood,Lakewood,0,🟢 Green Suburbs (Quiet + Green),#1565C0,-1.879,0.625
+midtown_east,Midtown East,1,🔴 Urban Core (Noisy + Walkable),#C62828,2.175,0.468
+northgate,Northgate,0,🟢 Green Suburbs (Quiet + Green),#1565C0,-0.706,-0.589
+old_quarter,Old Quarter,1,🔴 Urban Core (Noisy + Walkable),#C62828,1.087,0.076
+pine_ridge,Pine Ridge,0,🟢 Green Suburbs (Quiet + Green),#1565C0,-2.496,0.406
+riverside,Riverside,0,🟢 Green Suburbs (Quiet + Green),#1565C0,-0.976,0.439
+summit_park,Summit Park,0,🟢 Green Suburbs (Quiet + Green),#1565C0,-1.7,0.929
+tech_corridor,Tech Corridor,1,🔴 Urban Core (Noisy + Walkable),#C62828,2.27,0.837
+warehouse_row,Warehouse Row,2,⚫ Industrial Zone (Noisy + Sparse),#2E7D32,0.078,-2.799

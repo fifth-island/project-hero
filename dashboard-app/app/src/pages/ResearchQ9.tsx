@@ -5,6 +5,7 @@ import {
   BarChart, Bar, Cell, ReferenceLine,
 } from 'recharts'
 import { useQ9Data } from '../hooks/useQ9Data'
+import ReportViewer from '../components/ReportViewer'
 
 const C = {
   primary: '#6f070f',
@@ -35,6 +36,7 @@ export default function ResearchQ9() {
   const { kpi, profiles, scatterPm25, scatterWbgt, corrSummary, regression, loading } = useQ9Data()
   const [target, setTarget] = useState<TargetVar>('pm25')
   const [selectedLu, setSelectedLu] = useState<string>('Roads 50m')
+  const [showReport, setShowReport] = useState(false)
 
   const luVars = useMemo(() => corrSummary.map(c => c.lu_var), [corrSummary])
 
@@ -371,8 +373,24 @@ export default function ResearchQ9() {
               </p>
             </div>
           </div>
+          <div className="mt-8">
+            <button
+              onClick={() => setShowReport(true)}
+              className="bg-on-primary text-primary px-6 py-2 rounded-lg text-xs uppercase tracking-widest font-bold hover:scale-105 transition-transform flex items-center gap-2"
+            >
+              <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+              Read Mini Report
+            </button>
+          </div>
         </div>
       </footer>
+      {showReport && (
+        <ReportViewer
+          reportPath="/reports/Q9.md"
+          title="Q9 — Land-Use & Environmental Associations"
+          onClose={() => setShowReport(false)}
+        />
+      )}
     </div>
   )
 }

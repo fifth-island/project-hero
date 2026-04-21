@@ -1,0 +1,18 @@
+{
+  "rush": {
+    "n": 13453,
+    "pa_mean": 9.7,
+    "dep_mean": 8.07,
+    "mean_bias": 1.63,
+    "rmse": 2.66,
+    "pearson_r": 0.9287
+  },
+  "nonrush": {
+    "n": 33556,
+    "pa_mean": 9.4,
+    "dep_mean": 7.92,
+    "mean_bias": 1.48,
+    "rmse": 2.47,
+    "pearson_r": 0.9431
+  }
+}

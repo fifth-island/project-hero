@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import OverviewMap from '../components/OverviewMap'
 
 const IMG_GATE = '/photos/chinatown_gate.jpg'
-const IMG_FOOTER = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAGxa0t4jL43JeB2mp6LyvlqtpPbynaPpnMwoxyrTx6hMCkDv9HFt-kSx5aNzvi6Lrfm87gvR0j6P3Le6MfA8pa8cHRweBR1phtz2cc7plVAjytbFuvjbXHsmAm0OhvvQmoGlNLGlkEZzk8yWqNui9ykspSlQtLLMI2UEg0huMgCUybonJvWoisSHw74KIpiTM_pvlGUvvngr1QahyLYMl9mOPF1tNiw_T5LWED58aKpcsFIhGbUu1fp-0PHytRKHFP6IwKLO3IJn9'
+const IMG_FOOTER = '/tufts-logo.png'
 
 /* ── Policy Narrative Groups ────────────────────────────── */
 const NARRATIVE_GROUPS = [
@@ -11,7 +11,7 @@ const NARRATIVE_GROUPS = [
     color: '#003e2f',
     bg: 'bg-tertiary/10',
     border: 'border-tertiary',
-    icon: 'eco',
+    icon: 'analytics',
     labelKey: 'overview.envAnalytics',
     questionKey: 'overview.envAnalyticsQ',
     items: [
@@ -19,13 +19,13 @@ const NARRATIVE_GROUPS = [
       { q: 'Q4', titleKey: 'overview.q4Title' },
       { q: 'Q8', titleKey: 'overview.q8Title' },
     ],
-    route: '/analytics/pm25',
+    route: '/analytics/distributions',
   },
   {
     color: '#87512d',
     bg: 'bg-secondary/10',
     border: 'border-secondary',
-    icon: 'warning',
+    icon: 'emergency_heat',
     labelKey: 'overview.riskAssessment',
     questionKey: 'overview.riskAssessmentQ',
     items: [
@@ -38,7 +38,7 @@ const NARRATIVE_GROUPS = [
     color: '#6f070f',
     bg: 'bg-primary/10',
     border: 'border-primary',
-    icon: 'hub',
+    icon: 'psychiatry',
     labelKey: 'overview.rootCauses',
     questionKey: 'overview.rootCausesQ',
     items: [
@@ -51,7 +51,7 @@ const NARRATIVE_GROUPS = [
     color: '#1565C0',
     bg: 'bg-blue-500/10',
     border: 'border-blue-600',
-    icon: 'verified',
+    icon: 'precision_manufacturing',
     labelKey: 'overview.sensorValidation',
     questionKey: 'overview.sensorValidationQ',
     items: [
@@ -261,7 +261,7 @@ export default function ProjectOverview() {
       {/* Footer */}
       <footer className="mt-20 p-12 bg-surface-container-low text-center space-y-6 rounded-2xl">
         <div className="flex justify-center items-center gap-4">
-          <img alt="Tufts University Logo" className="h-12 opacity-60 grayscale" src={IMG_FOOTER} />
+          <img alt="Tufts University Logo" className="h-12 object-contain opacity-80" src={IMG_FOOTER} />
           <div className="h-8 w-px bg-outline-variant" />
           <span className="font-[family-name:var(--font-family-headline)] font-bold text-stone-500">
             {t('overview.chinatownHeros')}

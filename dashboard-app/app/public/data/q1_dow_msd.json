@@ -1,0 +1,72 @@
+[
+  {
+    "day": "Monday",
+    "day_short": "Mon",
+    "is_weekend": false,
+    "n": 6653,
+    "msd": 6.947,
+    "rmse": 2.636,
+    "mean_bias": 1.794,
+    "pearson_r": 0.9617
+  },
+  {
+    "day": "Tuesday",
+    "day_short": "Tue",
+    "is_weekend": false,
+    "n": 6717,
+    "msd": 4.67,
+    "rmse": 2.161,
+    "mean_bias": 1.346,
+    "pearson_r": 0.8739
+  },
+  {
+    "day": "Wednesday",
+    "day_short": "Wed",
+    "is_weekend": false,
+    "n": 5653,
+    "msd": 3.556,
+    "rmse": 1.886,
+    "mean_bias": 0.992,
+    "pearson_r": 0.9805
+  },
+  {
+    "day": "Thursday",
+    "day_short": "Thu",
+    "is_weekend": false,
+    "n": 7211,
+    "msd": 6.016,
+    "rmse": 2.453,
+    "mean_bias": 1.469,
+    "pearson_r": 0.9577
+  },
+  {
+    "day": "Friday",
+    "day_short": "Fri",
+    "is_weekend": false,
+    "n": 6983,
+    "msd": 9.772,
+    "rmse": 3.126,
+    "mean_bias": 1.766,
+    "pearson_r": 0.8951
+  },
+  {
+    "day": "Saturday",
+    "day_short": "Sat",
+    "is_weekend": true,
+    "n": 6933,
+    "msd": 9.471,
+    "rmse": 3.078,
+    "mean_bias": 2.062,
+    "pearson_r": 0.8935
+  },
+  {
+    "day": "Sunday",
+    "day_short": "Sun",
+    "is_weekend": true,
+    "n": 6859,
+    "msd": 3.611,
+    "rmse": 1.9,
+    "mean_bias": 1.152,
+    "pearson_r": 0.9453
+  }
+]

@@ -42,6 +42,9 @@ export interface AssetCard { id: string; site_id: string; name: string; r_dep: n
 /* ── Temp × RH heatmap ── */
 export interface TempRhCell { temp: string; humidity: string; bias: number; n: number }
 
+/* ── Daily timeseries ── */
+export interface DailyTempPoint { date: string; kestrel: number; ws: number; dep: number; n: number }
+
 export function useQ2Data() {
   const [scatterDep, setScatterDep] = useState<DepScatterData | null>(null)
   const [scatterWs, setScatterWs] = useState<WsScatterData | null>(null)
@@ -52,6 +55,7 @@ export function useQ2Data() {
   const [siteHour, setSiteHour] = useState<SiteHourCell[]>([])
   const [assets, setAssets] = useState<AssetCard[]>([])
   const [tempRh, setTempRh] = useState<TempRhCell[]>([])
+  const [dailyTimeseries, setDailyTimeseries] = useState<DailyTempPoint[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -65,7 +69,8 @@ export function useQ2Data() {
       fetchJson<SiteHourCell[]>('q2_site_hour_heatmap.json'),
       fetchJson<AssetCard[]>('q2_asset_cards.json'),
       fetchJson<TempRhCell[]>('q2_temp_rh_heatmap.json'),
-    ]).then(([sd, sw, ba, st, di, ro, sh, ac, tr]) => {
+      fetchJson<DailyTempPoint[]>('q2_daily_timeseries.json'),
+    ]).then(([sd, sw, ba, st, di, ro, sh, ac, tr, dt]) => {
       setScatterDep(sd)
       setScatterWs(sw)
       setBlandAltman(ba)
@@ -75,9 +80,10 @@ export function useQ2Data() {
       setSiteHour(sh)
       setAssets(ac)
       setTempRh(tr)
+      setDailyTimeseries(dt)
       setLoading(false)
     })
   }, [])
 
-  return { scatterDep, scatterWs, blandAltman, siteTable, diurnal, rolling, siteHour, assets, tempRh, loading }
+  return { scatterDep, scatterWs, blandAltman, siteTable, diurnal, rolling, siteHour, assets, tempRh, dailyTimeseries, loading }
 }
